@@ -1,0 +1,9 @@
+# XCode
+*.xcuserstate
+xcuserstate
+*/xcuserdata/
+
+# OSX
+.DS_Store
+
+

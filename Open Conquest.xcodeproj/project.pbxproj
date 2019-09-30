@@ -1,0 +1,922 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C964D66548608BDB670EA9C /* Pods_Open_Conquest_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7983E38CDCA9309E80F75D87 /* Pods_Open_Conquest_Tests.framework */; };
+		30A8C688AF5BA81E17EBF4B4 /* Pods_Open_Conquest_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B9E61105C50CA622C14EB0 /* Pods_Open_Conquest_UITests.framework */; };
+		44424056C7E6B878DFADC787 /* Pods_Open_Conquest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5353B247E7DCA1E14EAA30FF /* Pods_Open_Conquest.framework */; };
+		920398F322C87FCF003B981C /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920398F222C87FCF003B981C /* RequestFactory.swift */; };
+		922AA73822B5EAB100FCA595 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922AA73722B5EAB100FCA595 /* GameManager.swift */; };
+		923B38B2229DD71A00748F6F /* LoginSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38B1229DD71A00748F6F /* LoginSceneView.swift */; };
+		923B38B922A0812900748F6F /* LoginSceneBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38B822A0812900748F6F /* LoginSceneBackground.swift */; };
+		923B38BB22A0815600748F6F /* LoginSceneGameImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38BA22A0815600748F6F /* LoginSceneGameImage.swift */; };
+		923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38BC22A0816F00748F6F /* LoginSceneLoginButton.swift */; };
+		923B38BF22A0818300748F6F /* LoginSceneUsernameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */; };
+		923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */; };
+		923B38C422A0829E00748F6F /* GameSceneMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C322A0829E00748F6F /* GameSceneMap.swift */; };
+		923B38C622A0832200748F6F /* GameSceneOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C522A0832200748F6F /* GameSceneOverlay.swift */; };
+		923B38D022A1760D00748F6F /* MapTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 923B38CE22A1760D00748F6F /* MapTileSet.sks */; };
+		923B38D622A1BA2400748F6F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38D522A1BA2400748F6F /* Map.swift */; };
+		923B38D822A1BA3A00748F6F /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38D722A1BA3A00748F6F /* Tile.swift */; };
+		923B38DA22A1D99C00748F6F /* GameSceneGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38D922A1D99C00748F6F /* GameSceneGestures.swift */; };
+		923B38DC22A1DB2C00748F6F /* GameSceneMapCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38DB22A1DB2B00748F6F /* GameSceneMapCamera.swift */; };
+		923B38DE22A2F6C400748F6F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38DD22A2F6C400748F6F /* API.swift */; };
+		9244332722C5810C00913284 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9244332622C5810C00913284 /* Game.swift */; };
+		9244332922C6CC5C00913284 /* NotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9244332822C6CC5C00913284 /* NotificationFactory.swift */; };
+		9244332B22C6CDCB00913284 /* LoginSceneNotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9244332A22C6CDCB00913284 /* LoginSceneNotificationFactory.swift */; };
+		92A2A33C229B635A0090287C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A33B229B635A0090287C /* AppDelegate.swift */; };
+		92A2A33E229B635A0090287C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A33D229B635A0090287C /* GameScene.sks */; };
+		92A2A342229B635A0090287C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A341229B635A0090287C /* GameScene.swift */; };
+		92A2A344229B635A0090287C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A343229B635A0090287C /* GameViewController.swift */; };
+		92A2A347229B635A0090287C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A345229B635A0090287C /* Main.storyboard */; };
+		92A2A349229B635C0090287C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A348229B635C0090287C /* Assets.xcassets */; };
+		92A2A34C229B635C0090287C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A34A229B635C0090287C /* LaunchScreen.storyboard */; };
+		92A2A357229B635C0090287C /* Pixel_EmpireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A356229B635C0090287C /* Pixel_EmpireTests.swift */; };
+		92A2A362229B635C0090287C /* Pixel_EmpireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A361229B635C0090287C /* Pixel_EmpireUITests.swift */; };
+		92A2A372229B65DA0090287C /* LoginScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 92A2A371229B65DA0090287C /* LoginScene.sks */; };
+		92A2A374229B66450090287C /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A373229B66450090287C /* LoginScene.swift */; };
+		92E518EE22A5F1DB000B1F59 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E518ED22A5F1DB000B1F59 /* ConnectionManager.swift */; };
+		92E518F322A5F8CC000B1F59 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E518F222A5F8CC000B1F59 /* User.swift */; };
+		92E518F822A71DB5000B1F59 /* GameObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E518F722A71DB5000B1F59 /* GameObserver.swift */; };
+		92E5190222A74830000B1F59 /* GamePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190122A74830000B1F59 /* GamePoster.swift */; };
+		92E5190822A74BC8000B1F59 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190722A74BC8000B1F59 /* Account.swift */; };
+		92E5190B22A750D0000B1F59 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190A22A750D0000B1F59 /* Poster.swift */; };
+		92E5190D22A750DB000B1F59 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190C22A750DB000B1F59 /* Observer.swift */; };
+		92E5190F22A7547D000B1F59 /* LoginSceneObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190E22A7547D000B1F59 /* LoginSceneObserver.swift */; };
+		92E5191122A75B31000B1F59 /* LoginScenePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5191022A75B31000B1F59 /* LoginScenePoster.swift */; };
+		92E5191322A76021000B1F59 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5191222A76021000B1F59 /* Notifications.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92A2A353229B635C0090287C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92A2A330229B635A0090287C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92A2A337229B635A0090287C;
+			remoteInfo = "Pixel Empire";
+		};
+		92A2A35E229B635C0090287C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92A2A330229B635A0090287C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92A2A337229B635A0090287C;
+			remoteInfo = "Pixel Empire";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		23C29AF4ED08E7EB4EB9659E /* Pods-Open Conquest Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest Tests/Pods-Open Conquest Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		30C51E8A2F5DBB6C1AFCBEEB /* Pods-Open Conquest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest/Pods-Open Conquest.debug.xcconfig"; sourceTree = "<group>"; };
+		50120B0735284F4B92369AB9 /* Pods-Open Conquest UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest UITests/Pods-Open Conquest UITests.release.xcconfig"; sourceTree = "<group>"; };
+		5353B247E7DCA1E14EAA30FF /* Pods_Open_Conquest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open_Conquest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74B9E61105C50CA622C14EB0 /* Pods_Open_Conquest_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open_Conquest_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7983E38CDCA9309E80F75D87 /* Pods_Open_Conquest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open_Conquest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		920398F222C87FCF003B981C /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		922AA73722B5EAB100FCA595 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		923B38B1229DD71A00748F6F /* LoginSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneView.swift; sourceTree = "<group>"; };
+		923B38B822A0812900748F6F /* LoginSceneBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginSceneBackground.swift; path = ../LoginSceneBackground.swift; sourceTree = "<group>"; };
+		923B38BA22A0815600748F6F /* LoginSceneGameImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginSceneGameImage.swift; path = ../LoginSceneGameImage.swift; sourceTree = "<group>"; };
+		923B38BC22A0816F00748F6F /* LoginSceneLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginSceneLoginButton.swift; path = ../LoginSceneLoginButton.swift; sourceTree = "<group>"; };
+		923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginSceneUsernameField.swift; path = ../LoginSceneUsernameField.swift; sourceTree = "<group>"; };
+		923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginScenePasswordField.swift; path = ../LoginScenePasswordField.swift; sourceTree = "<group>"; };
+		923B38C322A0829E00748F6F /* GameSceneMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneMap.swift; sourceTree = "<group>"; };
+		923B38C522A0832200748F6F /* GameSceneOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneOverlay.swift; sourceTree = "<group>"; };
+		923B38CE22A1760D00748F6F /* MapTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapTileSet.sks; sourceTree = "<group>"; };
+		923B38D522A1BA2400748F6F /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		923B38D722A1BA3A00748F6F /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		923B38D922A1D99C00748F6F /* GameSceneGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneGestures.swift; sourceTree = "<group>"; };
+		923B38DB22A1DB2B00748F6F /* GameSceneMapCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneMapCamera.swift; sourceTree = "<group>"; };
+		923B38DD22A2F6C400748F6F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		9244332622C5810C00913284 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9244332822C6CC5C00913284 /* NotificationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFactory.swift; sourceTree = "<group>"; };
+		9244332A22C6CDCB00913284 /* LoginSceneNotificationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneNotificationFactory.swift; sourceTree = "<group>"; };
+		92A2A338229B635A0090287C /* Open Conquest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Open Conquest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92A2A33B229B635A0090287C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		92A2A33D229B635A0090287C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		92A2A341229B635A0090287C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		92A2A343229B635A0090287C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		92A2A346229B635A0090287C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92A2A348229B635C0090287C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92A2A34B229B635C0090287C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		92A2A34D229B635C0090287C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92A2A352229B635C0090287C /* Open Conquest Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Open Conquest Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92A2A356229B635C0090287C /* Pixel_EmpireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel_EmpireTests.swift; sourceTree = "<group>"; };
+		92A2A358229B635C0090287C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92A2A35D229B635C0090287C /* Open Conquest UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Open Conquest UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92A2A361229B635C0090287C /* Pixel_EmpireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel_EmpireUITests.swift; sourceTree = "<group>"; };
+		92A2A363229B635C0090287C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92A2A371229B65DA0090287C /* LoginScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoginScene.sks; sourceTree = "<group>"; };
+		92A2A373229B66450090287C /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
+		92E518ED22A5F1DB000B1F59 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		92E518F222A5F8CC000B1F59 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		92E518F722A71DB5000B1F59 /* GameObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObserver.swift; sourceTree = "<group>"; };
+		92E5190122A74830000B1F59 /* GamePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePoster.swift; sourceTree = "<group>"; };
+		92E5190722A74BC8000B1F59 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		92E5190A22A750D0000B1F59 /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
+		92E5190C22A750DB000B1F59 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		92E5190E22A7547D000B1F59 /* LoginSceneObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneObserver.swift; sourceTree = "<group>"; };
+		92E5191022A75B31000B1F59 /* LoginScenePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePoster.swift; sourceTree = "<group>"; };
+		92E5191222A76021000B1F59 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		B2844570776E81819817B8CB /* Pods-Open Conquest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest/Pods-Open Conquest.release.xcconfig"; sourceTree = "<group>"; };
+		E011B0D88D6ACB513770E511 /* Pods-Open Conquest Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest Tests/Pods-Open Conquest Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E1605DDC9F08BB7737BFF792 /* Pods-Open Conquest UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest UITests/Pods-Open Conquest UITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92A2A335229B635A0090287C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44424056C7E6B878DFADC787 /* Pods_Open_Conquest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A2A34F229B635C0090287C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C964D66548608BDB670EA9C /* Pods_Open_Conquest_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A2A35A229B635C0090287C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30A8C688AF5BA81E17EBF4B4 /* Pods_Open_Conquest_UITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		046B9228F47975D488989A00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30C51E8A2F5DBB6C1AFCBEEB /* Pods-Open Conquest.debug.xcconfig */,
+				B2844570776E81819817B8CB /* Pods-Open Conquest.release.xcconfig */,
+				23C29AF4ED08E7EB4EB9659E /* Pods-Open Conquest Tests.debug.xcconfig */,
+				E011B0D88D6ACB513770E511 /* Pods-Open Conquest Tests.release.xcconfig */,
+				E1605DDC9F08BB7737BFF792 /* Pods-Open Conquest UITests.debug.xcconfig */,
+				50120B0735284F4B92369AB9 /* Pods-Open Conquest UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		923B38D422A1B92400748F6F /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				9244332622C5810C00913284 /* Game.swift */,
+				922AA73722B5EAB100FCA595 /* GameManager.swift */,
+				92E518F722A71DB5000B1F59 /* GameObserver.swift */,
+				92E5190122A74830000B1F59 /* GamePoster.swift */,
+				92E518DD22A44501000B1F59 /* API */,
+				92E518F622A71DA4000B1F59 /* Models */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		923B38E322A34B1000748F6F /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				923B38B822A0812900748F6F /* LoginSceneBackground.swift */,
+				923B38BA22A0815600748F6F /* LoginSceneGameImage.swift */,
+				923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */,
+				923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */,
+				923B38BC22A0816F00748F6F /* LoginSceneLoginButton.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		92A2A32F229B635A0090287C = {
+			isa = PBXGroup;
+			children = (
+				92A2A33A229B635A0090287C /* Open Conquest */,
+				92A2A355229B635C0090287C /* Open Conquest Tests */,
+				92A2A360229B635C0090287C /* Open Conquest UITests */,
+				92A2A339229B635A0090287C /* Products */,
+				046B9228F47975D488989A00 /* Pods */,
+				F979D1FDB74AC47635790C88 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		92A2A339229B635A0090287C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92A2A338229B635A0090287C /* Open Conquest.app */,
+				92A2A352229B635C0090287C /* Open Conquest Tests.xctest */,
+				92A2A35D229B635C0090287C /* Open Conquest UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92A2A33A229B635A0090287C /* Open Conquest */ = {
+			isa = PBXGroup;
+			children = (
+				92A2A33B229B635A0090287C /* AppDelegate.swift */,
+				92A2A343229B635A0090287C /* GameViewController.swift */,
+				92A2A345229B635A0090287C /* Main.storyboard */,
+				92A2A348229B635C0090287C /* Assets.xcassets */,
+				92A2A34A229B635C0090287C /* LaunchScreen.storyboard */,
+				92A2A34D229B635C0090287C /* Info.plist */,
+				92E5190922A75096000B1F59 /* Notifications */,
+				92A2A36F229B63D70090287C /* Scenes */,
+				923B38D422A1B92400748F6F /* Game */,
+			);
+			path = "Open Conquest";
+			sourceTree = "<group>";
+		};
+		92A2A355229B635C0090287C /* Open Conquest Tests */ = {
+			isa = PBXGroup;
+			children = (
+				92A2A356229B635C0090287C /* Pixel_EmpireTests.swift */,
+				92A2A358229B635C0090287C /* Info.plist */,
+			);
+			path = "Open Conquest Tests";
+			sourceTree = "<group>";
+		};
+		92A2A360229B635C0090287C /* Open Conquest UITests */ = {
+			isa = PBXGroup;
+			children = (
+				92A2A361229B635C0090287C /* Pixel_EmpireUITests.swift */,
+				92A2A363229B635C0090287C /* Info.plist */,
+			);
+			path = "Open Conquest UITests";
+			sourceTree = "<group>";
+		};
+		92A2A36F229B63D70090287C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				92A2A370229B64AD0090287C /* LoginScene */,
+				92A2A375229B69070090287C /* GameScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		92A2A370229B64AD0090287C /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				92A2A371229B65DA0090287C /* LoginScene.sks */,
+				92A2A373229B66450090287C /* LoginScene.swift */,
+				92E5190E22A7547D000B1F59 /* LoginSceneObserver.swift */,
+				92E5191022A75B31000B1F59 /* LoginScenePoster.swift */,
+				9244332A22C6CDCB00913284 /* LoginSceneNotificationFactory.swift */,
+				923B38B1229DD71A00748F6F /* LoginSceneView.swift */,
+				923B38E322A34B1000748F6F /* Subviews */,
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		92A2A375229B69070090287C /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				92A2A33D229B635A0090287C /* GameScene.sks */,
+				923B38CE22A1760D00748F6F /* MapTileSet.sks */,
+				92A2A341229B635A0090287C /* GameScene.swift */,
+				923B38D922A1D99C00748F6F /* GameSceneGestures.swift */,
+				923B38C322A0829E00748F6F /* GameSceneMap.swift */,
+				923B38DB22A1DB2B00748F6F /* GameSceneMapCamera.swift */,
+				923B38C522A0832200748F6F /* GameSceneOverlay.swift */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
+		92E518DD22A44501000B1F59 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				923B38DD22A2F6C400748F6F /* API.swift */,
+				92E518ED22A5F1DB000B1F59 /* ConnectionManager.swift */,
+				920398F222C87FCF003B981C /* RequestFactory.swift */,
+			);
+			name = API;
+			path = ../API;
+			sourceTree = "<group>";
+		};
+		92E518F622A71DA4000B1F59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92E5190722A74BC8000B1F59 /* Account.swift */,
+				923B38D522A1BA2400748F6F /* Map.swift */,
+				92E518F222A5F8CC000B1F59 /* User.swift */,
+				923B38D722A1BA3A00748F6F /* Tile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		92E5190922A75096000B1F59 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				92E5190A22A750D0000B1F59 /* Poster.swift */,
+				92E5190C22A750DB000B1F59 /* Observer.swift */,
+				92E5191222A76021000B1F59 /* Notifications.swift */,
+				9244332822C6CC5C00913284 /* NotificationFactory.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		F979D1FDB74AC47635790C88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5353B247E7DCA1E14EAA30FF /* Pods_Open_Conquest.framework */,
+				7983E38CDCA9309E80F75D87 /* Pods_Open_Conquest_Tests.framework */,
+				74B9E61105C50CA622C14EB0 /* Pods_Open_Conquest_UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92A2A337229B635A0090287C /* Open Conquest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92A2A366229B635C0090287C /* Build configuration list for PBXNativeTarget "Open Conquest" */;
+			buildPhases = (
+				66C158C727915AAF771C92CB /* [CP] Check Pods Manifest.lock */,
+				92A2A334229B635A0090287C /* Sources */,
+				92A2A335229B635A0090287C /* Frameworks */,
+				92A2A336229B635A0090287C /* Resources */,
+				F192D9BFE382AFB9E06B1C36 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Open Conquest";
+			productName = "Pixel Empire";
+			productReference = 92A2A338229B635A0090287C /* Open Conquest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92A2A351229B635C0090287C /* Open Conquest Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92A2A369229B635C0090287C /* Build configuration list for PBXNativeTarget "Open Conquest Tests" */;
+			buildPhases = (
+				A2DBD87C6965980C958C7ED8 /* [CP] Check Pods Manifest.lock */,
+				92A2A34E229B635C0090287C /* Sources */,
+				92A2A34F229B635C0090287C /* Frameworks */,
+				92A2A350229B635C0090287C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92A2A354229B635C0090287C /* PBXTargetDependency */,
+			);
+			name = "Open Conquest Tests";
+			productName = "Pixel EmpireTests";
+			productReference = 92A2A352229B635C0090287C /* Open Conquest Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92A2A35C229B635C0090287C /* Open Conquest UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92A2A36C229B635C0090287C /* Build configuration list for PBXNativeTarget "Open Conquest UITests" */;
+			buildPhases = (
+				877890507E91583DFE4FB722 /* [CP] Check Pods Manifest.lock */,
+				92A2A359229B635C0090287C /* Sources */,
+				92A2A35A229B635C0090287C /* Frameworks */,
+				92A2A35B229B635C0090287C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92A2A35F229B635C0090287C /* PBXTargetDependency */,
+			);
+			name = "Open Conquest UITests";
+			productName = "Pixel EmpireUITests";
+			productReference = 92A2A35D229B635C0090287C /* Open Conquest UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92A2A330229B635A0090287C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Zach Wild";
+				TargetAttributes = {
+					92A2A337229B635A0090287C = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					92A2A351229B635C0090287C = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 92A2A337229B635A0090287C;
+					};
+					92A2A35C229B635C0090287C = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 92A2A337229B635A0090287C;
+					};
+				};
+			};
+			buildConfigurationList = 92A2A333229B635A0090287C /* Build configuration list for PBXProject "Open Conquest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92A2A32F229B635A0090287C;
+			productRefGroup = 92A2A339229B635A0090287C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92A2A337229B635A0090287C /* Open Conquest */,
+				92A2A351229B635C0090287C /* Open Conquest Tests */,
+				92A2A35C229B635C0090287C /* Open Conquest UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92A2A336229B635A0090287C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A2A347229B635A0090287C /* Main.storyboard in Resources */,
+				92A2A33E229B635A0090287C /* GameScene.sks in Resources */,
+				92A2A372229B65DA0090287C /* LoginScene.sks in Resources */,
+				92A2A349229B635C0090287C /* Assets.xcassets in Resources */,
+				92A2A34C229B635C0090287C /* LaunchScreen.storyboard in Resources */,
+				923B38D022A1760D00748F6F /* MapTileSet.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A2A350229B635C0090287C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A2A35B229B635C0090287C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		66C158C727915AAF771C92CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Open Conquest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		877890507E91583DFE4FB722 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Open Conquest UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2DBD87C6965980C958C7ED8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Open Conquest Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F192D9BFE382AFB9E06B1C36 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Open Conquest/Pods-Open Conquest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Open Conquest/Pods-Open Conquest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Open Conquest/Pods-Open Conquest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92A2A334229B635A0090287C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92E518F322A5F8CC000B1F59 /* User.swift in Sources */,
+				922AA73822B5EAB100FCA595 /* GameManager.swift in Sources */,
+				92E5190D22A750DB000B1F59 /* Observer.swift in Sources */,
+				923B38BF22A0818300748F6F /* LoginSceneUsernameField.swift in Sources */,
+				92A2A342229B635A0090287C /* GameScene.swift in Sources */,
+				92A2A344229B635A0090287C /* GameViewController.swift in Sources */,
+				92E5190B22A750D0000B1F59 /* Poster.swift in Sources */,
+				92A2A374229B66450090287C /* LoginScene.swift in Sources */,
+				923B38DE22A2F6C400748F6F /* API.swift in Sources */,
+				9244332B22C6CDCB00913284 /* LoginSceneNotificationFactory.swift in Sources */,
+				923B38B922A0812900748F6F /* LoginSceneBackground.swift in Sources */,
+				923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */,
+				923B38B2229DD71A00748F6F /* LoginSceneView.swift in Sources */,
+				923B38C622A0832200748F6F /* GameSceneOverlay.swift in Sources */,
+				92E518EE22A5F1DB000B1F59 /* ConnectionManager.swift in Sources */,
+				92A2A33C229B635A0090287C /* AppDelegate.swift in Sources */,
+				920398F322C87FCF003B981C /* RequestFactory.swift in Sources */,
+				92E5190F22A7547D000B1F59 /* LoginSceneObserver.swift in Sources */,
+				923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */,
+				923B38D622A1BA2400748F6F /* Map.swift in Sources */,
+				923B38BB22A0815600748F6F /* LoginSceneGameImage.swift in Sources */,
+				92E5190822A74BC8000B1F59 /* Account.swift in Sources */,
+				92E5191122A75B31000B1F59 /* LoginScenePoster.swift in Sources */,
+				923B38DA22A1D99C00748F6F /* GameSceneGestures.swift in Sources */,
+				92E5191322A76021000B1F59 /* Notifications.swift in Sources */,
+				923B38D822A1BA3A00748F6F /* Tile.swift in Sources */,
+				92E518F822A71DB5000B1F59 /* GameObserver.swift in Sources */,
+				923B38DC22A1DB2C00748F6F /* GameSceneMapCamera.swift in Sources */,
+				923B38C422A0829E00748F6F /* GameSceneMap.swift in Sources */,
+				92E5190222A74830000B1F59 /* GamePoster.swift in Sources */,
+				9244332722C5810C00913284 /* Game.swift in Sources */,
+				9244332922C6CC5C00913284 /* NotificationFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A2A34E229B635C0090287C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A2A357229B635C0090287C /* Pixel_EmpireTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A2A359229B635C0090287C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A2A362229B635C0090287C /* Pixel_EmpireUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92A2A354229B635C0090287C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92A2A337229B635A0090287C /* Open Conquest */;
+			targetProxy = 92A2A353229B635C0090287C /* PBXContainerItemProxy */;
+		};
+		92A2A35F229B635C0090287C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92A2A337229B635A0090287C /* Open Conquest */;
+			targetProxy = 92A2A35E229B635C0090287C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92A2A345229B635A0090287C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92A2A346229B635A0090287C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		92A2A34A229B635C0090287C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92A2A34B229B635C0090287C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92A2A364229B635C0090287C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		92A2A365229B635C0090287C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92A2A367229B635C0090287C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30C51E8A2F5DBB6C1AFCBEEB /* Pods-Open Conquest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32BZ4HSFX3;
+				INFOPLIST_FILE = "Open Conquest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zach-wild.Open-Conquest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92A2A368229B635C0090287C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2844570776E81819817B8CB /* Pods-Open Conquest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32BZ4HSFX3;
+				INFOPLIST_FILE = "Open Conquest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zach-wild.Open-Conquest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		92A2A36A229B635C0090287C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23C29AF4ED08E7EB4EB9659E /* Pods-Open Conquest Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Open Conquest Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zach-wild.Open-Conquest-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Open Conquest.app/Open Conquest";
+			};
+			name = Debug;
+		};
+		92A2A36B229B635C0090287C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E011B0D88D6ACB513770E511 /* Pods-Open Conquest Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Open Conquest Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zach-wild.Open-Conquest-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Open Conquest.app/Open Conquest";
+			};
+			name = Release;
+		};
+		92A2A36D229B635C0090287C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1605DDC9F08BB7737BFF792 /* Pods-Open Conquest UITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Open Conquest UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zach-wild.Open-Conquest-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Open Conquest";
+			};
+			name = Debug;
+		};
+		92A2A36E229B635C0090287C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50120B0735284F4B92369AB9 /* Pods-Open Conquest UITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Open Conquest UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zach-wild.Open-Conquest-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Open Conquest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92A2A333229B635A0090287C /* Build configuration list for PBXProject "Open Conquest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A2A364229B635C0090287C /* Debug */,
+				92A2A365229B635C0090287C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92A2A366229B635C0090287C /* Build configuration list for PBXNativeTarget "Open Conquest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A2A367229B635C0090287C /* Debug */,
+				92A2A368229B635C0090287C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92A2A369229B635C0090287C /* Build configuration list for PBXNativeTarget "Open Conquest Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A2A36A229B635C0090287C /* Debug */,
+				92A2A36B229B635C0090287C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92A2A36C229B635C0090287C /* Build configuration list for PBXNativeTarget "Open Conquest UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A2A36D229B635C0090287C /* Debug */,
+				92A2A36E229B635C0090287C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92A2A330229B635A0090287C /* Project object */;
+}

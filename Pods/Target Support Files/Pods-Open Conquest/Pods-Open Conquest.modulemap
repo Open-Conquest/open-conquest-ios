@@ -1,0 +1,6 @@
+framework module Pods_Open_Conquest {
+  umbrella header "Pods-Open Conquest-umbrella.h"
+
+  export *
+  module * { export * }
+}
