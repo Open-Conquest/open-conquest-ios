@@ -9,73 +9,67 @@
 import SpriteKit
 
 class LoginScene: SKScene {
+    let loginView: LoginSceneView
+    let publisher: LoginScenePublisher
     let game: Game
-    let observer: LoginSceneObserver
-    let poster: LoginScenePoster
-    let loginSceneView: LoginSceneView
+
+    // MARK: INITIALIZATION METHODS
     
     init(game: Game, size: CGSize) {
         self.game = game
-        self.observer = LoginSceneObserver()
-        self.poster = LoginScenePoster()
-        self.loginSceneView = LoginSceneView(frame: UIScreen.main.bounds)
-        
+        self.publisher = LoginScenePublisher()
+        self.loginView = LoginSceneView(frame: UIScreen.main.bounds)
         super.init(size: size)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func didMove(to view: SKView) {
-        setupNotifications()
         setupUI()
-        setupActions()
+        setupUIActions()
     }
     
-    override func update(_ currentTime: TimeInterval) {}
+    // MARK: SETUP METHODS
     
-    // MARK: SETUP FUNCTIONS
-    
-    func setupNotifications() { // observe notifications from game (ie. successful login event)
-        observer.setupObservers(scene: self)
-    }
-    
-    func setupUI() {            // sets up all views and subviews for the screen
-        view!.addSubview(loginSceneView)
+    func setupUI() {
+        view!.addSubview(loginView)
         let screenSize = UIScreen.main.bounds.size
-        loginSceneView.setup()
-        loginSceneView.autoSetDimension(.height, toSize: screenSize.height)
-        loginSceneView.autoSetDimension(.width, toSize: screenSize.width)
+        loginView.setup()
+        loginView.autoSetDimension(.height, toSize: screenSize.height)
+        loginView.autoSetDimension(.width, toSize: screenSize.width)
     }
     
-    func setupActions() {       // make methods listen for things happening in scene (ie. clicks)
-        loginSceneView.loginButton!.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
+    func setupUIActions() {
+        loginView.loginButton!.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
     }
     
-    // MARK: POSTING FUNCTIONS
+    // MARK: PUBLISHING METHODS
     
     @objc func tryLogin() {
-        let username = loginSceneView.getUsername()
-        let password = loginSceneView.getPassword()
-        poster.tryLogin(username: username, password: password)
+        let username = loginView.getUsername()
+        let password = loginView.getPassword()
+        // emit tryLogin event (listented to by userservice)
+        // post event to try to login
+        let loginResult = game.tryLogin(username: username, password: password)
+        print(loginResult)
+        if (loginResult == true) {
+            print("presnt game scene")
+            presentGameScene()
+        }
     }
     
-    // MARK: OBSERVING FUNCTIONS
-    
-    @objc func userDidLoginSuccessfully(_ notification: Notification) {
-        // when recieve a successful login response from gane
-        presentGameScene()
-    }
-    
-    // MARK: NAVIGATION FUNCTIONS
-    
+    // MARK: NAVIGATION METHODS
+        
     func presentGameScene() {
-        loginSceneView.removeFromSuperview()
-        let screenSize = UIScreen.main.bounds.size
-        let gameScene = GameScene(game: game, size: screenSize)
+        // cleanup current scene's views
+        loginView.removeFromSuperview()
+        // present game scene
+        let gameScene = GameScene(game: game, size: UIScreen.main.bounds.size)
         gameScene.scaleMode = .aspectFill
-        view!.presentScene(gameScene)
+        let view = self.view!
+        view.presentScene(gameScene)
     }
     
+    // MARK: REQUIRED METHODS
+    
+    override func update(_ currentTime: TimeInterval) {}
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }

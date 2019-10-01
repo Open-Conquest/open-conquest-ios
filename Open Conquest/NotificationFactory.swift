@@ -10,9 +10,7 @@ import Foundation
 
 class NotificationFactory {
     
-    init() {
-        
-    }
+    init() {}
     
     func buildNotification(name: Notification.Name, data: [AnyHashable: Any]?) -> Notification {
         return Notification(name: name, object: nil, userInfo: data)

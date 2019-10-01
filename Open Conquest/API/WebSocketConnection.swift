@@ -9,7 +9,7 @@
 import Foundation
 import Starscream
 
-class ConnectionManager: WebSocketDelegate {
+class WebSocketConnection: WebSocketDelegate {
     
     var socket: WebSocket
     

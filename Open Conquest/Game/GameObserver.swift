@@ -8,20 +8,24 @@
 
 import Foundation
 
-class GameObserver: Observer {
-    
-    // listens for notifications from the scene
-    override init() {
-        super.init()
-    }
-    
-    func setupObservers(game: Game) {
-        // listen for notifications incoming from scene
-        observe(observingFunction: game.tryLogin(_:), name: .SceneTryLogin)
-    }
-    
-    func teardownObservers() {
-        
-    }
-    
+protocol GameObserver {
+    func setupObservers()
 }
+
+//class GameObserver: Observer {
+//
+//    // listens for notifications from the scene
+//    override init() {
+//        super.init()
+//    }
+//
+//    func setupObservers(game: Game) {
+//        // listen for notifications incoming from scene
+//        observe(observingFunction: game.tryLogin(_:), name: .SceneTryLogin)
+//    }
+//
+//    func teardownObservers() {
+//
+//    }
+//
+//}

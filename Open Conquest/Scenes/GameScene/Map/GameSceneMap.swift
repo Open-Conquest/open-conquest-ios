@@ -8,12 +8,10 @@
 
 import SpriteKit
 
-class GameSceneMap: SKTileMapNode
-{
+class GameSceneMap: SKTileMapNode {
     
     // depends on map model (which is a part of game model)
-    init(map: Map)
-    {
+    init(map: Map) {
         super.init()
         
         // setup all SKTileMapNode properties
@@ -28,13 +26,11 @@ class GameSceneMap: SKTileMapNode
         drawMapFromMapModel(map: map)
     }
     
-    required init?(coder aDecoder: NSCoder)
-    {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func drawMapFromMapModel(map: Map)
-    {
+    func drawMapFromMapModel(map: Map) {
         numberOfRows = map.numRows
         numberOfColumns = map.numCols
         
@@ -45,8 +41,11 @@ class GameSceneMap: SKTileMapNode
         }
     }
     
-    func drawTileAt(row: Int, col: Int, tileGroup: Int)
-    {
+    func updateTile() {
+        
+    }
+    
+    func drawTileAt(row: Int, col: Int, tileGroup: Int) {
         setTileGroup(tileSet.tileGroups[tileGroup], forColumn: col, row: row)
     }
     

@@ -8,10 +8,12 @@
 
 import Foundation
 
-class Poster {
+class Publisher {
+    
+    var notificationFactory: NotificationFactory
     
     init() {
-        
+        notificationFactory = NotificationFactory()
     }
     
     func post(notification: Notification) {

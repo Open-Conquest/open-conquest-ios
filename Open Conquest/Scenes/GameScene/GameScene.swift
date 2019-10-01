@@ -8,16 +8,14 @@
 
 import SpriteKit
 
-class GameScene: SKScene
-{
-    var game:       Game
-    var map:        GameSceneMap?
-    var overlay:    GameSceneOverlay?
-    var gestures:   GameSceneGestures?
-    var mapCamera:  SKCameraNode?
+class GameScene: SKScene, GameObserver {
+    var game: Game
+    var map: GameSceneMap?
+    var overlay: GameSceneOverlay?
+    var gestures: GameSceneGestures?
+    var mapCamera: SKCameraNode?
     
-    init(game: Game, size: CGSize)
-    {
+    init(game: Game, size: CGSize) {
         self.game = game
         super.init(size: size)
     }
@@ -28,35 +26,48 @@ class GameScene: SKScene
     
     override func didMove(to view: SKView) {
         // setup map (with model)
-        map = GameSceneMap(map: game.getMap())
-        mapCamera = SKCameraNode()
-        camera = mapCamera!
-        addChild(map!)
-        map?.addChild(mapCamera!)
-        // setup marches on map (with model)
-        // setup overlay (with model)
-        // setup all actions on map
-        // setup all actions on overlay
-        gestures = GameSceneGestures(scene: self, camera: mapCamera!)
+        setupMap()
         setupGestures()
+        setupObservers()
     }
     
-    override func update(_ currentTime: TimeInterval)
-    {
+    override func update(_ currentTime: TimeInterval) {
         // draw once they move
     }
+    // MARK: SETUP METHODS
     
-    func setupGestures()
-    {
+    func setupObservers() {
+        NotificationCenter.default.addObserver(forName: .GameMapUpdate, object: nil, queue: nil, using: updateMap(_:))
+    }
+    
+    func setupGestures() {
+        gestures = GameSceneGestures(scene: self, camera: mapCamera!)
         // setup pan gesture
         let panSelector = #selector(self.handlePan(panGesture:))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
         self.view?.addGestureRecognizer(panGestureRecognizer)
     }
     
-    @objc func handlePan(panGesture: UIPanGestureRecognizer)
-    {
+    func setupMap() {
+        map = GameSceneMap(map: game.getMap())
+        mapCamera = SKCameraNode()
+        camera = mapCamera!
+        addChild(map!)
+        map?.addChild(mapCamera!)
+    }
+    
+    // MARK: UI GESTURE METHODS
+    
+    @objc func handlePan(panGesture: UIPanGestureRecognizer) {
        gestures!.handlePan(panGesture: panGesture)
     }
+    
+    // MARK: OBSERVING METHODS
+    
+    func updateMap(_ notification: Notification) {
+        // updates a single tile when a change event is recieved
+        map!.updateTile()
+    }
+    
     
 }

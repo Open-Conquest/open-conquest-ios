@@ -2,7 +2,7 @@
 //  Tile.swift
 //  Open Conquest
 //
-//  Created by Zach Wild on 5/31/19.
+//  Created by Zach Wild on 10/1/19.
 //  Copyright © 2019 Zach Wild. All rights reserved.
 //
 

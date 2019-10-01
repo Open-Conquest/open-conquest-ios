@@ -1,21 +1,21 @@
 //
-//  GamePublisher.swift
+//  LoginScenePublisher.swift
 //  Open Conquest
 //
-//  Created by zach on 6/4/19.
+//  Created by Zach Wild on 10/2/19.
 //  Copyright © 2019 Zach Wild. All rights reserved.
 //
 
 import Foundation
 
-class GamePublisher: Publisher {
+class LoginScenePublisher: Publisher {
     
     override init() {
         super.init()
     }
-
-    func didLogin() {
-        let name = Notification.Name.GameLoginSuccess
+    
+    func tryLogin(username: String, password: String) {
+        let name = Notification.Name.SceneTryLogin
         let data : [AnyHashable: Any]? = nil
         let notification = notificationFactory.buildNotification(name: name, data: data)
         post(notification: notification)

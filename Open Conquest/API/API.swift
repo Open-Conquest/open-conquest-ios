@@ -9,23 +9,13 @@
 import Foundation
 import SwiftyJSON
 
-class API
-{
+class API {
     
-    var connection: ConnectionManager
+    static let connection = WebSocketConnection()
     
-    init()
-    {
-        // connection to server should be made
-        connection = ConnectionManager()
-        
-        connection.send(message: "created connection")
+    init() {}
+    
+    static func getInstance() -> WebSocketConnection {
+        return API.connection
     }
-    
-    
-    
-    // api has a connection to the api
-    // -- make requests to the api and returns the responses
-    
-   
 }

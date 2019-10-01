@@ -8,13 +8,13 @@
 
 import Foundation
 
-class Observer {
+class Subscriber {
     
     init() {
         
     }
     
-    func observe(observingFunction: @escaping (Notification) -> Void, name: Notification.Name) {
+    func subscribe(observingFunction: @escaping (Notification) -> Void, name: Notification.Name) {
         NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil, using: observingFunction)
     }
 }

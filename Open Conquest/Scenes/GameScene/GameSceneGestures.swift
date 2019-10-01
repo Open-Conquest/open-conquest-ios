@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 import SpriteKit
 
-class GameSceneGestures
-{
+class GameSceneGestures {
     
     var scene: GameScene
     var camera: SKCameraNode
@@ -19,22 +18,18 @@ class GameSceneGestures
     var startingPoint: CGPoint
     var currentPoint: CGPoint
     
-    init(scene: GameScene, camera: SKCameraNode)
-    {
+    init(scene: GameScene, camera: SKCameraNode) {
         self.scene = scene
         self.camera = camera
         startingPoint = CGPoint(x: 0, y: 0)
         currentPoint = CGPoint(x: 0, y: 0)
     }
     
-    @objc func handlePan(panGesture: UIPanGestureRecognizer)
-    {
-        if panGesture.state == .began
-        {
+    @objc func handlePan(panGesture: UIPanGestureRecognizer) {
+        if panGesture.state == .began {
             startingPoint = panGesture.location(in: scene.view)
         }
-        else if panGesture.state == .changed
-        {
+        else if panGesture.state == .changed {
             currentPoint = panGesture.location(in: scene.view)
             let xDiff = currentPoint.x - startingPoint.x
             let yDiff = currentPoint.y - startingPoint.y
@@ -47,8 +42,7 @@ class GameSceneGestures
             
             startingPoint = currentPoint
         }
-        else if panGesture.state == .ended
-        {
+        else if panGesture.state == .ended {
             currentPoint = panGesture.location(in: scene.view)
         }
     }
