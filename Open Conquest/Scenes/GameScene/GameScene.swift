@@ -8,15 +8,13 @@
 
 import SpriteKit
 
-class GameScene: SKScene, GameObserver {
-    var game: Game
+class GameScene: SKScene {
     var map: GameSceneMap?
     var overlay: GameSceneOverlay?
     var gestures: GameSceneGestures?
     var mapCamera: SKCameraNode?
     
-    init(game: Game, size: CGSize) {
-        self.game = game
+    override init(size: CGSize) {
         super.init(size: size)
     }
     
@@ -25,6 +23,7 @@ class GameScene: SKScene, GameObserver {
     }
     
     override func didMove(to view: SKView) {
+        print("DidMoveTo GameScene")
         // setup map (with model)
         setupMap()
         setupGestures()
@@ -37,7 +36,7 @@ class GameScene: SKScene, GameObserver {
     // MARK: SETUP METHODS
     
     func setupObservers() {
-        NotificationCenter.default.addObserver(forName: .GameMapUpdate, object: nil, queue: nil, using: updateMap(_:))
+        
     }
     
     func setupGestures() {
@@ -49,7 +48,7 @@ class GameScene: SKScene, GameObserver {
     }
     
     func setupMap() {
-        map = GameSceneMap(map: game.getMap())
+        map = GameSceneMap(map: Map())
         mapCamera = SKCameraNode()
         camera = mapCamera!
         addChild(map!)

@@ -8,33 +8,34 @@
 
 import Foundation
 
-protocol GameDelegate {
-    func gameUpdated()
+class Game {
+    var subscriber:     Subscriber
+    var gamePublisher:  GamePublisher
+    
+    var armyComponent:  ArmyComponent
+    var cityComponent:  CityComponent
+    var mapComponent:   MapComponent
+    var marchComponent: MarchComponent
+    var userComponent:  UserComponent
+
+    init() {
+        subscriber      = Subscriber()
+        gamePublisher   = GamePublisher()
+        
+        armyComponent   = ArmyComponent()
+        cityComponent   = CityComponent()
+        mapComponent    = MapComponent()
+        marchComponent  = MarchComponent()
+        userComponent   = UserComponent()
+        
+        print("Game intialized")
+    }
 }
 
-class Game {
-    var publisher: GamePublisher
-    var api: API
-    // component controllers
-    var userComponent: UserComponent
-    var mapComponent: MapComponent
-
-    // MARK: INITIALIZATION METHODS
-    
-    init() {
-        api = API()
-        publisher = GamePublisher()
-        // create all controllers
-        userComponent = UserComponent()
-        mapComponent = MapComponent()
-    }
-    
-    func tryLogin(username: String, password: String) -> Bool {
-        print("Game tryLogin")
-        return userComponent.tryLogin(username: username, password: password)
-    }
-    
-    func getMap() -> Map {
-        return mapComponent.getMap()
-    }
+enum GameComponents: String {
+    case army   = "army"
+    case city   = "city"
+    case map    = "map"
+    case march  = "march"
+    case user   = "user"
 }

@@ -8,28 +8,35 @@
 
 import SpriteKit
 
-class LoginScene: SKScene {
-    let loginView: LoginSceneView
-    let publisher: LoginScenePublisher
-    let game: Game
-
-    // MARK: INITIALIZATION METHODS
+class LoginScene: Scene  {
+    var loginView:      LoginSceneView
+    var publisher:      LoginScenePublisher
+    var subscriber:     Subscriber
     
-    init(game: Game, size: CGSize) {
-        self.game = game
-        self.publisher = LoginScenePublisher()
-        self.loginView = LoginSceneView(frame: UIScreen.main.bounds)
-        super.init(size: size)
+    init(viewController: GameViewController) {
+        self.loginView      = LoginSceneView(frame: UIScreen.main.bounds)
+        self.publisher      = LoginScenePublisher()
+        self.subscriber     = Subscriber()
+//        super.init(size: UIScreen.main.bounds.size, viewController: viewController)
+        super.init()
     }
     
     override func didMove(to view: SKView) {
+        print("DidMoveTo LoginScene")
+        setupSubscribers()
         setupUI()
         setupUIActions()
     }
     
-    // MARK: SETUP METHODS
+    override func setupSubscribers() {
+        subscriber.subscribe(observingFunction: loginSucceeded(_:), name: .GameLoginSucceed)
+    }
     
-    func setupUI() {
+    override func teardownSubscribers() {
+        subscriber.unsubscribe(observingFunction: loginSucceeded(_:))
+    }
+    
+    override func setupUI() {
         view!.addSubview(loginView)
         let screenSize = UIScreen.main.bounds.size
         loginView.setup()
@@ -37,38 +44,34 @@ class LoginScene: SKScene {
         loginView.autoSetDimension(.width, toSize: screenSize.width)
     }
     
-    func setupUIActions() {
+    override func setupUIActions() {
         loginView.loginButton!.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
     }
     
-    // MARK: PUBLISHING METHODS
+    override func prepareForNavigation() {
+        loginView.removeFromSuperview()
+        teardownSubscribers()
+    }
+    
+    // MARK: PUBLISHING AND SUBSCRIBING METHODS
     
     @objc func tryLogin() {
+        print("LoginScene user pressed login button.")
         let username = loginView.getUsername()
         let password = loginView.getPassword()
-        // emit tryLogin event (listented to by userservice)
-        // post event to try to login
-        let loginResult = game.tryLogin(username: username, password: password)
-        print(loginResult)
-        if (loginResult == true) {
-            print("presnt game scene")
-            presentGameScene()
+        publisher.tryLogin(username: username, password: password)
+    }
+    
+    func loginSucceeded(_ notification: Notification) {
+        print("LoginScene recieved loginSucceed event from game.")
+        print("LoginScene presenting LoadingScene...")
+//        viewController!.presentLoadingScene()
+        if let view = self.view as? SKView {
+            let scene = LoadingScene()
+            scene.scaleMode = .aspectFill
+            view.presentScene(scene)
         }
     }
-    
-    // MARK: NAVIGATION METHODS
-        
-    func presentGameScene() {
-        // cleanup current scene's views
-        loginView.removeFromSuperview()
-        // present game scene
-        let gameScene = GameScene(game: game, size: UIScreen.main.bounds.size)
-        gameScene.scaleMode = .aspectFill
-        let view = self.view!
-        view.presentScene(gameScene)
-    }
-    
-    // MARK: REQUIRED METHODS
     
     override func update(_ currentTime: TimeInterval) {}
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }

@@ -36,7 +36,7 @@ class GameSceneMap: SKTileMapNode {
         
         for row in map.tiles {
             for tile in row {
-                drawTileAt(row: tile.row, col: tile.col, tileGroup: tile.type.rawValue)
+                drawTileAt(row: tile.row, col: tile.col, tileGroup: tile.type)
             }
         }
     }
@@ -45,8 +45,8 @@ class GameSceneMap: SKTileMapNode {
         
     }
     
-    func drawTileAt(row: Int, col: Int, tileGroup: Int) {
-        setTileGroup(tileSet.tileGroups[tileGroup], forColumn: col, row: row)
+    func drawTileAt(row: Int, col: Int, tileGroup: String) {
+        setTileGroup(tileSet.tileGroups[Int(tileGroup)!], forColumn: col, row: row)
     }
     
     

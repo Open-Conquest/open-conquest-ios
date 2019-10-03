@@ -8,44 +8,31 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
-
-// need to create all these fuckin things
-
-// game scenes
-// game services
-// game controllers
-// api services
 
 class GameViewController: UIViewController {
+    var scene: Scene?
+    var game: Game?
+    var api: API?
+    var connection: Connection?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // present initial scene... if not logged in
-        startGame()
+        game        = Game()
+        api         = API()
+        scene       = LoginScene(viewController: self)
+        connection  = Connection()
+        
+	print("changed something")
+
+        if let view = self.view as? SKView {
+            scene!.scaleMode = .aspectFill
+            view.presentScene(scene)
+        }
     }
-    
-    func startGame() {
-        let game = Game()
-        let loginScene = LoginScene(game: game, size: UIScreen.main.bounds.size)
-        presentLoginScene(loginScene: loginScene)
-    }
-    
-    func presentLoginScene(loginScene: LoginScene) {
-        loginScene.scaleMode = .aspectFill
-        let view = self.view as! SKView
-        view.presentScene(loginScene)
-    }
-    
+  
     // lock app rotation & hide status bar
-    override var shouldAutorotate: Bool {
-        return false
-    }
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .allButUpsideDown
-    }
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+    override var shouldAutorotate: Bool { return false }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .allButUpsideDown }
+    override var prefersStatusBarHidden: Bool { return true }
 }
