@@ -8,13 +8,24 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
-    var map: GameSceneMap?
-    var overlay: GameSceneOverlay?
+class GameScene: SKScene, Scene {
+    
+    var map: GameSceneMapNode?
+    var overlay: GameSceneOverlayView?
     var gestures: GameSceneGestures?
     var mapCamera: SKCameraNode?
+    let publisher: GameScenePublisher
+    let subscriber: Subscriber
+    
+    override init() {
+        publisher = GameScenePublisher()
+        subscriber = Subscriber()
+        super.init()
+    }
     
     override init(size: CGSize) {
+        publisher = GameScenePublisher()
+        subscriber = Subscriber()
         super.init(size: size)
     }
     
@@ -26,8 +37,9 @@ class GameScene: SKScene {
         print("DidMoveTo GameScene")
         // setup map (with model)
         setupMap()
+        setupOverlay()
         setupGestures()
-        setupObservers()
+        setupSubscribers()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -35,8 +47,25 @@ class GameScene: SKScene {
     }
     // MARK: SETUP METHODS
     
-    func setupObservers() {
-        
+    func setupSubscribers() {
+        // subscribe to update methods
+    }
+
+    
+    func setupUI() {
+        //asdf
+    }
+    
+    func setupUIActions() {
+        //t
+    }
+    
+    func prepareForNavigation() {
+        // todo
+    }
+    
+    func teardownSubscribers() {
+        // todo
     }
     
     func setupGestures() {
@@ -47,8 +76,12 @@ class GameScene: SKScene {
         self.view?.addGestureRecognizer(panGestureRecognizer)
     }
     
+    func setupOverlay() {
+        
+    }
+    
     func setupMap() {
-        map = GameSceneMap(map: Map())
+        map = GameSceneMapNode(map: Map())
         mapCamera = SKCameraNode()
         camera = mapCamera!
         addChild(map!)

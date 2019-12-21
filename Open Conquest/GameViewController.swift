@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-    var scene: Scene?
+    var scene: SKScene?
     var game: Game?
     var api: API?
     var connection: Connection?
@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
         
         game        = Game()
         api         = API()
-        scene       = LoginScene(viewController: self)
+        scene       = LoginScene()
         connection  = Connection()
         
 	print("changed something")

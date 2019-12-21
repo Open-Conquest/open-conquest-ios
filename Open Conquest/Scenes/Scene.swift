@@ -9,40 +9,16 @@
 import Foundation
 import SpriteKit
 
-class Scene: SKScene {
+protocol Scene {
     
-//    weak var viewController: GameViewController?
-//
-//    init (size: CGSize, viewController: GameViewController) {
-//        self.viewController = viewController
-//        super.init(size: UIScreen.main.bounds.size)
-//    }
+    func setupUI()
     
-    override init () {
-        super.init(size: UIScreen.main.bounds.size)
-    }
+    func setupUIActions()
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    func prepareForNavigation()
     
-    func setupUI() {
-        fatalError("Method must be overriden in subclass")
-    }
+    func setupSubscribers()
     
-    func setupUIActions() {
-        fatalError("Method must be overriden in subclass")
-    }
+    func teardownSubscribers()
     
-    func prepareForNavigation() {
-        fatalError("Method must be overriden in subclass")
-    }
-    
-    func setupSubscribers() {
-        fatalError("Method must be overriden in subclass")
-    }
-
-    func teardownSubscribers() {
-       fatalError("Method must be overriden in subclass")
-    }
 }

@@ -8,12 +8,12 @@
 
 import SpriteKit
 
-class LoadingScene: Scene {
+class LoadingScene: SKScene, Scene {
     var loadingView: LoadingSceneView
     var publisher: LoadingScenePublisher
     var subscriber: Subscriber
     var componentsLoaded: Int = 0
-    var totalComponents: Int = 5
+    let totalComponents: Int = 5
 
     // MARK: INITIALIZATION METHODS
     
@@ -21,8 +21,14 @@ class LoadingScene: Scene {
         self.loadingView = LoadingSceneView(frame: UIScreen.main.bounds)
         self.publisher = LoadingScenePublisher()
         self.subscriber = Subscriber()
-//        super.init(size: UIScreen.main.bounds.size, viewController: viewController)
         super.init()
+    }
+    
+    override init(size: CGSize) {
+        self.loadingView = LoadingSceneView(frame: UIScreen.main.bounds)
+        self.publisher = LoadingScenePublisher()
+        self.subscriber = Subscriber()
+        super.init(size: size)
     }
     
     override func didMove(to view: SKView) {
@@ -33,9 +39,17 @@ class LoadingScene: Scene {
         tryLoading()
     }
     
+    override func update(_ currentTime: TimeInterval) {
+        if (componentsLoaded == totalComponents) {
+            presentGameScene()
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
     // MARK: SETUP METHODS
     
-    override func setupSubscribers() {
+    func setupSubscribers() {
         subscriber.subscribe(observingFunction: gotArmies(_:),  name: .GameDidGetArmies)
         subscriber.subscribe(observingFunction: gotCities(_:),  name: .GameDidGetCities)
         subscriber.subscribe(observingFunction: gotMap(_:),     name: .GameDidGetMap)
@@ -43,7 +57,7 @@ class LoadingScene: Scene {
         subscriber.subscribe(observingFunction: gotUsers(_:),   name: .GameDidGetUsers)
     }
     
-    override func setupUI() {
+    func setupUI() {
         view!.addSubview(loadingView)
         let screenSize = UIScreen.main.bounds.size
         loadingView.setup()
@@ -51,17 +65,23 @@ class LoadingScene: Scene {
         loadingView.autoSetDimension(.width, toSize: screenSize.width)
     }
     
-    override func setupUIActions() {
+    func setupUIActions() {
+        // none
     }
     
-    override func prepareForNavigation() {
-        print("perp")
+    // MARK: CLEANUP METHODS
+    
+    func teardownSubscribers() {
+        subscriber.unsubscribe(observingFunction: gotArmies(_:))
+        subscriber.unsubscribe(observingFunction: gotCities(_:))
+        subscriber.unsubscribe(observingFunction: gotMap(_:))
+        subscriber.unsubscribe(observingFunction: gotMarches(_:))
+        subscriber.unsubscribe(observingFunction: gotUsers(_:))
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        if (componentsLoaded == totalComponents) {
-            presentGameScene()
-        }
+    func prepareForNavigation() {
+        loadingView.removeFromSuperview()
+        teardownSubscribers()
     }
     
     // MARK: PUBLISHING METHODS
@@ -103,13 +123,12 @@ class LoadingScene: Scene {
     // MARK: NAVIGATION METHODS
         
     func presentGameScene() {
-        // perform ui cleanup before scene transition
-        loadingView.removeFromSuperview()
-        // present game scene
-        let gameScene = GameScene(size: UIScreen.main.bounds.size)
-        gameScene.scaleMode = .aspectFill
-        let view = self.view!
-        view.presentScene(gameScene)
+        print("LoadingScene presenting GameScene...")
+        
+        prepareForNavigation()
+        let scene = GameScene()
+        scene.scaleMode = .aspectFill
+        view!.presentScene(scene)
     }
     
     // MARK: UI METHODS
@@ -122,7 +141,4 @@ class LoadingScene: Scene {
         
         loadingView.progressLabel!.text = String((Float(componentsLoaded) / Float(totalComponents)))
     }
-    
-    // MARK: REQUIRED METHODS
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }

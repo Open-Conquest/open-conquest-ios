@@ -8,17 +8,23 @@
 
 import SpriteKit
 
-class LoginScene: Scene  {
+class LoginScene: SKScene, Scene {
     var loginView:      LoginSceneView
     var publisher:      LoginScenePublisher
     var subscriber:     Subscriber
     
-    init(viewController: GameViewController) {
+    override init() {
         self.loginView      = LoginSceneView(frame: UIScreen.main.bounds)
         self.publisher      = LoginScenePublisher()
         self.subscriber     = Subscriber()
-//        super.init(size: UIScreen.main.bounds.size, viewController: viewController)
         super.init()
+    }
+    
+    override init(size: CGSize) {
+        self.loginView      = LoginSceneView(frame: UIScreen.main.bounds)
+        self.publisher      = LoginScenePublisher()
+        self.subscriber     = Subscriber()
+        super.init(size: size)
     }
     
     override func didMove(to view: SKView) {
@@ -28,15 +34,15 @@ class LoginScene: Scene  {
         setupUIActions()
     }
     
-    override func setupSubscribers() {
+    func setupSubscribers() {
         subscriber.subscribe(observingFunction: loginSucceeded(_:), name: .GameLoginSucceed)
     }
     
-    override func teardownSubscribers() {
+    func teardownSubscribers() {
         subscriber.unsubscribe(observingFunction: loginSucceeded(_:))
     }
     
-    override func setupUI() {
+    func setupUI() {
         view!.addSubview(loginView)
         let screenSize = UIScreen.main.bounds.size
         loginView.setup()
@@ -44,11 +50,11 @@ class LoginScene: Scene  {
         loginView.autoSetDimension(.width, toSize: screenSize.width)
     }
     
-    override func setupUIActions() {
+    func setupUIActions() {
         loginView.loginButton!.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
     }
     
-    override func prepareForNavigation() {
+    func prepareForNavigation() {
         loginView.removeFromSuperview()
         teardownSubscribers()
     }
@@ -65,7 +71,7 @@ class LoginScene: Scene  {
     func loginSucceeded(_ notification: Notification) {
         print("LoginScene recieved loginSucceed event from game.")
         print("LoginScene presenting LoadingScene...")
-//        viewController!.presentLoadingScene()
+        prepareForNavigation()
         if let view = self.view as? SKView {
             let scene = LoadingScene()
             scene.scaleMode = .aspectFill

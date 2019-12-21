@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameSceneMap: SKTileMapNode {
+class GameSceneMapNode: SKTileMapNode {
     
     // depends on map model (which is a part of game model)
     init(map: Map) {
