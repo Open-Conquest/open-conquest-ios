@@ -66,7 +66,11 @@ class LoadingScene: SKScene, Scene {
     }
     
     func setupUIActions() {
-        // none
+        // do nothing
+    }
+    
+    func setupGestures() {
+        // do nothing
     }
     
     // MARK: CLEANUP METHODS

@@ -15,6 +15,8 @@ protocol Scene {
     
     func setupUIActions()
     
+    func setupGestures()
+    
     func prepareForNavigation()
     
     func setupSubscribers()

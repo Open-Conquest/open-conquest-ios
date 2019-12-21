@@ -27,7 +27,7 @@ class ScenePublisher: Publisher {
     }
     
     func getMap() {
-        let notification = sceneNotificationFactory.buildGetComponentNotification(component: GameComponents.city)
+        let notification = sceneNotificationFactory.buildGetComponentNotification(component: GameComponents.map)
         post(notification: notification)
     }
     

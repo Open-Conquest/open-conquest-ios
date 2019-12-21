@@ -54,6 +54,10 @@ class LoginScene: SKScene, Scene {
         loginView.loginButton!.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
     }
     
+    func setupGestures() {
+        // do nothing
+    }
+    
     func prepareForNavigation() {
         loginView.removeFromSuperview()
         teardownSubscribers()

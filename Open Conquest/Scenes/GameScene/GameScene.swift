@@ -9,11 +9,9 @@
 import SpriteKit
 
 class GameScene: SKScene, Scene {
-    
     var map: GameSceneMapNode?
     var overlay: GameSceneOverlayView?
     var gestures: GameSceneGestures?
-    var mapCamera: SKCameraNode?
     let publisher: GameScenePublisher
     let subscriber: Subscriber
     
@@ -35,11 +33,13 @@ class GameScene: SKScene, Scene {
     
     override func didMove(to view: SKView) {
         print("DidMoveTo GameScene")
-        // setup map (with model)
+        setupUI()
+        setupUIActions()
         setupMap()
         setupOverlay()
         setupGestures()
         setupSubscribers()
+        loadComponentsIntialState()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -47,17 +47,53 @@ class GameScene: SKScene, Scene {
     }
     // MARK: SETUP METHODS
     
-    func setupSubscribers() {
-        // subscribe to update methods
-    }
-
     func setupUI() {
-        //asdf
+        setupMap()
+        setupOverlay()
+    }
+    
+    func setupMap() {
+        print("GameScene setting up map")
+        
+        // initialize map & add to scene
+        map = GameSceneMapNode(map: Map())
+        self.addChild(map!)
+        
+        // intialize camera & add to map
+        let camera = SKCameraNode()
+        self.camera = camera
+        map!.addChild(camera)
+    }
+    
+    func setupOverlay() {
+        // todo
     }
     
     func setupUIActions() {
-        //t
+        // todo
     }
+    
+    func setupGestures() {
+        gestures = GameSceneGestures(scene: self, camera: camera!)
+        // setup pan gesture
+        let panSelector = #selector(self.handlePan(panGesture:))
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
+        self.view?.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    func setupSubscribers() {
+        subscriber.subscribe(observingFunction: didGetCities(_:), name: .GameDidGetCities)
+        subscriber.subscribe(observingFunction: didGetMap(_:), name: .GameDidGetMap)
+        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .GameDidGetMarches)
+    }
+    
+    func loadComponentsIntialState() {
+        publisher.getCities()
+        publisher.getMap()
+        publisher.getMarches()
+    }
+    
+    // MARK: CLEANUP METHODS
     
     func prepareForNavigation() {
         // todo
@@ -67,24 +103,31 @@ class GameScene: SKScene, Scene {
         // todo
     }
     
-    func setupGestures() {
-        gestures = GameSceneGestures(scene: self, camera: mapCamera!)
-        // setup pan gesture
-        let panSelector = #selector(self.handlePan(panGesture:))
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
-        self.view?.addGestureRecognizer(panGestureRecognizer)
+    // MARK: SUBSCRIBING METHODS
+    
+    func didGetCities(_ notifiction: Notification) {
+        print("GameScene recieved scene-did-get-cities event...")
+        // todo
     }
     
-    func setupOverlay() {
+    func didGetMap(_ notification: Notification) {
+        print("GameScene recieved scene-did-get-map event...")
         
+        // pull map model from notification
+        let mapModel = notification.userInfo!["data"] as! [Map]
+        
+        // draw map from map model
+        map!.drawMapFromMapModel(map: mapModel[0])
+        
+        // move camera to focus on map
+        camera!.position = map!.centerOfTile(atColumn: 0, row: 0)
+        let zoomAction = SKAction.scale(by: 1000, duration: 0)
+        camera!.run(zoomAction)
     }
     
-    func setupMap() {
-        map = GameSceneMapNode(map: Map())
-        mapCamera = SKCameraNode()
-        camera = mapCamera!
-        addChild(map!)
-        map?.addChild(mapCamera!)
+    func didGetMarches(_ notification: Notification) {
+        // todo
+        print("GameScene recieved scene-did-get-marches event...")
     }
     
     // MARK: UI GESTURE METHODS

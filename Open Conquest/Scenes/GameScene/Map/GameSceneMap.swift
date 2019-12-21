@@ -18,7 +18,8 @@ class GameSceneMapNode: SKTileMapNode {
         name = "GameScene_map"
         tileSet = SKTileSet(named: "Sample Hexagonal Tile Set")!
         tileSize = CGSize(width: 111, height: 128)
-
+        numberOfRows = 20
+        numberOfColumns = 20
         position = CGPoint(x: 0, y: 0)
         anchorPoint = CGPoint(x: 0, y: 0)
         
@@ -36,6 +37,7 @@ class GameSceneMapNode: SKTileMapNode {
         
         for row in map.tiles {
             for tile in row {
+                print("Drawing tile row: \(tile.row), col: \(tile.col), type:\(tile.type)")
                 drawTileAt(row: tile.row, col: tile.col, tileGroup: tile.type)
             }
         }
@@ -46,6 +48,7 @@ class GameSceneMapNode: SKTileMapNode {
     }
     
     func drawTileAt(row: Int, col: Int, tileGroup: String) {
+        print(tileSet.tileGroups[Int(tileGroup)!] )
         setTileGroup(tileSet.tileGroups[Int(tileGroup)!], forColumn: col, row: row)
     }
     

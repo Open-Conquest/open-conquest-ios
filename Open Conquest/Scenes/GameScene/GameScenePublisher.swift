@@ -8,18 +8,9 @@
 
 import Foundation
 
-class GameScenePublisher: Publisher {
-    
-    let sceneNotificationFactory: SceneNotificationFactory
+class GameScenePublisher: ScenePublisher {
     
     override init() {
-        sceneNotificationFactory = SceneNotificationFactory()
     }
-    
-    // MARK: METHODS PUBLISHING TO COMPONENTS
-    
-    // get map
-    
-    // get cities
     
 }
