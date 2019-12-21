@@ -51,7 +51,6 @@ class GameScene: SKScene, Scene {
         // subscribe to update methods
     }
 
-    
     func setupUI() {
         //asdf
     }

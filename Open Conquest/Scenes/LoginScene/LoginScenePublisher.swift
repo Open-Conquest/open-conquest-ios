@@ -8,20 +8,14 @@
 
 import Foundation
 
-class LoginScenePublisher: Publisher {
-    
-    let sceneNotificationFactory: SceneNotificationFactory
+class LoginScenePublisher: ScenePublisher {
     
     override init() {
-        self.sceneNotificationFactory = SceneNotificationFactory()
         super.init()
     }
     
     func tryLogin(username: String, password: String) {
         let notification = sceneNotificationFactory.buildTryLoginNotification(username: username, password: password) as! Notification
-//        let name = Notification.Name.SceneTryLogin
-//        let data : [AnyHashable: Any]? = ["username": username, "password": password]
-//        let notification = notificationFactory.buildNotification(name: name, data: data)
         post(notification: notification)
     }
 }

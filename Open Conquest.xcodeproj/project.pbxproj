@@ -47,6 +47,7 @@
 		C277ED6A2393663500894B7A /* CityComponentPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED692393663500894B7A /* CityComponentPublisher.swift */; };
 		C27A47B3237A43A400740918 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27A47B2237A43A400740918 /* Scene.swift */; };
 		C27A47BB237B2B6900740918 /* LoginSceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27A47BA237B2B6900740918 /* LoginSceneTests.swift */; };
+		C27BA72A23ADF82300034023 /* ScenePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BA72923ADF82300034023 /* ScenePublisher.swift */; };
 		C283488E236BC43700381EA3 /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283488D236BC43700381EA3 /* LoadingScene.swift */; };
 		C2834890236BC4DD00381EA3 /* LoadingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283488F236BC4DD00381EA3 /* LoadingSceneView.swift */; };
 		C2834893236BC56B00381EA3 /* LoadingSceneBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2834892236BC56B00381EA3 /* LoadingSceneBackground.swift */; };
@@ -165,6 +166,7 @@
 		C277ED692393663500894B7A /* CityComponentPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityComponentPublisher.swift; sourceTree = "<group>"; };
 		C27A47B2237A43A400740918 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		C27A47BA237B2B6900740918 /* LoginSceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneTests.swift; sourceTree = "<group>"; };
+		C27BA72923ADF82300034023 /* ScenePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePublisher.swift; sourceTree = "<group>"; };
 		C283488D236BC43700381EA3 /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		C283488F236BC4DD00381EA3 /* LoadingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneView.swift; sourceTree = "<group>"; };
 		C2834892236BC56B00381EA3 /* LoadingSceneBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneBackground.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				C27A47B2237A43A400740918 /* Scene.swift */,
+				C27BA72923ADF82300034023 /* ScenePublisher.swift */,
 				C2D50840237B3ED000F48B32 /* SceneNotificationFactory.swift */,
 				C2D50846237B4A2100F48B32 /* SceneNotifications.swift */,
 				92A2A370229B64AD0090287C /* LoginScene */,
@@ -969,6 +972,7 @@
 				92E5191322A76021000B1F59 /* Notifications.swift in Sources */,
 				C23CF4A7237F5FDC00833792 /* Army.swift in Sources */,
 				C2D50841237B3ED000F48B32 /* SceneNotificationFactory.swift in Sources */,
+				C27BA72A23ADF82300034023 /* ScenePublisher.swift in Sources */,
 				C2F574E323A9825C00E2DE5D /* CityServicesPublisher.swift in Sources */,
 				C2F574E123A981F600E2DE5D /* CityServices.swift in Sources */,
 				923B38DC22A1DB2C00748F6F /* GameSceneMapCamera.swift in Sources */,

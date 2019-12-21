@@ -16,5 +16,10 @@ class GameScenePublisher: Publisher {
         sceneNotificationFactory = SceneNotificationFactory()
     }
     
+    // MARK: METHODS PUBLISHING TO COMPONENTS
+    
+    // get map
+    
+    // get cities
     
 }
