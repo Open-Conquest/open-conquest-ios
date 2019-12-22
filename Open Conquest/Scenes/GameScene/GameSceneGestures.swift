@@ -12,20 +12,15 @@ import SpriteKit
 
 class GameSceneGestures {
     
-    var scene: GameScene
-    var camera: SKCameraNode
-    
     var startingPoint: CGPoint
     var currentPoint: CGPoint
     
-    init(scene: GameScene, camera: SKCameraNode) {
-        self.scene = scene
-        self.camera = camera
+    init() {
         startingPoint = CGPoint(x: 0, y: 0)
         currentPoint = CGPoint(x: 0, y: 0)
     }
     
-    @objc func handlePan(panGesture: UIPanGestureRecognizer) {
+    @objc func handlePan(panGesture: UIPanGestureRecognizer, scene: GameScene, camera: SKCameraNode) {
         if panGesture.state == .began {
             startingPoint = panGesture.location(in: scene.view)
         }
@@ -38,7 +33,7 @@ class GameSceneGestures {
             let newPos = CGPoint(x: currPos.x - xDiff,
                                  y: currPos.y + yDiff)
             
-            self.camera.position = newPos
+            camera.position = newPos
             
             startingPoint = currentPoint
         }
@@ -47,6 +42,20 @@ class GameSceneGestures {
         }
     }
     
+    /*
+     Handle pinch gestures. This allows players to zoom in and out of the map.
+    */
+    @objc func handlePinch(pinchGesture: UIPinchGestureRecognizer, camera: SKCameraNode) {
+        if pinchGesture.state == .began || pinchGesture.state == .changed {
+
+            let zoomAction = SKAction.scale(by: 1/pinchGesture.scale, duration: 0)
+            if (camera.yScale > CGFloat(0.3) || 1/pinchGesture.scale > 1) {
+                camera.run(zoomAction)
+            }
+
+            pinchGesture.scale = 1.0
+        }
+    }
 }
 
 

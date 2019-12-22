@@ -53,13 +53,9 @@ class GameScene: SKScene, Scene {
     }
     
     func setupMap() {
-        print("GameScene setting up map")
-        
-        // initialize map & add to scene
         map = GameSceneMapNode(map: Map())
         self.addChild(map!)
         
-        // intialize camera & add to map
         let camera = SKCameraNode()
         self.camera = camera
         map!.addChild(camera)
@@ -74,11 +70,17 @@ class GameScene: SKScene, Scene {
     }
     
     func setupGestures() {
-        gestures = GameSceneGestures(scene: self, camera: camera!)
+        gestures = GameSceneGestures()
+        
         // setup pan gesture
         let panSelector = #selector(self.handlePan(panGesture:))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
         self.view?.addGestureRecognizer(panGestureRecognizer)
+        
+        // setup pinch gesture
+        let pinchGesture = #selector(self.handlePinch(pinchGesture:))
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: pinchGesture)
+        self.view?.addGestureRecognizer(pinchGestureRecognizer)
     }
     
     func setupSubscribers() {
@@ -133,7 +135,11 @@ class GameScene: SKScene, Scene {
     // MARK: UI GESTURE METHODS
     
     @objc func handlePan(panGesture: UIPanGestureRecognizer) {
-       gestures!.handlePan(panGesture: panGesture)
+        gestures!.handlePan(panGesture: panGesture, scene: self, camera: camera!)
+    }
+    
+    @objc func handlePinch(pinchGesture: UIPinchGestureRecognizer) {
+        gestures!.handlePinch(pinchGesture: pinchGesture, camera: camera!)
     }
     
     // MARK: OBSERVING METHODS
