@@ -43,6 +43,17 @@ class GameSceneMapNode: SKTileMapNode {
         }
     }
     
+    func drawMarches(marches: [March]) {
+        
+        for march in marches {
+            
+            // get the starting tile of the march
+            // get the ending tile of the marc
+            
+            // determine the path of the march
+        }
+    }
+    
     func updateTile() {
         
     }

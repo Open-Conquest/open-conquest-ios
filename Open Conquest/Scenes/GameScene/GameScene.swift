@@ -115,11 +115,11 @@ class GameScene: SKScene, Scene {
     func didGetMap(_ notification: Notification) {
         print("GameScene recieved scene-did-get-map event...")
         
-        // pull map model from notification
-        let mapModel = notification.userInfo!["data"] as! [Map]
+        // parse map from notification
+        let mapData = notification.userInfo!["data"] as! [Map]
         
-        // draw map from map model
-        map!.drawMapFromMapModel(map: mapModel[0])
+        // draw map
+        map!.drawMapFromMapModel(map: mapData[0])
         
         // move camera to focus on map
         camera!.position = map!.centerOfTile(atColumn: 0, row: 0)
@@ -128,8 +128,14 @@ class GameScene: SKScene, Scene {
     }
     
     func didGetMarches(_ notification: Notification) {
-        // todo
         print("GameScene recieved scene-did-get-marches event...")
+        
+        // parse marches from notification
+        let marches = notification.userInfo!["data"] as! [March]
+        
+        // draw marches
+        map.drawMarches(marches: marches)
+        
     }
     
     // MARK: UI GESTURE METHODS
