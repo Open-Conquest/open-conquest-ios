@@ -9,6 +9,7 @@
 import SpriteKit
 
 class GameScene: SKScene, Scene {
+    var marches = [GameSceneMapMarchNode]()
     var map: GameSceneMapNode?
     var overlay: GameSceneOverlayView?
     var gestures: GameSceneGestures?
@@ -43,8 +44,9 @@ class GameScene: SKScene, Scene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        // draw once they move
+        updateMarches()
     }
+    
     // MARK: SETUP METHODS
     
     func setupUI() {
@@ -131,10 +133,13 @@ class GameScene: SKScene, Scene {
         print("GameScene recieved scene-did-get-marches event...")
         
         // parse marches from notification
-        let marches = notification.userInfo!["data"] as! [March]
+        let newMarches = notification.userInfo!["data"] as! [March]
         
-        // draw marches
-        map!.drawMarches(marches: marches)
+        for march in newMarches {
+            let thisMarch = GameSceneMapMarchNode(march: march)
+            map!.addMarch(march: thisMarch)
+            self.marches.append(thisMarch)
+        }
     }
     
     // MARK: UI GESTURE METHODS
@@ -152,6 +157,14 @@ class GameScene: SKScene, Scene {
     func updateMap(_ notification: Notification) {
         // updates a single tile when a change event is recieved
         map!.updateTile()
+    }
+    
+    // MARK: UPDATING METHODS
+    
+    func updateMarches() {
+        for march in marches {
+            march.update()
+        }
     }
     
     

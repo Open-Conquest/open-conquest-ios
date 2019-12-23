@@ -17,7 +17,8 @@ class GetMarchesResponse: Response {
         
         let marchesData = response.getData()
         for march in marchesData.array! {
-            print(march)
+            let thisMarch = March(json: march)
+            marches.append(thisMarch)
         }
         
         super.init(service: response.getService().rawValue, operation: response.getOperation().rawValue, data: response.getData())

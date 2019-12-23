@@ -35,6 +35,7 @@
 		92E5190B22A750D0000B1F59 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190A22A750D0000B1F59 /* Publisher.swift */; };
 		92E5190D22A750DB000B1F59 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190C22A750DB000B1F59 /* Subscriber.swift */; };
 		92E5191322A76021000B1F59 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5191222A76021000B1F59 /* Notifications.swift */; };
+		C20E1FE623B106C9002A8E7E /* GameSceneMapMarchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E1FE523B106C9002A8E7E /* GameSceneMapMarchNode.swift */; };
 		C237374523ADB761002FEBF1 /* GameScenePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C237374423ADB761002FEBF1 /* GameScenePublisher.swift */; };
 		C23CF49B237EA1D200833792 /* ConnectionNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CF49A237EA1D200833792 /* ConnectionNotifications.swift */; };
 		C23CF4A2237F5E8A00833792 /* CityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CF4A1237F5E8A00833792 /* CityComponent.swift */; };
@@ -154,6 +155,7 @@
 		92E5190C22A750DB000B1F59 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		92E5191222A76021000B1F59 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		B2844570776E81819817B8CB /* Pods-Open Conquest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest/Pods-Open Conquest.release.xcconfig"; sourceTree = "<group>"; };
+		C20E1FE523B106C9002A8E7E /* GameSceneMapMarchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneMapMarchNode.swift; sourceTree = "<group>"; };
 		C237374423ADB761002FEBF1 /* GameScenePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScenePublisher.swift; sourceTree = "<group>"; };
 		C23CF49A237EA1D200833792 /* ConnectionNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionNotifications.swift; sourceTree = "<group>"; };
 		C23CF4A1237F5E8A00833792 /* CityComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityComponent.swift; sourceTree = "<group>"; };
@@ -569,8 +571,9 @@
 		C2D1BDB42343DDD600ADF01E /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				923B38DB22A1DB2B00748F6F /* GameSceneMapCamera.swift */,
 				923B38C322A0829E00748F6F /* GameSceneMapNode.swift */,
+				923B38DB22A1DB2B00748F6F /* GameSceneMapCamera.swift */,
+				C20E1FE523B106C9002A8E7E /* GameSceneMapMarchNode.swift */,
 				923B38CE22A1760D00748F6F /* MapTileSet.sks */,
 			);
 			path = Map;
@@ -965,6 +968,7 @@
 				C2D1BDE32345EABE00ADF01E /* Response.swift in Sources */,
 				C2D1BDB92343F95500ADF01E /* MapComponent.swift in Sources */,
 				923B38BB22A0815600748F6F /* LoginSceneGameImage.swift in Sources */,
+				C20E1FE623B106C9002A8E7E /* GameSceneMapMarchNode.swift in Sources */,
 				C277ED6A2393663500894B7A /* CityComponentPublisher.swift in Sources */,
 				923B38DA22A1D99C00748F6F /* GameSceneGestures.swift in Sources */,
 				C2D7B8E723907A40006571E2 /* ArmyServicesPublisher.swift in Sources */,

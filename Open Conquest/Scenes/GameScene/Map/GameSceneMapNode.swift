@@ -10,7 +10,6 @@ import SpriteKit
 
 class GameSceneMapNode: SKTileMapNode {
     
-    // depends on map model (which is a part of game model)
     init(map: Map) {
         super.init()
         
@@ -42,8 +41,28 @@ class GameSceneMapNode: SKTileMapNode {
         }
     }
     
+    func drawTileAt(row: Int, col: Int, tileGroup: String) {
+        setTileGroup(tileSet.tileGroups[Int(tileGroup)!], forColumn: col, row: row)
+    }
+    
+    func addMarch(march: GameSceneMapMarchNode) {
+        
+        // determine positions for the march
+        // CGPoint of start, end in map space
+        let startPoint = centerOfTile(atColumn: march.march.startTileCol, row: march.march.startTileRow)
+        let endPoint = centerOfTile(atColumn: march.march.endTileCol, row: march.march.endTileRow)
+        
+        march.position = startPoint
+        march.startPos = startPoint
+        march.endPos = endPoint
+        
+        addChild(march)
+    }
+    
     func drawMarches(marches: [March]) {
         for march in marches {
+            let marchNode = GameSceneMapMarchNode(march: march)
+            addChild(marchNode)
         }
     }
     
@@ -51,9 +70,6 @@ class GameSceneMapNode: SKTileMapNode {
         
     }
     
-    func drawTileAt(row: Int, col: Int, tileGroup: String) {
-        setTileGroup(tileSet.tileGroups[Int(tileGroup)!], forColumn: col, row: row)
-    }
     
     
 }
