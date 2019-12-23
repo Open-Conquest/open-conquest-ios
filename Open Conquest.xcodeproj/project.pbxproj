@@ -16,7 +16,7 @@
 		923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38BC22A0816F00748F6F /* LoginSceneLoginButton.swift */; };
 		923B38BF22A0818300748F6F /* LoginSceneUsernameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */; };
 		923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */; };
-		923B38C422A0829E00748F6F /* GameSceneMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C322A0829E00748F6F /* GameSceneMap.swift */; };
+		923B38C422A0829E00748F6F /* GameSceneMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C322A0829E00748F6F /* GameSceneMapNode.swift */; };
 		923B38C622A0832200748F6F /* GameSceneOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C522A0832200748F6F /* GameSceneOverlayView.swift */; };
 		923B38D022A1760D00748F6F /* MapTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 923B38CE22A1760D00748F6F /* MapTileSet.sks */; };
 		923B38DA22A1D99C00748F6F /* GameSceneGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38D922A1D99C00748F6F /* GameSceneGestures.swift */; };
@@ -128,7 +128,7 @@
 		923B38BC22A0816F00748F6F /* LoginSceneLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneLoginButton.swift; sourceTree = "<group>"; };
 		923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneUsernameField.swift; sourceTree = "<group>"; };
 		923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePasswordField.swift; sourceTree = "<group>"; };
-		923B38C322A0829E00748F6F /* GameSceneMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneMap.swift; sourceTree = "<group>"; };
+		923B38C322A0829E00748F6F /* GameSceneMapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneMapNode.swift; sourceTree = "<group>"; };
 		923B38C522A0832200748F6F /* GameSceneOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneOverlayView.swift; sourceTree = "<group>"; };
 		923B38CE22A1760D00748F6F /* MapTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapTileSet.sks; sourceTree = "<group>"; };
 		923B38D922A1D99C00748F6F /* GameSceneGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneGestures.swift; sourceTree = "<group>"; };
@@ -570,7 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				923B38DB22A1DB2B00748F6F /* GameSceneMapCamera.swift */,
-				923B38C322A0829E00748F6F /* GameSceneMap.swift */,
+				923B38C322A0829E00748F6F /* GameSceneMapNode.swift */,
 				923B38CE22A1760D00748F6F /* MapTileSet.sks */,
 			);
 			path = Map;
@@ -976,7 +976,7 @@
 				C2F574E323A9825C00E2DE5D /* CityServicesPublisher.swift in Sources */,
 				C2F574E123A981F600E2DE5D /* CityServices.swift in Sources */,
 				923B38DC22A1DB2C00748F6F /* GameSceneMapCamera.swift in Sources */,
-				923B38C422A0829E00748F6F /* GameSceneMap.swift in Sources */,
+				923B38C422A0829E00748F6F /* GameSceneMapNode.swift in Sources */,
 				C2D5084F237B518E00F48B32 /* APINotificationFactory.swift in Sources */,
 				C2D1BDCD2345189E00ADF01E /* LoginScenePublisher.swift in Sources */,
 				C2D5084B237B4B2300F48B32 /* GameNotifications.swift in Sources */,

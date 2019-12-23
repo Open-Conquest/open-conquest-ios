@@ -23,8 +23,6 @@ class GameViewController: UIViewController {
         scene       = LoginScene()
         connection  = Connection()
         
-	print("changed something")
-
         if let view = self.view as? SKView {
             scene!.scaleMode = .aspectFill
             view.presentScene(scene)

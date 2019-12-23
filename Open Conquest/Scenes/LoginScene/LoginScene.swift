@@ -59,6 +59,9 @@ class LoginScene: SKScene, Scene {
     }
     
     func prepareForNavigation() {
+        for subview in loginView.subviews {
+            subview.removeFromSuperview()
+        }
         loginView.removeFromSuperview()
         teardownSubscribers()
     }
@@ -76,11 +79,9 @@ class LoginScene: SKScene, Scene {
         print("LoginScene recieved loginSucceed event from game.")
         print("LoginScene presenting LoadingScene...")
         prepareForNavigation()
-        if let view = self.view as? SKView {
-            let scene = LoadingScene()
-            scene.scaleMode = .aspectFill
-            view.presentScene(scene)
-        }
+        let scene = LoadingScene()
+        scene.scaleMode = .aspectFill
+        view!.presentScene(scene)
     }
     
     override func update(_ currentTime: TimeInterval) {}

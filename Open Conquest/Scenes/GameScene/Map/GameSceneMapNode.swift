@@ -37,20 +37,13 @@ class GameSceneMapNode: SKTileMapNode {
         
         for row in map.tiles {
             for tile in row {
-                print("Drawing tile row: \(tile.row), col: \(tile.col), type:\(tile.type)")
                 drawTileAt(row: tile.row, col: tile.col, tileGroup: tile.type)
             }
         }
     }
     
     func drawMarches(marches: [March]) {
-        
         for march in marches {
-            
-            // get the starting tile of the march
-            // get the ending tile of the marc
-            
-            // determine the path of the march
         }
     }
     
@@ -59,7 +52,6 @@ class GameSceneMapNode: SKTileMapNode {
     }
     
     func drawTileAt(row: Int, col: Int, tileGroup: String) {
-        print(tileSet.tileGroups[Int(tileGroup)!] )
         setTileGroup(tileSet.tileGroups[Int(tileGroup)!], forColumn: col, row: row)
     }
     

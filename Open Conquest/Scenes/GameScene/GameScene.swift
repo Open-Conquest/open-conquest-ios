@@ -134,8 +134,7 @@ class GameScene: SKScene, Scene {
         let marches = notification.userInfo!["data"] as! [March]
         
         // draw marches
-        map.drawMarches(marches: marches)
-        
+        map!.drawMarches(marches: marches)
     }
     
     // MARK: UI GESTURE METHODS
