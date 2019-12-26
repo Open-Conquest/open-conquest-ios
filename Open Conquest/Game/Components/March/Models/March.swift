@@ -15,22 +15,23 @@ class March: GameComponentModel {
     let end_tile: Int
     let user_id: Int
     let army_id: Int
+    let start_time: Date
     let end_time: Date
-    
-    let startTileRow: Int = 0
-    let startTileCol: Int = 0
-    let endTileRow: Int = 5
-    let endTileCol: Int = 5
+    let total_time: TimeInterval
+    let speed_modifier: Float
     
     required init(json: JSON) {
         user_id = 0
         start_tile = json["start_tile_id"].int!
         end_tile = json["end_tile_id"].int!
         army_id = json["army_id"].int!
+        speed_modifier = json["speed_modifier"].float!
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        start_time = formatter.date(from: json["start_time"].string!)!
         end_time = formatter.date(from: json["end_time"].string!)!
+        total_time = end_time.timeIntervalSince(start_time)
     }
     
     func toJSON() -> JSON {

@@ -47,6 +47,13 @@ class GameScene: SKScene, Scene {
         updateMarches()
     }
     
+    // MARK: todo add some logic to remove stale marches
+    func updateMarches() {
+        for march in marches {
+            march.update()
+        }
+    }
+    
     // MARK: SETUP METHODS
     
     func setupUI() {
@@ -135,10 +142,10 @@ class GameScene: SKScene, Scene {
         // parse marches from notification
         let newMarches = notification.userInfo!["data"] as! [March]
         
+        // add all the marches to the map
         for march in newMarches {
-            let thisMarch = GameSceneMapMarchNode(march: march)
-            map!.addMarch(march: thisMarch)
-            self.marches.append(thisMarch)
+            let marchNode = map!.addMarch(march: march)
+            self.marches.append(marchNode)
         }
     }
     
@@ -151,21 +158,5 @@ class GameScene: SKScene, Scene {
     @objc func handlePinch(pinchGesture: UIPinchGestureRecognizer) {
         gestures!.handlePinch(pinchGesture: pinchGesture, camera: camera!)
     }
-    
-    // MARK: OBSERVING METHODS
-    
-    func updateMap(_ notification: Notification) {
-        // updates a single tile when a change event is recieved
-        map!.updateTile()
-    }
-    
-    // MARK: UPDATING METHODS
-    
-    func updateMarches() {
-        for march in marches {
-            march.update()
-        }
-    }
-    
-    
+
 }
