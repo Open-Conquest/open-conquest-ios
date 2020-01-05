@@ -10,6 +10,14 @@ import SpriteKit
 
 class GameSceneMapNode: SKTileMapNode {
     
+    //    // spritekit elements
+    //    // tile elements
+    //    var userCastleButton = SKSpriteNode(imageNamed: "crown-button-3")
+    //    var cityButton = SKSpriteNode(imageNamed: "view-city-button-1")
+    //    var attackCityButton = SKSpriteNode(imageNamed: "attack-button-3")
+    //    var cityNameLabel = SKLabelNode(fontNamed: "Chalkduster")
+    //    var tileOutline = SKSpriteNode(imageNamed: "tile-outline")
+    
     init(map: Map) {
         super.init()
         
@@ -55,11 +63,5 @@ class GameSceneMapNode: SKTileMapNode {
         addChild(marchNode)
         return marchNode
     }
-    
-    func updateTile() {
-        
-    }
-    
-    
     
 }

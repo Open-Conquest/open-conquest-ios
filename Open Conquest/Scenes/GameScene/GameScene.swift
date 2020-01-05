@@ -71,7 +71,13 @@ class GameScene: SKScene, Scene {
     }
     
     func setupOverlay() {
-        // todo
+        overlay = GameSceneOverlayView()
+        view!.addSubview(overlay!)
+        overlay!.autoPinEdge(.left, to: .left, of: view!)
+        overlay!.autoPinEdge(.right, to: .right, of: view!)
+        overlay!.autoPinEdge(.top, to: .top, of: view!)
+        overlay!.autoPinEdge(.right, to: .right, of: view!)
+        overlay!.setupUI()
     }
     
     func setupUIActions() {
@@ -84,12 +90,12 @@ class GameScene: SKScene, Scene {
         // setup pan gesture
         let panSelector = #selector(self.handlePan(panGesture:))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
-        self.view?.addGestureRecognizer(panGestureRecognizer)
+        view!.addGestureRecognizer(panGestureRecognizer)
         
         // setup pinch gesture
         let pinchGesture = #selector(self.handlePinch(pinchGesture:))
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: pinchGesture)
-        self.view?.addGestureRecognizer(pinchGestureRecognizer)
+        view!.addGestureRecognizer(pinchGestureRecognizer)
     }
     
     func setupSubscribers() {
