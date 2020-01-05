@@ -46,10 +46,8 @@ class GameSceneMapNode: SKTileMapNode {
     }
     
     func addMarch(march: March) -> GameSceneMapMarchNode {
-        
-        // determine positions for the march bsaed on start and end tiles
-        let startPoint = centerOfTile(atColumn: 0, row: 0)
-        let endPoint = centerOfTile(atColumn: 5, row: 5)
+        let startPoint = centerOfTile(atColumn: march.start_tile_col, row: march.start_tile_row)
+        let endPoint = centerOfTile(atColumn: march.end_tile_col, row: march.end_tile_row)
         
         // create & add march node to the map
         let marchNode = GameSceneMapMarchNode(march: march, startPoint: startPoint, endPoint: endPoint)
