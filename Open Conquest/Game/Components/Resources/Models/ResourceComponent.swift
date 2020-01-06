@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class ResourceComponent {
+    
+}
+
+enum ResourceEnum: String {
+    case gold = "gold"
+    case power = "power"
+}
