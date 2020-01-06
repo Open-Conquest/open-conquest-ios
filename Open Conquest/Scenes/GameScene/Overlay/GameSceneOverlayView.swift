@@ -17,14 +17,18 @@ class GameSceneOverlayView: UIView {
     var goldTicker = ResourceTickerView()
     var powerTicker = ResourceTickerView()
 
+    /**
+     Setup constraints for subviews.
+     */
     func setupUI() {
-        // setup resources
+        // determining offsets and sizes based on screen size
         let resourceBackgroundHeight = screenSize.height/22.0
         let resourceBackgroundWidth = screenSize.width/4
         let resourceHeightOffset = resourceBackgroundHeight
         let resourceWidthOffset = (resourceBackgroundWidth)/10
         let resourceBackgroundNavbarOffset: CGFloat = -5
-        
+
+        // setup constraints for resource tickers
         goldTicker.autoSetDimension(.height, toSize: resourceBackgroundHeight)
         goldTicker.autoSetDimension(.width, toSize: resourceBackgroundWidth)
         addSubview(goldTicker)

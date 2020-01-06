@@ -13,12 +13,9 @@ import SpriteKit
  */
 class GameSceneMapNode: SKTileMapNode {
     
-    // spritekit elements
     var userCastleButton = SKSpriteNode(imageNamed: "crown-button-3")
     var cityButton = SKSpriteNode(imageNamed: "view-city-button-1")
     var attackCityButton = SKSpriteNode(imageNamed: "attack-button-3")
-    var cityNameLabel = SKLabelNode(fontNamed: "Chalkduster")
-    var tileOutline = SKSpriteNode(imageNamed: "tile-outline")
     
     /**
      Initialize a map node and draw all tiles from a map model.
@@ -54,6 +51,7 @@ class GameSceneMapNode: SKTileMapNode {
         numberOfRows = map.numRows
         numberOfColumns = map.numCols
         
+        // draw each of the tiles in the map
         for row in map.tiles {
             for tile in row {
                 drawTileAt(row: tile.row, col: tile.col, tileGroup: tile.type)
@@ -62,24 +60,28 @@ class GameSceneMapNode: SKTileMapNode {
     }
     
     /**
-     Draws a tile group at a row, column.
+     Draws a tile at a row and column.
     
      Example:
-    
      ```
      mapNode.drawTileAt(row: 0, col: 0, tileGroup: TileType.GRASS)
      ```
-    
-     The same as: let name = json[9]["list"]["person"]["name"]
-    
-     - parameter path: The target json's path.
-    
-     - returns: Return a json found by the path or a null json with error
+     
+     - parameter row: The 0 indexed row of the tile being drawn
+     - parameter col: The 0 indexed column of the tile being drawn
+     - parameter tileGroup: The tile type enum value (grass, castle
      */
     func drawTileAt(row: Int, col: Int, tileGroup: TileType) {
         setTileGroup(tileSet.tileGroups[tileGroup.rawValue], forColumn: col, row: row)
     }
     
+    /**
+     Adds a new march node to the map.
+     
+     - parameter march: The march model class. This contains all the information needed to draw the march correctly.
+     
+     - returns: The march node that was added
+     */
     func addMarch(march: March) -> GameSceneMapMarchNode {
         let startPoint = centerOfTile(atColumn: march.start_tile_col, row: march.start_tile_row)
         let endPoint = centerOfTile(atColumn: march.end_tile_col, row: march.end_tile_row)
