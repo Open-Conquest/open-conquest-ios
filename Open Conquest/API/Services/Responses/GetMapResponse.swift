@@ -26,8 +26,9 @@ class GetMapResponse: Response {
 
             let row = tile["tile_row"].int!
             let col = tile["tile_col"].int!
-            let type = tile["tile_type"].string!
-            let thisTile = Tile(row: row, col: col, owner: 0, type: type)
+            let type = tile["tile_type"].int!
+            let tileType = TileType.init(rawValue: type)!
+            let thisTile = Tile(row: row, col: col, owner: 0, type: tileType)
             
             if row > last_row {
                 tiles.append(tileRow)

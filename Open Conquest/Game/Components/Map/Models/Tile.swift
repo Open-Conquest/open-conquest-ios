@@ -8,23 +8,25 @@
 
 import Foundation
 
+/**
+ Enum to represent a tile type. This enum corresponds with the `tile` entity's `tile_type` coding in the database.
+ */
 enum TileType: Int
 {
     case GRASS = 0
-    case FOREST = 1
-    case CASTLE = 2
-    case TOWN = 3
+    case CASTLE = 1
 }
 
-class Tile
-{
+/**
+ Model class for storing a tile's properties. Based of the `tile` entity.
+ */
+class Tile {
     var row: Int
     var col: Int
     var owner: Int
-    var type: String
+    var type: TileType
     
-    init(row: Int, col: Int, owner: Int, type: String)
-    {
+    init(row: Int, col: Int, owner: Int, type: TileType) {
         self.row = row
         self.col = col
         self.owner = owner
