@@ -1,4 +1,4 @@
-//
+///Users/mrwiki/Projects/open-conquest/open-conquest-ios/Open Conquest.xcodeproj
 //  GameSceneOverlay.swift
 //  Open Conquest
 //
@@ -21,6 +21,9 @@ class GameSceneOverlayView: UIView {
     var uiWood: UIView = UIView()
     var uiStone: UIView = UIView()
     var uiOre: UIView = UIView()
+    
+    var goldTicker = ResourceTickerView()
+    var powerTicker = ResourceTickerView()
 
     func setupUI() {
         // setup navbar
@@ -42,80 +45,25 @@ class GameSceneOverlayView: UIView {
         uiKingdomLabel.autoPinEdge(.top, to: .top, of: uiNavbar, withOffset: 2)
         uiKingdomLabel.autoPinEdge(.left, to: .left, of: uiNavbar)
         uiKingdomLabel.autoPinEdge(.right, to: .right, of: uiNavbar)
-
+        
         // setup resources
         let resourceBackgroundHeight = uiNavbarHeight/2.2
-        let resourceBackgroundWidth = uiNavbarWidth/4.5
+        let resourceBackgroundWidth = uiNavbarWidth/4
         let widthOffset = (resourceBackgroundWidth)/10
-        let resourceIconWidth = resourceBackgroundHeight
         let resourceBackgroundNavbarOffset: CGFloat = -5
-
-        // setup gold
-        uiGold.autoSetDimension(.height, toSize: resourceBackgroundHeight)
-        uiGold.autoSetDimension(.width, toSize: resourceBackgroundWidth)
-        addSubview(uiGold)
-        uiGold.autoPinEdge(.bottom, to: .bottom, of: uiNavbar, withOffset: resourceBackgroundNavbarOffset)
-        uiGold.autoPinEdge(.left, to: .left, of: self, withOffset: widthOffset)
         
-        let uiGoldBackground = UIView()
-        uiGoldBackground.backgroundColor = .black
-        uiGoldBackground.alpha = 0.4
-        uiGold.addSubview(uiGoldBackground)
-        uiGoldBackground.autoPinEdge(.top, to: .top, of: uiGold)
-        uiGoldBackground.autoPinEdge(.bottom, to: .bottom, of: uiGold)
-        uiGoldBackground.autoPinEdge(.left, to: .left, of: uiGold)
-        uiGoldBackground.autoPinEdge(.right, to: .right, of: uiGold)
-
-        let uiGoldIcon = UIImageView()
-        uiGoldIcon.image = UIImage(named: "gold")
-        uiGoldIcon.autoSetDimension(.height, toSize: resourceIconWidth)
-        uiGoldIcon.autoSetDimension(.width, toSize: resourceIconWidth)
-        uiGold.addSubview(uiGoldIcon)
-        uiGoldIcon.autoPinEdge(.left, to: .left, of: uiGold, withOffset: 0)
-
-        let uiGoldLabel = UILabel()
-        uiGoldLabel.text = "0.34k"
-        uiGoldLabel.font = UIFont(name: "Chalkduster", size: 14)
-        uiGoldLabel.textColor = UIColor.black
-        uiGoldLabel.textAlignment = NSTextAlignment.center
-        uiGold.addSubview(uiGoldLabel)
-        uiGoldLabel.autoPinEdge(.top, to: .top, of: uiGold, withOffset: 0)
-        uiGoldLabel.autoPinEdge(.bottom, to: .bottom, of: uiGold, withOffset: 0)
-        uiGoldLabel.autoPinEdge(.left, to: .right, of: uiGoldIcon, withOffset: 0)
-        uiGoldLabel.autoPinEdge(.right, to: .right, of: uiGold, withOffset: -resourceBackgroundWidth/15)
+        goldTicker.autoSetDimension(.height, toSize: resourceBackgroundHeight)
+        goldTicker.autoSetDimension(.width, toSize: resourceBackgroundWidth)
+        addSubview(goldTicker)
+        goldTicker.autoPinEdge(.bottom, to: .bottom, of: uiNavbar, withOffset: resourceBackgroundNavbarOffset)
+        goldTicker.autoPinEdge(.left, to: .left, of: self, withOffset: widthOffset)
+        goldTicker.setupUI(resource: ResourceEnum.gold)
         
-        // setup power
-        uiPower.autoSetDimension(.height, toSize: resourceBackgroundHeight)
-        uiPower.autoSetDimension(.width, toSize: resourceBackgroundWidth)
-        addSubview(uiPower)
-        uiPower.autoPinEdge(.bottom, to: .bottom, of: uiNavbar, withOffset: resourceBackgroundNavbarOffset)
-        uiPower.autoPinEdge(.left, to: .right, of: uiGold, withOffset: widthOffset)
-        
-        let uiPowerBackground = UIView()
-        uiPowerBackground.backgroundColor = .black
-        uiPowerBackground.alpha = 0.4
-        uiPower.addSubview(uiPowerBackground)
-        uiPowerBackground.autoPinEdge(.top, to: .top, of: uiPower)
-        uiPowerBackground.autoPinEdge(.bottom, to: .bottom, of: uiPower)
-        uiPowerBackground.autoPinEdge(.left, to: .left, of: uiPower)
-        uiPowerBackground.autoPinEdge(.right, to: .right, of: uiPower)
-
-        let uiPowerIcon = UIImageView()
-        uiPowerIcon.image = UIImage(named: "power")
-        uiPowerIcon.autoSetDimension(.height, toSize: resourceIconWidth)
-        uiPowerIcon.autoSetDimension(.width, toSize: resourceIconWidth)
-        uiPower.addSubview(uiPowerIcon)
-        uiPowerIcon.autoPinEdge(.left, to: .left, of: uiPower, withOffset: 0)
-
-        let uiPowerLabel = UILabel()
-        uiPowerLabel.text = "0.34k"
-        uiPowerLabel.font = UIFont(name: "Chalkduster", size: 14)
-        uiPowerLabel.textColor = UIColor.black
-        uiPowerLabel.textAlignment = NSTextAlignment.center
-        uiPower.addSubview(uiPowerLabel)
-        uiPowerLabel.autoPinEdge(.top, to: .top, of: uiPower, withOffset: 0)
-        uiPowerLabel.autoPinEdge(.bottom, to: .bottom, of: uiPower, withOffset: 0)
-        uiPowerLabel.autoPinEdge(.left, to: .right, of: uiPowerIcon, withOffset: 0)
-        uiPowerLabel.autoPinEdge(.right, to: .right, of: uiPower, withOffset: -resourceBackgroundWidth/15)
+        powerTicker.autoSetDimension(.height, toSize: resourceBackgroundHeight)
+        powerTicker.autoSetDimension(.width, toSize: resourceBackgroundWidth)
+        addSubview(powerTicker)
+        powerTicker.autoPinEdge(.top, to: .bottom, of: goldTicker, withOffset: resourceBackgroundNavbarOffset)
+        powerTicker.autoPinEdge(.left, to: .left, of: self, withOffset: widthOffset)
+        powerTicker.setupUI(resource: ResourceEnum.power)
     }
 }
