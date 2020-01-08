@@ -15,12 +15,6 @@ enum GameSceneButtonTypeEnum {
     case message
 }
 
-enum GameSceneButtonNames: String {
-    case attack = "attack-city-button"
-    case view = "view-city-button"
-    case message = "message-city-button"
-}
-
 class GameSceneMapButton: SKSpriteNode {
     init(buttonType: GameSceneButtonTypeEnum) {
         var texture: SKTexture?
@@ -49,7 +43,7 @@ class MessageCityButton: GameSceneMapButton {
         super.init(buttonType: .message)
         
         // name property is the only unique identifier used to determine which button is pressed
-        name = GameSceneButtonNames.message.rawValue
+        name = GameSceneNodeNames.messageCityButton.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,7 +55,7 @@ class AttackCityButton: GameSceneMapButton {
     init() {
         super.init(buttonType: .attack)
         
-        name = GameSceneButtonNames.attack.rawValue
+        name = GameSceneNodeNames.attackCityButton.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -73,7 +67,7 @@ class ViewCityButton: GameSceneMapButton {
     init() {
         super.init(buttonType: .view)
         
-        name = GameSceneButtonNames.view.rawValue
+        name = GameSceneNodeNames.viewCityButton.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -194,13 +194,39 @@ class GameScene: SKScene, Scene {
         let tapLocation = tapGesture.location(in: tapGesture.view)
         let location = self.convertPoint(fromView: tapLocation)
         
-        // get node tapped
+        // determine what was tapped (map, button, etc) and take appropriate action
         let node = self.atPoint(location)
-        
-        repositionButtons(location: location)
-        
-        showMapButtons()
+        switch node.name {
+        case GameSceneNodeNames.attackCityButton.rawValue:
+            print("attack button pressed")
+        case GameSceneNodeNames.viewCityButton.rawValue:
+            print("view")
+        case GameSceneNodeNames.messageCityButton.rawValue:
+            print("message")
+        case GameSceneNodeNames.map.rawValue:
+            print("map")
+            repositionButtons(location: location)
+            showMapButtons()
+        default:
+            print("Node with name \(node.name!) pressed but doesn't have any action")
+        }
     }
+    
+    // MARK: METHODS FOR HANDLING TILE BUTTON PRESSES
+    
+    func attackCityPressed(location: CGPoint) {
+        
+    }
+    
+    func messageCityPressed(location: CGPoint) {
+        
+    }
+    
+    func viewCityPressed(location: CGPoint) {
+        
+    }
+    
+    // MARK: CONVEINENCE METHODS FOR MANAGING TILE BUTTONS UI
     
     func repositionButtons(location: CGPoint) {
         // get the tile (row, col) that we clicked and position

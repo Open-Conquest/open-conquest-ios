@@ -21,7 +21,7 @@ class GameSceneMapNode: SKTileMapNode {
         super.init()
         
         // setup all SKTileMapNode properties
-        name = "GameScene_map"
+        name = GameSceneNodeNames.map.rawValue
         tileSet = SKTileSet(named: "Sample Hexagonal Tile Set")!
         tileSize = CGSize(width: 111, height: 128)
         numberOfRows = 20
