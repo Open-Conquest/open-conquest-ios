@@ -96,6 +96,12 @@ class GameScene: SKScene, Scene {
         let pinchGesture = #selector(self.handlePinch(pinchGesture:))
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: pinchGesture)
         view!.addGestureRecognizer(pinchGestureRecognizer)
+        
+        // setup tap gesture
+        let tapSelector = #selector(self.handleTap(tapGesture:))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: tapSelector)
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        view!.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func setupSubscribers() {
@@ -163,6 +169,27 @@ class GameScene: SKScene, Scene {
     
     @objc func handlePinch(pinchGesture: UIPinchGestureRecognizer) {
         gestures!.handlePinch(pinchGesture: pinchGesture, camera: camera!)
+    }
+    
+    @objc func handleTap(tapGesture: UITapGestureRecognizer) {
+        if tapGesture.state != .ended {
+            return
+        }
+        
+        let tapLocation = tapGesture.location(in: tapGesture.view)
+        let location = self.convertPoint(fromView: tapLocation)
+        
+        // get node tapped
+        let node = self.atPoint(location)
+
+        // get the tile (row, col) that we clicked and position
+        let col = map!.tileColumnIndex(fromPosition: location)
+        let row = map!.tileRowIndex(fromPosition: location)
+        let tileCenter = map!.centerOfTile(atColumn: col, row: row)
+        
+        map!.messageButton.position = CGPoint(x: tileCenter.x - 64, y: tileCenter.y + 80)
+        map!.cityButton.position = CGPoint(x: tileCenter.x, y: tileCenter.y + 120)
+        map!.attackCityButton.position = CGPoint(x: tileCenter.x + 64, y: tileCenter.y + 80)
     }
 
 }
