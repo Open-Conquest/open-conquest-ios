@@ -12,6 +12,9 @@ class GameScene: SKScene, Scene {
     var marches = [GameSceneMapMarchNode]()
     var map: GameSceneMapNode?
     var overlay: GameSceneOverlayView?
+    var messageCityButton: MessageCityButton?
+    var viewCityButton: ViewCityButton?
+    var attackCityButton: AttackCityButton?
     var gestures: GameSceneGestures?
     let publisher: GameScenePublisher
     let subscriber: Subscriber
@@ -58,6 +61,7 @@ class GameScene: SKScene, Scene {
     
     func setupUI() {
         setupMap()
+        setupMapButtons()
         setupOverlay()
     }
     
@@ -68,6 +72,15 @@ class GameScene: SKScene, Scene {
         let camera = SKCameraNode()
         self.camera = camera
         map!.addChild(camera)
+    }
+    
+    func setupMapButtons() {
+        attackCityButton = AttackCityButton()
+        messageCityButton = MessageCityButton()
+        viewCityButton = ViewCityButton()
+        addChild(attackCityButton!)
+        addChild(messageCityButton!)
+        addChild(viewCityButton!)
     }
     
     func setupOverlay() {
@@ -165,10 +178,12 @@ class GameScene: SKScene, Scene {
     
     @objc func handlePan(panGesture: UIPanGestureRecognizer) {
         gestures!.handlePan(panGesture: panGesture, scene: self, camera: camera!)
+        hideMapButtons()
     }
     
     @objc func handlePinch(pinchGesture: UIPinchGestureRecognizer) {
         gestures!.handlePinch(pinchGesture: pinchGesture, camera: camera!)
+        hideMapButtons()
     }
     
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {
@@ -181,15 +196,33 @@ class GameScene: SKScene, Scene {
         
         // get node tapped
         let node = self.atPoint(location)
-
+        
+        repositionButtons(location: location)
+        
+        showMapButtons()
+    }
+    
+    func repositionButtons(location: CGPoint) {
         // get the tile (row, col) that we clicked and position
         let col = map!.tileColumnIndex(fromPosition: location)
         let row = map!.tileRowIndex(fromPosition: location)
         let tileCenter = map!.centerOfTile(atColumn: col, row: row)
         
-        map!.messageButton.position = CGPoint(x: tileCenter.x - 64, y: tileCenter.y + 80)
-        map!.cityButton.position = CGPoint(x: tileCenter.x, y: tileCenter.y + 120)
-        map!.attackCityButton.position = CGPoint(x: tileCenter.x + 64, y: tileCenter.y + 80)
+        messageCityButton!.position = CGPoint(x: tileCenter.x - 64, y: tileCenter.y + 80)
+        viewCityButton!.position = CGPoint(x: tileCenter.x, y: tileCenter.y + 120)
+        attackCityButton!.position = CGPoint(x: tileCenter.x + 64, y: tileCenter.y + 80)
+    }
+    
+    func hideMapButtons() {
+        messageCityButton!.isHidden = true
+        viewCityButton!.isHidden = true
+        attackCityButton!.isHidden = true
+    }
+    
+    func showMapButtons() {
+        messageCityButton!.isHidden = false
+        viewCityButton!.isHidden = false
+        attackCityButton!.isHidden = false
     }
 
 }

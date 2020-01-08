@@ -12,10 +12,6 @@ import SpriteKit
  Map node for rendring tiles.
  */
 class GameSceneMapNode: SKTileMapNode {
-    let messageButton = SKSpriteNode(imageNamed: "message-button")
-    let cityButton = SKSpriteNode(imageNamed: "view-city-button-1")
-    let attackCityButton = SKSpriteNode(imageNamed: "attack-button-3")
-    
     /**
      Initialize a map node and draw all tiles from a map model.
     
@@ -32,14 +28,6 @@ class GameSceneMapNode: SKTileMapNode {
         numberOfColumns = 20
         position = CGPoint(x: 0, y: 0)
         anchorPoint = CGPoint(x: 0, y: 0)
-        
-        // setup map tile buttons
-        addChild(messageButton)
-        addChild(cityButton)
-        addChild(attackCityButton)
-        messageButton.size = CGSize(width: 64, height: 64)
-        cityButton.size = CGSize(width: 64, height: 64)
-        attackCityButton.size = CGSize(width: 64, height: 64)
         
         // draw map from map model
         drawMapFromMapModel(map: map)
