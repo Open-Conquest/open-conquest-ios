@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Army" representedClassName="Army" syncable="YES" codeGenerationType="class">
+    <entity name="CDArmy" representedClassName=".CDArmy" syncable="YES">
         <attribute name="army_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="units" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Army_Units" inverseName="army" inverseEntity="Army_Units"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User" inverseName="armies" inverseEntity="User"/>
+        <relationship name="units" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDArmy_Units" inverseName="army" inverseEntity="CDArmy_Units"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="CDUser" inverseName="armies" inverseEntity="CDUser"/>
     </entity>
-    <entity name="Army_Units" representedClassName="Army_Units" syncable="YES" codeGenerationType="class">
+    <entity name="CDArmy_Units" representedClassName=".CDArmy_Units" syncable="YES">
         <attribute name="army_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="army_units_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="unit_count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="unit_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army" inverseName="units" inverseEntity="Army"/>
-        <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="army_units" inverseEntity="Unit"/>
+        <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDArmy" inverseName="units" inverseEntity="CDArmy"/>
+        <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUnit" inverseName="army_units" inverseEntity="CDUnit"/>
     </entity>
-    <entity name="City" representedClassName="City" syncable="YES" codeGenerationType="class">
+    <entity name="CDCity" representedClassName=".CDCity" syncable="YES">
         <attribute name="city_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="city_level" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="city_name" optional="YES" attributeType="String"/>
         <attribute name="tile_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="tile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tile" inverseName="city" inverseEntity="Tile"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="cities" inverseEntity="User"/>
+        <relationship name="tile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTile" inverseName="city" inverseEntity="CDTile"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="cities" inverseEntity="CDUser"/>
     </entity>
-    <entity name="Map" representedClassName="Map" syncable="YES" codeGenerationType="class">
+    <entity name="CDMap" representedClassName=".CDMap" syncable="YES">
         <attribute name="map_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="world_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="tiles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tile" inverseName="map" inverseEntity="Tile"/>
-        <relationship name="world" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="map" inverseEntity="World"/>
+        <relationship name="tiles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTile" inverseName="map" inverseEntity="CDTile"/>
+        <relationship name="world" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDWorld" inverseName="map" inverseEntity="CDWorld"/>
     </entity>
-    <entity name="March" representedClassName="March" syncable="YES" codeGenerationType="class">
+    <entity name="CDMarch" representedClassName=".CDMarch" syncable="YES">
         <attribute name="army_id" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="end_tile_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="end_time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -37,52 +37,52 @@
         <attribute name="speed_modifier" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="start_tile_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="start_time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army"/>
-        <relationship name="end_tile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tile"/>
-        <relationship name="start_tile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tile"/>
+        <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDArmy"/>
+        <relationship name="end_tile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTile"/>
+        <relationship name="start_tile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTile"/>
     </entity>
-    <entity name="Tile" representedClassName="Tile" syncable="YES" codeGenerationType="class">
+    <entity name="CDTile" representedClassName=".CDTile" syncable="YES">
         <attribute name="map_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tile_col" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tile_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tile_row" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tile_type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="tile" inverseEntity="City"/>
-        <relationship name="map" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Map" inverseName="tiles" inverseEntity="Map"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDCity" inverseName="tile" inverseEntity="CDCity"/>
+        <relationship name="map" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDMap" inverseName="tiles" inverseEntity="CDMap"/>
     </entity>
-    <entity name="Unit" representedClassName="Unit" syncable="YES" codeGenerationType="class">
+    <entity name="CDUnit" representedClassName=".CDUnit" syncable="YES">
         <attribute name="attack" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="defense" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="gold_cost" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="unit_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="army_units" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Army_Units" inverseName="unit" inverseEntity="Army_Units"/>
+        <relationship name="army_units" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDArmy_Units" inverseName="unit" inverseEntity="CDArmy_Units"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+    <entity name="CDUser" representedClassName=".CDUser" syncable="YES">
         <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="user_name" optional="YES" attributeType="String"/>
         <attribute name="world_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="armies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Army" inverseName="user" inverseEntity="Army"/>
-        <relationship name="cities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="user" inverseEntity="City"/>
-        <relationship name="marches" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="March"/>
-        <relationship name="world" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="users" inverseEntity="World"/>
+        <relationship name="armies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDArmy" inverseName="user" inverseEntity="CDArmy"/>
+        <relationship name="cities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDCity" inverseName="user" inverseEntity="CDCity"/>
+        <relationship name="marches" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDMarch"/>
+        <relationship name="world" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDWorld" inverseName="users" inverseEntity="CDWorld"/>
     </entity>
-    <entity name="World" representedClassName="World" syncable="YES" codeGenerationType="class">
+    <entity name="CDWorld" representedClassName=".CDWorld" syncable="YES">
         <attribute name="world_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="world_name" optional="YES" attributeType="String"/>
-        <relationship name="map" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Map" inverseName="world" inverseEntity="Map"/>
-        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="world" inverseEntity="User"/>
+        <relationship name="map" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDMap" inverseName="world" inverseEntity="CDMap"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDUser" inverseName="world" inverseEntity="CDUser"/>
     </entity>
     <elements>
-        <element name="Army" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="User" positionX="-54" positionY="9" width="128" height="148"/>
-        <element name="March" positionX="-36" positionY="18" width="128" height="193"/>
-        <element name="Army_Units" positionX="-18" positionY="27" width="128" height="133"/>
-        <element name="Unit" positionX="9" positionY="54" width="128" height="148"/>
-        <element name="World" positionX="18" positionY="108" width="128" height="103"/>
-        <element name="Map" positionX="-27" positionY="72" width="128" height="103"/>
-        <element name="Tile" positionX="-18" positionY="90" width="128" height="148"/>
-        <element name="City" positionX="-9" positionY="108" width="128" height="148"/>
+        <element name="CDArmy" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="CDArmy_Units" positionX="-18" positionY="27" width="128" height="133"/>
+        <element name="CDCity" positionX="-9" positionY="108" width="128" height="148"/>
+        <element name="CDMap" positionX="-27" positionY="72" width="128" height="103"/>
+        <element name="CDMarch" positionX="-36" positionY="18" width="128" height="193"/>
+        <element name="CDTile" positionX="-18" positionY="90" width="128" height="148"/>
+        <element name="CDUnit" positionX="9" positionY="54" width="128" height="148"/>
+        <element name="CDUser" positionX="-54" positionY="9" width="128" height="148"/>
+        <element name="CDWorld" positionX="18" positionY="108" width="128" height="103"/>
     </elements>
 </model>
