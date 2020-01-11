@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    // initilialize core data container
+    // MARK: todo handle save before leaving application
+    var persistentContainer: NSPersistentContainer = NSPersistentContainer(name: "game")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
