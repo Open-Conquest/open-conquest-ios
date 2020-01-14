@@ -9,15 +9,29 @@
 import SpriteKit
 
 class GameScene: SKScene, Scene {
-    var marches = [GameSceneMapMarchNode]()
+    // publisher and subscriber for handling events
+    let publisher: GameScenePublisher
+    let subscriber: Subscriber
+    
+    // spritekit nodes for displaying game content
     var map: GameSceneMapNode?
+    var marches = [GameSceneMapMarchNode]()
+    
+    // uikit overlay for diplaying resource indicators and navigation buttons
     var overlay: GameSceneOverlayView?
+    
+    // buttons that are presented on the map
     var messageCityButton: MessageCityButton?
     var viewCityButton: ViewCityButton?
     var attackCityButton: AttackCityButton?
+    
+    // encapsulates gesture logic for pinch and pan
     var gestures: GameSceneGestures?
-    let publisher: GameScenePublisher
-    let subscriber: Subscriber
+    
+    // used to keep track of which tile is selected
+    // are set when responding to a user clicking the map in handleTap(_:)
+    var rowSelected: Int?
+    var colSelected: Int?
     
     override init() {
         publisher = GameScenePublisher()
@@ -89,7 +103,7 @@ class GameScene: SKScene, Scene {
         overlay!.autoPinEdge(.left, to: .left, of: view!)
         overlay!.autoPinEdge(.right, to: .right, of: view!)
         overlay!.autoPinEdge(.top, to: .top, of: view!)
-        overlay!.autoPinEdge(.right, to: .right, of: view!)
+        overlay!.autoPinEdge(.bottom, to: .bottom, of: view!)
         overlay!.setupUI()
     }
     
@@ -174,6 +188,20 @@ class GameScene: SKScene, Scene {
         }
     }
     
+    // MARK: PUBLISHING METHODS
+    
+    
+    /**
+     Called when a user tries to attack a city with a selected army.
+     
+     - parameter row: The row of the city that the user is trying to attack.
+     - parameter col: The col of the city that the user is trying to attack.
+     - parameter army: The units that the user is trying to attack with.
+     */
+    func createMarch(row: Int, col: Int, army: Army) {
+        
+    }
+    
     // MARK: UI GESTURE METHODS
     
     @objc func handlePan(panGesture: UIPanGestureRecognizer) {
@@ -208,14 +236,24 @@ class GameScene: SKScene, Scene {
             repositionButtons(location: location)
             showMapButtons()
         default:
-            print("Node with name \(node.name!) pressed but doesn't have any action")
+            print("Node with name \(node.name) pressed but doesn't have any action")
         }
     }
     
     // MARK: METHODS FOR HANDLING TILE BUTTON PRESSES
     
-    func attackCityPressed(location: CGPoint) {
+    func attackCityPressed() {
         
+        // MARK: todo get army from the attack ui
+//        let wizard = Unit(id: UnitIds.wizard.rawValue, attack: 100, defense: 50, level: 1, name: UnitNames.wizard.rawValue)
+//        let bear = Unit(id: UnitIds.bear.rawValue, attack: 50, defense: 150, level: 1, name: UnitNames.bear.rawValue)
+//        var units: [Unit: Int] = [:]
+//        units[wizard] = 10
+//        units[bear] = 5
+//        let army = Army(units: units)
+//
+        // build a test army to use for now
+//        createMarch(row: rowSelected!, col: colSelected!, army: army)
     }
     
     func messageCityPressed(location: CGPoint) {
@@ -237,6 +275,9 @@ class GameScene: SKScene, Scene {
         messageCityButton!.position = CGPoint(x: tileCenter.x - 64, y: tileCenter.y + 80)
         viewCityButton!.position = CGPoint(x: tileCenter.x, y: tileCenter.y + 120)
         attackCityButton!.position = CGPoint(x: tileCenter.x + 64, y: tileCenter.y + 80)
+        
+        colSelected = col
+        rowSelected = row
     }
     
     func hideMapButtons() {

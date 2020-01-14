@@ -7,12 +7,25 @@
 //
 
 import Foundation
+import CoreData
 import SwiftyJSON
 
 class Army: GameComponentModel {
+    var units = [Unit: Int]()
+    
+    init(units: [Unit: Int])  {
+        self.units = units
+    }
     
     required init(json: JSON) {
-        // do nothing for now i guess
+    }
+    
+    func addUnits(units: [Unit: Int]) {
+        
+    }
+    
+    func addUnit(unit: Unit, number: Int) {
+        
     }
     
     func toJSON() -> JSON {

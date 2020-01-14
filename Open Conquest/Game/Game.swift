@@ -7,22 +7,25 @@
 //
 
 import Foundation
+import CoreData
 
 class Game {
     var subscriber:     Subscriber
     var gamePublisher:  GamePublisher
+    var context: NSManagedObjectContext
     
-    var armyComponent:  ArmyComponent
+    var armyController: ArmyController
     var cityComponent:  CityComponent
     var mapComponent:   MapComponent
     var marchComponent: MarchComponent
     var userComponent:  UserComponent
 
-    init() {
+    init(dataContext: NSManagedObjectContext) {
+        context         = dataContext
         subscriber      = Subscriber()
         gamePublisher   = GamePublisher()
         
-        armyComponent   = ArmyComponent()
+        armyController  = ArmyController(context: context)
         cityComponent   = CityComponent()
         mapComponent    = MapComponent()
         marchComponent  = MarchComponent()

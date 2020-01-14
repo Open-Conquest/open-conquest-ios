@@ -16,6 +16,8 @@ class GameSceneOverlayView: UIView {
     
     var goldTicker = ResourceTickerView()
     var powerTicker = ResourceTickerView()
+    
+    var navbar = NavbarView()
 
     /**
      Setup constraints for subviews.
@@ -42,5 +44,16 @@ class GameSceneOverlayView: UIView {
         powerTicker.autoPinEdge(.top, to: .bottom, of: goldTicker, withOffset: resourceBackgroundNavbarOffset)
         powerTicker.autoPinEdge(.left, to: .left, of: self, withOffset: resourceWidthOffset)
         powerTicker.setupUI(resource: ResourceEnum.power)
+        
+        // setup constraints for navbar
+        let navbarHeight = screenSize.height / 11
+        let navbarWidth = screenSize.width
+        navbar.autoSetDimension(.width, toSize: navbarWidth)
+        navbar.autoSetDimension(.height, toSize: navbarHeight)
+        addSubview(navbar)
+        navbar.autoPinEdge(.left, to: .left, of: self)
+        navbar.autoPinEdge(.right, to: .right, of: self)
+        navbar.autoPinEdge(.bottom, to: .bottom, of: self)
+        navbar.setupUI()
     }
 }

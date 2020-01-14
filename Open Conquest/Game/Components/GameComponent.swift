@@ -12,3 +12,8 @@ protocol GameComponent {
     func update(notification: Notification)
     func setupSubscribers()
 }
+
+protocol GameComponentController {
+    func update(notification: Notification)
+    func setupSubscribers()
+}

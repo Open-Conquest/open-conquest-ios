@@ -32,7 +32,9 @@ class ResourceTickerView: UIView {
         switch resource {
         case ResourceEnum.gold:
             icon.image = UIImage(named: "gold-1")
+            label.text = "100"
         case ResourceEnum.power:
+            label.text = "1023"
             icon.image = UIImage(named: "power")
         }
         icon.autoSetDimension(.height, toSize: resourceIconWidth)
@@ -40,10 +42,10 @@ class ResourceTickerView: UIView {
         addSubview(icon)
         icon.autoPinEdge(.left, to: .left, of: icon.superview!, withOffset: 0)
 
-        label.text = "0.34k"
+//        label.text = "0.34k"
         label.font = UIFont(name: "Chalkboard", size: 14)
         label.textColor = UIColor.white
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = NSTextAlignment.left
         addSubview(label)
         label.autoPinEdge(.top, to: .top, of: label.superview!, withOffset: 0)
         label.autoPinEdge(.bottom, to: .bottom, of: label.superview!, withOffset: 0)

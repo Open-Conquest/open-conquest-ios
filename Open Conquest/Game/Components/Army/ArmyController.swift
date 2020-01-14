@@ -7,13 +7,23 @@
 //
 
 import Foundation
+import CoreData
 
-class ArmyComponent: GameComponent {
+class ArmyController: GameComponentController {
     var armies:     [Army]?
+    
+    // core data
+    let context: NSManagedObjectContext
+//    let army: CDArmy
+    
     var publisher:  ArmyComponentPublisher
     var subscriber: Subscriber
     
-    init() {
+    init(context: NSManagedObjectContext) {
+        
+        // initialize core data context
+        self.context = context
+        
         self.publisher  = ArmyComponentPublisher()
         self.subscriber = Subscriber()
         setupSubscribers()
@@ -59,6 +69,9 @@ class ArmyComponent: GameComponent {
         
         // get armies from notification
         armies = notification.userInfo!["data"] as? [Army]
+        
+        // save armies from notification
+        
         
         // send armies array to scene
         publisher.didGetArmies(armies: armies!)

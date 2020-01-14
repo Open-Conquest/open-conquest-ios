@@ -22,6 +22,7 @@ class MarchComponent: GameComponent {
     func setupSubscribers() {
         subscriber.subscribe(observingFunction: tryGetMarches(_:), name: .SceneTryGetMarches)
         subscriber.subscribe(observingFunction: didGetMarches(_:), name: .APIDidGetMarches)
+        //subscriber.subscribe(observingFunction: tryCreateMarch(_:), name: .SceneTryCreateMarch)
     }
     
     func update(notification: Notification) {
@@ -39,6 +40,12 @@ class MarchComponent: GameComponent {
         else {
             publisher.tryGetMarches()
         }
+    }
+    
+    func tryCreateMarch(_ notification: Notification) {
+        print("MarchComponent recieved scene-try-create-march event...")
+        
+        
     }
     
     // MARK: METHODS SUBSCRIBED TO API NOTIFICATIONS

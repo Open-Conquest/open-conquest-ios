@@ -18,7 +18,10 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        game        = Game()
+        // get core data managed context from app delegate
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        game        = Game(dataContext: context)
         api         = API()
         scene       = LoginScene()
         connection  = Connection()
