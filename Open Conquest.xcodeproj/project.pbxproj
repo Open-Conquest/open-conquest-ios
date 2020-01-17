@@ -16,11 +16,11 @@
 		923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38BC22A0816F00748F6F /* LoginSceneLoginButton.swift */; };
 		923B38BF22A0818300748F6F /* LoginSceneUsernameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */; };
 		923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */; };
-		923B38C422A0829E00748F6F /* GameSceneMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C322A0829E00748F6F /* GameSceneMapNode.swift */; };
-		923B38C622A0832200748F6F /* GameSceneOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C522A0832200748F6F /* GameSceneOverlayView.swift */; };
+		923B38C422A0829E00748F6F /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C322A0829E00748F6F /* MapNode.swift */; };
+		923B38C622A0832200748F6F /* GameSceneOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C522A0832200748F6F /* GameSceneOverlay.swift */; };
 		923B38D022A1760D00748F6F /* MapTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 923B38CE22A1760D00748F6F /* MapTileSet.sks */; };
 		923B38DA22A1D99C00748F6F /* GameSceneGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38D922A1D99C00748F6F /* GameSceneGestures.swift */; };
-		923B38DC22A1DB2C00748F6F /* GameSceneMapCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38DB22A1DB2B00748F6F /* GameSceneMapCamera.swift */; };
+		923B38DC22A1DB2C00748F6F /* MapCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38DB22A1DB2B00748F6F /* MapCamera.swift */; };
 		923B38DE22A2F6C400748F6F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38DD22A2F6C400748F6F /* API.swift */; };
 		9244332722C5810C00913284 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9244332622C5810C00913284 /* Game.swift */; };
 		9244332922C6CC5C00913284 /* NotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9244332822C6CC5C00913284 /* NotificationFactory.swift */; };
@@ -35,7 +35,7 @@
 		92E5190B22A750D0000B1F59 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190A22A750D0000B1F59 /* Publisher.swift */; };
 		92E5190D22A750DB000B1F59 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190C22A750DB000B1F59 /* Subscriber.swift */; };
 		92E5191322A76021000B1F59 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5191222A76021000B1F59 /* Notifications.swift */; };
-		C20E1FE623B106C9002A8E7E /* GameSceneMapMarchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E1FE523B106C9002A8E7E /* GameSceneMapMarchNode.swift */; };
+		C20E1FE623B106C9002A8E7E /* MarchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E1FE523B106C9002A8E7E /* MarchNode.swift */; };
 		C237374523ADB761002FEBF1 /* GameScenePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C237374423ADB761002FEBF1 /* GameScenePublisher.swift */; };
 		C23CF49B237EA1D200833792 /* ConnectionNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CF49A237EA1D200833792 /* ConnectionNotifications.swift */; };
 		C23CF4A2237F5E8A00833792 /* CityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CF4A1237F5E8A00833792 /* CityComponent.swift */; };
@@ -43,6 +43,7 @@
 		C23CF4A7237F5FDC00833792 /* Army.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CF4A6237F5FDC00833792 /* Army.swift */; };
 		C2402E042383603700858422 /* GetComponentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2402E032383603700858422 /* GetComponentRequest.swift */; };
 		C241D18A238A2EC4008C74BF /* GameComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C241D189238A2EC4008C74BF /* GameComponentModel.swift */; };
+		C2491FE323D241B2000663C6 /* AttackCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2491FE223D241B2000663C6 /* AttackCityView.swift */; };
 		C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED6223931BCB00894B7A /* GetArmiesResponse.swift */; };
 		C277ED682393661800894B7A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED672393661800894B7A /* City.swift */; };
 		C277ED6A2393663500894B7A /* CityComponentPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED692393663500894B7A /* CityComponentPublisher.swift */; };
@@ -66,7 +67,7 @@
 		C299F0A8234BDA4B0076C747 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299F0A7234BDA4B0076C747 /* LoginResponse.swift */; };
 		C299F0AD234C2EF60076C747 /* UserComponentPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299F0AC234C2EF60076C747 /* UserComponentPublisher.swift */; };
 		C2B9B2FA2387BE7300BCF103 /* LoadingSceneProgressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B9B2F92387BE7300BCF103 /* LoadingSceneProgressLabel.swift */; };
-		C2C383D023C65DEA00F61849 /* GameSceneMapButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C383CF23C65DEA00F61849 /* GameSceneMapButtons.swift */; };
+		C2C383D023C65DEA00F61849 /* MapButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C383CF23C65DEA00F61849 /* MapButtons.swift */; };
 		C2C383D223C66C5500F61849 /* GameSceneNodeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C383D123C66C5500F61849 /* GameSceneNodeNames.swift */; };
 		C2C383D423C7D45600F61849 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C383D323C7D45600F61849 /* Unit.swift */; };
 		C2D1BDAE2342FF2400ADF01E /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D1BDAD2342FF2400ADF01E /* UserServices.swift */; };
@@ -155,11 +156,11 @@
 		923B38BC22A0816F00748F6F /* LoginSceneLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneLoginButton.swift; sourceTree = "<group>"; };
 		923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneUsernameField.swift; sourceTree = "<group>"; };
 		923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePasswordField.swift; sourceTree = "<group>"; };
-		923B38C322A0829E00748F6F /* GameSceneMapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneMapNode.swift; sourceTree = "<group>"; };
-		923B38C522A0832200748F6F /* GameSceneOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneOverlayView.swift; sourceTree = "<group>"; };
+		923B38C322A0829E00748F6F /* MapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
+		923B38C522A0832200748F6F /* GameSceneOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneOverlay.swift; sourceTree = "<group>"; };
 		923B38CE22A1760D00748F6F /* MapTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapTileSet.sks; sourceTree = "<group>"; };
 		923B38D922A1D99C00748F6F /* GameSceneGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneGestures.swift; sourceTree = "<group>"; };
-		923B38DB22A1DB2B00748F6F /* GameSceneMapCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneMapCamera.swift; sourceTree = "<group>"; };
+		923B38DB22A1DB2B00748F6F /* MapCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCamera.swift; sourceTree = "<group>"; };
 		923B38DD22A2F6C400748F6F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9244332622C5810C00913284 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		9244332822C6CC5C00913284 /* NotificationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFactory.swift; sourceTree = "<group>"; };
@@ -181,7 +182,7 @@
 		92E5190C22A750DB000B1F59 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		92E5191222A76021000B1F59 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		B2844570776E81819817B8CB /* Pods-Open Conquest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest/Pods-Open Conquest.release.xcconfig"; sourceTree = "<group>"; };
-		C20E1FE523B106C9002A8E7E /* GameSceneMapMarchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneMapMarchNode.swift; sourceTree = "<group>"; };
+		C20E1FE523B106C9002A8E7E /* MarchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchNode.swift; sourceTree = "<group>"; };
 		C237374423ADB761002FEBF1 /* GameScenePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScenePublisher.swift; sourceTree = "<group>"; };
 		C23CF49A237EA1D200833792 /* ConnectionNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionNotifications.swift; sourceTree = "<group>"; };
 		C23CF4A1237F5E8A00833792 /* CityComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityComponent.swift; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 		C23CF4A6237F5FDC00833792 /* Army.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Army.swift; sourceTree = "<group>"; };
 		C2402E032383603700858422 /* GetComponentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetComponentRequest.swift; sourceTree = "<group>"; };
 		C241D189238A2EC4008C74BF /* GameComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameComponentModel.swift; sourceTree = "<group>"; };
+		C2491FE223D241B2000663C6 /* AttackCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackCityView.swift; sourceTree = "<group>"; };
 		C277ED6223931BCB00894B7A /* GetArmiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArmiesResponse.swift; sourceTree = "<group>"; };
 		C277ED672393661800894B7A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		C277ED692393663500894B7A /* CityComponentPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityComponentPublisher.swift; sourceTree = "<group>"; };
@@ -212,7 +214,7 @@
 		C299F0A7234BDA4B0076C747 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		C299F0AC234C2EF60076C747 /* UserComponentPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComponentPublisher.swift; sourceTree = "<group>"; };
 		C2B9B2F92387BE7300BCF103 /* LoadingSceneProgressLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneProgressLabel.swift; sourceTree = "<group>"; };
-		C2C383CF23C65DEA00F61849 /* GameSceneMapButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneMapButtons.swift; sourceTree = "<group>"; };
+		C2C383CF23C65DEA00F61849 /* MapButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtons.swift; sourceTree = "<group>"; };
 		C2C383D123C66C5500F61849 /* GameSceneNodeNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneNodeNames.swift; sourceTree = "<group>"; };
 		C2C383D323C7D45600F61849 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		C2D1BDAD2342FF2400ADF01E /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
@@ -421,8 +423,7 @@
 				C237374423ADB761002FEBF1 /* GameScenePublisher.swift */,
 				923B38D922A1D99C00748F6F /* GameSceneGestures.swift */,
 				C2C383D123C66C5500F61849 /* GameSceneNodeNames.swift */,
-				C2D1BDB42343DDD600ADF01E /* Map */,
-				C27BA72823ADF12B00034023 /* Overlay */,
+				C2491FE423D24797000663C6 /* Subviews */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -464,6 +465,59 @@
 				C2C383D323C7D45600F61849 /* Unit.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C2491FE423D24797000663C6 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C2491FE923D24AA9000663C6 /* AttackCityTable */,
+				C2491FE523D247AD000663C6 /* March */,
+				C2D1BDB42343DDD600ADF01E /* Map */,
+				C27BA72823ADF12B00034023 /* Overlay */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		C2491FE523D247AD000663C6 /* March */ = {
+			isa = PBXGroup;
+			children = (
+				C20E1FE523B106C9002A8E7E /* MarchNode.swift */,
+			);
+			path = March;
+			sourceTree = "<group>";
+		};
+		C2491FE623D24A68000663C6 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C2491FE823D24A92000663C6 /* Navbar */,
+				C2491FE723D24A81000663C6 /* Resources */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		C2491FE723D24A81000663C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C284DBCF23C3AE79004ADEFC /* ResourceTickerView.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C2491FE823D24A92000663C6 /* Navbar */ = {
+			isa = PBXGroup;
+			children = (
+				C28CD02123CD3F30003F8B2A /* NavbarView.swift */,
+				C28CD02323CD449B003F8B2A /* NavbarButton.swift */,
+			);
+			path = Navbar;
+			sourceTree = "<group>";
+		};
+		C2491FE923D24AA9000663C6 /* AttackCityTable */ = {
+			isa = PBXGroup;
+			children = (
+				C2491FE223D241B2000663C6 /* AttackCityView.swift */,
+			);
+			path = AttackCityTable;
 			sourceTree = "<group>";
 		};
 		C277ED6423931BE300894B7A /* Requests */ = {
@@ -535,10 +589,8 @@
 		C27BA72823ADF12B00034023 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
-				923B38C522A0832200748F6F /* GameSceneOverlayView.swift */,
-				C284DBCF23C3AE79004ADEFC /* ResourceTickerView.swift */,
-				C28CD02123CD3F30003F8B2A /* NavbarView.swift */,
-				C28CD02323CD449B003F8B2A /* NavbarButton.swift */,
+				923B38C522A0832200748F6F /* GameSceneOverlay.swift */,
+				C2491FE623D24A68000663C6 /* Subviews */,
 			);
 			path = Overlay;
 			sourceTree = "<group>";
@@ -654,10 +706,9 @@
 		C2D1BDB42343DDD600ADF01E /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				923B38C322A0829E00748F6F /* GameSceneMapNode.swift */,
-				923B38DB22A1DB2B00748F6F /* GameSceneMapCamera.swift */,
-				C20E1FE523B106C9002A8E7E /* GameSceneMapMarchNode.swift */,
-				C2C383CF23C65DEA00F61849 /* GameSceneMapButtons.swift */,
+				923B38C322A0829E00748F6F /* MapNode.swift */,
+				923B38DB22A1DB2B00748F6F /* MapCamera.swift */,
+				C2C383CF23C65DEA00F61849 /* MapButtons.swift */,
 				923B38CE22A1760D00748F6F /* MapTileSet.sks */,
 			);
 			path = Map;
@@ -1049,6 +1100,7 @@
 				C2F5192823AADEB70042094E /* MapServicesPublisher.swift in Sources */,
 				C2D1BDBB2343F96600ADF01E /* Tile.swift in Sources */,
 				92A2A342229B635A0090287C /* GameScene.swift in Sources */,
+				C2491FE323D241B2000663C6 /* AttackCityView.swift in Sources */,
 				C2DDCA0F23CA25A500456276 /* CDMarch+CoreDataProperties.swift in Sources */,
 				C2F5192A23AADEC10042094E /* MarchServices.swift in Sources */,
 				C2DDCA1523CA25A500456276 /* CDArmy+CoreDataProperties.swift in Sources */,
@@ -1083,17 +1135,17 @@
 				923B38B2229DD71A00748F6F /* LoginSceneView.swift in Sources */,
 				C2402E042383603700858422 /* GetComponentRequest.swift in Sources */,
 				C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */,
-				923B38C622A0832200748F6F /* GameSceneOverlayView.swift in Sources */,
+				923B38C622A0832200748F6F /* GameSceneOverlay.swift in Sources */,
 				C28CD02423CD449B003F8B2A /* NavbarButton.swift in Sources */,
 				92A2A33C229B635A0090287C /* AppDelegate.swift in Sources */,
 				923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */,
 				C2F5192423AADB3A0042094E /* March.swift in Sources */,
 				C2D1BDE32345EABE00ADF01E /* Response.swift in Sources */,
 				C2D1BDB92343F95500ADF01E /* MapComponent.swift in Sources */,
-				C2C383D023C65DEA00F61849 /* GameSceneMapButtons.swift in Sources */,
+				C2C383D023C65DEA00F61849 /* MapButtons.swift in Sources */,
 				C2DDCA1423CA25A500456276 /* CDArmy+CoreDataClass.swift in Sources */,
 				923B38BB22A0815600748F6F /* LoginSceneGameImage.swift in Sources */,
-				C20E1FE623B106C9002A8E7E /* GameSceneMapMarchNode.swift in Sources */,
+				C20E1FE623B106C9002A8E7E /* MarchNode.swift in Sources */,
 				C277ED6A2393663500894B7A /* CityComponentPublisher.swift in Sources */,
 				C2DDCA1623CA25A500456276 /* CDArmy_Units+CoreDataClass.swift in Sources */,
 				C284DBD023C3AE79004ADEFC /* ResourceTickerView.swift in Sources */,
@@ -1111,8 +1163,8 @@
 				C27BA72A23ADF82300034023 /* ScenePublisher.swift in Sources */,
 				C2F574E323A9825C00E2DE5D /* CityServicesPublisher.swift in Sources */,
 				C2F574E123A981F600E2DE5D /* CityServices.swift in Sources */,
-				923B38DC22A1DB2C00748F6F /* GameSceneMapCamera.swift in Sources */,
-				923B38C422A0829E00748F6F /* GameSceneMapNode.swift in Sources */,
+				923B38DC22A1DB2C00748F6F /* MapCamera.swift in Sources */,
+				923B38C422A0829E00748F6F /* MapNode.swift in Sources */,
 				C2D5084F237B518E00F48B32 /* APINotificationFactory.swift in Sources */,
 				C2D1BDCD2345189E00ADF01E /* LoginScenePublisher.swift in Sources */,
 				C2D5084B237B4B2300F48B32 /* GameNotifications.swift in Sources */,

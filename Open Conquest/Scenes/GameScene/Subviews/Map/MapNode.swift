@@ -1,5 +1,5 @@
 //
-//  GameSceneMap.swift
+//  MapNode.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 5/30/19.
@@ -11,7 +11,7 @@ import SpriteKit
 /**
  Map node for rendring tiles.
  */
-class GameSceneMapNode: SKTileMapNode {
+class MapNode: SKTileMapNode {
     /**
      Initialize a map node and draw all tiles from a map model.
     
@@ -77,12 +77,12 @@ class GameSceneMapNode: SKTileMapNode {
      
      - returns: The march node that was added
      */
-    func addMarch(march: March) -> GameSceneMapMarchNode {
+    func addMarch(march: March) -> MarchNode {
         let startPoint = centerOfTile(atColumn: march.start_tile_col, row: march.start_tile_row)
         let endPoint = centerOfTile(atColumn: march.end_tile_col, row: march.end_tile_row)
         
         // create & add march node to the map
-        let marchNode = GameSceneMapMarchNode(march: march, startPoint: startPoint, endPoint: endPoint)
+        let marchNode = MarchNode(march: march, startPoint: startPoint, endPoint: endPoint)
         marchNode.position = startPoint
         addChild(marchNode)
         return marchNode

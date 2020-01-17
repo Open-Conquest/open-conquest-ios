@@ -1,5 +1,5 @@
 //
-//  GameSceneMapButtons.swift
+//  MapButtons.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 1/8/20.
@@ -15,7 +15,7 @@ enum GameSceneButtonTypeEnum {
     case message
 }
 
-class GameSceneMapButton: SKSpriteNode {
+class MapButton: SKSpriteNode {
     init(buttonType: GameSceneButtonTypeEnum) {
         var texture: SKTexture?
         switch buttonType {
@@ -38,7 +38,7 @@ class GameSceneMapButton: SKSpriteNode {
     }
 }
 
-class MessageCityButton: GameSceneMapButton {
+class MessageCityButton: MapButton {
     init() {
         super.init(buttonType: .message)
         
@@ -51,7 +51,7 @@ class MessageCityButton: GameSceneMapButton {
     }
 }
 
-class AttackCityButton: GameSceneMapButton {
+class AttackCityButton: MapButton {
     init() {
         super.init(buttonType: .attack)
         
@@ -63,7 +63,7 @@ class AttackCityButton: GameSceneMapButton {
     }
 }
 
-class ViewCityButton: GameSceneMapButton {
+class ViewCityButton: MapButton {
     init() {
         super.init(buttonType: .view)
         

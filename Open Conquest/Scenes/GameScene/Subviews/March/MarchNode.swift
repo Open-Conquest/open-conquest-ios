@@ -1,5 +1,5 @@
 //
-//  GameSceneMapMarchNode.swift
+//  MarchNode.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 12/23/19.
@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class GameSceneMapMarchNode: SKSpriteNode {
+class MarchNode: SKSpriteNode {
     
     var march: March
     // details for movement in the map space

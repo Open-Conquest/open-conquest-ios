@@ -9,23 +9,29 @@
 import SpriteKit
 
 class GameScene: SKScene, Scene {
-    // publisher and subscriber for handling events
+    // publisher and subscriber for sending / receieving handling events
     let publisher: GameScenePublisher
     let subscriber: Subscriber
     
-    // spritekit nodes for displaying game content
-    var map: GameSceneMapNode?
-    var marches = [GameSceneMapMarchNode]()
-    
-    // uikit overlay for diplaying resource indicators and navigation buttons
-    var overlay: GameSceneOverlayView?
-    
-    // buttons that are presented on the map
+    // spritekit nodes
+    // these nodes are used to display game content
+    // the map displays the tile map
+    var map: MapNode?
+    // marches are a subclass of sknode for displaying an individual march
+    var marches = [MarchNode]()
+    // these nodes are used for displaying buttons over tiles
+    // ie. when a user selects a tile these buttons appear around that tile
     var messageCityButton: MessageCityButton?
     var viewCityButton: ViewCityButton?
     var attackCityButton: AttackCityButton?
     
-    // encapsulates gesture logic for pinch and pan
+    // uikit views
+    // the overlay contains resource tickers and buttons for navigating to other scenes
+    var overlay: GameSceneOverlay?
+    // the attackcity view is a tableview with sliders for selecting an army when attacking a city
+    var attackCityView: AttackCityView?
+    
+    // gestures encapsulates gesture handling logic
     var gestures: GameSceneGestures?
     
     // used to keep track of which tile is selected
@@ -77,10 +83,11 @@ class GameScene: SKScene, Scene {
         setupMap()
         setupMapButtons()
         setupOverlay()
+        setupAttackCityView()
     }
     
     func setupMap() {
-        map = GameSceneMapNode(map: Map())
+        map = MapNode(map: Map())
         self.addChild(map!)
         
         let camera = SKCameraNode()
@@ -98,13 +105,18 @@ class GameScene: SKScene, Scene {
     }
     
     func setupOverlay() {
-        overlay = GameSceneOverlayView()
+        overlay = GameSceneOverlay()
         view!.addSubview(overlay!)
         overlay!.autoPinEdge(.left, to: .left, of: view!)
         overlay!.autoPinEdge(.right, to: .right, of: view!)
         overlay!.autoPinEdge(.top, to: .top, of: view!)
         overlay!.autoPinEdge(.bottom, to: .bottom, of: view!)
         overlay!.setupUI()
+    }
+    
+    func setupAttackCityView() {
+        attackCityView = AttackCityView()
+        view!.addSubview(attackCityView!)
     }
     
     func setupUIActions() {
@@ -226,7 +238,9 @@ class GameScene: SKScene, Scene {
         let node = self.atPoint(location)
         switch node.name {
         case GameSceneNodeNames.attackCityButton.rawValue:
-            print("attack button pressed")
+            print("attack city button pressed")
+            // present attack city view
+            showAttackCityView()
         case GameSceneNodeNames.viewCityButton.rawValue:
             print("view")
         case GameSceneNodeNames.messageCityButton.rawValue:
@@ -264,7 +278,14 @@ class GameScene: SKScene, Scene {
         
     }
     
-    // MARK: CONVEINENCE METHODS FOR MANAGING TILE BUTTONS UI
+    // MARK: METHODS FOR MANAGING UI ELEMNTS
+    
+    /**
+        Displays the attackcityview.
+     */
+    func showAttackCityView() {
+        
+    }
     
     func repositionButtons(location: CGPoint) {
         // get the tile (row, col) that we clicked and position

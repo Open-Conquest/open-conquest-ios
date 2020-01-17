@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import PureLayout
 
-class GameSceneOverlayView: UIView {
+class GameSceneOverlay: UIView {
 
     let screenSize = UIScreen.main.bounds
     
