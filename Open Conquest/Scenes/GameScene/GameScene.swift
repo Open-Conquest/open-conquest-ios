@@ -9,33 +9,25 @@
 import SpriteKit
 
 class GameScene: SKScene, Scene {
-    // publisher and subscriber for sending / receieving handling events
     let publisher: GameScenePublisher
     let subscriber: Subscriber
     
-    // spritekit nodes
-    // these nodes are used to display game content
-    // the map displays the tile map
+    // MARK: SKNodes
     var map: MapNode?
-    // marches are a subclass of sknode for displaying an individual march
     var marches = [MarchNode]()
-    // these nodes are used for displaying buttons over tiles
-    // ie. when a user selects a tile these buttons appear around that tile
+    // tile buttons
     var messageCityButton: MessageCityButton?
     var viewCityButton: ViewCityButton?
     var attackCityButton: AttackCityButton?
     
-    // uikit views
-    // the overlay contains resource tickers and buttons for navigating to other scenes
+    // MARK: UIViews
     var overlay: GameSceneOverlay?
-    // the attackcity view is a tableview with sliders for selecting an army when attacking a city
-    var attackCityView: AttackCityView?
+    var marchSelectorView: MarchSelectorView?
     
-    // gestures encapsulates gesture handling logic
+    // encapsulates gesture handling logic
     var gestures: GameSceneGestures?
     
     // used to keep track of which tile is selected
-    // are set when responding to a user clicking the map in handleTap(_:)
     var rowSelected: Int?
     var colSelected: Int?
     
@@ -58,20 +50,15 @@ class GameScene: SKScene, Scene {
     override func didMove(to view: SKView) {
         print("DidMoveTo GameScene")
         setupUI()
-        setupUIActions()
-        setupMap()
-        setupOverlay()
         setupGestures()
         setupSubscribers()
+        
         loadComponentsIntialState()
     }
     
     override func update(_ currentTime: TimeInterval) {
-        updateMarches()
-    }
-    
-    // MARK: todo add some logic to remove stale marches
-    func updateMarches() {
+        
+        // update marches
         for march in marches {
             march.update()
         }
@@ -112,35 +99,56 @@ class GameScene: SKScene, Scene {
         overlay!.autoPinEdge(.top, to: .top, of: view!)
         overlay!.autoPinEdge(.bottom, to: .bottom, of: view!)
         overlay!.setupUI()
+        
+        // allow tap gestures to be recognized
+        overlay!.isUserInteractionEnabled = true
     }
     
     func setupAttackCityView() {
-        attackCityView = AttackCityView()
-        view!.addSubview(attackCityView!)
+        marchSelectorView = MarchSelectorView()
+        view!.addSubview(marchSelectorView!)
+        marchSelectorView!.setup()
+        hideMarchSelectorView()
     }
     
     func setupUIActions() {
-        // todo
+        fatalError("no implementation")
     }
     
-    func setupGestures() {
-        gestures = GameSceneGestures()
+    // MARK: METHODS FOR MANAGING UI ELEMENTS
+    
+    func showMarchSelectorView() {
+        marchSelectorView!.show()
+    }
+
+    func hideMarchSelectorView() {
+        marchSelectorView!.hide()
+    }
+    
+    func repositionButtons(location: CGPoint) {
+        // get the tile (row, col) that we clicked and position
+        let col = map!.tileColumnIndex(fromPosition: location)
+        let row = map!.tileRowIndex(fromPosition: location)
+        let tileCenter = map!.centerOfTile(atColumn: col, row: row)
         
-        // setup pan gesture
-        let panSelector = #selector(self.handlePan(panGesture:))
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
-        view!.addGestureRecognizer(panGestureRecognizer)
+        messageCityButton!.position = CGPoint(x: tileCenter.x - 64, y: tileCenter.y + 80)
+        viewCityButton!.position = CGPoint(x: tileCenter.x, y: tileCenter.y + 120)
+        attackCityButton!.position = CGPoint(x: tileCenter.x + 64, y: tileCenter.y + 80)
         
-        // setup pinch gesture
-        let pinchGesture = #selector(self.handlePinch(pinchGesture:))
-        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: pinchGesture)
-        view!.addGestureRecognizer(pinchGestureRecognizer)
-        
-        // setup tap gesture
-        let tapSelector = #selector(self.handleTap(tapGesture:))
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: tapSelector)
-        tapGestureRecognizer.numberOfTapsRequired = 1
-        view!.addGestureRecognizer(tapGestureRecognizer)
+        colSelected = col
+        rowSelected = row
+    }
+    
+    func hideMapButtons() {
+        messageCityButton!.isHidden = true
+        viewCityButton!.isHidden = true
+        attackCityButton!.isHidden = true
+    }
+    
+    func showMapButtons() {
+        messageCityButton!.isHidden = false
+        viewCityButton!.isHidden = false
+        attackCityButton!.isHidden = false
     }
     
     func setupSubscribers() {
@@ -213,19 +221,37 @@ class GameScene: SKScene, Scene {
     func createMarch(row: Int, col: Int, army: Army) {
         
     }
-    
-    // MARK: UI GESTURE METHODS
-    
+
+    func setupGestures() {
+        gestures = GameSceneGestures()
+        
+        // setup pan gesture
+        let panSelector = #selector(self.handlePan(panGesture:))
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
+        view!.addGestureRecognizer(panGestureRecognizer)
+        
+        // setup pinch gesture
+        let pinchGesture = #selector(self.handlePinch(pinchGesture:))
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: pinchGesture)
+        view!.addGestureRecognizer(pinchGestureRecognizer)
+        
+        // setup tap gesture
+        let tapSelector = #selector(self.handleTap(tapGesture:))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: tapSelector)
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        view!.addGestureRecognizer(tapGestureRecognizer)
+    }
+
     @objc func handlePan(panGesture: UIPanGestureRecognizer) {
         gestures!.handlePan(panGesture: panGesture, scene: self, camera: camera!)
         hideMapButtons()
     }
-    
+
     @objc func handlePinch(pinchGesture: UIPinchGestureRecognizer) {
         gestures!.handlePinch(pinchGesture: pinchGesture, camera: camera!)
         hideMapButtons()
     }
-    
+
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {
         if tapGesture.state != .ended {
             return
@@ -233,14 +259,12 @@ class GameScene: SKScene, Scene {
         
         let tapLocation = tapGesture.location(in: tapGesture.view)
         let location = self.convertPoint(fromView: tapLocation)
-        
         // determine what was tapped (map, button, etc) and take appropriate action
         let node = self.atPoint(location)
         switch node.name {
         case GameSceneNodeNames.attackCityButton.rawValue:
             print("attack city button pressed")
-            // present attack city view
-            showAttackCityView()
+            showMarchSelectorView()
         case GameSceneNodeNames.viewCityButton.rawValue:
             print("view")
         case GameSceneNodeNames.messageCityButton.rawValue:
@@ -253,64 +277,19 @@ class GameScene: SKScene, Scene {
             print("Node with name \(node.name) pressed but doesn't have any action")
         }
     }
-    
+
     // MARK: METHODS FOR HANDLING TILE BUTTON PRESSES
-    
+
     func attackCityPressed() {
-        
-        // MARK: todo get army from the attack ui
-//        let wizard = Unit(id: UnitIds.wizard.rawValue, attack: 100, defense: 50, level: 1, name: UnitNames.wizard.rawValue)
-//        let bear = Unit(id: UnitIds.bear.rawValue, attack: 50, defense: 150, level: 1, name: UnitNames.bear.rawValue)
-//        var units: [Unit: Int] = [:]
-//        units[wizard] = 10
-//        units[bear] = 5
-//        let army = Army(units: units)
-//
-        // build a test army to use for now
-//        createMarch(row: rowSelected!, col: colSelected!, army: army)
+       
     }
-    
+
     func messageCityPressed(location: CGPoint) {
-        
+       
     }
-    
+
     func viewCityPressed(location: CGPoint) {
-        
-    }
-    
-    // MARK: METHODS FOR MANAGING UI ELEMNTS
-    
-    /**
-        Displays the attackcityview.
-     */
-    func showAttackCityView() {
-        
-    }
-    
-    func repositionButtons(location: CGPoint) {
-        // get the tile (row, col) that we clicked and position
-        let col = map!.tileColumnIndex(fromPosition: location)
-        let row = map!.tileRowIndex(fromPosition: location)
-        let tileCenter = map!.centerOfTile(atColumn: col, row: row)
-        
-        messageCityButton!.position = CGPoint(x: tileCenter.x - 64, y: tileCenter.y + 80)
-        viewCityButton!.position = CGPoint(x: tileCenter.x, y: tileCenter.y + 120)
-        attackCityButton!.position = CGPoint(x: tileCenter.x + 64, y: tileCenter.y + 80)
-        
-        colSelected = col
-        rowSelected = row
-    }
-    
-    func hideMapButtons() {
-        messageCityButton!.isHidden = true
-        viewCityButton!.isHidden = true
-        attackCityButton!.isHidden = true
-    }
-    
-    func showMapButtons() {
-        messageCityButton!.isHidden = false
-        viewCityButton!.isHidden = false
-        attackCityButton!.isHidden = false
+       
     }
 
 }

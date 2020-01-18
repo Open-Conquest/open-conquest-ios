@@ -43,7 +43,7 @@
 		C23CF4A7237F5FDC00833792 /* Army.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CF4A6237F5FDC00833792 /* Army.swift */; };
 		C2402E042383603700858422 /* GetComponentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2402E032383603700858422 /* GetComponentRequest.swift */; };
 		C241D18A238A2EC4008C74BF /* GameComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C241D189238A2EC4008C74BF /* GameComponentModel.swift */; };
-		C2491FE323D241B2000663C6 /* AttackCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2491FE223D241B2000663C6 /* AttackCityView.swift */; };
+		C2491FE323D241B2000663C6 /* MarchSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2491FE223D241B2000663C6 /* MarchSelectorView.swift */; };
 		C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED6223931BCB00894B7A /* GetArmiesResponse.swift */; };
 		C277ED682393661800894B7A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED672393661800894B7A /* City.swift */; };
 		C277ED6A2393663500894B7A /* CityComponentPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED692393663500894B7A /* CityComponentPublisher.swift */; };
@@ -190,7 +190,7 @@
 		C23CF4A6237F5FDC00833792 /* Army.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Army.swift; sourceTree = "<group>"; };
 		C2402E032383603700858422 /* GetComponentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetComponentRequest.swift; sourceTree = "<group>"; };
 		C241D189238A2EC4008C74BF /* GameComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameComponentModel.swift; sourceTree = "<group>"; };
-		C2491FE223D241B2000663C6 /* AttackCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackCityView.swift; sourceTree = "<group>"; };
+		C2491FE223D241B2000663C6 /* MarchSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorView.swift; sourceTree = "<group>"; };
 		C277ED6223931BCB00894B7A /* GetArmiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArmiesResponse.swift; sourceTree = "<group>"; };
 		C277ED672393661800894B7A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		C277ED692393663500894B7A /* CityComponentPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityComponentPublisher.swift; sourceTree = "<group>"; };
@@ -470,7 +470,7 @@
 		C2491FE423D24797000663C6 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				C2491FE923D24AA9000663C6 /* AttackCityTable */,
+				C2491FE923D24AA9000663C6 /* MarchSelector */,
 				C2491FE523D247AD000663C6 /* March */,
 				C2D1BDB42343DDD600ADF01E /* Map */,
 				C27BA72823ADF12B00034023 /* Overlay */,
@@ -512,12 +512,12 @@
 			path = Navbar;
 			sourceTree = "<group>";
 		};
-		C2491FE923D24AA9000663C6 /* AttackCityTable */ = {
+		C2491FE923D24AA9000663C6 /* MarchSelector */ = {
 			isa = PBXGroup;
 			children = (
-				C2491FE223D241B2000663C6 /* AttackCityView.swift */,
+				C2491FE223D241B2000663C6 /* MarchSelectorView.swift */,
 			);
-			path = AttackCityTable;
+			path = MarchSelector;
 			sourceTree = "<group>";
 		};
 		C277ED6423931BE300894B7A /* Requests */ = {
@@ -1100,7 +1100,7 @@
 				C2F5192823AADEB70042094E /* MapServicesPublisher.swift in Sources */,
 				C2D1BDBB2343F96600ADF01E /* Tile.swift in Sources */,
 				92A2A342229B635A0090287C /* GameScene.swift in Sources */,
-				C2491FE323D241B2000663C6 /* AttackCityView.swift in Sources */,
+				C2491FE323D241B2000663C6 /* MarchSelectorView.swift in Sources */,
 				C2DDCA0F23CA25A500456276 /* CDMarch+CoreDataProperties.swift in Sources */,
 				C2F5192A23AADEC10042094E /* MarchServices.swift in Sources */,
 				C2DDCA1523CA25A500456276 /* CDArmy+CoreDataProperties.swift in Sources */,
