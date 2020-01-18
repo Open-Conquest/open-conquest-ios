@@ -14,7 +14,6 @@ class GameScene: SKScene, Scene {
     
     // MARK: Nodes
     var map: MapNode?
-    var marches = [MarchNode]()
     
     // MARK: Views
     var overlay: GameSceneOverlay?
@@ -53,11 +52,7 @@ class GameScene: SKScene, Scene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        
-        // update marches
-        for march in marches {
-            march.update()
-        }
+        map!.updateMarches()
     }
     
     // MARK: SETUP METHODS
@@ -159,8 +154,7 @@ class GameScene: SKScene, Scene {
         
         // add all the marches to the map
         for march in newMarches {
-            let marchNode = map!.addMarch(march: march)
-            self.marches.append(marchNode)
+            map!.addMarch(march: march)
         }
     }
     

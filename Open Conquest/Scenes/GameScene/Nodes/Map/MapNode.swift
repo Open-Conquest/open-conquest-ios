@@ -13,6 +13,7 @@ import SpriteKit
  */
 class MapNode: SKTileMapNode {
     
+    var marches: [MarchNode]
     var messageCityButton: MessageCityButton
     var viewCityButton: ViewCityButton
     var attackCityButton: AttackCityButton
@@ -24,6 +25,7 @@ class MapNode: SKTileMapNode {
      */
     init(map: Map) {
         // init child nodes
+        marches = [MarchNode]()
         attackCityButton = AttackCityButton()
         messageCityButton = MessageCityButton()
         viewCityButton = ViewCityButton()
@@ -89,10 +91,8 @@ class MapNode: SKTileMapNode {
      Adds a new march node to the map.
      
      - parameter march: The march model class. This contains all the information needed to draw the march correctly.
-     
-     - returns: The march node that was added
      */
-    func addMarch(march: March) -> MarchNode {
+    func addMarch(march: March) {
         let startPoint = centerOfTile(atColumn: march.start_tile_col, row: march.start_tile_row)
         let endPoint = centerOfTile(atColumn: march.end_tile_col, row: march.end_tile_row)
         
@@ -100,7 +100,14 @@ class MapNode: SKTileMapNode {
         let marchNode = MarchNode(march: march, startPoint: startPoint, endPoint: endPoint)
         marchNode.position = startPoint
         addChild(marchNode)
-        return marchNode
+        
+        marches.append(marchNode)
+    }
+    
+    func updateMarches() {
+        for march in marches {
+            march.update()
+        }
     }
     
     /**
