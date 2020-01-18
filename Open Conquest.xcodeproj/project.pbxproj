@@ -423,6 +423,7 @@
 				C237374423ADB761002FEBF1 /* GameScenePublisher.swift */,
 				923B38D922A1D99C00748F6F /* GameSceneGestures.swift */,
 				C2C383D123C66C5500F61849 /* GameSceneNodeNames.swift */,
+				C2F252E323D3B18000AAF818 /* Nodes */,
 				C2491FE423D24797000663C6 /* Subviews */,
 			);
 			path = GameScene;
@@ -471,8 +472,6 @@
 			isa = PBXGroup;
 			children = (
 				C2491FE923D24AA9000663C6 /* MarchSelector */,
-				C2491FE523D247AD000663C6 /* March */,
-				C2D1BDB42343DDD600ADF01E /* Map */,
 				C27BA72823ADF12B00034023 /* Overlay */,
 			);
 			path = Subviews;
@@ -807,6 +806,15 @@
 				C2DDCA0D23CA25A500456276 /* CDUser+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C2F252E323D3B18000AAF818 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				C2491FE523D247AD000663C6 /* March */,
+				C2D1BDB42343DDD600ADF01E /* Map */,
+			);
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 		C2F5192223AADB310042094E /* Models */ = {

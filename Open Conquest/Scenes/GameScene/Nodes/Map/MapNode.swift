@@ -103,6 +103,11 @@ class MapNode: SKTileMapNode {
         return marchNode
     }
     
+    /**
+    Moves buttons to the tile that was pressed
+    
+    - parameter location: CGPoint of where the tap occured
+    */
     func repositionButtons(location: CGPoint) {
         // get the tile (row, col) that we clicked and position
         let col = tileColumnIndex(fromPosition: location)

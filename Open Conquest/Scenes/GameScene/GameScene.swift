@@ -12,11 +12,11 @@ class GameScene: SKScene, Scene {
     let publisher: GameScenePublisher
     let subscriber: Subscriber
     
-    // MARK: SKNodes
+    // MARK: Nodes
     var map: MapNode?
     var marches = [MarchNode]()
     
-    // MARK: UIViews
+    // MARK: Views
     var overlay: GameSceneOverlay?
     var marchSelectorView: MarchSelectorView?
     
@@ -83,16 +83,6 @@ class GameScene: SKScene, Scene {
         marchSelectorView!.setup()
     }
     
-    func setupUIActions() {
-        fatalError("no implementation")
-    }
-    
-    func setupSubscribers() {
-        subscriber.subscribe(observingFunction: didGetCities(_:), name: .GameDidGetCities)
-        subscriber.subscribe(observingFunction: didGetMap(_:), name: .GameDidGetMap)
-        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .GameDidGetMarches)
-    }
-    
     func setupGestures() {
         gestures = GameSceneGestures()
         
@@ -111,6 +101,16 @@ class GameScene: SKScene, Scene {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: tapSelector)
         tapGestureRecognizer.numberOfTapsRequired = 1
         view!.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func setupUIActions() {
+        fatalError("no implementation")
+    }
+    
+    func setupSubscribers() {
+        subscriber.subscribe(observingFunction: didGetCities(_:), name: .GameDidGetCities)
+        subscriber.subscribe(observingFunction: didGetMap(_:), name: .GameDidGetMap)
+        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .GameDidGetMarches)
     }
     
     func loadComponentsIntialState() {
@@ -178,7 +178,7 @@ class GameScene: SKScene, Scene {
         
     }
     
-    // MARK: METHODS FOR HANDLING GESTURES
+    // MARK: GESTURING METHODS
 
     @objc func handlePan(panGesture: UIPanGestureRecognizer) {
         gestures!.handlePan(panGesture: panGesture, scene: self, camera: camera!)
