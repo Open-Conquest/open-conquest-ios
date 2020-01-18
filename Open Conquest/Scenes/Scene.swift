@@ -13,8 +13,6 @@ protocol Scene {
     
     func setupUI()
     
-    func setupUIActions()
-    
     func setupGestures()
     
     func prepareForNavigation()

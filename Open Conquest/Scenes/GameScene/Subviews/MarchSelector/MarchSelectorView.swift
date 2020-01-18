@@ -23,16 +23,21 @@ class MarchSelectorView: UIView {
         
         // setup gestures
         setupGestures()
+        
+        // hide initially
+        hide()
     }
     
     func setupConstraints() {
-        let heightOffset = UIScreen.main.bounds.height / 6
-        let widthOffset = UIScreen.main.bounds.width / 18
-        self.height = UIScreen.main.bounds.height - heightOffset * 2
-        self.width = UIScreen.main.bounds.width - widthOffset * 2
+        let superHeight = superview!.bounds.height
+        let superWidth = superview!.bounds.width
+        let heightOffset = superHeight / 6
+        let widthOffset = superWidth / 18
+        self.height = superHeight - heightOffset * 2
+        self.width = superWidth - widthOffset * 2
         
         // setup size constraints
-        self.autoSetDimensions(to: CGSize(width: width!, height: height!))
+        self.autoSetDimensions(to: CGSize(width: superWidth, height: superHeight))
         
         // setup constraints to position view on screen
         self.autoPinEdge(.left, to: .left, of: superview!, withOffset: widthOffset)

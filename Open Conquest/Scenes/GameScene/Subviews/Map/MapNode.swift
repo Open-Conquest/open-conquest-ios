@@ -12,13 +12,28 @@ import SpriteKit
  Map node for rendring tiles.
  */
 class MapNode: SKTileMapNode {
+    
+    var messageCityButton: MessageCityButton
+    var viewCityButton: ViewCityButton
+    var attackCityButton: AttackCityButton
+    
     /**
      Initialize a map node and draw all tiles from a map model.
     
      - parameter map: The map model (contains all tile data)
      */
     init(map: Map) {
+        // init child nodes
+        attackCityButton = AttackCityButton()
+        messageCityButton = MessageCityButton()
+        viewCityButton = ViewCityButton()
+        
         super.init()
+        
+        // add child nodes
+        addChild(attackCityButton)
+        addChild(messageCityButton)
+        addChild(viewCityButton)
         
         // setup all SKTileMapNode properties
         name = GameSceneNodeNames.map.rawValue
@@ -86,6 +101,31 @@ class MapNode: SKTileMapNode {
         marchNode.position = startPoint
         addChild(marchNode)
         return marchNode
+    }
+    
+    func repositionButtons(location: CGPoint) {
+        // get the tile (row, col) that we clicked and position
+        let col = tileColumnIndex(fromPosition: location)
+        let row = tileRowIndex(fromPosition: location)
+        let tileCenter = centerOfTile(atColumn: col, row: row)
+        
+        messageCityButton.position = CGPoint(x: tileCenter.x - 64, y: tileCenter.y + 80)
+        viewCityButton.position = CGPoint(x: tileCenter.x, y: tileCenter.y + 120)
+        attackCityButton.position = CGPoint(x: tileCenter.x + 64, y: tileCenter.y + 80)
+        
+        showButtons()
+    }
+    
+    func hideButtons() {
+        messageCityButton.isHidden = true
+        viewCityButton.isHidden = true
+        attackCityButton.isHidden = true
+    }
+    
+    func showButtons() {
+        messageCityButton.isHidden = false
+        viewCityButton.isHidden = false
+        attackCityButton.isHidden = false
     }
     
 }
