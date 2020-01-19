@@ -11,30 +11,34 @@ import SpriteKit
 class GameScene: SKScene, Scene {
     let publisher: GameScenePublisher
     let subscriber: Subscriber
-    
-    // MARK: Nodes
-    var map: MapNode?
-    
-    // MARK: Views
-    var overlay: GameSceneOverlay?
-    var marchSelectorView: MarchSelectorView?
-    
-    // encapsulates gesture handling logic
-    var gestures: GameSceneGestures?
-    
-    // used to keep track of which tile is selected
+    // nodes
+    var map: MapNode
+    // views
+    var overlay: GameSceneOverlay
+    var marchSelectorView: MarchSelectorView
+    // gesture handling logic
+    var gestures: GameSceneGestures
+    // keeps track of which tile is selected
     var rowSelected: Int?
     var colSelected: Int?
     
     override init() {
         publisher = GameScenePublisher()
         subscriber = Subscriber()
+        map = MapNode(map: Map())
+        overlay = GameSceneOverlay()
+        marchSelectorView = MarchSelectorView()
+        gestures = GameSceneGestures()
         super.init()
     }
     
     override init(size: CGSize) {
         publisher = GameScenePublisher()
         subscriber = Subscriber()
+        map = MapNode(map: Map())
+        overlay = GameSceneOverlay()
+        marchSelectorView = MarchSelectorView()
+        gestures = GameSceneGestures()
         super.init(size: size)
     }
     
@@ -43,54 +47,42 @@ class GameScene: SKScene, Scene {
     }
     
     override func didMove(to view: SKView) {
-        print("DidMoveTo GameScene")
         setupUI()
         setupGestures()
         setupSubscribers()
-        
         loadComponentsIntialState()
     }
     
     override func update(_ currentTime: TimeInterval) {
-        map!.updateMarches()
+        map.updateMarches()
     }
     
     // MARK: SETUP METHODS
     
     func setupUI() {
-        // setup map
-        map = MapNode(map: Map())
-        self.addChild(map!)
-        
-        // setup camera
+        // setup map & camera
+        self.addChild(map)
         let camera = SKCameraNode()
         self.camera = camera
-        map!.addChild(camera)
-        
+        map.addChild(camera)
         // setup overlay
-        overlay = GameSceneOverlay()
-        view!.addSubview(overlay!)
-        overlay!.setup()
-        
+        view!.addSubview(overlay)
+        overlay.setup()
         // setup march selector view
-        marchSelectorView = MarchSelectorView()
-        view!.addSubview(marchSelectorView!)
-        marchSelectorView!.setup()
+        view!.addSubview(marchSelectorView)
+        marchSelectorView.setup()
     }
     
     func setupGestures() {
         gestures = GameSceneGestures()
-        
         // setup pan gesture
         let panSelector = #selector(self.handlePan(panGesture:))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
         view!.addGestureRecognizer(panGestureRecognizer)
-        
         // setup pinch gesture
         let pinchGesture = #selector(self.handlePinch(pinchGesture:))
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: pinchGesture)
         view!.addGestureRecognizer(pinchGestureRecognizer)
-        
         // setup tap gesture
         let tapSelector = #selector(self.handleTap(tapGesture:))
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: tapSelector)
@@ -138,10 +130,10 @@ class GameScene: SKScene, Scene {
         let mapData = notification.userInfo!["data"] as! [Map]
         
         // draw map
-        map!.drawMapFromMapModel(map: mapData[0])
+        map.drawMapFromMapModel(map: mapData[0])
         
         // move camera to focus on map
-        camera!.position = map!.centerOfTile(atColumn: 0, row: 0)
+        camera!.position = map.centerOfTile(atColumn: 0, row: 0)
         let zoomAction = SKAction.scale(by: 1000, duration: 0)
         camera!.run(zoomAction)
     }
@@ -154,7 +146,7 @@ class GameScene: SKScene, Scene {
         
         // add all the marches to the map
         for march in newMarches {
-            map!.addMarch(march: march)
+            map.addMarch(march: march)
         }
     }
     
@@ -175,13 +167,13 @@ class GameScene: SKScene, Scene {
     // MARK: GESTURING METHODS
 
     @objc func handlePan(panGesture: UIPanGestureRecognizer) {
-        gestures!.handlePan(panGesture: panGesture, scene: self, camera: camera!)
-        map!.hideButtons()
+        gestures.handlePan(panGesture: panGesture, scene: self, camera: camera!)
+        map.hideButtons()
     }
 
     @objc func handlePinch(pinchGesture: UIPinchGestureRecognizer) {
-        gestures!.handlePinch(pinchGesture: pinchGesture, camera: camera!)
-        map!.hideButtons()
+        gestures.handlePinch(pinchGesture: pinchGesture, camera: camera!)
+        map.hideButtons()
     }
 
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {
@@ -200,8 +192,8 @@ class GameScene: SKScene, Scene {
         
         case GameSceneNodeNames.attackCityButton.rawValue:
             print("attack city button pressed")
-            map!.hideButtons()
-            marchSelectorView!.show()
+            map.hideButtons()
+            marchSelectorView.show()
         
         case GameSceneNodeNames.viewCityButton.rawValue:
             print("view city button pressed")
@@ -211,9 +203,9 @@ class GameScene: SKScene, Scene {
             
         case GameSceneNodeNames.map.rawValue:
             print("map pressed")
-            colSelected = map!.tileColumnIndex(fromPosition: location)
-            rowSelected = map!.tileRowIndex(fromPosition: location)
-            map!.repositionButtons(location: location)
+            colSelected = map.tileColumnIndex(fromPosition: location)
+            rowSelected = map.tileRowIndex(fromPosition: location)
+            map.repositionButtons(location: location)
         
         default:
             print("Node with name \(String(describing: node.name)) pressed but doesn't have any action")

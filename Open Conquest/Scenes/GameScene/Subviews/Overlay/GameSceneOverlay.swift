@@ -58,11 +58,8 @@ class GameSceneOverlay: UIView {
     }
     
     func setupAppearance() {
-        
         goldTicker.setupUI(resource: ResourceEnum.gold)
-        
         powerTicker.setupUI(resource: ResourceEnum.power)
-        
         navbar.setupUI()
     }
     

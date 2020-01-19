@@ -14,12 +14,15 @@ class MarchSelectorView: UIView {
     var height: CGFloat?
     var width: CGFloat?
     
+    var tableView = MarchSelectorTableView()
+    
     func setup() {
         // setup constraints
         setupConstraints()
         
         // setup appearance
-        self.backgroundColor = .white
+        self.backgroundColor = .gray
+        setupAppearance()
         
         // setup gestures
         setupGestures()
@@ -44,6 +47,15 @@ class MarchSelectorView: UIView {
         self.autoPinEdge(.right, to: .right, of: superview!, withOffset: -widthOffset)
         self.autoPinEdge(.top, to: .top, of: superview!, withOffset: heightOffset)
         self.autoPinEdge(.bottom, to: .bottom, of: superview!, withOffset: -heightOffset)
+    }
+    
+    func setupAppearance() {
+        // Table setup
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.frame=CGRect(x:20,y:50,width:280,height:200)
+        addSubview(tableView)
+        tableView.setupConstraints()
+        tableView.reloadData()
     }
     
     func setupGestures() {

@@ -12,7 +12,6 @@ import SpriteKit
  Map node for rendring tiles.
  */
 class MapNode: SKTileMapNode {
-    
     var marches: [MarchNode]
     var messageCityButton: MessageCityButton
     var viewCityButton: ViewCityButton
