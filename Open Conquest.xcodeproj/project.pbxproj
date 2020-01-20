@@ -46,6 +46,7 @@
 		C2491FE323D241B2000663C6 /* MarchSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2491FE223D241B2000663C6 /* MarchSelectorView.swift */; };
 		C269764123D4D6A8007035ED /* UnitIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269764023D4D6A8007035ED /* UnitIconView.swift */; };
 		C269764323D4D884007035ED /* UnitNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269764223D4D884007035ED /* UnitNameLabel.swift */; };
+		C26C1A2823D621A70083E392 /* MarchSelectorContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1A2723D621A70083E392 /* MarchSelectorContent.swift */; };
 		C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED6223931BCB00894B7A /* GetArmiesResponse.swift */; };
 		C277ED682393661800894B7A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED672393661800894B7A /* City.swift */; };
 		C277ED6A2393663500894B7A /* CityComponentPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED692393663500894B7A /* CityComponentPublisher.swift */; };
@@ -198,6 +199,7 @@
 		C2491FE223D241B2000663C6 /* MarchSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorView.swift; sourceTree = "<group>"; };
 		C269764023D4D6A8007035ED /* UnitIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitIconView.swift; sourceTree = "<group>"; };
 		C269764223D4D884007035ED /* UnitNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitNameLabel.swift; sourceTree = "<group>"; };
+		C26C1A2723D621A70083E392 /* MarchSelectorContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorContent.swift; sourceTree = "<group>"; };
 		C277ED6223931BCB00894B7A /* GetArmiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArmiesResponse.swift; sourceTree = "<group>"; };
 		C277ED672393661800894B7A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		C277ED692393663500894B7A /* CityComponentPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityComponentPublisher.swift; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 			isa = PBXGroup;
 			children = (
 				C2491FE223D241B2000663C6 /* MarchSelectorView.swift */,
+				C26C1A2723D621A70083E392 /* MarchSelectorContent.swift */,
 				C2BF586323D571FE00772635 /* MarchSelectorHeader.swift */,
 				C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */,
 				C2BF586523D5720700772635 /* MarchSelectorFooter.swift */,
@@ -1171,6 +1174,7 @@
 				923B38B922A0812900748F6F /* LoginSceneBackground.swift in Sources */,
 				923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */,
 				C2D7B8E923907C35006571E2 /* ArmyComponentPublisher.swift in Sources */,
+				C26C1A2823D621A70083E392 /* MarchSelectorContent.swift in Sources */,
 				C2F5192E23AAE37B0042094E /* GetMapResponse.swift in Sources */,
 				C2DDCA1223CA25A500456276 /* CDWorld+CoreDataClass.swift in Sources */,
 				923B38B2229DD71A00748F6F /* LoginSceneView.swift in Sources */,

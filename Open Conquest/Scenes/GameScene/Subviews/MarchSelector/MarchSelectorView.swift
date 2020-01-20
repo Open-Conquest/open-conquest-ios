@@ -11,23 +11,17 @@ import UIKit
 import PureLayout
 
 class MarchSelectorView: UIView {
-    var header: MarchSelectorHeader
-    var tableView: MarchSelectorTable
-    var footer: MarchSelectorFooter
+    var background: UIView
+    var content: MarchSelectorContent
     
     override init(frame: CGRect) {
-        header = MarchSelectorHeader(frame: .zero)
-        tableView = MarchSelectorTable()
-        footer = MarchSelectorFooter(frame: .zero)
-        
+        background = UIView(frame: .zero)
+        content = MarchSelectorContent(frame: .zero)
         super.init(frame: frame)
-        
-        addSubview(header)
-        addSubview(footer)
-        addSubview(tableView)
-        tableView.reloadData()
-        
+        addSubview(background)
+        addSubview(content)
         setupGestures()
+        hide()
     }
     
     required init?(coder: NSCoder) {
@@ -35,34 +29,38 @@ class MarchSelectorView: UIView {
     }
     
     override func layoutSubviews() {
-        super.updateConstraints()
+        super.layoutSubviews()
         
         let height = self.frame.height
         let width = self.frame.width
+        let heightOffset = height / 6
+        let widthOffset = width / 18
         
-        header.autoSetDimension(.height, toSize: height/5)
-        header.autoSetDimension(.width, toSize: width)
-        header.autoPinEdge(.top, to: .top, of: self)
-        tableView.autoPinEdge(.left, to: .left, of: self)
+        background.autoPinEdge(.left, to: .left, of: self)
+        background.autoPinEdge(.right, to: .right, of: self)
+        background.autoPinEdge(.top, to: .top, of: self)
+        background.autoPinEdge(.bottom, to: .bottom, of: self)
         
-        tableView.autoSetDimension(.height, toSize: 3*height/5)
-        tableView.autoSetDimension(.width, toSize: width)
-        tableView.autoPinEdge(.top, to: .bottom, of: header)
-        tableView.autoPinEdge(.left, to: .left, of: self)
-        
-        footer.autoSetDimension(.height, toSize: height/5)
-        footer.autoSetDimension(.width, toSize: width)
-        footer.autoPinEdge(.top, to: .bottom, of: tableView)
-        footer.autoPinEdge(.left, to: .left, of: self)
+        content.autoPinEdge(.left, to: .left, of: self, withOffset: widthOffset)
+        content.autoPinEdge(.right, to: .right, of: self, withOffset: -widthOffset)
+        content.autoPinEdge(.top, to: .top, of: self, withOffset: heightOffset)
+        content.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: -heightOffset)
     }
     
     func setupGestures() {
+        // add pan gesture to override any in lower layers
+        let panSelector = #selector(self.handlePan(panGesture:))
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
+        self.addGestureRecognizer(panGestureRecognizer)
+        
         let tapSelector = #selector(self.handleTap(tapGesture:))
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: tapSelector)
         tapGestureRecognizer.numberOfTapsRequired = 1
-        addGestureRecognizer(tapGestureRecognizer)
-        
-        isUserInteractionEnabled = true
+        self.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func handlePan(panGesture: UIPanGestureRecognizer) {
+        // do nothing
     }
     
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {
@@ -70,7 +68,13 @@ class MarchSelectorView: UIView {
             return
         }
         
-        hide()
+        let tapLocation = tapGesture.location(in: self)
+        
+        // if invisible background was touched -> hide self
+        let view = hitTest(tapLocation, with: .none)
+        if (view == background) {
+            hide()
+        }
     }
     
     func hide() {
