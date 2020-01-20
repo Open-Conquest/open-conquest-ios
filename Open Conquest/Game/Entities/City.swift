@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class City: GameComponentModel {
+class City: GameEntity {
     
     var tile_id:    Int
     var name:       String

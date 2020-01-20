@@ -31,7 +31,7 @@ class CityServices {
     func tryGetCities(_ notification: Notification) {
         print("CityService did recieve GameTryGetCities event")
         
-        let request = GetComponentRequest(component: .city)
+        let request = GetEntityRequest(entity: .city)
         publisher.makeRequest(request: request)
     }
 

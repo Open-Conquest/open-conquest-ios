@@ -12,30 +12,30 @@ import CoreData
 class Game {
     var subscriber:     Subscriber
     var gamePublisher:  GamePublisher
-    var context: NSManagedObjectContext
+    var context:        NSManagedObjectContext
     
-    var armyController: ArmyController
-    var cityComponent:  CityComponent
-    var mapComponent:   MapComponent
-    var marchComponent: MarchComponent
-    var userComponent:  UserComponent
+    var armyService:    ArmyService
+    var cityService:    CityService
+    var mapService:     MapService
+    var marchService:   MarchService
+    var userService:    UserService
 
     init(dataContext: NSManagedObjectContext) {
         context         = dataContext
         subscriber      = Subscriber()
         gamePublisher   = GamePublisher()
         
-        armyController  = ArmyController(context: context)
-        cityComponent   = CityComponent()
-        mapComponent    = MapComponent()
-        marchComponent  = MarchComponent()
-        userComponent   = UserComponent()
+        armyService     = ArmyService(context: context)
+        cityService     = CityService()
+        mapService      = MapService()
+        marchService    = MarchService()
+        userService     = UserService()
         
         print("Game intialized")
     }
 }
 
-enum GameComponents: String {
+enum GameEntityType: String {
     case army   = "army"
     case city   = "city"
     case map    = "map"

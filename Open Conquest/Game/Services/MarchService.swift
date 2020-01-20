@@ -1,5 +1,5 @@
 //
-//  MarchComponent.swift
+//  MarchService.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 12/18/19.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-class MarchComponent: GameComponent {
+class MarchService: GameService {
     var marches: [March]?
-    let publisher: MarchComponentPublisher
+    let publisher: MarchServicePublisher
     let subscriber: Subscriber
     
     init() {
-        publisher = MarchComponentPublisher()
+        publisher = MarchServicePublisher()
         subscriber = Subscriber()
         setupSubscribers()
     }
@@ -32,7 +32,7 @@ class MarchComponent: GameComponent {
     // MARK: METHODS SUBSCRIBED TO SCENE NOTIFICATIONS
     
     func tryGetMarches(_ notification: Notification) {
-        print("MarchComponent recieved scene-try-get-marches event...")
+        print("MarchService recieved scene-try-get-marches event...")
         
         if (marches != nil) {
             publisher.didGetMarches(marches: marches!)
@@ -43,7 +43,7 @@ class MarchComponent: GameComponent {
     }
     
     func tryCreateMarch(_ notification: Notification) {
-        print("MarchComponent recieved scene-try-create-march event...")
+        print("MarchService recieved scene-try-create-march event...")
         
         
     }
@@ -51,7 +51,7 @@ class MarchComponent: GameComponent {
     // MARK: METHODS SUBSCRIBED TO API NOTIFICATIONS
     
     func didGetMarches(_ notification: Notification) {
-        print("MarchComponent recieved api-did-get-marches event...")
+        print("MarchService recieved api-did-get-marches event...")
         
         marches = notification.userInfo!["data"] as? [March]
         publisher.didGetMarches(marches: marches!)

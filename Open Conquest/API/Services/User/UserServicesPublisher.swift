@@ -26,7 +26,7 @@ class UserServicesPublisher: Publisher {
     }
     
     func getUsers() {
-        let request = GetComponentRequest(component: GameComponents.user)
+        let request = GetEntityRequest(entity: .user)
         let notification = apiNotificationFactory.buildAPIGetComponentNotification(request: request)
         post(notification: notification)
     }

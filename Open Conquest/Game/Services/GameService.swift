@@ -1,5 +1,5 @@
 //
-//  GameComponent.swift
+//  GameService.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 10/31/19.
@@ -8,12 +8,7 @@
 
 import Foundation
 
-protocol GameComponent {
-    func update(notification: Notification)
-    func setupSubscribers()
-}
-
-protocol GameComponentController {
+protocol GameService {
     func update(notification: Notification)
     func setupSubscribers()
 }

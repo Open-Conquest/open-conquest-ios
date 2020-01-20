@@ -1,5 +1,5 @@
 //
-//  ArmyComponent.swift
+//  ArmyService.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 11/15/19.
@@ -9,14 +9,14 @@
 import Foundation
 import CoreData
 
-class ArmyController: GameComponentController {
+class ArmyService: GameService {
     var armies:     [Army]?
     
     // core data
     let context: NSManagedObjectContext
 //    let army: CDArmy
     
-    var publisher:  ArmyComponentPublisher
+    var publisher:  ArmyServicePublisher
     var subscriber: Subscriber
     
     init(context: NSManagedObjectContext) {
@@ -24,21 +24,21 @@ class ArmyController: GameComponentController {
         // initialize core data context
         self.context = context
         
-        self.publisher  = ArmyComponentPublisher()
+        self.publisher  = ArmyServicePublisher()
         self.subscriber = Subscriber()
         setupSubscribers()
     }
     
     func setupSubscribers() {
         subscriber.subscribe(observingFunction: tryGetArmies(_:), name: .SceneTryGetArmies)
-    
+        
         subscriber.subscribe(observingFunction: didGetArmies(_:), name: .APIDidGetArmies)
     }
     
     // MARK: SCENE SUBSCRIBING METHODS
     
     func tryGetArmies(_ notification: Notification) {
-        print("ArmyComponent received SceneTryGetArmies event")
+        print("ArmyService received SceneTryGetArmies event")
         
         // if armies have already been loaded
         if (armies != nil) {
@@ -65,7 +65,7 @@ class ArmyController: GameComponentController {
     }
     
     func didGetArmies(_ notification: Notification) {
-        print("ArmyComponent received APIDidGetArmies event.")
+        print("ArmyService received APIDidGetArmies event.")
         
         // get armies from notification
         armies = notification.userInfo!["data"] as? [Army]

@@ -31,7 +31,7 @@ class MarchServices {
     func tryGetMarch(_ notification: Notification) {
         print("MarchService did recieve GameTryGetMarches event")
         
-        let request = GetComponentRequest(component: .march)
+        let request = GetEntityRequest(entity: .march)
         publisher.makeRequest(request: request)
     }
 

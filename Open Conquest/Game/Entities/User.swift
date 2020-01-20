@@ -9,8 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class User: GameComponentModel {
-    
+class User: GameEntity {
     required init(json: JSON) {
         fatalError()
     }

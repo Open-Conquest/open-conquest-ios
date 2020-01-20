@@ -1,5 +1,5 @@
 //
-//  LoadComponent.swift
+//  GetEntityRequest.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 11/18/19.
@@ -9,11 +9,11 @@
 import Foundation
 import SwiftyJSON
 
-class GetComponentRequest: Request {
+class GetEntityRequest: Request {
     
-    init(component: GameComponents) {
+    init(entity: GameEntityType) {
         let data = JSON()
-        super.init(service: component.rawValue, operation: "get", data: data)
+        super.init(service: entity.rawValue, operation: "get", data: data)
     }
 }
 

@@ -8,14 +8,14 @@
 
 import Foundation
 
-class CityComponent: GameComponent {
+class CityService: GameService {
     var cities: [City]?
     let subscriber: Subscriber
-    let publisher: CityComponentPublisher
+    let publisher: CityServicePublisher
     
     init() {
         subscriber = Subscriber()
-        publisher = CityComponentPublisher()
+        publisher = CityServicePublisher()
         setupSubscribers()
     }
     
@@ -29,7 +29,7 @@ class CityComponent: GameComponent {
     // MARK: SCENE SUBSCRIBING METHODS
     
     func tryGetCities(_ notification: Notification) {
-        print("CityComponent recieved scene-try-get-cities event...")
+        print("CityService recieved scene-try-get-cities event...")
         
         // if cities are already stored, send those cities to scene
         if (cities != nil) {
@@ -53,7 +53,7 @@ class CityComponent: GameComponent {
     }
     
     func didGetCities(_ notification: Notification) {
-        print("CityComponent recieve APIDidGetCities event")
+        print("CityService recieve APIDidGetCities event")
         /*
             not concered with specific cities being returned,
             this assumes that ALL cities in the world are being received

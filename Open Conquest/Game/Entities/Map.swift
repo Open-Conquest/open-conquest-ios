@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class Map: GameComponentModel {
+class Map: GameEntity {
     
     func toJSON() -> JSON {
         fatalError()

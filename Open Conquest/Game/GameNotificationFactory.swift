@@ -26,34 +26,34 @@ class GameNotificationFactory: NotificationFactory {
     }
     
     // TODO: add query
-    func buildTryGetComponentNotification(componentType: GameComponents) -> Notification {
+    func buildTryGetEntityNotification(entityType: GameEntityType) -> Notification {
         let query = JSON()
-        switch componentType {
-        case GameComponents.army:
+        switch entityType {
+        case .army:
             return buildNotification(name: .GameTryGetArmies, data: query)
-        case GameComponents.city:
+        case .city:
             return buildNotification(name: .GameTryGetCities, data: query)
-        case GameComponents.map:
+        case .map:
             return buildNotification(name: .GameTryGetMap, data: query)
-        case GameComponents.march:
+        case .march:
             return buildNotification(name: .GameTryGetMarches, data: query)
-        case GameComponents.user:
+        case .user:
             return buildNotification(name: .GameTryGetUsers, data: query)
         }
     }
     
-    func buildDidGetComponentNotification(componentType: GameComponents, componentData: [GameComponentModel]) -> Notification {
-        switch componentType {
-        case GameComponents.army:
-            return buildNotification(name: .GameDidGetArmies, data: componentData)
-        case GameComponents.city:
-            return buildNotification(name: .GameDidGetCities, data: componentData)
-        case GameComponents.map:
-            return buildNotification(name: .GameDidGetMap, data: componentData)
-        case GameComponents.march:
-            return buildNotification(name: .GameDidGetMarches, data: componentData)
-        case GameComponents.user:
-            return buildNotification(name: .GameDidGetUsers, data: componentData)
+    func buildDidGetEntityNotification(entityType: GameEntityType, entities: [GameEntity]) -> Notification {
+        switch entityType {
+        case .army:
+            return buildNotification(name: .GameDidGetArmies, data: entities)
+        case .city:
+            return buildNotification(name: .GameDidGetCities, data: entities)
+        case .map:
+            return buildNotification(name: .GameDidGetMap, data: entities)
+        case .march:
+            return buildNotification(name: .GameDidGetMarches, data: entities)
+        case .user:
+            return buildNotification(name: .GameDidGetUsers, data: entities)
         }
     }
     

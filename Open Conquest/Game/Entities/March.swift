@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class March: GameComponentModel {
+class March: GameEntity {
     
     let start_tile_row: Int
     let start_tile_col: Int

@@ -1,5 +1,5 @@
 //
-//  UserComponentPublisher.swift
+//  UserServicePublisher.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 10/7/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserComponentPublisher: Publisher {
+class UserServicePublisher: Publisher {
     
     let gameNotificationFactory: GameNotificationFactory
     
@@ -28,12 +28,12 @@ class UserComponentPublisher: Publisher {
     }
     
     func didGetUsers(users: [User]) {
-        let notification = gameNotificationFactory.buildDidGetComponentNotification(componentType: .user, componentData: users)
+        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .user, entities: users)
         post(notification: notification)
     }
     
     func tryGetUsers() {
-        let notification = gameNotificationFactory.buildTryGetComponentNotification(componentType: .user)
+        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .user)
         post(notification: notification)
     }
 }

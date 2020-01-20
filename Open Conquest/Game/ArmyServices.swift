@@ -30,7 +30,7 @@ class ArmyServices {
     func tryGetArmies(_ notification: Notification) {
         print("ArmyServices received GameTryGetArmies event.")
         
-        let request = GetComponentRequest(component: .army)
+        let request = GetEntityRequest(entity: .army)
         publisher.makeRequest(request: request)
     }
     

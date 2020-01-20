@@ -1,5 +1,5 @@
 //
-//  MapComponentPublisher.swift
+//  MapServicePublisher.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 12/18/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MapComponentPublisher: Publisher {
+class MapServicePublisher: Publisher {
     let gameNotificationFactory: GameNotificationFactory
     
     override init() {
@@ -22,14 +22,14 @@ class MapComponentPublisher: Publisher {
         var mapData = [Map]()
         mapData.append(map)
         
-        let notification = gameNotificationFactory.buildDidGetComponentNotification(componentType: .map, componentData: mapData)
+        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .map, entities: mapData)
         post(notification: notification)
     }
     
     // MARK: API PUBLISHING METHODS
     
     func tryGetMap() {
-        let notification = gameNotificationFactory.buildTryGetComponentNotification(componentType: .map)
+        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .map)
         post(notification: notification)
     }
 }

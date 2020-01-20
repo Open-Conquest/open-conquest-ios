@@ -19,17 +19,17 @@ class SceneNotificationFactory: NotificationFactory {
         return buildNotification(name: .SceneTryLogin, data: data)
     }
     
-    func buildGetComponentNotification(component: GameComponents) -> Notification {
-        switch component {
-        case GameComponents.army:
+    func buildGetEntityNotification(entity: GameEntityType) -> Notification {
+        switch entity {
+        case .army:
             return buildNotification(name: .SceneTryGetArmies, data: nil)
-        case GameComponents.city:
+        case .city:
             return buildNotification(name: .SceneTryGetCities, data: nil)
-        case GameComponents.map:
+        case .map:
             return buildNotification(name: .SceneTryGetMap, data: nil)
-        case GameComponents.march:
+        case .march:
             return buildNotification(name: .SceneTryGetMarches, data: nil)
-        case GameComponents.user:
+        case .user:
             return buildNotification(name: .SceneTryGetUsers, data: nil)
         }
     }

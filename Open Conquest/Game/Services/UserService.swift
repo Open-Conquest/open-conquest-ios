@@ -1,5 +1,5 @@
 //
-//  UserComponent.swift
+//  UserService.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 10/1/19.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-class UserComponent: GameComponent {
+class UserService: GameService {
     var user:       User?
     var users:      [User]?
-    var publisher:  UserComponentPublisher
+    var publisher:  UserServicePublisher
     var subscriber: Subscriber
     
     init() {
-        self.publisher  = UserComponentPublisher()
+        self.publisher  = UserServicePublisher()
         self.subscriber = Subscriber()
         setupSubscribers()
     }
@@ -36,7 +36,7 @@ class UserComponent: GameComponent {
     
     // scene
     func tryLogin(_ notification: Notification) {
-        print("UserComponent recieved SceneTryLogin event.")
+        print("UserService recieved SceneTryLogin event.")
 
         if (user != nil) {
             // user is already logged in
@@ -44,7 +44,7 @@ class UserComponent: GameComponent {
         }
         else {
             // user is not logged in
-            print("UserComponent found that user is not logged in.")
+            print("UserService found that user is not logged in.")
             let tryLoginData = notification.userInfo!["data"] as! SceneTryLoginData
             publisher.tryLogin(data: tryLoginData)
         }
@@ -53,19 +53,19 @@ class UserComponent: GameComponent {
     
     // api
     func loginSucceed(_ notification: Notification) {
-        print("UserComponent recieved APILoginSucceed event.")
+        print("UserService recieved APILoginSucceed event.")
         
         // initialize user from notification
         let loginSucceedData = notification.userInfo!["data"] as! APILoginSucceedData
         user = User(apiLoginSucceedData: loginSucceedData)
         
-        print("UserComponent publishing GameLoginSucceeded event...")
+        print("UserService publishing GameLoginSucceeded event...")
         publisher.loginSucceed()
     }
     
     // scene
     func tryGetUsers(_ notification: Notification) {
-        print("UserComponent received SceneGetUsers event")
+        print("UserService received SceneGetUsers event")
         
         if (users != nil) {
             publisher.didGetUsers(users: self.users!)
@@ -77,7 +77,7 @@ class UserComponent: GameComponent {
     
     // api
     func didGetUsers(_ notification: Notification) {
-        print("UserComponent received APIDidGetUsers event.")
+        print("UserService received APIDidGetUsers event.")
         
         let users = notification.userInfo!["data"] as! [User]
         self.users = users

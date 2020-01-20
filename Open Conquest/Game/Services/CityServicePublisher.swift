@@ -1,5 +1,5 @@
 //
-//  CityComponentPublisher.swift
+//  CityServicePublisher.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 11/30/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CityComponentPublisher: Publisher {
+class CityServicePublisher: Publisher {
     var gameNotificationFactory: GameNotificationFactory
     
     override init() {
@@ -18,14 +18,14 @@ class CityComponentPublisher: Publisher {
     // MARK: METHODS PUBLISHING TO SCENE
     
     func didGetCities(cities: [City]) {
-        let notification = gameNotificationFactory.buildDidGetComponentNotification(componentType: .city, componentData: cities)
+        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .city, entities: cities)
         post(notification: notification)
     }
     
     // MARK: METHODS PUBLISHING TO API
     
     func tryGetCities() {
-        let notification = gameNotificationFactory.buildTryGetComponentNotification(componentType: .city)
+        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .city)
         post(notification: notification)
     }
     

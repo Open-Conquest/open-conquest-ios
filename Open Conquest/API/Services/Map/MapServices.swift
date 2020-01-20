@@ -31,7 +31,7 @@ class MapServices {
     func tryGetmap(_ notification: Notification) {
         print("MapService did recieve GameTryGetmap event")
         
-        let request = GetComponentRequest(component: .map)
+        let request = GetEntityRequest(entity: .map)
         publisher.makeRequest(request: request)
     }
 

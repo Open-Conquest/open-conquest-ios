@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import SwiftyJSON
 
-class Army: GameComponentModel {
+class Army: GameEntity {
     var units = [Unit: Int]()
     
     init(units: [Unit: Int])  {

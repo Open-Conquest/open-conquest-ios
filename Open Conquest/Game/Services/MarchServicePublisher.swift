@@ -1,5 +1,5 @@
 //
-//  MarchComponentPublisher.swift
+//  MarchServicePublisher.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 12/18/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MarchComponentPublisher: Publisher {
+class MarchServicePublisher: Publisher {
     let gameNotificationFactory: GameNotificationFactory
     
     override init() {
@@ -20,7 +20,7 @@ class MarchComponentPublisher: Publisher {
     
     func didGetMarches(marches: [March]) {
         
-        let notification = gameNotificationFactory.buildDidGetComponentNotification(componentType: .march, componentData: marches)
+        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .march, entities: marches)
         post(notification: notification)
     }
     
@@ -28,7 +28,7 @@ class MarchComponentPublisher: Publisher {
     
     func tryGetMarches() {
         
-        let notification = gameNotificationFactory.buildTryGetComponentNotification(componentType: .march)
+        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .march)
         post(notification: notification)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ArmyComponentPublisher.swift
+//  ArmyServicePublisher.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 11/28/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ArmyComponentPublisher: Publisher {
+class ArmyServicePublisher: Publisher {
     
     let gameNotificationFactory: GameNotificationFactory
     
@@ -20,14 +20,14 @@ class ArmyComponentPublisher: Publisher {
     // MARK: METHODS PUBLISHING TO SCENE
     
     func didGetArmies(armies: [Army]) {
-        let notification = gameNotificationFactory.buildDidGetComponentNotification(componentType: .army, componentData: armies)
+        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .army, entities: armies)
         post(notification: notification)
     }
     
     // MARK: METHODS PUBLISHING TO API
     
     func tryGetArmies() {
-        let notification = gameNotificationFactory.buildTryGetComponentNotification(componentType: .army)
+        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .army)
         post(notification: notification)
     }
 }

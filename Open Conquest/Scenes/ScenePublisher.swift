@@ -17,27 +17,27 @@ class ScenePublisher: Publisher {
     }
     
     func getArmies() {
-        let notification = sceneNotificationFactory.buildGetComponentNotification(component: GameComponents.army)
+        let notification = sceneNotificationFactory.buildGetEntityNotification(entity: .army)
         post(notification: notification)
     }
     
     func getCities() {
-        let notification = sceneNotificationFactory.buildGetComponentNotification(component: GameComponents.city)
+        let notification = sceneNotificationFactory.buildGetEntityNotification(entity: .city)
         post(notification: notification)
     }
     
     func getMap() {
-        let notification = sceneNotificationFactory.buildGetComponentNotification(component: GameComponents.map)
+        let notification = sceneNotificationFactory.buildGetEntityNotification(entity: .map)
         post(notification: notification)
     }
     
     func getMarches() {
-        let notification = sceneNotificationFactory.buildGetComponentNotification(component: GameComponents.march)
+        let notification = sceneNotificationFactory.buildGetEntityNotification(entity: .march)
         post(notification: notification)
     }
     
     func getUsers() {
-        let notification = sceneNotificationFactory.buildGetComponentNotification(component: GameComponents.user)
+        let notification = sceneNotificationFactory.buildGetEntityNotification(entity: .user)
         post(notification: notification)
     }
     

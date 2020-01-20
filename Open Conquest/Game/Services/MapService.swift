@@ -8,13 +8,13 @@
 
 import Foundation
 
-class MapComponent: GameComponent {
+class MapService: GameService {
     var map: Map?
     let subscriber: Subscriber
-    let publisher: MapComponentPublisher
+    let publisher: MapServicePublisher
     
     init() {
-        publisher = MapComponentPublisher()
+        publisher = MapServicePublisher()
         subscriber = Subscriber()
         setupSubscribers()
     }
@@ -36,7 +36,7 @@ class MapComponent: GameComponent {
     // MARK: SCENE SUBSCRIBING METHODS
     
     func tryGetMap(_ notification: Notification) {
-        print("MapComponent recieved scene-try-get-map event...")
+        print("MapService recieved scene-try-get-map event...")
         
         // if map is already initialized
         if (map != nil) {
@@ -52,7 +52,7 @@ class MapComponent: GameComponent {
     // MARK: API SUBSCRIBING METHODS
     
     func didGetMap(_ notification: Notification) {
-        print("MapComponent recieved api-did-get-map event...")
+        print("MapService recieved api-did-get-map event...")
         let maps = notification.userInfo!["data"] as! [Map]
         map = maps[0]
         publisher.didGetMap(map: map!)
