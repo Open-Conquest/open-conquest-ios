@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class MarchSelectorTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
+class MarchSelectorTable: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)

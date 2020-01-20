@@ -1,5 +1,5 @@
 //
-//  AttackCityView.swift
+//  MarchSelectorView.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 1/17/20.
@@ -11,31 +11,32 @@ import UIKit
 import PureLayout
 
 class MarchSelectorView: UIView {
-    var height: CGFloat?
-    var width: CGFloat?
+    var header: UIView
+    var tableView: MarchSelectorTable
+    var footer: UIView
     
-    var header = UIView()
-    var tableView = MarchSelectorTableView()
-    var footer = UIView()
-    
-    func setup() {
-        setupSubviews()
-        setupConstraints()
-        setupGestures()
-        // hide initially
-        hide()
-    }
-    
-    func setupSubviews() {
+    override init(frame: CGRect) {
+        header = UIView()
+        tableView = MarchSelectorTable()
+        footer = UIView()
+        
+        super.init(frame: frame)
+        
         addSubview(header)
-        
         addSubview(footer)
-        
         addSubview(tableView)
         tableView.reloadData()
+        
+        setupGestures()
     }
     
-    func setupConstraints() {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.updateConstraints()
+        
         let height = self.frame.height
         let width = self.frame.width
         

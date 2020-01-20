@@ -27,7 +27,7 @@ class GameScene: SKScene, Scene {
         subscriber = Subscriber()
         map = MapNode(map: Map())
         overlay = GameSceneOverlay()
-        marchSelectorView = MarchSelectorView()
+        marchSelectorView = MarchSelectorView(frame: .zero)
         gestures = GameSceneGestures()
         super.init()
     }
@@ -37,7 +37,7 @@ class GameScene: SKScene, Scene {
         subscriber = Subscriber()
         map = MapNode(map: Map())
         overlay = GameSceneOverlay()
-        marchSelectorView = MarchSelectorView()
+        marchSelectorView = MarchSelectorView(frame: .zero)
         gestures = GameSceneGestures()
         super.init(size: size)
     }
@@ -72,12 +72,10 @@ class GameScene: SKScene, Scene {
         
         // setup march selector view
         view!.addSubview(marchSelectorView)
-        let superHeight = view!.bounds.height
-        let superWidth = view!.bounds.width
+        let superHeight = view!.frame.height
+        let superWidth = view!.frame.width
         let heightOffset = superHeight / 6
         let widthOffset = superWidth / 18
-        marchSelectorView.height = superHeight - heightOffset * 2
-        marchSelectorView.width = superWidth - widthOffset * 2
         // setup size constraints
         marchSelectorView.autoSetDimensions(to: CGSize(width: superWidth, height: superHeight))
         // setup constraints to position view on screen
@@ -85,7 +83,6 @@ class GameScene: SKScene, Scene {
         marchSelectorView.autoPinEdge(.right, to: .right, of: view!, withOffset: -widthOffset)
         marchSelectorView.autoPinEdge(.top, to: .top, of: view!, withOffset: heightOffset)
         marchSelectorView.autoPinEdge(.bottom, to: .bottom, of: view!, withOffset: -heightOffset)
-        marchSelectorView.setup()
     }
     
     func setupGestures() {
