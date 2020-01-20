@@ -20,15 +20,37 @@ class Army: GameComponentModel {
     required init(json: JSON) {
     }
     
-    func addUnits(units: [Unit: Int]) {
-        
-    }
-    
-    func addUnit(unit: Unit, number: Int) {
-        
-    }
-    
     func toJSON() -> JSON {
         return JSON()
     }
+    
+    func addUnit(unit: Unit, number: Int) {
+        if (units[unit] == nil) {
+            units[unit] = number
+        } else {
+            units[unit] = units[unit]! + number
+        }
+    }
+    
+    func numUnits() -> Int {
+        return units.count
+    }
+    
+    func numUnits(unit: Unit) -> Int {
+        if (units[unit] == nil) {
+            return 0
+        }
+        return units[unit]!
+    }
+    
+    func getUnits() -> [[Unit: Int]] {
+        var unitsArr = [[Unit: Int]]()
+        for (unit, count) in units {
+            var unitDict = [Unit: Int]()
+            unitDict[unit] = count
+            unitsArr.append(unitDict)
+        }
+        return unitsArr
+    }
+    
 }

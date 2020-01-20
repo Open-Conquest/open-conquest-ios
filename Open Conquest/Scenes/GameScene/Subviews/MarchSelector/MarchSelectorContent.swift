@@ -17,7 +17,14 @@ class MarchSelectorContent: UIView {
     
     override init(frame: CGRect) {
         header = MarchSelectorHeader(frame: .zero)
-        tableView = MarchSelectorTable()
+        
+        var units = [Unit: Int]()
+        let bear = Unit(id: 1, attack: 100, defense: 200, level: 1, name: "Bear")
+        let wizard = Unit(id: 0, attack: 150, defense: 50, level: 1, name: "Wizard")
+        units[wizard] = 10
+        units[bear] = 20
+        let army = Army(units: units)
+        tableView = MarchSelectorTable(frame: .zero, style: .plain, army: army)
         footer = MarchSelectorFooter(frame: .zero)
         super.init(frame: frame)
         addSubview(header)
