@@ -14,48 +14,45 @@ class MarchSelectorView: UIView {
     var height: CGFloat?
     var width: CGFloat?
     
+    var header = UIView()
     var tableView = MarchSelectorTableView()
+    var footer = UIView()
     
     func setup() {
-        // setup constraints
+        setupSubviews()
         setupConstraints()
-        
-        // setup appearance
-        self.backgroundColor = .gray
-        setupAppearance()
-        
-        // setup gestures
         setupGestures()
-        
         // hide initially
         hide()
     }
     
-    func setupConstraints() {
-        let superHeight = superview!.bounds.height
-        let superWidth = superview!.bounds.width
-        let heightOffset = superHeight / 6
-        let widthOffset = superWidth / 18
-        self.height = superHeight - heightOffset * 2
-        self.width = superWidth - widthOffset * 2
+    func setupSubviews() {
+        addSubview(header)
         
-        // setup size constraints
-        self.autoSetDimensions(to: CGSize(width: superWidth, height: superHeight))
+        addSubview(footer)
         
-        // setup constraints to position view on screen
-        self.autoPinEdge(.left, to: .left, of: superview!, withOffset: widthOffset)
-        self.autoPinEdge(.right, to: .right, of: superview!, withOffset: -widthOffset)
-        self.autoPinEdge(.top, to: .top, of: superview!, withOffset: heightOffset)
-        self.autoPinEdge(.bottom, to: .bottom, of: superview!, withOffset: -heightOffset)
+        addSubview(tableView)
+        tableView.reloadData()
     }
     
-    func setupAppearance() {
-        // Table setup
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.frame=CGRect(x:20,y:50,width:280,height:200)
-        addSubview(tableView)
-        tableView.setupConstraints()
-        tableView.reloadData()
+    func setupConstraints() {
+        let height = self.frame.height
+        let width = self.frame.width
+        
+        header.autoSetDimension(.height, toSize: height/5)
+        header.autoSetDimension(.width, toSize: width)
+        header.autoPinEdge(.top, to: .top, of: self)
+        tableView.autoPinEdge(.left, to: .left, of: self)
+        
+        tableView.autoSetDimension(.height, toSize: 3*height/5)
+        tableView.autoSetDimension(.width, toSize: width)
+        tableView.autoPinEdge(.top, to: .bottom, of: header)
+        tableView.autoPinEdge(.left, to: .left, of: self)
+        
+        footer.autoSetDimension(.height, toSize: height/5)
+        footer.autoSetDimension(.width, toSize: width)
+        footer.autoPinEdge(.top, to: .bottom, of: tableView)
+        footer.autoPinEdge(.left, to: .left, of: self)
     }
     
     func setupGestures() {

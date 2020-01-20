@@ -65,11 +65,26 @@ class GameScene: SKScene, Scene {
         let camera = SKCameraNode()
         self.camera = camera
         map.addChild(camera)
+        
         // setup overlay
         view!.addSubview(overlay)
         overlay.setup()
+        
         // setup march selector view
         view!.addSubview(marchSelectorView)
+        let superHeight = view!.bounds.height
+        let superWidth = view!.bounds.width
+        let heightOffset = superHeight / 6
+        let widthOffset = superWidth / 18
+        marchSelectorView.height = superHeight - heightOffset * 2
+        marchSelectorView.width = superWidth - widthOffset * 2
+        // setup size constraints
+        marchSelectorView.autoSetDimensions(to: CGSize(width: superWidth, height: superHeight))
+        // setup constraints to position view on screen
+        marchSelectorView.autoPinEdge(.left, to: .left, of: view!, withOffset: widthOffset)
+        marchSelectorView.autoPinEdge(.right, to: .right, of: view!, withOffset: -widthOffset)
+        marchSelectorView.autoPinEdge(.top, to: .top, of: view!, withOffset: heightOffset)
+        marchSelectorView.autoPinEdge(.bottom, to: .bottom, of: view!, withOffset: -heightOffset)
         marchSelectorView.setup()
     }
     
