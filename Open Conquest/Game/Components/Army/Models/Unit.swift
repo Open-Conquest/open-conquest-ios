@@ -21,6 +21,11 @@ enum UnitNames: String {
     case bear = "Bear"
 }
 
+enum UnitType {
+    case wizard
+    case bear
+}
+
 struct Unit: Hashable {
     let id: Int
     let attack: Int
