@@ -69,6 +69,8 @@
 		C299F0A8234BDA4B0076C747 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299F0A7234BDA4B0076C747 /* LoginResponse.swift */; };
 		C299F0AD234C2EF60076C747 /* UserComponentPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299F0AC234C2EF60076C747 /* UserComponentPublisher.swift */; };
 		C2B9B2FA2387BE7300BCF103 /* LoadingSceneProgressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B9B2F92387BE7300BCF103 /* LoadingSceneProgressLabel.swift */; };
+		C2BF586423D571FE00772635 /* MarchSelectorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF586323D571FE00772635 /* MarchSelectorHeader.swift */; };
+		C2BF586623D5720700772635 /* MarchSelectorFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF586523D5720700772635 /* MarchSelectorFooter.swift */; };
 		C2C383D023C65DEA00F61849 /* MapButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C383CF23C65DEA00F61849 /* MapButtons.swift */; };
 		C2C383D223C66C5500F61849 /* GameSceneNodeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C383D123C66C5500F61849 /* GameSceneNodeNames.swift */; };
 		C2C383D423C7D45600F61849 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C383D323C7D45600F61849 /* Unit.swift */; };
@@ -112,7 +114,7 @@
 		C2DDCA1E23CA25A500456276 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0C23CA25A500456276 /* CDUser+CoreDataClass.swift */; };
 		C2DDCA1F23CA25A500456276 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0D23CA25A500456276 /* CDUser+CoreDataProperties.swift */; };
 		C2E0A903234D9114000F6FCD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E0A902234D9114000F6FCD /* User.swift */; };
-		C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4A40923D3DFC7004B97C9 /* MarchSelectorTableView.swift */; };
+		C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */; };
 		C2F5191D23AACC9F0042094E /* MapComponentPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5191C23AACC9F0042094E /* MapComponentPublisher.swift */; };
 		C2F5191F23AAD9F10042094E /* MarchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5191E23AAD9F10042094E /* MarchComponent.swift */; };
 		C2F5192123AAD9FC0042094E /* MarchComponentPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5192023AAD9FC0042094E /* MarchComponentPublisher.swift */; };
@@ -219,6 +221,8 @@
 		C299F0A7234BDA4B0076C747 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		C299F0AC234C2EF60076C747 /* UserComponentPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComponentPublisher.swift; sourceTree = "<group>"; };
 		C2B9B2F92387BE7300BCF103 /* LoadingSceneProgressLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneProgressLabel.swift; sourceTree = "<group>"; };
+		C2BF586323D571FE00772635 /* MarchSelectorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorHeader.swift; sourceTree = "<group>"; };
+		C2BF586523D5720700772635 /* MarchSelectorFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorFooter.swift; sourceTree = "<group>"; };
 		C2C383CF23C65DEA00F61849 /* MapButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtons.swift; sourceTree = "<group>"; };
 		C2C383D123C66C5500F61849 /* GameSceneNodeNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneNodeNames.swift; sourceTree = "<group>"; };
 		C2C383D323C7D45600F61849 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -262,7 +266,7 @@
 		C2DDCA0C23CA25A500456276 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C2DDCA0D23CA25A500456276 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C2E0A902234D9114000F6FCD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C2F4A40923D3DFC7004B97C9 /* MarchSelectorTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorTableView.swift; sourceTree = "<group>"; };
+		C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorTable.swift; sourceTree = "<group>"; };
 		C2F5191C23AACC9F0042094E /* MapComponentPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapComponentPublisher.swift; sourceTree = "<group>"; };
 		C2F5191E23AAD9F10042094E /* MarchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchComponent.swift; sourceTree = "<group>"; };
 		C2F5192023AAD9FC0042094E /* MarchComponentPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchComponentPublisher.swift; sourceTree = "<group>"; };
@@ -522,7 +526,9 @@
 			isa = PBXGroup;
 			children = (
 				C2491FE223D241B2000663C6 /* MarchSelectorView.swift */,
-				C2F4A40923D3DFC7004B97C9 /* MarchSelectorTableView.swift */,
+				C2BF586323D571FE00772635 /* MarchSelectorHeader.swift */,
+				C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */,
+				C2BF586523D5720700772635 /* MarchSelectorFooter.swift */,
 			);
 			path = MarchSelector;
 			sourceTree = "<group>";
@@ -1129,6 +1135,7 @@
 				C2F574E523A9C0FF00E2DE5D /* GetCitiesResponse.swift in Sources */,
 				C2DDCA1E23CA25A500456276 /* CDUser+CoreDataClass.swift in Sources */,
 				C2F5191F23AAD9F10042094E /* MarchComponent.swift in Sources */,
+				C2BF586623D5720700772635 /* MarchSelectorFooter.swift in Sources */,
 				C2DDCA1323CA25A500456276 /* CDWorld+CoreDataProperties.swift in Sources */,
 				C299F0A8234BDA4B0076C747 /* LoginResponse.swift in Sources */,
 				C2F5192823AADEB70042094E /* MapServicesPublisher.swift in Sources */,
@@ -1215,10 +1222,11 @@
 				C28348AA236CC3EB00381EA3 /* ConnectionMessageDispatch.swift in Sources */,
 				C2F5192123AAD9FC0042094E /* MarchComponentPublisher.swift in Sources */,
 				C2DDCA0E23CA25A500456276 /* CDMarch+CoreDataClass.swift in Sources */,
+				C2BF586423D571FE00772635 /* MarchSelectorHeader.swift in Sources */,
 				C2DDC9D723CA24D700456276 /* Model.xcdatamodeld in Sources */,
 				C2DDCA1123CA25A500456276 /* CDUnit+CoreDataProperties.swift in Sources */,
 				C28348A3236C93B800381EA3 /* ConnectionPublisher.swift in Sources */,
-				C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTableView.swift in Sources */,
+				C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */,
 				C277ED682393661800894B7A /* City.swift in Sources */,
 				C2834890236BC4DD00381EA3 /* LoadingSceneView.swift in Sources */,
 			);
