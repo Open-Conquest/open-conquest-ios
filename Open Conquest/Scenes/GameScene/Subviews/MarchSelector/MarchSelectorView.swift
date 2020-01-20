@@ -11,14 +11,14 @@ import UIKit
 import PureLayout
 
 class MarchSelectorView: UIView {
-    var header: UIView
+    var header: MarchSelectorHeader
     var tableView: MarchSelectorTable
-    var footer: UIView
+    var footer: MarchSelectorFooter
     
     override init(frame: CGRect) {
-        header = UIView()
+        header = MarchSelectorHeader(frame: .zero)
         tableView = MarchSelectorTable()
-        footer = UIView()
+        footer = MarchSelectorFooter(frame: .zero)
         
         super.init(frame: frame)
         

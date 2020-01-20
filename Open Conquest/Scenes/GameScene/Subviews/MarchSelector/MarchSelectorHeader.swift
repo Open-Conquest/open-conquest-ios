@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import UIKit
+import PureLayout
+
+class MarchSelectorHeader: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        backgroundColor = .white
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        // do something
+    }
+}
