@@ -17,7 +17,7 @@
 		923B38BF22A0818300748F6F /* LoginSceneUsernameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */; };
 		923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */; };
 		923B38C422A0829E00748F6F /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C322A0829E00748F6F /* MapNode.swift */; };
-		923B38C622A0832200748F6F /* GameSceneOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C522A0832200748F6F /* GameSceneOverlay.swift */; };
+		923B38C622A0832200748F6F /* MapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38C522A0832200748F6F /* MapOverlayView.swift */; };
 		923B38D022A1760D00748F6F /* MapTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 923B38CE22A1760D00748F6F /* MapTileSet.sks */; };
 		923B38DA22A1D99C00748F6F /* GameSceneGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38D922A1D99C00748F6F /* GameSceneGestures.swift */; };
 		923B38DC22A1DB2C00748F6F /* MapCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B38DB22A1DB2B00748F6F /* MapCamera.swift */; };
@@ -156,14 +156,14 @@
 		5353B247E7DCA1E14EAA30FF /* Pods_Open_Conquest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open_Conquest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B9E61105C50CA622C14EB0 /* Pods_Open_Conquest_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open_Conquest_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7983E38CDCA9309E80F75D87 /* Pods_Open_Conquest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open_Conquest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		923B38B1229DD71A00748F6F /* LoginSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneView.swift; sourceTree = "<group>"; };
+		923B38B1229DD71A00748F6F /* LoginSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginSceneView.swift; path = ../LoginSceneView.swift; sourceTree = "<group>"; };
 		923B38B822A0812900748F6F /* LoginSceneBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneBackground.swift; sourceTree = "<group>"; };
 		923B38BA22A0815600748F6F /* LoginSceneGameImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneGameImage.swift; sourceTree = "<group>"; };
 		923B38BC22A0816F00748F6F /* LoginSceneLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneLoginButton.swift; sourceTree = "<group>"; };
 		923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneUsernameField.swift; sourceTree = "<group>"; };
 		923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePasswordField.swift; sourceTree = "<group>"; };
 		923B38C322A0829E00748F6F /* MapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
-		923B38C522A0832200748F6F /* GameSceneOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneOverlay.swift; sourceTree = "<group>"; };
+		923B38C522A0832200748F6F /* MapOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverlayView.swift; sourceTree = "<group>"; };
 		923B38CE22A1760D00748F6F /* MapTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapTileSet.sks; sourceTree = "<group>"; };
 		923B38D922A1D99C00748F6F /* GameSceneGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneGestures.swift; sourceTree = "<group>"; };
 		923B38DB22A1DB2B00748F6F /* MapCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCamera.swift; sourceTree = "<group>"; };
@@ -328,16 +328,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		923B38E322A34B1000748F6F /* Subviews */ = {
+		923B38E322A34B1000748F6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				923B38B1229DD71A00748F6F /* LoginSceneView.swift */,
 				923B38B822A0812900748F6F /* LoginSceneBackground.swift */,
 				923B38BA22A0815600748F6F /* LoginSceneGameImage.swift */,
 				923B38C022A0819A00748F6F /* LoginScenePasswordField.swift */,
 				923B38BE22A0818300748F6F /* LoginSceneUsernameField.swift */,
 				923B38BC22A0816F00748F6F /* LoginSceneLoginButton.swift */,
 			);
-			path = Subviews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		92A2A32F229B635A0090287C = {
@@ -422,9 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				92A2A373229B66450090287C /* LoginScene.swift */,
-				923B38B1229DD71A00748F6F /* LoginSceneView.swift */,
 				C2D1BDCC2345189E00ADF01E /* LoginScenePublisher.swift */,
-				923B38E322A34B1000748F6F /* Subviews */,
+				923B38E322A34B1000748F6F /* Views */,
 			);
 			path = LoginScene;
 			sourceTree = "<group>";
@@ -435,57 +435,13 @@
 				92A2A341229B635A0090287C /* GameScene.swift */,
 				C237374423ADB761002FEBF1 /* GameScenePublisher.swift */,
 				923B38D922A1D99C00748F6F /* GameSceneGestures.swift */,
-				C2C383D123C66C5500F61849 /* GameSceneNodeNames.swift */,
 				C2F252E323D3B18000AAF818 /* Nodes */,
-				C2491FE423D24797000663C6 /* Subviews */,
+				C2491FE423D24797000663C6 /* Views */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
 		};
-		C2491FE423D24797000663C6 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				C2491FE923D24AA9000663C6 /* MarchSelector */,
-				C27BA72823ADF12B00034023 /* Overlay */,
-			);
-			path = Subviews;
-			sourceTree = "<group>";
-		};
-		C2491FE523D247AD000663C6 /* March */ = {
-			isa = PBXGroup;
-			children = (
-				C20E1FE523B106C9002A8E7E /* MarchNode.swift */,
-			);
-			path = March;
-			sourceTree = "<group>";
-		};
-		C2491FE623D24A68000663C6 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				C2491FE823D24A92000663C6 /* Navbar */,
-				C2491FE723D24A81000663C6 /* Resources */,
-			);
-			path = Subviews;
-			sourceTree = "<group>";
-		};
-		C2491FE723D24A81000663C6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C284DBCF23C3AE79004ADEFC /* ResourceTickerView.swift */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C2491FE823D24A92000663C6 /* Navbar */ = {
-			isa = PBXGroup;
-			children = (
-				C28CD02123CD3F30003F8B2A /* NavbarView.swift */,
-				C28CD02323CD449B003F8B2A /* NavbarButton.swift */,
-			);
-			path = Navbar;
-			sourceTree = "<group>";
-		};
-		C2491FE923D24AA9000663C6 /* MarchSelector */ = {
+		C2491FE423D24797000663C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C2491FE223D241B2000663C6 /* MarchSelectorView.swift */,
@@ -493,8 +449,12 @@
 				C2BF586323D571FE00772635 /* MarchSelectorHeader.swift */,
 				C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */,
 				C2BF586523D5720700772635 /* MarchSelectorFooter.swift */,
+				923B38C522A0832200748F6F /* MapOverlayView.swift */,
+				C28CD02123CD3F30003F8B2A /* NavbarView.swift */,
+				C28CD02323CD449B003F8B2A /* NavbarButton.swift */,
+				C284DBCF23C3AE79004ADEFC /* ResourceTickerView.swift */,
 			);
-			path = MarchSelector;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C258E57D23D662080078E317 /* Entities */ = {
@@ -588,15 +548,6 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		C27BA72823ADF12B00034023 /* Overlay */ = {
-			isa = PBXGroup;
-			children = (
-				923B38C522A0832200748F6F /* GameSceneOverlay.swift */,
-				C2491FE623D24A68000663C6 /* Subviews */,
-			);
-			path = Overlay;
-			sourceTree = "<group>";
-		};
 		C282F1542388EA19003A45A6 /* Army */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,20 +573,20 @@
 			children = (
 				C283488D236BC43700381EA3 /* LoadingScene.swift */,
 				C2834894236BC5DE00381EA3 /* LoadingScenePublisher.swift */,
-				C283488F236BC4DD00381EA3 /* LoadingSceneView.swift */,
-				C2834891236BC4FA00381EA3 /* Subviews */,
+				C2834891236BC4FA00381EA3 /* Views */,
 			);
 			path = LoadingScene;
 			sourceTree = "<group>";
 		};
-		C2834891236BC4FA00381EA3 /* Subviews */ = {
+		C2834891236BC4FA00381EA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C283488F236BC4DD00381EA3 /* LoadingSceneView.swift */,
 				C2834892236BC56B00381EA3 /* LoadingSceneBackground.swift */,
 				C28348A0236BDF3300381EA3 /* LoadingSceneProgressBar.swift */,
 				C2B9B2F92387BE7300BCF103 /* LoadingSceneProgressLabel.swift */,
 			);
-			path = Subviews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C299F0AB234C2DFA0076C747 /* Notifications */ = {
@@ -670,17 +621,6 @@
 				C2D1BDD72345A98000ADF01E /* User */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		C2D1BDB42343DDD600ADF01E /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				923B38C322A0829E00748F6F /* MapNode.swift */,
-				923B38DB22A1DB2B00748F6F /* MapCamera.swift */,
-				C2C383CF23C65DEA00F61849 /* MapButtons.swift */,
-				923B38CE22A1760D00748F6F /* MapTileSet.sks */,
-			);
-			path = Map;
 			sourceTree = "<group>";
 		};
 		C2D1BDB72343F94800ADF01E /* Services */ = {
@@ -765,8 +705,12 @@
 		C2F252E323D3B18000AAF818 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				C2491FE523D247AD000663C6 /* March */,
-				C2D1BDB42343DDD600ADF01E /* Map */,
+				C2C383D123C66C5500F61849 /* GameSceneNodeNames.swift */,
+				C20E1FE523B106C9002A8E7E /* MarchNode.swift */,
+				923B38C322A0829E00748F6F /* MapNode.swift */,
+				923B38DB22A1DB2B00748F6F /* MapCamera.swift */,
+				C2C383CF23C65DEA00F61849 /* MapButtons.swift */,
+				923B38CE22A1760D00748F6F /* MapTileSet.sks */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -1091,7 +1035,7 @@
 				923B38B2229DD71A00748F6F /* LoginSceneView.swift in Sources */,
 				C2402E042383603700858422 /* GetComponentRequest.swift in Sources */,
 				C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */,
-				923B38C622A0832200748F6F /* GameSceneOverlay.swift in Sources */,
+				923B38C622A0832200748F6F /* MapOverlayView.swift in Sources */,
 				C28CD02423CD449B003F8B2A /* NavbarButton.swift in Sources */,
 				92A2A33C229B635A0090287C /* AppDelegate.swift in Sources */,
 				923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */,

@@ -11,12 +11,11 @@ import SpriteKit
 class GameScene: SKScene, Scene {
     let publisher: GameScenePublisher
     let subscriber: Subscriber
-    // nodes
+    
     var map: MapNode
-    // views
-    var overlay: GameSceneOverlay
+    var overlay: MapOverlayView
     var marchSelectorView: MarchSelectorView
-    // gesture handling logic
+    
     var gestures: GameSceneGestures
     // keeps track of which tile is selected
     var rowSelected: Int?
@@ -26,7 +25,7 @@ class GameScene: SKScene, Scene {
         publisher = GameScenePublisher()
         subscriber = Subscriber()
         map = MapNode(map: Map())
-        overlay = GameSceneOverlay()
+        overlay = MapOverlayView()
         marchSelectorView = MarchSelectorView(frame: .zero)
         gestures = GameSceneGestures()
         super.init()
@@ -36,7 +35,7 @@ class GameScene: SKScene, Scene {
         publisher = GameScenePublisher()
         subscriber = Subscriber()
         map = MapNode(map: Map())
-        overlay = GameSceneOverlay()
+        overlay = MapOverlayView()
         marchSelectorView = MarchSelectorView(frame: .zero)
         gestures = GameSceneGestures()
         super.init(size: size)

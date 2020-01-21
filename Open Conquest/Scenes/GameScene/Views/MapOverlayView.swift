@@ -1,5 +1,5 @@
 ///Users/mrwiki/Projects/open-conquest/open-conquest-ios/Open Conquest.xcodeproj
-//  GameSceneOverlay.swift
+//  MapOverlayView.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 5/30/19.
@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import PureLayout
 
-class GameSceneOverlay: UIView {
+class MapOverlayView: UIView {
     var goldTicker = ResourceTickerView()
     var powerTicker = ResourceTickerView()
     var navbar = NavbarView()
