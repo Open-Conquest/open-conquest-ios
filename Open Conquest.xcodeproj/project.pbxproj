@@ -47,6 +47,24 @@
 		C269764123D4D6A8007035ED /* UnitIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269764023D4D6A8007035ED /* UnitIconView.swift */; };
 		C269764323D4D884007035ED /* UnitNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269764223D4D884007035ED /* UnitNameLabel.swift */; };
 		C26C1A2823D621A70083E392 /* MarchSelectorContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1A2723D621A70083E392 /* MarchSelectorContent.swift */; };
+		C276CBE323D681C2005D21A0 /* CDCity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBD123D681C2005D21A0 /* CDCity+CoreDataClass.swift */; };
+		C276CBE423D681C2005D21A0 /* CDCity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBD223D681C2005D21A0 /* CDCity+CoreDataProperties.swift */; };
+		C276CBE523D681C2005D21A0 /* CDUnit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBD323D681C2005D21A0 /* CDUnit+CoreDataClass.swift */; };
+		C276CBE623D681C2005D21A0 /* CDUnit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBD423D681C2005D21A0 /* CDUnit+CoreDataProperties.swift */; };
+		C276CBE723D681C2005D21A0 /* CDWorld+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBD523D681C2005D21A0 /* CDWorld+CoreDataClass.swift */; };
+		C276CBE823D681C2005D21A0 /* CDWorld+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBD623D681C2005D21A0 /* CDWorld+CoreDataProperties.swift */; };
+		C276CBE923D681C2005D21A0 /* CDTile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBD723D681C2005D21A0 /* CDTile+CoreDataClass.swift */; };
+		C276CBEA23D681C2005D21A0 /* CDTile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBD823D681C2005D21A0 /* CDTile+CoreDataProperties.swift */; };
+		C276CBEB23D681C2005D21A0 /* CDMarch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBD923D681C2005D21A0 /* CDMarch+CoreDataClass.swift */; };
+		C276CBEC23D681C2005D21A0 /* CDMarch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBDA23D681C2005D21A0 /* CDMarch+CoreDataProperties.swift */; };
+		C276CBED23D681C2005D21A0 /* CDArmy_Units+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBDB23D681C2005D21A0 /* CDArmy_Units+CoreDataClass.swift */; };
+		C276CBEE23D681C2005D21A0 /* CDArmy_Units+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBDC23D681C2005D21A0 /* CDArmy_Units+CoreDataProperties.swift */; };
+		C276CBEF23D681C2005D21A0 /* CDMap+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBDD23D681C2005D21A0 /* CDMap+CoreDataClass.swift */; };
+		C276CBF023D681C2005D21A0 /* CDMap+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBDE23D681C2005D21A0 /* CDMap+CoreDataProperties.swift */; };
+		C276CBF123D681C2005D21A0 /* CDArmy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBDF23D681C2005D21A0 /* CDArmy+CoreDataClass.swift */; };
+		C276CBF223D681C2005D21A0 /* CDArmy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBE023D681C2005D21A0 /* CDArmy+CoreDataProperties.swift */; };
+		C276CBF323D681C2005D21A0 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBE123D681C2005D21A0 /* CDUser+CoreDataClass.swift */; };
+		C276CBF423D681C2005D21A0 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276CBE223D681C2005D21A0 /* CDUser+CoreDataProperties.swift */; };
 		C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED6223931BCB00894B7A /* GetArmiesResponse.swift */; };
 		C277ED682393661800894B7A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED672393661800894B7A /* City.swift */; };
 		C277ED6A2393663500894B7A /* CityServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277ED692393663500894B7A /* CityServicePublisher.swift */; };
@@ -96,24 +114,6 @@
 		C2D7B8E723907A40006571E2 /* ArmyServicesPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D7B8E623907A40006571E2 /* ArmyServicesPublisher.swift */; };
 		C2D7B8E923907C35006571E2 /* ArmyServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D7B8E823907C35006571E2 /* ArmyServicePublisher.swift */; };
 		C2DDC9D723CA24D700456276 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2DDC9D523CA24D600456276 /* Model.xcdatamodeld */; };
-		C2DDCA0E23CA25A500456276 /* CDMarch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDC9FC23CA25A400456276 /* CDMarch+CoreDataClass.swift */; };
-		C2DDCA0F23CA25A500456276 /* CDMarch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDC9FD23CA25A500456276 /* CDMarch+CoreDataProperties.swift */; };
-		C2DDCA1023CA25A500456276 /* CDUnit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDC9FE23CA25A500456276 /* CDUnit+CoreDataClass.swift */; };
-		C2DDCA1123CA25A500456276 /* CDUnit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDC9FF23CA25A500456276 /* CDUnit+CoreDataProperties.swift */; };
-		C2DDCA1223CA25A500456276 /* CDWorld+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0023CA25A500456276 /* CDWorld+CoreDataClass.swift */; };
-		C2DDCA1323CA25A500456276 /* CDWorld+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0123CA25A500456276 /* CDWorld+CoreDataProperties.swift */; };
-		C2DDCA1423CA25A500456276 /* CDArmy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0223CA25A500456276 /* CDArmy+CoreDataClass.swift */; };
-		C2DDCA1523CA25A500456276 /* CDArmy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0323CA25A500456276 /* CDArmy+CoreDataProperties.swift */; };
-		C2DDCA1623CA25A500456276 /* CDArmy_Units+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0423CA25A500456276 /* CDArmy_Units+CoreDataClass.swift */; };
-		C2DDCA1723CA25A500456276 /* CDArmy_Units+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0523CA25A500456276 /* CDArmy_Units+CoreDataProperties.swift */; };
-		C2DDCA1823CA25A500456276 /* CDTile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0623CA25A500456276 /* CDTile+CoreDataClass.swift */; };
-		C2DDCA1923CA25A500456276 /* CDTile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0723CA25A500456276 /* CDTile+CoreDataProperties.swift */; };
-		C2DDCA1A23CA25A500456276 /* CDMap+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0823CA25A500456276 /* CDMap+CoreDataClass.swift */; };
-		C2DDCA1B23CA25A500456276 /* CDMap+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0923CA25A500456276 /* CDMap+CoreDataProperties.swift */; };
-		C2DDCA1C23CA25A500456276 /* CDCity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0A23CA25A500456276 /* CDCity+CoreDataClass.swift */; };
-		C2DDCA1D23CA25A500456276 /* CDCity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0B23CA25A500456276 /* CDCity+CoreDataProperties.swift */; };
-		C2DDCA1E23CA25A500456276 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0C23CA25A500456276 /* CDUser+CoreDataClass.swift */; };
-		C2DDCA1F23CA25A500456276 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDCA0D23CA25A500456276 /* CDUser+CoreDataProperties.swift */; };
 		C2E0A903234D9114000F6FCD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E0A902234D9114000F6FCD /* User.swift */; };
 		C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */; };
 		C2F5191D23AACC9F0042094E /* MapServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5191C23AACC9F0042094E /* MapServicePublisher.swift */; };
@@ -200,6 +200,24 @@
 		C269764023D4D6A8007035ED /* UnitIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitIconView.swift; sourceTree = "<group>"; };
 		C269764223D4D884007035ED /* UnitNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitNameLabel.swift; sourceTree = "<group>"; };
 		C26C1A2723D621A70083E392 /* MarchSelectorContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorContent.swift; sourceTree = "<group>"; };
+		C276CBD123D681C2005D21A0 /* CDCity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C276CBD223D681C2005D21A0 /* CDCity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C276CBD323D681C2005D21A0 /* CDUnit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUnit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C276CBD423D681C2005D21A0 /* CDUnit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUnit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C276CBD523D681C2005D21A0 /* CDWorld+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDWorld+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C276CBD623D681C2005D21A0 /* CDWorld+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDWorld+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C276CBD723D681C2005D21A0 /* CDTile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C276CBD823D681C2005D21A0 /* CDTile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C276CBD923D681C2005D21A0 /* CDMarch+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMarch+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C276CBDA23D681C2005D21A0 /* CDMarch+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMarch+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C276CBDB23D681C2005D21A0 /* CDArmy_Units+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy_Units+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C276CBDC23D681C2005D21A0 /* CDArmy_Units+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy_Units+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C276CBDD23D681C2005D21A0 /* CDMap+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMap+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C276CBDE23D681C2005D21A0 /* CDMap+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMap+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C276CBDF23D681C2005D21A0 /* CDArmy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C276CBE023D681C2005D21A0 /* CDArmy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C276CBE123D681C2005D21A0 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C276CBE223D681C2005D21A0 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C277ED6223931BCB00894B7A /* GetArmiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArmiesResponse.swift; sourceTree = "<group>"; };
 		C277ED672393661800894B7A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		C277ED692393663500894B7A /* CityServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityServicePublisher.swift; sourceTree = "<group>"; };
@@ -249,24 +267,6 @@
 		C2D7B8E623907A40006571E2 /* ArmyServicesPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArmyServicesPublisher.swift; path = "Open Conquest/API/Services/ArmyServicesPublisher.swift"; sourceTree = SOURCE_ROOT; };
 		C2D7B8E823907C35006571E2 /* ArmyServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyServicePublisher.swift; sourceTree = "<group>"; };
 		C2DDC9D623CA24D600456276 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		C2DDC9FC23CA25A400456276 /* CDMarch+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMarch+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2DDC9FD23CA25A500456276 /* CDMarch+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMarch+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C2DDC9FE23CA25A500456276 /* CDUnit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUnit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2DDC9FF23CA25A500456276 /* CDUnit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUnit+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C2DDCA0023CA25A500456276 /* CDWorld+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDWorld+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2DDCA0123CA25A500456276 /* CDWorld+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDWorld+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C2DDCA0223CA25A500456276 /* CDArmy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2DDCA0323CA25A500456276 /* CDArmy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C2DDCA0423CA25A500456276 /* CDArmy_Units+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy_Units+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2DDCA0523CA25A500456276 /* CDArmy_Units+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy_Units+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C2DDCA0623CA25A500456276 /* CDTile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTile+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2DDCA0723CA25A500456276 /* CDTile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTile+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C2DDCA0823CA25A500456276 /* CDMap+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMap+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2DDCA0923CA25A500456276 /* CDMap+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMap+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C2DDCA0A23CA25A500456276 /* CDCity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2DDCA0B23CA25A500456276 /* CDCity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C2DDCA0C23CA25A500456276 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2DDCA0D23CA25A500456276 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C2E0A902234D9114000F6FCD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorTable.swift; sourceTree = "<group>"; };
 		C2F5191C23AACC9F0042094E /* MapServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapServicePublisher.swift; sourceTree = "<group>"; };
@@ -667,24 +667,24 @@
 		C2DDCA2023CA25B000456276 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C2DDC9FC23CA25A400456276 /* CDMarch+CoreDataClass.swift */,
-				C2DDC9FD23CA25A500456276 /* CDMarch+CoreDataProperties.swift */,
-				C2DDC9FE23CA25A500456276 /* CDUnit+CoreDataClass.swift */,
-				C2DDC9FF23CA25A500456276 /* CDUnit+CoreDataProperties.swift */,
-				C2DDCA0023CA25A500456276 /* CDWorld+CoreDataClass.swift */,
-				C2DDCA0123CA25A500456276 /* CDWorld+CoreDataProperties.swift */,
-				C2DDCA0223CA25A500456276 /* CDArmy+CoreDataClass.swift */,
-				C2DDCA0323CA25A500456276 /* CDArmy+CoreDataProperties.swift */,
-				C2DDCA0423CA25A500456276 /* CDArmy_Units+CoreDataClass.swift */,
-				C2DDCA0523CA25A500456276 /* CDArmy_Units+CoreDataProperties.swift */,
-				C2DDCA0623CA25A500456276 /* CDTile+CoreDataClass.swift */,
-				C2DDCA0723CA25A500456276 /* CDTile+CoreDataProperties.swift */,
-				C2DDCA0823CA25A500456276 /* CDMap+CoreDataClass.swift */,
-				C2DDCA0923CA25A500456276 /* CDMap+CoreDataProperties.swift */,
-				C2DDCA0A23CA25A500456276 /* CDCity+CoreDataClass.swift */,
-				C2DDCA0B23CA25A500456276 /* CDCity+CoreDataProperties.swift */,
-				C2DDCA0C23CA25A500456276 /* CDUser+CoreDataClass.swift */,
-				C2DDCA0D23CA25A500456276 /* CDUser+CoreDataProperties.swift */,
+				C276CBD123D681C2005D21A0 /* CDCity+CoreDataClass.swift */,
+				C276CBD223D681C2005D21A0 /* CDCity+CoreDataProperties.swift */,
+				C276CBD323D681C2005D21A0 /* CDUnit+CoreDataClass.swift */,
+				C276CBD423D681C2005D21A0 /* CDUnit+CoreDataProperties.swift */,
+				C276CBD523D681C2005D21A0 /* CDWorld+CoreDataClass.swift */,
+				C276CBD623D681C2005D21A0 /* CDWorld+CoreDataProperties.swift */,
+				C276CBD723D681C2005D21A0 /* CDTile+CoreDataClass.swift */,
+				C276CBD823D681C2005D21A0 /* CDTile+CoreDataProperties.swift */,
+				C276CBD923D681C2005D21A0 /* CDMarch+CoreDataClass.swift */,
+				C276CBDA23D681C2005D21A0 /* CDMarch+CoreDataProperties.swift */,
+				C276CBDB23D681C2005D21A0 /* CDArmy_Units+CoreDataClass.swift */,
+				C276CBDC23D681C2005D21A0 /* CDArmy_Units+CoreDataProperties.swift */,
+				C276CBDD23D681C2005D21A0 /* CDMap+CoreDataClass.swift */,
+				C276CBDE23D681C2005D21A0 /* CDMap+CoreDataProperties.swift */,
+				C276CBDF23D681C2005D21A0 /* CDArmy+CoreDataClass.swift */,
+				C276CBE023D681C2005D21A0 /* CDArmy+CoreDataProperties.swift */,
+				C276CBE123D681C2005D21A0 /* CDUser+CoreDataClass.swift */,
+				C276CBE223D681C2005D21A0 /* CDUser+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -935,37 +935,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2DDCA1C23CA25A500456276 /* CDCity+CoreDataClass.swift in Sources */,
 				92E5190D22A750DB000B1F59 /* Subscriber.swift in Sources */,
 				C2D50849237B4B1600F48B32 /* GameNotificationFactory.swift in Sources */,
 				C23CF4A4237F5EA900833792 /* ArmyService.swift in Sources */,
+				C276CBF423D681C2005D21A0 /* CDUser+CoreDataProperties.swift in Sources */,
 				C269764323D4D884007035ED /* UnitNameLabel.swift in Sources */,
-				C2DDCA1823CA25A500456276 /* CDTile+CoreDataClass.swift in Sources */,
-				C2DDCA1723CA25A500456276 /* CDArmy_Units+CoreDataProperties.swift in Sources */,
 				C2F5193023AAE3830042094E /* GetMarchesResponse.swift in Sources */,
 				C2834899236BCE1A00381EA3 /* GameService.swift in Sources */,
 				C283488E236BC43700381EA3 /* LoadingScene.swift in Sources */,
+				C276CBF023D681C2005D21A0 /* CDMap+CoreDataProperties.swift in Sources */,
 				C283489D236BDB7F00381EA3 /* APIPublisher.swift in Sources */,
 				923B38BF22A0818300748F6F /* LoginSceneUsernameField.swift in Sources */,
-				C2DDCA1D23CA25A500456276 /* CDCity+CoreDataProperties.swift in Sources */,
 				C2D50847237B4A2100F48B32 /* SceneNotifications.swift in Sources */,
 				C2D5084D237B518700F48B32 /* APINotifications.swift in Sources */,
 				C2F574E523A9C0FF00E2DE5D /* GetCitiesResponse.swift in Sources */,
-				C2DDCA1E23CA25A500456276 /* CDUser+CoreDataClass.swift in Sources */,
 				C2F5191F23AAD9F10042094E /* MarchService.swift in Sources */,
 				C2BF586623D5720700772635 /* MarchSelectorFooter.swift in Sources */,
-				C2DDCA1323CA25A500456276 /* CDWorld+CoreDataProperties.swift in Sources */,
 				C299F0A8234BDA4B0076C747 /* LoginResponse.swift in Sources */,
+				C276CBE723D681C2005D21A0 /* CDWorld+CoreDataClass.swift in Sources */,
 				C2F5192823AADEB70042094E /* MapServicesPublisher.swift in Sources */,
+				C276CBEE23D681C2005D21A0 /* CDArmy_Units+CoreDataProperties.swift in Sources */,
 				C2D1BDBB2343F96600ADF01E /* Tile.swift in Sources */,
 				92A2A342229B635A0090287C /* GameScene.swift in Sources */,
 				C2491FE323D241B2000663C6 /* MarchSelectorView.swift in Sources */,
-				C2DDCA0F23CA25A500456276 /* CDMarch+CoreDataProperties.swift in Sources */,
 				C2F5192A23AADEC10042094E /* MarchServices.swift in Sources */,
-				C2DDCA1523CA25A500456276 /* CDArmy+CoreDataProperties.swift in Sources */,
 				C2D1BDE12345EABA00ADF01E /* Request.swift in Sources */,
 				C2834895236BC5DE00381EA3 /* LoadingScenePublisher.swift in Sources */,
 				C2C383D223C66C5500F61849 /* GameSceneNodeNames.swift in Sources */,
+				C276CBE423D681C2005D21A0 /* CDCity+CoreDataProperties.swift in Sources */,
 				92A2A344229B635A0090287C /* GameViewController.swift in Sources */,
 				C2F5192C23AADEC90042094E /* MarchServicesPublisher.swift in Sources */,
 				C23CF4A2237F5E8A00833792 /* CityService.swift in Sources */,
@@ -984,43 +981,43 @@
 				C23CF49B237EA1D200833792 /* ConnectionNotifications.swift in Sources */,
 				C27A47B3237A43A400740918 /* Scene.swift in Sources */,
 				C28CD02223CD3F30003F8B2A /* NavbarView.swift in Sources */,
-				C2DDCA1F23CA25A500456276 /* CDUser+CoreDataProperties.swift in Sources */,
 				C2834893236BC56B00381EA3 /* LoadingSceneBackground.swift in Sources */,
 				923B38B922A0812900748F6F /* LoginSceneBackground.swift in Sources */,
 				923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */,
 				C2D7B8E923907C35006571E2 /* ArmyServicePublisher.swift in Sources */,
 				C26C1A2823D621A70083E392 /* MarchSelectorContent.swift in Sources */,
 				C2F5192E23AAE37B0042094E /* GetMapResponse.swift in Sources */,
-				C2DDCA1223CA25A500456276 /* CDWorld+CoreDataClass.swift in Sources */,
 				923B38B2229DD71A00748F6F /* LoginSceneView.swift in Sources */,
+				C276CBEA23D681C2005D21A0 /* CDTile+CoreDataProperties.swift in Sources */,
 				C2402E042383603700858422 /* GetComponentRequest.swift in Sources */,
 				C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */,
+				C276CBE523D681C2005D21A0 /* CDUnit+CoreDataClass.swift in Sources */,
 				923B38C622A0832200748F6F /* MapOverlayView.swift in Sources */,
 				C28CD02423CD449B003F8B2A /* NavbarButton.swift in Sources */,
 				92A2A33C229B635A0090287C /* AppDelegate.swift in Sources */,
 				923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */,
+				C276CBF123D681C2005D21A0 /* CDArmy+CoreDataClass.swift in Sources */,
 				C2F5192423AADB3A0042094E /* March.swift in Sources */,
 				C2D1BDE32345EABE00ADF01E /* Response.swift in Sources */,
 				C2D1BDB92343F95500ADF01E /* MapService.swift in Sources */,
 				C2C383D023C65DEA00F61849 /* MapButtons.swift in Sources */,
-				C2DDCA1423CA25A500456276 /* CDArmy+CoreDataClass.swift in Sources */,
+				C276CBED23D681C2005D21A0 /* CDArmy_Units+CoreDataClass.swift in Sources */,
 				923B38BB22A0815600748F6F /* LoginSceneGameImage.swift in Sources */,
+				C276CBEB23D681C2005D21A0 /* CDMarch+CoreDataClass.swift in Sources */,
 				C20E1FE623B106C9002A8E7E /* MarchNode.swift in Sources */,
 				C277ED6A2393663500894B7A /* CityServicePublisher.swift in Sources */,
-				C2DDCA1623CA25A500456276 /* CDArmy_Units+CoreDataClass.swift in Sources */,
 				C284DBD023C3AE79004ADEFC /* ResourceTickerView.swift in Sources */,
-				C2DDCA1923CA25A500456276 /* CDTile+CoreDataProperties.swift in Sources */,
+				C276CBE623D681C2005D21A0 /* CDUnit+CoreDataProperties.swift in Sources */,
 				923B38DA22A1D99C00748F6F /* GameSceneGestures.swift in Sources */,
 				C2D7B8E723907A40006571E2 /* ArmyServicesPublisher.swift in Sources */,
-				C2DDCA1B23CA25A500456276 /* CDMap+CoreDataProperties.swift in Sources */,
 				C2C383D423C7D45600F61849 /* Unit.swift in Sources */,
 				C2FDC5752384756800C0E556 /* GetUsersResponse.swift in Sources */,
 				C284DBD423C3B04E004ADEFC /* Resources.swift in Sources */,
 				92E5191322A76021000B1F59 /* Notifications.swift in Sources */,
+				C276CBE823D681C2005D21A0 /* CDWorld+CoreDataProperties.swift in Sources */,
 				C23CF4A7237F5FDC00833792 /* Army.swift in Sources */,
 				C269764123D4D6A8007035ED /* UnitIconView.swift in Sources */,
 				C2D50841237B3ED000F48B32 /* SceneNotificationFactory.swift in Sources */,
-				C2DDCA1023CA25A500456276 /* CDUnit+CoreDataClass.swift in Sources */,
 				C27BA72A23ADF82300034023 /* ScenePublisher.swift in Sources */,
 				C2F574E323A9825C00E2DE5D /* CityServicesPublisher.swift in Sources */,
 				C2F574E123A981F600E2DE5D /* CityServices.swift in Sources */,
@@ -1029,21 +1026,24 @@
 				C2D5084F237B518E00F48B32 /* APINotificationFactory.swift in Sources */,
 				C2D1BDCD2345189E00ADF01E /* LoginScenePublisher.swift in Sources */,
 				C2D5084B237B4B2300F48B32 /* GameNotifications.swift in Sources */,
+				C276CBEF23D681C2005D21A0 /* CDMap+CoreDataClass.swift in Sources */,
 				C2D1BDDF2345EA0800ADF01E /* Connection.swift in Sources */,
 				C2D1BDAE2342FF2400ADF01E /* UserServices.swift in Sources */,
+				C276CBE323D681C2005D21A0 /* CDCity+CoreDataClass.swift in Sources */,
 				C2E0A903234D9114000F6FCD /* User.swift in Sources */,
 				9244332722C5810C00913284 /* Game.swift in Sources */,
-				C2DDCA1A23CA25A500456276 /* CDMap+CoreDataClass.swift in Sources */,
 				C2D1BDE72346975F00ADF01E /* LoginRequest.swift in Sources */,
+				C276CBE923D681C2005D21A0 /* CDTile+CoreDataClass.swift in Sources */,
 				C2D7B8E52390788E006571E2 /* ArmyServices.swift in Sources */,
 				C28348A1236BDF3300381EA3 /* LoadingSceneProgressBar.swift in Sources */,
 				9244332922C6CC5C00913284 /* NotificationFactory.swift in Sources */,
+				C276CBF223D681C2005D21A0 /* CDArmy+CoreDataProperties.swift in Sources */,
+				C276CBEC23D681C2005D21A0 /* CDMarch+CoreDataProperties.swift in Sources */,
 				C28348AA236CC3EB00381EA3 /* ConnectionMessageDispatch.swift in Sources */,
 				C2F5192123AAD9FC0042094E /* MarchServicePublisher.swift in Sources */,
-				C2DDCA0E23CA25A500456276 /* CDMarch+CoreDataClass.swift in Sources */,
 				C2BF586423D571FE00772635 /* MarchSelectorHeader.swift in Sources */,
+				C276CBF323D681C2005D21A0 /* CDUser+CoreDataClass.swift in Sources */,
 				C2DDC9D723CA24D700456276 /* Model.xcdatamodeld in Sources */,
-				C2DDCA1123CA25A500456276 /* CDUnit+CoreDataProperties.swift in Sources */,
 				C28348A3236C93B800381EA3 /* ConnectionPublisher.swift in Sources */,
 				C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */,
 				C277ED682393661800894B7A /* City.swift in Sources */,

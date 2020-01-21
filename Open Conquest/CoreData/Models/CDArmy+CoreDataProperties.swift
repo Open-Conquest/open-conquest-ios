@@ -2,7 +2,7 @@
 //  CDArmy+CoreDataProperties.swift
 //  Open Conquest
 //
-//  Created by Zach Wild on 1/11/20.
+//  Created by Zach Wild on 1/20/20.
 //  Copyright © 2020 Zach Wild. All rights reserved.
 //
 //
@@ -21,6 +21,7 @@ extension CDArmy {
     @NSManaged public var user_id: Int64
     @NSManaged public var units: NSSet?
     @NSManaged public var user: CDUser?
+    @NSManaged public var march: CDMarch?
 
 }
 

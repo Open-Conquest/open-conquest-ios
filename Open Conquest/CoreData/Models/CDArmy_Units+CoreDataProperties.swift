@@ -2,7 +2,7 @@
 //  CDArmy_Units+CoreDataProperties.swift
 //  Open Conquest
 //
-//  Created by Zach Wild on 1/11/20.
+//  Created by Zach Wild on 1/20/20.
 //  Copyright © 2020 Zach Wild. All rights reserved.
 //
 //
@@ -14,7 +14,7 @@ import CoreData
 extension CDArmy_Units {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CDArmy_Units> {
-        return NSFetchRequest<CDArmy_Units>(entityName: "CDArmy_Units")
+        return NSFetchRequest<CDArmy_Units>(entityName: "CDArmyUnits")
     }
 
     @NSManaged public var army_id: Int64

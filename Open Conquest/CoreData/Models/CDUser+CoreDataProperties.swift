@@ -2,7 +2,7 @@
 //  CDUser+CoreDataProperties.swift
 //  Open Conquest
 //
-//  Created by Zach Wild on 1/11/20.
+//  Created by Zach Wild on 1/20/20.
 //  Copyright © 2020 Zach Wild. All rights reserved.
 //
 //
@@ -22,7 +22,7 @@ extension CDUser {
     @NSManaged public var world_id: Int64
     @NSManaged public var armies: NSSet?
     @NSManaged public var cities: NSSet?
-    @NSManaged public var marches: CDMarch?
+    @NSManaged public var marches: NSSet?
     @NSManaged public var world: CDWorld?
 
 }
@@ -58,5 +58,22 @@ extension CDUser {
 
     @objc(removeCities:)
     @NSManaged public func removeFromCities(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for marches
+extension CDUser {
+
+    @objc(addMarchesObject:)
+    @NSManaged public func addToMarches(_ value: CDMarch)
+
+    @objc(removeMarchesObject:)
+    @NSManaged public func removeFromMarches(_ value: CDMarch)
+
+    @objc(addMarches:)
+    @NSManaged public func addToMarches(_ values: NSSet)
+
+    @objc(removeMarches:)
+    @NSManaged public func removeFromMarches(_ values: NSSet)
 
 }

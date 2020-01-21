@@ -2,7 +2,7 @@
 //  CDMarch+CoreDataProperties.swift
 //  Open Conquest
 //
-//  Created by Zach Wild on 1/11/20.
+//  Created by Zach Wild on 1/20/20.
 //  Copyright © 2020 Zach Wild. All rights reserved.
 //
 //
@@ -27,5 +27,6 @@ extension CDMarch {
     @NSManaged public var army: CDArmy?
     @NSManaged public var end_tile: CDTile?
     @NSManaged public var start_tile: CDTile?
+    @NSManaged public var user: CDUser?
 
 }
