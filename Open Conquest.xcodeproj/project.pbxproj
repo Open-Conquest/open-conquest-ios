@@ -245,8 +245,8 @@
 		C2D5084A237B4B2300F48B32 /* GameNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNotifications.swift; sourceTree = "<group>"; };
 		C2D5084C237B518700F48B32 /* APINotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINotifications.swift; sourceTree = "<group>"; };
 		C2D5084E237B518E00F48B32 /* APINotificationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINotificationFactory.swift; sourceTree = "<group>"; };
-		C2D7B8E42390788E006571E2 /* ArmyServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArmyServices.swift; path = "Open Conquest/Game/ArmyServices.swift"; sourceTree = SOURCE_ROOT; };
-		C2D7B8E623907A40006571E2 /* ArmyServicesPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArmyServicesPublisher.swift; path = "Open Conquest/Game/ArmyServicesPublisher.swift"; sourceTree = SOURCE_ROOT; };
+		C2D7B8E42390788E006571E2 /* ArmyServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArmyServices.swift; path = "Open Conquest/API/Services/ArmyServices.swift"; sourceTree = SOURCE_ROOT; };
+		C2D7B8E623907A40006571E2 /* ArmyServicesPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArmyServicesPublisher.swift; path = "Open Conquest/API/Services/ArmyServicesPublisher.swift"; sourceTree = SOURCE_ROOT; };
 		C2D7B8E823907C35006571E2 /* ArmyServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyServicePublisher.swift; sourceTree = "<group>"; };
 		C2DDC9D623CA24D600456276 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C2DDC9FC23CA25A400456276 /* CDMarch+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMarch+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -548,15 +548,6 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		C282F1542388EA19003A45A6 /* Army */ = {
-			isa = PBXGroup;
-			children = (
-				C2D7B8E42390788E006571E2 /* ArmyServices.swift */,
-				C2D7B8E623907A40006571E2 /* ArmyServicesPublisher.swift */,
-			);
-			path = Army;
-			sourceTree = "<group>";
-		};
 		C2834889236BC11700381EA3 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,13 +603,16 @@
 		C2D1BDAC2342F98300ADF01E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C277ED6523931BE800894B7A /* Responses */,
-				C277ED6423931BE300894B7A /* Requests */,
-				C282F1542388EA19003A45A6 /* Army */,
-				C2F574DD23A981AF00E2DE5D /* City */,
-				C2F574DF23A981C300E2DE5D /* Map */,
-				C2F574DE23A981BE00E2DE5D /* March */,
-				C2D1BDD72345A98000ADF01E /* User */,
+				C2D7B8E42390788E006571E2 /* ArmyServices.swift */,
+				C2D7B8E623907A40006571E2 /* ArmyServicesPublisher.swift */,
+				C2F574E023A981F600E2DE5D /* CityServices.swift */,
+				C2F574E223A9825C00E2DE5D /* CityServicesPublisher.swift */,
+				C2F5192523AADEB00042094E /* MapServices.swift */,
+				C2F5192723AADEB70042094E /* MapServicesPublisher.swift */,
+				C2F5192923AADEC10042094E /* MarchServices.swift */,
+				C2F5192B23AADEC90042094E /* MarchServicesPublisher.swift */,
+				C2D1BDAD2342FF2400ADF01E /* UserServices.swift */,
+				C2D1BDD123455B5C00ADF01E /* UserServicesPublisher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -663,18 +657,11 @@
 				C2D5084E237B518E00F48B32 /* APINotificationFactory.swift */,
 				C2D1BDE02345EABA00ADF01E /* Request.swift */,
 				C2D1BDE22345EABE00ADF01E /* Response.swift */,
+				C277ED6523931BE800894B7A /* Responses */,
+				C277ED6423931BE300894B7A /* Requests */,
 				C2D1BDAC2342F98300ADF01E /* Services */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		C2D1BDD72345A98000ADF01E /* User */ = {
-			isa = PBXGroup;
-			children = (
-				C2D1BDAD2342FF2400ADF01E /* UserServices.swift */,
-				C2D1BDD123455B5C00ADF01E /* UserServicesPublisher.swift */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		C2DDCA2023CA25B000456276 /* Models */ = {
@@ -713,33 +700,6 @@
 				923B38CE22A1760D00748F6F /* MapTileSet.sks */,
 			);
 			path = Nodes;
-			sourceTree = "<group>";
-		};
-		C2F574DD23A981AF00E2DE5D /* City */ = {
-			isa = PBXGroup;
-			children = (
-				C2F574E023A981F600E2DE5D /* CityServices.swift */,
-				C2F574E223A9825C00E2DE5D /* CityServicesPublisher.swift */,
-			);
-			path = City;
-			sourceTree = "<group>";
-		};
-		C2F574DE23A981BE00E2DE5D /* March */ = {
-			isa = PBXGroup;
-			children = (
-				C2F5192923AADEC10042094E /* MarchServices.swift */,
-				C2F5192B23AADEC90042094E /* MarchServicesPublisher.swift */,
-			);
-			path = March;
-			sourceTree = "<group>";
-		};
-		C2F574DF23A981C300E2DE5D /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				C2F5192523AADEB00042094E /* MapServices.swift */,
-				C2F5192723AADEB70042094E /* MapServicesPublisher.swift */,
-			);
-			path = Map;
 			sourceTree = "<group>";
 		};
 		F979D1FDB74AC47635790C88 /* Frameworks */ = {
