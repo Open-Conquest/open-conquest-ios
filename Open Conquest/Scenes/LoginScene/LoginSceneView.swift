@@ -16,6 +16,8 @@ class LoginSceneView: UIView {
     var usernameField: LoginSceneUsernameField?
     var passwordField: LoginScenePasswordField?
     var loginButton: LoginSceneLoginButton?
+    var switchModeButton: UIButton?
+    var errorMessage: UILabel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,6 +39,8 @@ class LoginSceneView: UIView {
         usernameField = LoginSceneUsernameField()
         passwordField = LoginScenePasswordField()
         loginButton = LoginSceneLoginButton()
+        switchModeButton = UIButton()
+        errorMessage = UILabel()
     }
     
     func addSubviews() {
@@ -45,6 +49,8 @@ class LoginSceneView: UIView {
         addSubview(usernameField!)
         addSubview(passwordField!)
         addSubview(loginButton!)
+        addSubview(switchModeButton!)
+        addSubview(errorMessage!)
     }
     
     func setupConstraints() {
@@ -87,6 +93,37 @@ class LoginSceneView: UIView {
         loginButton?.autoSetDimension(.width, toSize: loginButtonWidth)
         loginButton?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
         loginButton?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
+        
+        let switchModeButtonHeight = viewHeight/14
+        let switchModeButtonWidth = viewWidth
+        switchModeButton?.autoSetDimension(.height, toSize: switchModeButtonHeight)
+        switchModeButton?.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 20)
+        switchModeButton?.autoSetDimension(.width, toSize: loginButtonWidth)
+        switchModeButton?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
+        switchModeButton?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
+        switchModeButton?.setTitle("Register Account", for: UIControl.State.normal)
+        switchModeButton?.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)
+        
+        let errorMessageWidth = viewWidth
+        errorMessage?.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 20)
+        errorMessage?.autoPinEdge(toSuperviewEdge: .bottom, withInset: 20)
+        errorMessage?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
+        errorMessage?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
+    }
+    
+    func switchMode(mode: LoginSceneMode) {
+        switch mode {
+        case .Login:
+            switchModeButton?.setTitle("Register Account", for: UIControl.State.normal)
+            loginButton?.setTitle("Login", for: UIControl.State.normal)
+        case .Register:
+            switchModeButton?.setTitle("Login to Account", for: UIControl.State.normal)
+            loginButton?.setTitle("Register", for: UIControl.State.normal)
+        }
+    }
+    
+    func setErrorMessage(message: String) {
+        errorMessage?.text = message
     }
     
     func getUsername() -> String {

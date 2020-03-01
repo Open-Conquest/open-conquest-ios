@@ -22,6 +22,7 @@ class UserServices {
     func setupSubscibers() {
         // game subscribing methods
         subscriber.subscribe(observingFunction: tryLogin(_:), name: .GameTryLogin)
+        subscriber.subscribe(observingFunction: tryRegister(_:), name: .GameTryRegister)
         subscriber.subscribe(observingFunction: tryGetUsers(_:), name: .GameTryGetUsers)
         
         // connection subscribing methods
@@ -36,6 +37,13 @@ class UserServices {
         
         let tryLoginData = notification.userInfo!["data"] as! GameTryLoginData
         publisher.tryLogin(gameTryLoginData: tryLoginData)
+    }
+    
+    func tryRegister(_ notification: Notification) {
+        print("UserServices receieved GameTryRegister event.")
+        
+        let tryRegisterData = notification.userInfo!["data"] as! GameTryRegisterData
+        publisher.tryRegister(gameTryRegisterData: tryRegisterData)
     }
     
     func tryGetUsers(_ notifcation: Notification) {

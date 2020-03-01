@@ -24,6 +24,12 @@ class UserServicesPublisher: Publisher {
         let notification = apiNotificationFactory.buildAPITryLoginNotification(request: request)
         post(notification: notification)
     }
+
+    func tryRegister(gameTryRegisterData: GameTryRegisterData) {
+        let request = RegisterRequest(gameTryRegisterData: gameTryRegisterData)
+        let notification = apiNotificationFactory.buildAPITryRegisterNotification(request: request)
+        post(notification: notification)
+    }
     
     func getUsers() {
         let request = GetEntityRequest(entity: .user)

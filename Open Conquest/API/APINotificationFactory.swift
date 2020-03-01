@@ -17,6 +17,10 @@ class APINotificationFactory: NotificationFactory {
     func buildAPITryLoginNotification(request: LoginRequest) -> Notification {
         return buildNotification(name: .APIMakeRequest, data: request)
     }
+
+    func buildAPITryRegisterNotification(request: RegisterRequest) -> Notification {
+        return buildNotification(name: .APIMakeRequest, data: request)
+    }
     
     func buildAPIGetComponentNotification(request: GetEntityRequest) -> Notification {
         return buildNotification(name: .APIMakeRequest, data: request)

@@ -11,6 +11,7 @@ import Foundation
 enum SceneNotifications: String
 {
     case TryLogin           = "scene-try-login"
+    case TryRegister        = "scene-try-register"
     
     case TryGetArmies       = "scene-try-get-armies"
     case TryGetCities       = "scene-try-get-cities"
@@ -28,6 +29,7 @@ enum SceneNotifications: String
 extension Notification.Name
 {
     static let SceneTryLogin        = Notification.Name(rawValue: SceneNotifications.TryLogin.rawValue)
+    static let SceneTryRegister     = Notification.Name(rawValue: SceneNotifications.TryRegister.rawValue)
     
     static let SceneTryGetArmies    = Notification.Name(rawValue: SceneNotifications.TryGetArmies.rawValue)
     static let SceneTryGetCities    = Notification.Name(rawValue: SceneNotifications.TryGetCities.rawValue)
@@ -45,10 +47,17 @@ extension Notification.Name
 class SceneTryLoginData {
     let username: String
     let password: String
-    
     init(username: String, password: String) {
         self.username = username
         self.password = password
     }
+}
 
+class SceneTryRegisterData {
+    let username: String
+    let password: String
+    init(username: String, password: String) {
+        self.username = username
+        self.password = password
+    }
 }

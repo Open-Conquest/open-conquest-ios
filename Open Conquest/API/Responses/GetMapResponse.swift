@@ -42,7 +42,7 @@ class GetMapResponse: Response {
         
         print(map)
         
-        super.init(service: response.getService().rawValue, operation: response.getOperation().rawValue, data: response.getData())
+        super.init(service: APIServices(rawValue: response.getService().rawValue)!, operation: APIOperations(rawValue: response.getOperation().rawValue)!, data: response.getData())
     }
     
     func getMap() -> [Map] {

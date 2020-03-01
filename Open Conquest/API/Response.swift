@@ -15,16 +15,16 @@ class Response {
     var operation:  APIOperations
     var data:       JSON
     
-    init(service: String, operation: String, data: JSON) {
-        self.service    = APIServices(rawValue: service)!
-        self.operation  = APIOperations(rawValue: operation)!
+    init(service: APIServices, operation: APIOperations, data: JSON) {
+        self.service    = service
+        self.operation  = operation
         self.data       = data
     }
     
     init(body: JSON) {
         self.service    = APIServices(rawValue: body["service"].string!)!
         self.operation  = APIOperations(rawValue: body["operation"].string!)!
-        self.data       = body["data"]
+        self.data       = body["data"] 
     }
     
     init(data: [AnyHashable: Any]) {

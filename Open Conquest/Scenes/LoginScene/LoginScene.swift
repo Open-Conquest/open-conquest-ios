@@ -8,15 +8,22 @@
 
 import SpriteKit
 
+enum LoginSceneMode {
+    case Login
+    case Register
+}
+
 class LoginScene: SKScene, Scene {
     var loginView:      LoginSceneView
     var publisher:      LoginScenePublisher
     var subscriber:     Subscriber
+    var mode:           LoginSceneMode
     
     override init() {
         self.loginView      = LoginSceneView(frame: UIScreen.main.bounds)
         self.publisher      = LoginScenePublisher()
         self.subscriber     = Subscriber()
+        self.mode           = .Login
         super.init()
     }
     
@@ -24,6 +31,7 @@ class LoginScene: SKScene, Scene {
         self.loginView      = LoginSceneView(frame: UIScreen.main.bounds)
         self.publisher      = LoginScenePublisher()
         self.subscriber     = Subscriber()
+        self.mode           = .Login
         super.init(size: size)
     }
     
@@ -36,10 +44,16 @@ class LoginScene: SKScene, Scene {
     
     func setupSubscribers() {
         subscriber.subscribe(observingFunction: loginSucceeded(_:), name: .GameLoginSucceed)
+        subscriber.subscribe(observingFunction: registerSucceeded(_:), name: .GameRegisterSucceed)
+        subscriber.subscribe(observingFunction: loginSucceeded(_:), name: .GameLoginFailed)
+        subscriber.subscribe(observingFunction: registerSucceeded(_:), name: .GameRegisterFailed)
     }
     
     func teardownSubscribers() {
         subscriber.unsubscribe(observingFunction: loginSucceeded(_:))
+        subscriber.unsubscribe(observingFunction: registerSucceeded(_:))
+        subscriber.unsubscribe(observingFunction: loginFailed(_:))
+        subscriber.unsubscribe(observingFunction: registerFailed(_:))
     }
     
     func setupUI() {
@@ -52,6 +66,7 @@ class LoginScene: SKScene, Scene {
     
     func setupUIActions() {
         loginView.loginButton!.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
+        loginView.switchModeButton!.addTarget(self, action: #selector(switchMode), for: .touchUpInside)
     }
     
     func setupGestures() {
@@ -66,22 +81,58 @@ class LoginScene: SKScene, Scene {
         teardownSubscribers()
     }
     
-    // MARK: PUBLISHING AND SUBSCRIBING METHODS
+    // MARK: UI RESPONDING METHODS
     
     @objc func tryLogin() {
         print("LoginScene user pressed login button.")
-        let username = loginView.getUsername()
-        let password = loginView.getPassword()
-        publisher.tryLogin(username: username, password: password)
+
+        switch mode {
+        case .Login:
+            let username = loginView.getUsername()
+            let password = loginView.getPassword()
+            publisher.tryLogin(username: username, password: password)
+        case .Register:
+            let username = loginView.getUsername()
+            let password = loginView.getPassword()
+            publisher.tryRegister(username: username, password: password)
+        }
     }
+    
+    @objc func switchMode() {
+        switch mode {
+        case .Login:
+            self.mode = .Register
+            loginView.switchMode(mode: .Register)
+        case .Register:
+            self.mode = .Login
+            loginView.switchMode(mode: .Login)
+        }
+    }
+    
+    // MARK: PUBLISHING AND SUBSCRIBING METHODS
     
     func loginSucceeded(_ notification: Notification) {
         print("LoginScene recieved loginSucceed event from game.")
-        print("LoginScene presenting LoadingScene...")
-        prepareForNavigation()
-        let scene = LoadingScene()
-        scene.scaleMode = .aspectFill
-        view!.presentScene(scene)
+        print("LoginScene presenting PickPlayerScene...")
+//        prepareForNavigation()
+//        let scene = LoadingScene()
+//        scene.scaleMode = .aspectFill
+//        view!.presentScene(scene)
+    }
+    
+    func loginFailed(_ notification: Notification) {
+        print("LoginScene recieved loginFailed event from game.")
+        loginView.setErrorMessage(message: "Error logging into account")
+    }
+    
+    func registerSucceeded(_ notification: Notification) {
+        print("LoginScene recieved registerSucceed event from game.")
+        print("LoginScene presenting CreatePlayerScene...")
+    }
+    
+    func registerFailed(_ notification: Notification) {
+        print("LoginScene recieved registerSucceed event from game.")
+        loginView.setErrorMessage(message: "Error registering account")
     }
     
     override func update(_ currentTime: TimeInterval) {}

@@ -22,6 +22,11 @@ class UserServicePublisher: Publisher {
         post(notification: notification)
     }
     
+    func tryRegister(data: SceneTryRegisterData) {
+        let notification = gameNotificationFactory.buildGameTryRegisterNotification(data: data)
+        post(notification: notification)
+    }
+    
     func loginSucceed() {
         let notification = gameNotificationFactory.buildGameLoginSucceedNotification()
         post(notification: notification)

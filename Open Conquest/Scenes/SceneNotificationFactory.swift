@@ -19,6 +19,11 @@ class SceneNotificationFactory: NotificationFactory {
         return buildNotification(name: .SceneTryLogin, data: data)
     }
     
+    func buildTryRegisterNotification(username: String, password: String) -> Notification {
+        let data = SceneTryRegisterData(username: username, password: password)
+        return buildNotification(name: .SceneTryRegister, data: data)
+    }
+    
     func buildGetEntityNotification(entity: GameEntityType) -> Notification {
         switch entity {
         case .army:

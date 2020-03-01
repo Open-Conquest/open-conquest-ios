@@ -25,6 +25,11 @@ class GameNotificationFactory: NotificationFactory {
         return buildNotification(name: .GameLoginSucceed, data: data)
     }
     
+    func buildGameTryRegisterNotification(data: SceneTryRegisterData) -> Notification {
+        let notifData = GameTryRegisterData(data: data)
+        return buildNotification(name: .GameTryRegister, data: notifData)
+    }
+    
     // TODO: add query
     func buildTryGetEntityNotification(entityType: GameEntityType) -> Notification {
         let query = JSON()

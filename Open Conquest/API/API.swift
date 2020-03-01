@@ -31,17 +31,3 @@ class API {
         print("API initialized.")
     }
 }
-
-
-enum APIOperations: String {
-    case login  = "login"
-    case get    = "get"
-}
-
-enum APIServices: String {
-    case army   = "army"
-    case city   = "city"
-    case map    = "map"
-    case march  = "march"
-    case user   = "user"
-}

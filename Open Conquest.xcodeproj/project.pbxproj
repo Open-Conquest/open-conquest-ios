@@ -81,6 +81,8 @@
 		C28348A1236BDF3300381EA3 /* LoadingSceneProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28348A0236BDF3300381EA3 /* LoadingSceneProgressBar.swift */; };
 		C28348A3236C93B800381EA3 /* ConnectionPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28348A2236C93B800381EA3 /* ConnectionPublisher.swift */; };
 		C28348AA236CC3EB00381EA3 /* ConnectionMessageDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28348A9236CC3EB00381EA3 /* ConnectionMessageDispatch.swift */; };
+		C283D5A42408DEEB00E109A0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283D5A32408DEEB00E109A0 /* Token.swift */; };
+		C283D5A62409132E00E109A0 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283D5A52409132E00E109A0 /* RegisterRequest.swift */; };
 		C284DBD023C3AE79004ADEFC /* ResourceTickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C284DBCF23C3AE79004ADEFC /* ResourceTickerView.swift */; };
 		C284DBD423C3B04E004ADEFC /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C284DBD323C3B04E004ADEFC /* Resources.swift */; };
 		C28CD02223CD3F30003F8B2A /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CD02123CD3F30003F8B2A /* NavbarView.swift */; };
@@ -129,6 +131,8 @@
 		C2F574E123A981F600E2DE5D /* CityServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F574E023A981F600E2DE5D /* CityServices.swift */; };
 		C2F574E323A9825C00E2DE5D /* CityServicesPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F574E223A9825C00E2DE5D /* CityServicesPublisher.swift */; };
 		C2F574E523A9C0FF00E2DE5D /* GetCitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F574E423A9C0FF00E2DE5D /* GetCitiesResponse.swift */; };
+		C2FBBE1F240C205B0023014F /* APIOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FBBE1E240C205B0023014F /* APIOperations.swift */; };
+		C2FBBE21240C20690023014F /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FBBE20240C20690023014F /* APIServices.swift */; };
 		C2FDC5752384756800C0E556 /* GetUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FDC5742384756800C0E556 /* GetUsersResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -234,6 +238,8 @@
 		C28348A0236BDF3300381EA3 /* LoadingSceneProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneProgressBar.swift; sourceTree = "<group>"; };
 		C28348A2236C93B800381EA3 /* ConnectionPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionPublisher.swift; sourceTree = "<group>"; };
 		C28348A9236CC3EB00381EA3 /* ConnectionMessageDispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMessageDispatch.swift; sourceTree = "<group>"; };
+		C283D5A32408DEEB00E109A0 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		C283D5A52409132E00E109A0 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		C284DBCF23C3AE79004ADEFC /* ResourceTickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceTickerView.swift; sourceTree = "<group>"; };
 		C284DBD323C3B04E004ADEFC /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		C28CD02123CD3F30003F8B2A /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
@@ -282,6 +288,8 @@
 		C2F574E023A981F600E2DE5D /* CityServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityServices.swift; sourceTree = "<group>"; };
 		C2F574E223A9825C00E2DE5D /* CityServicesPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityServicesPublisher.swift; sourceTree = "<group>"; };
 		C2F574E423A9C0FF00E2DE5D /* GetCitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesResponse.swift; sourceTree = "<group>"; };
+		C2FBBE1E240C205B0023014F /* APIOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperations.swift; sourceTree = "<group>"; };
+		C2FBBE20240C20690023014F /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		C2FDC5742384756800C0E556 /* GetUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersResponse.swift; sourceTree = "<group>"; };
 		E011B0D88D6ACB513770E511 /* Pods-Open Conquest Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest Tests/Pods-Open Conquest Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E1605DDC9F08BB7737BFF792 /* Pods-Open Conquest UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest UITests/Pods-Open Conquest UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -495,6 +503,7 @@
 			children = (
 				C2D1BDE62346975F00ADF01E /* LoginRequest.swift */,
 				C2402E032383603700858422 /* GetComponentRequest.swift */,
+				C283D5A52409132E00E109A0 /* RegisterRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -652,11 +661,14 @@
 			isa = PBXGroup;
 			children = (
 				923B38DD22A2F6C400748F6F /* API.swift */,
+				C2FBBE1E240C205B0023014F /* APIOperations.swift */,
+				C2FBBE20240C20690023014F /* APIServices.swift */,
 				C283489C236BDB7F00381EA3 /* APIPublisher.swift */,
 				C2D5084C237B518700F48B32 /* APINotifications.swift */,
 				C2D5084E237B518E00F48B32 /* APINotificationFactory.swift */,
 				C2D1BDE02345EABA00ADF01E /* Request.swift */,
 				C2D1BDE22345EABE00ADF01E /* Response.swift */,
+				C283D5A32408DEEB00E109A0 /* Token.swift */,
 				C277ED6523931BE800894B7A /* Responses */,
 				C277ED6423931BE300894B7A /* Requests */,
 				C2D1BDAC2342F98300ADF01E /* Services */,
@@ -991,12 +1003,14 @@
 				C276CBEA23D681C2005D21A0 /* CDTile+CoreDataProperties.swift in Sources */,
 				C2402E042383603700858422 /* GetComponentRequest.swift in Sources */,
 				C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */,
+				C2FBBE1F240C205B0023014F /* APIOperations.swift in Sources */,
 				C276CBE523D681C2005D21A0 /* CDUnit+CoreDataClass.swift in Sources */,
 				923B38C622A0832200748F6F /* MapOverlayView.swift in Sources */,
 				C28CD02423CD449B003F8B2A /* NavbarButton.swift in Sources */,
 				92A2A33C229B635A0090287C /* AppDelegate.swift in Sources */,
 				923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */,
 				C276CBF123D681C2005D21A0 /* CDArmy+CoreDataClass.swift in Sources */,
+				C283D5A62409132E00E109A0 /* RegisterRequest.swift in Sources */,
 				C2F5192423AADB3A0042094E /* March.swift in Sources */,
 				C2D1BDE32345EABE00ADF01E /* Response.swift in Sources */,
 				C2D1BDB92343F95500ADF01E /* MapService.swift in Sources */,
@@ -1023,6 +1037,7 @@
 				C2F574E123A981F600E2DE5D /* CityServices.swift in Sources */,
 				923B38DC22A1DB2C00748F6F /* MapCamera.swift in Sources */,
 				923B38C422A0829E00748F6F /* MapNode.swift in Sources */,
+				C2FBBE21240C20690023014F /* APIServices.swift in Sources */,
 				C2D5084F237B518E00F48B32 /* APINotificationFactory.swift in Sources */,
 				C2D1BDCD2345189E00ADF01E /* LoginScenePublisher.swift in Sources */,
 				C2D5084B237B4B2300F48B32 /* GameNotifications.swift in Sources */,
@@ -1046,6 +1061,7 @@
 				C2DDC9D723CA24D700456276 /* Model.xcdatamodeld in Sources */,
 				C28348A3236C93B800381EA3 /* ConnectionPublisher.swift in Sources */,
 				C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */,
+				C283D5A42408DEEB00E109A0 /* Token.swift in Sources */,
 				C277ED682393661800894B7A /* City.swift in Sources */,
 				C2834890236BC4DD00381EA3 /* LoadingSceneView.swift in Sources */,
 				C258E57F23D662CB0078E317 /* GameEntity.swift in Sources */,

@@ -61,7 +61,7 @@ class ConnectionPublisher: Publisher {
     func publishUserResponse(response: Response) {
         var notification: Notification
         switch response.getOperation() {
-        case APIOperations.login:
+        case APIOperations.LoginUser:
             notification = notificationFactory.buildNotification(name: .ConnectionLoginSucceed, data: response)
         case APIOperations.get:
             notification = notificationFactory.buildNotification(name: .ConnectionDidGetUsers, data: response)

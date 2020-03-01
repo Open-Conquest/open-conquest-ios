@@ -23,9 +23,12 @@ class UserService: GameService {
     func setupSubscribers() {
         // subscribe to scene notifications
         subscriber.subscribe(observingFunction: tryLogin(_:), name: .SceneTryLogin)
+        subscriber.subscribe(observingFunction: tryRegister(_:), name: .SceneTryRegister)
         subscriber.subscribe(observingFunction: tryGetUsers(_:), name: .SceneTryGetUsers)
         
         // subscribe to api notifications
+//        subscriber.subscribe(observingFunction: registerSucceed(_:), name: .APIRegisterSucceed)
+//        subscriber.subscribe(observingFunction: registerFailed(_:), name: .APIRegisterFailed)
         subscriber.subscribe(observingFunction: loginSucceed(_:), name: .APILoginSucceed)
         subscriber.subscribe(observingFunction: didGetUsers(_:), name: .APIDidGetUsers)
     }
@@ -50,6 +53,38 @@ class UserService: GameService {
         }
         
     }
+    
+    // scene
+    func tryRegister(_ notification: Notification) {
+        print("UserService recieved SceneTryRegister event.")
+        
+        let tryRegisterData = notification.userInfo!["data"] as! SceneTryRegisterData
+        publisher.tryRegister(data: tryRegisterData)
+    }
+
+    // api
+//    func registerSucceed(_ notification: Notification) {
+//        print("UserService recieved APIRegisterSucceed event.")
+//
+//        // initialize user from notification
+//        let loginSucceedData = notification.userInfo!["data"] as! APIRegisterSucceedData
+//        user = User(apiLoginSucceedData: loginSucceedData)
+//
+//        print("UserService publishing GameLoginSucceeded event...")
+//        publisher.loginSucceed()
+//    }
+//
+//    // api
+//    func registerFailed(_ notification: Notification) {
+//        print("UserService recieved APIRegisterFailed event.")
+//
+//        // initialize user from notification
+//        let loginSucceedData = notification.userInfo!["data"] as! APIRegisterFailedData
+//        user = User(apiLoginSucceedData: loginSucceedData)
+//
+//        print("UserService publishing GameLoginSucceeded event...")
+//        publisher.loginSucceed()
+//    }
     
     // api
     func loginSucceed(_ notification: Notification) {
