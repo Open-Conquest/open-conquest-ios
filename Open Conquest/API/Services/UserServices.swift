@@ -54,17 +54,38 @@ class UserServices {
     
     
     // MARK: CONNECTION SUBSCRIBING METHODS
-    
+    struct TokenStruct {
+        var value: String
+    }
     func didLogin(_ notification: Notification) {
         print("UserServices received ConnectionLoginSucceeded event.")
+
+        // parse response
+        let loginUserResponse = LoginUserResponseDTO(response:
+            notification.userInfo!["data"] as! Response
+        )
         
-        let response = notification.userInfo!["data"] as! Response
-        let loginUserResponse = LoginUserResponseDTO(response: response)
-        publisher.loginSucceeded(loginUserResponse)
-//        var response = notification.userInfo!["data"] as! Response
-//        response = LoginResponse(response: response)
-//        let username = response.getUsername()
-//        publisher.loginSucceeded(username: username)
+        // save token value
+        let tokenStruct = TokenStruct(value: loginUserResponse.getToken().getValue())
+        let tokenValue = tokenStruct.value.data(using: String.Encoding.utf8)!
+        let server = "server"
+        let account = "account"
+        let attributes: [String: Any] = [
+            kSecClass as String: kSecClassInternetPassword,
+            kSecAttrAccount as String: account,
+            kSecAttrServer as String: server,
+            kSecValueData as String: tokenValue
+        ]
+        let addstatus = SecItemAdd(attributes as CFDictionary, nil)
+        guard addstatus == errSecSuccess else {
+            print("Error in UserServices didLogin")
+            // emit login failed notification
+            publisher.loginFailed()
+            return
+        }
+        
+        // emit did login notification
+        publisher.loginSucceeded(response: loginUserResponse)
     }
     
     func didGetUsers(_ notification: Notification) {
