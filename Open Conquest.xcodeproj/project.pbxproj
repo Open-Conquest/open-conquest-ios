@@ -117,6 +117,7 @@
 		C2D7B8E923907C35006571E2 /* ArmyServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D7B8E823907C35006571E2 /* ArmyServicePublisher.swift */; };
 		C2DDC9D723CA24D700456276 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2DDC9D523CA24D600456276 /* Model.xcdatamodeld */; };
 		C2E0A903234D9114000F6FCD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E0A902234D9114000F6FCD /* User.swift */; };
+		C2EF8E57240D65410002354D /* BaseAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E56240D65400002354D /* BaseAPIServices.swift */; };
 		C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */; };
 		C2F5191D23AACC9F0042094E /* MapServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5191C23AACC9F0042094E /* MapServicePublisher.swift */; };
 		C2F5191F23AAD9F10042094E /* MarchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5191E23AAD9F10042094E /* MarchService.swift */; };
@@ -274,6 +275,7 @@
 		C2D7B8E823907C35006571E2 /* ArmyServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyServicePublisher.swift; sourceTree = "<group>"; };
 		C2DDC9D623CA24D600456276 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C2E0A902234D9114000F6FCD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C2EF8E56240D65400002354D /* BaseAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIServices.swift; sourceTree = "<group>"; };
 		C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorTable.swift; sourceTree = "<group>"; };
 		C2F5191C23AACC9F0042094E /* MapServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapServicePublisher.swift; sourceTree = "<group>"; };
 		C2F5191E23AAD9F10042094E /* MarchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchService.swift; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 		C2D1BDAC2342F98300ADF01E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C2EF8E56240D65400002354D /* BaseAPIServices.swift */,
 				C2D7B8E42390788E006571E2 /* ArmyServices.swift */,
 				C2D7B8E623907A40006571E2 /* ArmyServicesPublisher.swift */,
 				C2F574E023A981F600E2DE5D /* CityServices.swift */,
@@ -983,6 +986,7 @@
 				92A2A374229B66450090287C /* LoginScene.swift in Sources */,
 				C2D1BDBE2344425D00ADF01E /* UserService.swift in Sources */,
 				C2D1BDD223455B5C00ADF01E /* UserServicesPublisher.swift in Sources */,
+				C2EF8E57240D65410002354D /* BaseAPIServices.swift in Sources */,
 				C299F0AD234C2EF60076C747 /* UserServicePublisher.swift in Sources */,
 				C2B9B2FA2387BE7300BCF103 /* LoadingSceneProgressLabel.swift in Sources */,
 				C2834897236BC71400381EA3 /* GamePublisher.swift in Sources */,

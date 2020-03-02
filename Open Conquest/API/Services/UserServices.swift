@@ -8,14 +8,15 @@
 
 import Foundation
 
-class UserServices {
+class UserServices: BaseAPIServices {
     var publisher:  UserServicesPublisher
     var subscriber: Subscriber
     
-    init() {
+    override init() {
         publisher   = UserServicesPublisher()
         subscriber  = Subscriber()
         
+        super.init()
         setupSubscibers()
     }
     
@@ -65,24 +66,48 @@ class UserServices {
             notification.userInfo!["data"] as! Response
         )
         
-        // save token value
-        let tokenStruct = TokenStruct(value: loginUserResponse.getToken().getValue())
-        let tokenValue = tokenStruct.value.data(using: String.Encoding.utf8)!
-        let server = "server"
-        let account = "account"
-        let attributes: [String: Any] = [
-            kSecClass as String: kSecClassInternetPassword,
-            kSecAttrAccount as String: account,
-            kSecAttrServer as String: server,
-            kSecValueData as String: tokenValue
-        ]
-        let addstatus = SecItemAdd(attributes as CFDictionary, nil)
-        guard addstatus == errSecSuccess else {
-            print("Error in UserServices didLogin")
-            // emit login failed notification
-            publisher.loginFailed()
-            return
+        // test getting token value
+        do {
+            try saveTokenToKeychain(value: loginUserResponse.getToken().getValue())
+        } catch KeychainError.tokenNotSaved {
+            print("fuck")
+        } catch KeychainError.tokenNotUpdated {
+            print("ugh")
+        } catch {
+            print("fuck ugh")
         }
+        
+        print("added token successfully mayve")
+        
+        
+//        do {
+//            let gotValue = try getTokenFromKeychain()
+//            print(gotValue)
+//        } catch KeychainError.tokenNotFound {
+//            print("fuck it")
+//        } catch {
+//            print("really fuck it")
+//        }
+//
+//        // save token value
+//        let tokenStruct = TokenStruct(value: loginUserResponse.getToken().getValue())
+//        let tokenValue = tokenStruct.value.data(using: String.Encoding.utf8)!
+//        let server = "server"
+//        let account = "account"
+//        let attributes: [String: Any] = [
+//            kSecClass as String: kSecClassInternetPassword,
+//            kSecAttrAccount as String: account,
+//            kSecAttrServer as String: server,
+//            kSecValueData as String: tokenValue
+//        ]
+//        let addstatus = SecItemAdd(attributes as CFDictionary, nil)
+//        guard addstatus == errSecSuccess else {
+//            print("Error in UserServices didLogin")
+//            // emit login failed notification
+//            publisher.loginFailed()
+//            return
+//        }
+        
         
         // emit did login notification
         publisher.loginSucceeded(response: loginUserResponse)
