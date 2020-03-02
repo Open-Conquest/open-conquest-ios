@@ -9,7 +9,7 @@
 import Foundation
 
 enum APIOperations: String {
-    case LoginUser  = "LoginUser"
+    case LoginUser  = "loginUser"
     case get    = "get"
-    case RegisterUser = "RegisterUser"
+    case RegisterUser = "registerUser"
 }

@@ -10,7 +10,6 @@ import Foundation
 import SwiftyJSON
 
 class Request {
-    
     var service:    APIServices
     var operation:  APIOperations
     var token:      Token?

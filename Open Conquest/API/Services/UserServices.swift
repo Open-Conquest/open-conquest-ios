@@ -58,11 +58,13 @@ class UserServices {
     func didLogin(_ notification: Notification) {
         print("UserServices received ConnectionLoginSucceeded event.")
         
+        let response = notification.userInfo!["data"] as! Response
+        let loginUserResponse = LoginUserResponseDTO(response: response)
+        publisher.loginSucceeded(loginUserResponse)
 //        var response = notification.userInfo!["data"] as! Response
-        let username = "zach"
 //        response = LoginResponse(response: response)
 //        let username = response.getUsername()
-        publisher.loginSucceeded(username: username)
+//        publisher.loginSucceeded(username: username)
     }
     
     func didGetUsers(_ notification: Notification) {

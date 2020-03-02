@@ -9,27 +9,14 @@
 import Foundation
 import SwiftyJSON
 
-class LoginUserReponse: Response {
-    var token: Token?
-    var username: String?
-    
-    init(response: Response) {
-        
-        // from json
-        
-        super.init(service: .User, operation: .LoginUser, data: JSON())
-//        let data = JSON([
-//            "username": gameTryLoginData.username,
-//        ])
-//        super.init(service: .user, operation: .LoginUser, data: data)
-    }
+class LoginUserResponseDTO: Response {
+    let token: Token
+    let username: String
 
-    init(username: String, password: String) {
-//        let data = JSON([
-//            "username": username,
-//            "password": password
-//        ])
-//        super.init(service: .user, operation: .LoginUser, data: data)
-        super.init(service: .User, operation: .LoginUser, data: JSON())
+    init(response: Response) {
+        let responseData = response.getData()
+        username = responseData["username"].string!
+        token = Token(value: responseData["token"].string!)
+        super.init(service: .User, operation: .LoginUser, data: response.getData())
     }
 }

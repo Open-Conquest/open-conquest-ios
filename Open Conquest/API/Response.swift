@@ -10,7 +10,6 @@ import Foundation
 import SwiftyJSON
 
 class Response {
-    
     var service:    APIServices
     var operation:  APIOperations
     var data:       JSON

@@ -16,12 +16,14 @@ class LoginRequest: Request {
             "username": gameTryLoginData.username,
             "password": gameTryLoginData.password
         ])
-        super.init(service: .user, operation: .LoginUser, data: data)
+        super.init(service: .User, operation: .LoginUser, data: data)
     }
 
     init(username: String, password: String) {
-        let data = JSON(["username": username,
-                         "password": password])
-        super.init(service: .user, operation: .LoginUser, data: data)
+        let data = JSON([
+            "username": username,
+            "password": password
+        ])
+        super.init(service: .User, operation: .LoginUser, data: data)
     }
 }
