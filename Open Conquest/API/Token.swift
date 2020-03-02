@@ -14,4 +14,8 @@ class Token {
     init(value: String) {
         self.value = value
     }
+    
+    func getValue() -> String {
+        return value
+    }
 }

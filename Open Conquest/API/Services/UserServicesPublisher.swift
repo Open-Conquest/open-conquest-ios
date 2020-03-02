@@ -39,8 +39,8 @@ class UserServicesPublisher: Publisher {
     
     // MARK: GAME PUBLISHING METHODS
     
-    func loginSucceeded(username: String) {
-        let data    = APILoginSucceedData(username: username)
+    func loginSucceeded(response: LoginUserResponseDTO) {
+        let data    = APILoginSucceedData(username: response.getUsername())
         let notif   = notificationFactory.buildNotification(name: .APILoginSucceed, data: data)
         post(notification: notif)
     }
