@@ -87,7 +87,7 @@
 		C284DBD423C3B04E004ADEFC /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C284DBD323C3B04E004ADEFC /* Resources.swift */; };
 		C28CD02223CD3F30003F8B2A /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CD02123CD3F30003F8B2A /* NavbarView.swift */; };
 		C28CD02423CD449B003F8B2A /* NavbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CD02323CD449B003F8B2A /* NavbarButton.swift */; };
-		C299F0A8234BDA4B0076C747 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299F0A7234BDA4B0076C747 /* LoginResponse.swift */; };
+		C299F0A8234BDA4B0076C747 /* LoginUserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299F0A7234BDA4B0076C747 /* LoginUserResponseDTO.swift */; };
 		C299F0AD234C2EF60076C747 /* UserServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299F0AC234C2EF60076C747 /* UserServicePublisher.swift */; };
 		C2B9B2FA2387BE7300BCF103 /* LoadingSceneProgressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B9B2F92387BE7300BCF103 /* LoadingSceneProgressLabel.swift */; };
 		C2BF586423D571FE00772635 /* MarchSelectorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF586323D571FE00772635 /* MarchSelectorHeader.swift */; };
@@ -244,7 +244,7 @@
 		C284DBD323C3B04E004ADEFC /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		C28CD02123CD3F30003F8B2A /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
 		C28CD02323CD449B003F8B2A /* NavbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarButton.swift; sourceTree = "<group>"; };
-		C299F0A7234BDA4B0076C747 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		C299F0A7234BDA4B0076C747 /* LoginUserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserResponseDTO.swift; sourceTree = "<group>"; };
 		C299F0AC234C2EF60076C747 /* UserServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServicePublisher.swift; sourceTree = "<group>"; };
 		C2B9B2F92387BE7300BCF103 /* LoadingSceneProgressLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneProgressLabel.swift; sourceTree = "<group>"; };
 		C2BF586323D571FE00772635 /* MarchSelectorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorHeader.swift; sourceTree = "<group>"; };
@@ -516,7 +516,7 @@
 				C2F5192D23AAE37B0042094E /* GetMapResponse.swift */,
 				C2F5192F23AAE3830042094E /* GetMarchesResponse.swift */,
 				C2FDC5742384756800C0E556 /* GetUsersResponse.swift */,
-				C299F0A7234BDA4B0076C747 /* LoginResponse.swift */,
+				C299F0A7234BDA4B0076C747 /* LoginUserResponseDTO.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -963,7 +963,7 @@
 				C2F574E523A9C0FF00E2DE5D /* GetCitiesResponse.swift in Sources */,
 				C2F5191F23AAD9F10042094E /* MarchService.swift in Sources */,
 				C2BF586623D5720700772635 /* MarchSelectorFooter.swift in Sources */,
-				C299F0A8234BDA4B0076C747 /* LoginResponse.swift in Sources */,
+				C299F0A8234BDA4B0076C747 /* LoginUserResponseDTO.swift in Sources */,
 				C276CBE723D681C2005D21A0 /* CDWorld+CoreDataClass.swift in Sources */,
 				C2F5192823AADEB70042094E /* MapServicesPublisher.swift in Sources */,
 				C276CBEE23D681C2005D21A0 /* CDArmy_Units+CoreDataProperties.swift in Sources */,
