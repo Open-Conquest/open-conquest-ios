@@ -16,7 +16,15 @@ class LoginUserResponseDTO: Response {
     init(response: Response) {
         let responseData = response.getData()
         username = responseData["username"].string!
-        token = Token(value: responseData["token"].string!)
+        token = Token(value: responseData["token"]["value"].string!)
         super.init(service: .User, operation: .LoginUser, data: response.getData())
+    }
+    
+    func getUsername() -> String {
+        return username
+    }
+    
+    func getToken() -> Token {
+        return token
     }
 }
