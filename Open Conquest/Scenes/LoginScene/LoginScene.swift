@@ -45,8 +45,8 @@ class LoginScene: SKScene, Scene {
     func setupSubscribers() {
         subscriber.subscribe(observingFunction: loginSucceeded(_:), name: .GameLoginSucceed)
         subscriber.subscribe(observingFunction: registerSucceeded(_:), name: .GameRegisterSucceed)
-        subscriber.subscribe(observingFunction: loginSucceeded(_:), name: .GameLoginFailed)
-        subscriber.subscribe(observingFunction: registerSucceeded(_:), name: .GameRegisterFailed)
+        subscriber.subscribe(observingFunction: loginFailed(_:), name: .GameLoginFailed)
+        subscriber.subscribe(observingFunction: registerFailed(_:), name: .GameRegisterFailed)
     }
     
     func teardownSubscribers() {
@@ -114,6 +114,7 @@ class LoginScene: SKScene, Scene {
     func loginSucceeded(_ notification: Notification) {
         print("LoginScene recieved loginSucceed event from game.")
         print("LoginScene presenting PickPlayerScene...")
+        loginView.setErrorMessage(message: "")
 //        prepareForNavigation()
 //        let scene = LoadingScene()
 //        scene.scaleMode = .aspectFill
@@ -122,17 +123,25 @@ class LoginScene: SKScene, Scene {
     
     func loginFailed(_ notification: Notification) {
         print("LoginScene recieved loginFailed event from game.")
-        loginView.setErrorMessage(message: "Error logging into account")
+        // get message from notification
+        let loginFailedData = notification.userInfo!["data"] as! GameLoginFailedData
+        loginView.setErrorMessage(message: loginFailedData.getMessage())
     }
     
     func registerSucceeded(_ notification: Notification) {
         print("LoginScene recieved registerSucceed event from game.")
         print("LoginScene presenting CreatePlayerScene...")
+        loginView.setErrorMessage(message: "")
+        //        prepareForNavigation()
+        //        let scene = LoadingScene()
+        //        scene.scaleMode = .aspectFill
+        //        view!.presentScene(scene)
     }
     
     func registerFailed(_ notification: Notification) {
         print("LoginScene recieved registerSucceed event from game.")
-        loginView.setErrorMessage(message: "Error registering account")
+        let registerFailedData = notification.userInfo!["data"] as! GameRegisterFailedData
+        loginView.setErrorMessage(message: registerFailedData.getMessage())
     }
     
     override func update(_ currentTime: TimeInterval) {}

@@ -1,5 +1,5 @@
 //
-//  Response.swift
+//  Request.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 10/3/19.
@@ -9,44 +9,37 @@
 import Foundation
 import SwiftyJSON
 
-class Response {
-    
+class Request {
     var service:    APIServices
     var operation:  APIOperations
+    var token:      Token?
     var data:       JSON
     
     init(service: APIServices, operation: APIOperations, data: JSON) {
-        self.service    = service
-        self.operation  = operation
-        self.data       = data
+        self.service = service
+        self.operation = operation
+        self.data = data
     }
     
-    init(body: JSON) {
-        self.service    = APIServices(rawValue: body["service"].string!)!
-        self.operation  = APIOperations(rawValue: body["operation"].string!)!
-        self.data       = body["data"] 
+    init(service: String, operation: String, data: JSON) {
+        self.service    = APIServices(rawValue: service)!
+        self.operation  = APIOperations(rawValue: operation)!
+        self.data       = data
     }
     
     init(data: [AnyHashable: Any]) {
         fatalError("No implementation")
     }
     
-    func getService() -> APIServices {
-        return service
-    }
-    
-    func getOperation() -> APIOperations {
-        return operation
-    }
-    
-    func getData() -> JSON {
-        return data
+    func setToken(token: Token) {
+        self.token = token
     }
     
     func toString() -> String {
         let request = JSON([
             "service": service.rawValue,
             "operation": operation.rawValue,
+            "token": token?.getValue(),
             "data": data
         ])
         return request.rawString()!

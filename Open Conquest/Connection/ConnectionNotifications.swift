@@ -13,6 +13,8 @@ enum ConnectionNotifications: String
 {
     case LoginSucceed   = "connection-login-succeed"
     case LoginFailed    = "connection-login-failed"
+    case RegisterSucceed   = "connection-register-succeed"
+    case RegisterFailed    = "connection-register-failed"
     
     case DidGetArmies   = "connection-did-get-armies"
     case DidGetCities   = "connection-did-get-cities"
@@ -25,6 +27,8 @@ extension Notification.Name
 {
     static let ConnectionLoginSucceed   = Notification.Name(rawValue: ConnectionNotifications.LoginSucceed.rawValue)
     static let ConnectionLoginFailed    = Notification.Name(rawValue: ConnectionNotifications.LoginFailed.rawValue)
+    static let ConnectionRegisterSucceed   = Notification.Name(rawValue: ConnectionNotifications.RegisterSucceed.rawValue)
+    static let ConnectionRegisterFailed    = Notification.Name(rawValue: ConnectionNotifications.RegisterFailed.rawValue)
     
     static let ConnectionDidGetArmies   = Notification.Name(rawValue: ConnectionNotifications.DidGetArmies.rawValue)
     static let ConnectionDidGetCities   = Notification.Name(rawValue: ConnectionNotifications.DidGetCities.rawValue)

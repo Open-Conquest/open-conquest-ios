@@ -26,18 +26,16 @@ class ConnectionMessageDispatch {
         print("ConnectionMessageDispatch received response: \(response.toString())")
         
         switch service {
-        case APIServices.army:
+        case APIServices.Army:
             publisher.publishArmyResponse(response: response)
-        case APIServices.city:
+        case APIServices.City:
             publisher.publishCityResponse(response: response)
-        case APIServices.map:
+        case APIServices.Map:
             publisher.publishMapResponse(response: response)
-        case APIServices.march:
+        case APIServices.March:
             publisher.publishMarchResponse(response: response)
-        case APIServices.user:
-            publisher.publishUserResponse(response: response)
         case APIServices.User:
-            print(json)
+            publisher.publishUserResponse(response: response)
         }
     }
 }

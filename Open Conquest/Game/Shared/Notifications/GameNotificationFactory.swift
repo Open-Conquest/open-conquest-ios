@@ -25,9 +25,21 @@ class GameNotificationFactory: NotificationFactory {
         return buildNotification(name: .GameLoginSucceed, data: data)
     }
     
+    func buildGameLoginFailedNotification(data: GameLoginFailedData) -> Notification {
+        return buildNotification(name: .GameLoginFailed, data: data)
+    }
+    
     func buildGameTryRegisterNotification(data: SceneTryRegisterData) -> Notification {
         let notifData = GameTryRegisterData(data: data)
         return buildNotification(name: .GameTryRegister, data: notifData)
+    }
+    
+    func buildGameRegisterSucceedNotification(data: GameRegisterSucceedData) -> Notification {
+        return buildNotification(name: .GameRegisterSucceed, data: data)
+    }
+    
+    func buildGameRegisterFailedNotification(data: GameRegisterFailedData) -> Notification {
+        return buildNotification(name: .GameRegisterFailed, data: data)
     }
     
     // TODO: add query

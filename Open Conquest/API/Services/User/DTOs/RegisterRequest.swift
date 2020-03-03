@@ -20,8 +20,10 @@ class RegisterRequest: Request {
     }
 
     init(username: String, password: String) {
-        let data = JSON(["username": username,
-                         "password": password])
+        let data = JSON([
+            "username": username,
+            "password": password
+        ])
         super.init(service: APIServices.User, operation: APIOperations.RegisterUser, data: data)
     }
 }
