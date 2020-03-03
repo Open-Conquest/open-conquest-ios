@@ -63,6 +63,12 @@ class ConnectionPublisher: Publisher {
         switch response.getOperation() {
         case APIOperations.LoginUser:
             notification = notificationFactory.buildNotification(name: .ConnectionLoginSucceed, data: response)
+        case APIOperations.LoginUserError:
+            notification = notificationFactory.buildNotification(name: .ConnectionLoginFailed, data: response)
+        case APIOperations.RegisterUser:
+            notification = notificationFactory.buildNotification(name: .ConnectionRegisterSucceed, data: response)
+        case APIOperations.RegisterUserError:
+            notification = notificationFactory.buildNotification(name: .ConnectionRegisterFailed, data: response)
         case APIOperations.get:
             notification = notificationFactory.buildNotification(name: .ConnectionDidGetUsers, data: response)
         default:

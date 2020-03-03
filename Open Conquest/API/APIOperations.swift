@@ -10,6 +10,8 @@ import Foundation
 
 enum APIOperations: String {
     case LoginUser  = "loginUser"
+    case LoginUserError = "loginUserError"
     case get    = "get"
     case RegisterUser = "registerUser"
+    case RegisterUserError = "registerUserError"
 }

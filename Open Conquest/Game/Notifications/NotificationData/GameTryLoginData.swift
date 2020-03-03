@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class GameTryLoginData {
+    let username: String
+    let password: String
+    init(data: SceneTryLoginData) {
+        self.username = data.username
+        self.password = data.password
+    }
+}

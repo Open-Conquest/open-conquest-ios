@@ -28,8 +28,9 @@ class UserService: GameService {
         
         // subscribe to api notifications
 //        subscriber.subscribe(observingFunction: registerSucceed(_:), name: .APIRegisterSucceed)
-//        subscriber.subscribe(observingFunction: registerFailed(_:), name: .APIRegisterFailed)
+        subscriber.subscribe(observingFunction: registerFailed(_:), name: .APIRegisterFailed)
         subscriber.subscribe(observingFunction: loginSucceed(_:), name: .APILoginSucceed)
+        subscriber.subscribe(observingFunction: loginFailed(_:), name: .APILoginFailed)
         subscriber.subscribe(observingFunction: didGetUsers(_:), name: .APIDidGetUsers)
     }
 
@@ -63,28 +64,26 @@ class UserService: GameService {
     }
 
     // api
-//    func registerSucceed(_ notification: Notification) {
-//        print("UserService recieved APIRegisterSucceed event.")
-//
-//        // initialize user from notification
-//        let loginSucceedData = notification.userInfo!["data"] as! APIRegisterSucceedData
-//        user = User(apiLoginSucceedData: loginSucceedData)
-//
-//        print("UserService publishing GameLoginSucceeded event...")
-//        publisher.loginSucceed()
-//    }
-//
-//    // api
-//    func registerFailed(_ notification: Notification) {
-//        print("UserService recieved APIRegisterFailed event.")
-//
-//        // initialize user from notification
-//        let loginSucceedData = notification.userInfo!["data"] as! APIRegisterFailedData
-//        user = User(apiLoginSucceedData: loginSucceedData)
-//
-//        print("UserService publishing GameLoginSucceeded event...")
-//        publisher.loginSucceed()
-//    }
+    func registerSucceed(_ notification: Notification) {
+        print("UserService recieved APIRegisterSucceed event.")
+
+        // initialize user from notification
+        let registerSucceedData = notification.userInfo!["data"] as! APIRegisterSucceedData
+        // create a user from username
+        let username = registerSucceedData.getUsername()
+
+        print("UserService publishing GameLoginSucceeded event...")
+        publisher.loginSucceed()
+    }
+
+    // api
+    func registerFailed(_ notification: Notification) {
+        print("UserService recieved APIRegisterFailed event.")
+
+        // initialize user from notification
+        let registerFailedData = notification.userInfo!["data"] as! APIRegisterFailedData
+        publisher.registerFailed(message: registerFailedData.getMessage())
+    }
     
     // api
     func loginSucceed(_ notification: Notification) {
@@ -96,6 +95,16 @@ class UserService: GameService {
         
         print("UserService publishing GameLoginSucceeded event...")
         publisher.loginSucceed()
+    }
+    
+    func loginFailed(_ notification: Notification) {
+        print("UserService received APILoginFailed event.")
+        
+        // notify scene of error
+        let loginErrorData = notification.userInfo!["data"] as! APILoginFailedData
+        let errorMessage = loginErrorData.getMessage()
+        
+        publisher.loginFailed(message: errorMessage)
     }
     
     // scene

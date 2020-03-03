@@ -39,7 +39,7 @@ class Request {
         let request = JSON([
             "service": service.rawValue,
             "operation": operation.rawValue,
-            "token": token,
+            "token": token?.getValue(),
             "data": data
         ])
         return request.rawString()!

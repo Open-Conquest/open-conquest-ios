@@ -54,15 +54,6 @@ extension Notification.Name
     static let GameDidGetUsers      = Notification.Name(rawValue: GameNotifications.DidGetUsers.rawValue)
 }
 
-class GameTryLoginData {
-    let username: String
-    let password: String
-    init(data: SceneTryLoginData) {
-        self.username = data.username
-        self.password = data.password
-    }
-}
-
 
 class GameLoginSucceedData {
 }

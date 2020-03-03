@@ -17,6 +17,8 @@ enum APINotifications: String
     // all of these are observed by the game components
     case LoginSucceed   = "api-login-succeed"
     case LoginFailed    = "api-login-failed"
+    case RegisterSucceed   = "api-register-succeed"
+    case RegisterFailed    = "api-register-failed"
     
     case DidGetArmies   = "api-did-get-armies"
     case DidGetCities   = "api-did-get-cities"
@@ -33,6 +35,8 @@ extension Notification.Name
     // all of these are observed by the game components
     static let APILoginSucceed  = Notification.Name(rawValue: APINotifications.LoginSucceed.rawValue)
     static let APILoginFailed   = Notification.Name(rawValue: APINotifications.LoginFailed.rawValue)
+    static let APIRegisterSucceed  = Notification.Name(rawValue: APINotifications.RegisterSucceed.rawValue)
+    static let APIRegisterFailed   = Notification.Name(rawValue: APINotifications.RegisterFailed.rawValue)
     
     static let APIDidGetArmies  = Notification.Name(rawValue: APINotifications.DidGetArmies.rawValue)
     static let APIDidGetCities  = Notification.Name(rawValue: APINotifications.DidGetCities.rawValue)
@@ -52,26 +56,7 @@ class APIMakeRequestData {
     }
 }
 
-class APILoginSucceedData {
-    let username: String
-    init(username: String) {
-        self.username = username
-    }
-    func getUsername() -> String {
-        return username
-    }
-}
 
-class APILoginFailedData {
-    let message: String
-    init(message: String) {
-        self.message = message
-    }
-    
-    func getMessage() -> String {
-        return message
-    }
-}
 
 class APIDidGetUsersData {
     

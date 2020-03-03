@@ -77,6 +77,7 @@ class LoginSceneView: UIView {
         usernameField?.autoSetDimension(.width, toSize: usernameFieldWidth)
         usernameField?.autoPinEdge(toSuperviewEdge: .left, withInset: 10)
         usernameField?.autoPinEdge(toSuperviewEdge: .right, withInset: 10)
+        usernameField?.text = "test_username"
         
         let passwordFieldHeight = viewHeight/15
         let passwordFieldWidth = viewWidth - 20
@@ -85,6 +86,7 @@ class LoginSceneView: UIView {
         passwordField?.autoSetDimension(.width, toSize: passwordFieldWidth)
         passwordField?.autoPinEdge(toSuperviewEdge: .left, withInset: 10)
         passwordField?.autoPinEdge(toSuperviewEdge: .right, withInset: 10)
+        passwordField?.text = "test_password"
         
         let loginButtonHeight =  viewHeight/14
         let loginButtonWidth = viewWidth - 40
@@ -105,10 +107,15 @@ class LoginSceneView: UIView {
         switchModeButton?.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)
         
         let errorMessageWidth = viewWidth
-        errorMessage?.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 20)
+        errorMessage?.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 10)
         errorMessage?.autoPinEdge(toSuperviewEdge: .bottom, withInset: 20)
         errorMessage?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
         errorMessage?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
+        errorMessage?.textAlignment = .center
+        errorMessage?.font = UIFont(name: "Chalkduster", size: 18)
+        errorMessage?.textColor = UIColor.red
+        errorMessage?.lineBreakMode = .byWordWrapping
+        errorMessage?.numberOfLines = 0
     }
     
     func switchMode(mode: LoginSceneMode) {

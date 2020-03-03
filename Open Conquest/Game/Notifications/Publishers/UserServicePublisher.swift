@@ -38,6 +38,16 @@ class UserServicePublisher: Publisher {
         post(notification: notification)
     }
     
+    func registerSucceed() {
+        
+    }
+    
+    func registerFailed(message: String) {
+        let data = GameRegisterFailedData(message: message)
+        let notification = gameNotificationFactory.buildGameRegisterFailedNotification(data: data)
+        post(notification: notification)
+    }
+    
     func didGetUsers(users: [User]) {
         let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .user, entities: users)
         post(notification: notification)

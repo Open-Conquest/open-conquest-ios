@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class GameRegisterFailedData {
+    var message: String
+    init(message: String) {
+        self.message = message
+    }
+    
+    func getMessage() -> String {
+        return message
+    }
+}
