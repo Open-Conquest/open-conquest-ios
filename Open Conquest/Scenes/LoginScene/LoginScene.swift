@@ -113,12 +113,12 @@ class LoginScene: SKScene, Scene {
     
     func loginSucceeded(_ notification: Notification) {
         print("LoginScene recieved loginSucceed event from game.")
-        print("LoginScene presenting PickPlayerScene...")
+        print("LoginScene presenting CreatePlayerScene...")
         loginView.setErrorMessage(message: "")
-//        prepareForNavigation()
-//        let scene = LoadingScene()
-//        scene.scaleMode = .aspectFill
-//        view!.presentScene(scene)
+        prepareForNavigation()
+        let scene = CreatePlayerScene()
+        scene.scaleMode = .aspectFill
+        view!.presentScene(scene)
     }
     
     func loginFailed(_ notification: Notification) {
@@ -132,10 +132,10 @@ class LoginScene: SKScene, Scene {
         print("LoginScene recieved registerSucceed event from game.")
         print("LoginScene presenting CreatePlayerScene...")
         loginView.setErrorMessage(message: "")
-        //        prepareForNavigation()
-        //        let scene = LoadingScene()
-        //        scene.scaleMode = .aspectFill
-        //        view!.presentScene(scene)
+        prepareForNavigation()
+        let scene = CreatePlayerScene()
+        scene.scaleMode = .aspectFill
+        view!.presentScene(scene)
     }
     
     func registerFailed(_ notification: Notification) {

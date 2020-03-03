@@ -131,6 +131,13 @@
 		C2EF8E84240DE0480002354D /* RegisterUserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E83240DE0480002354D /* RegisterUserResponseDTO.swift */; };
 		C2EF8E87240DE19F0002354D /* GameRegisterSucceedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E86240DE19F0002354D /* GameRegisterSucceedData.swift */; };
 		C2EF8E8A240DE1D70002354D /* GameLoginSucceedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E89240DE1D70002354D /* GameLoginSucceedData.swift */; };
+		C2EF8E94240DE7CC0002354D /* CreatePlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E93240DE7CC0002354D /* CreatePlayerScene.swift */; };
+		C2EF8E96240DE7E70002354D /* CreatePlayerScenePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E95240DE7E70002354D /* CreatePlayerScenePublisher.swift */; };
+		C2EF8E9B240DE8F20002354D /* CreatePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E9A240DE8F20002354D /* CreatePlayerView.swift */; };
+		C2EF8E9D240DEB030002354D /* CreatePlayerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E9C240DEB030002354D /* CreatePlayerBackground.swift */; };
+		C2EF8E9F240DEB1D0002354D /* CreatePlayerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E9E240DEB1D0002354D /* CreatePlayerHeader.swift */; };
+		C2EF8EA1240DEB280002354D /* CreatePlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8EA0240DEB280002354D /* CreatePlayerCard.swift */; };
+		C2EF8EA3240DF0400002354D /* CreatePlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8EA2240DF0400002354D /* CreatePlayerButton.swift */; };
 		C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */; };
 		C2F5191D23AACC9F0042094E /* MapServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5191C23AACC9F0042094E /* MapServicePublisher.swift */; };
 		C2F5191F23AAD9F10042094E /* MarchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5191E23AAD9F10042094E /* MarchService.swift */; };
@@ -302,6 +309,13 @@
 		C2EF8E83240DE0480002354D /* RegisterUserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserResponseDTO.swift; sourceTree = "<group>"; };
 		C2EF8E86240DE19F0002354D /* GameRegisterSucceedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRegisterSucceedData.swift; sourceTree = "<group>"; };
 		C2EF8E89240DE1D70002354D /* GameLoginSucceedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoginSucceedData.swift; sourceTree = "<group>"; };
+		C2EF8E93240DE7CC0002354D /* CreatePlayerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerScene.swift; sourceTree = "<group>"; };
+		C2EF8E95240DE7E70002354D /* CreatePlayerScenePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerScenePublisher.swift; sourceTree = "<group>"; };
+		C2EF8E9A240DE8F20002354D /* CreatePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerView.swift; sourceTree = "<group>"; };
+		C2EF8E9C240DEB030002354D /* CreatePlayerBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerBackground.swift; sourceTree = "<group>"; };
+		C2EF8E9E240DEB1D0002354D /* CreatePlayerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerHeader.swift; sourceTree = "<group>"; };
+		C2EF8EA0240DEB280002354D /* CreatePlayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerCard.swift; sourceTree = "<group>"; };
+		C2EF8EA2240DF0400002354D /* CreatePlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerButton.swift; sourceTree = "<group>"; };
 		C2F4A40923D3DFC7004B97C9 /* MarchSelectorTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorTable.swift; sourceTree = "<group>"; };
 		C2F5191C23AACC9F0042094E /* MapServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapServicePublisher.swift; sourceTree = "<group>"; };
 		C2F5191E23AAD9F10042094E /* MarchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchService.swift; sourceTree = "<group>"; };
@@ -445,6 +459,7 @@
 			children = (
 				C269763E23D4D691007035ED /* Shared */,
 				92A2A370229B64AD0090287C /* LoginScene */,
+				C2EF8E92240DE7930002354D /* CreatePlayer */,
 				C283488A236BC40300381EA3 /* LoadingScene */,
 				92A2A375229B69070090287C /* GameScene */,
 			);
@@ -943,6 +958,28 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		C2EF8E92240DE7930002354D /* CreatePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C2EF8E93240DE7CC0002354D /* CreatePlayerScene.swift */,
+				C2EF8E95240DE7E70002354D /* CreatePlayerScenePublisher.swift */,
+				C2EF8E99240DE8EB0002354D /* View */,
+			);
+			path = CreatePlayer;
+			sourceTree = "<group>";
+		};
+		C2EF8E99240DE8EB0002354D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2EF8E9A240DE8F20002354D /* CreatePlayerView.swift */,
+				C2EF8E9C240DEB030002354D /* CreatePlayerBackground.swift */,
+				C2EF8E9E240DEB1D0002354D /* CreatePlayerHeader.swift */,
+				C2EF8EA0240DEB280002354D /* CreatePlayerCard.swift */,
+				C2EF8EA2240DF0400002354D /* CreatePlayerButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C2F252E323D3B18000AAF818 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1205,6 +1242,7 @@
 				C2D5084D237B518700F48B32 /* APINotifications.swift in Sources */,
 				C2F574E523A9C0FF00E2DE5D /* GetCitiesResponse.swift in Sources */,
 				C2F5191F23AAD9F10042094E /* MarchService.swift in Sources */,
+				C2EF8E9D240DEB030002354D /* CreatePlayerBackground.swift in Sources */,
 				C2BF586623D5720700772635 /* MarchSelectorFooter.swift in Sources */,
 				C299F0A8234BDA4B0076C747 /* LoginUserResponseDTO.swift in Sources */,
 				C276CBE723D681C2005D21A0 /* CDWorld+CoreDataClass.swift in Sources */,
@@ -1225,6 +1263,7 @@
 				C237374523ADB761002FEBF1 /* GameScenePublisher.swift in Sources */,
 				92A2A374229B66450090287C /* LoginScene.swift in Sources */,
 				C2D1BDBE2344425D00ADF01E /* UserService.swift in Sources */,
+				C2EF8EA3240DF0400002354D /* CreatePlayerButton.swift in Sources */,
 				C2EF8E5E240DA5090002354D /* APILoginSucceedData.swift in Sources */,
 				C2EF8E6D240DACBB0002354D /* RegisterUserErrorResponseDTO.swift in Sources */,
 				C2D1BDD223455B5C00ADF01E /* UserServicesPublisher.swift in Sources */,
@@ -1274,7 +1313,9 @@
 				C2EF8E84240DE0480002354D /* RegisterUserResponseDTO.swift in Sources */,
 				923B38DA22A1D99C00748F6F /* GameSceneGestures.swift in Sources */,
 				C2D7B8E723907A40006571E2 /* ArmyServicesPublisher.swift in Sources */,
+				C2EF8E9B240DE8F20002354D /* CreatePlayerView.swift in Sources */,
 				C2EF8E65240DA5670002354D /* GameTryLoginData.swift in Sources */,
+				C2EF8E96240DE7E70002354D /* CreatePlayerScenePublisher.swift in Sources */,
 				C2C383D423C7D45600F61849 /* Unit.swift in Sources */,
 				C2FDC5752384756800C0E556 /* GetUsersResponse.swift in Sources */,
 				C284DBD423C3B04E004ADEFC /* Resources.swift in Sources */,
@@ -1287,6 +1328,7 @@
 				C2D50841237B3ED000F48B32 /* SceneNotificationFactory.swift in Sources */,
 				C27BA72A23ADF82300034023 /* ScenePublisher.swift in Sources */,
 				C2F574E323A9825C00E2DE5D /* CityServicesPublisher.swift in Sources */,
+				C2EF8E94240DE7CC0002354D /* CreatePlayerScene.swift in Sources */,
 				C2F574E123A981F600E2DE5D /* CityServices.swift in Sources */,
 				923B38DC22A1DB2C00748F6F /* MapCamera.swift in Sources */,
 				923B38C422A0829E00748F6F /* MapNode.swift in Sources */,
@@ -1306,6 +1348,7 @@
 				C2D7B8E52390788E006571E2 /* ArmyServices.swift in Sources */,
 				C28348A1236BDF3300381EA3 /* LoadingSceneProgressBar.swift in Sources */,
 				9244332922C6CC5C00913284 /* NotificationFactory.swift in Sources */,
+				C2EF8E9F240DEB1D0002354D /* CreatePlayerHeader.swift in Sources */,
 				C276CBF223D681C2005D21A0 /* CDArmy+CoreDataProperties.swift in Sources */,
 				C276CBEC23D681C2005D21A0 /* CDMarch+CoreDataProperties.swift in Sources */,
 				C28348AA236CC3EB00381EA3 /* ConnectionMessageDispatch.swift in Sources */,
@@ -1316,6 +1359,7 @@
 				C2EF8E63240DA5580002354D /* GameTryRegisterData.swift in Sources */,
 				C28348A3236C93B800381EA3 /* ConnectionPublisher.swift in Sources */,
 				C2EF8E59240DA3D40002354D /* LoginUserErrorResponseDTO.swift in Sources */,
+				C2EF8EA1240DEB280002354D /* CreatePlayerCard.swift in Sources */,
 				C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */,
 				C283D5A42408DEEB00E109A0 /* Token.swift in Sources */,
 				C277ED682393661800894B7A /* City.swift in Sources */,
