@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 class UserServices: BaseAPIServices {
     var publisher:  UserServicesPublisher
     var subscriber: Subscriber
@@ -28,6 +27,9 @@ class UserServices: BaseAPIServices {
         
         // connection subscribing methods
         subscriber.subscribe(observingFunction: didLogin(_:), name: .ConnectionLoginSucceed)
+        subscriber.subscribe(observingFunction: loginFailed(_:), name: .ConnectionLoginFailed)
+        subscriber.subscribe(observingFunction: registerSucceed(_:), name: .ConnectionRegisterSucceed)
+        subscriber.subscribe(observingFunction: registerFailed(_:), name: .ConnectionRegisterFailed)
         subscriber.subscribe(observingFunction: didGetUsers(_:), name: .ConnectionDidGetUsers)
     }
     
@@ -66,51 +68,53 @@ class UserServices: BaseAPIServices {
             notification.userInfo!["data"] as! Response
         )
         
-        // test getting token value
+        // save token from response to keychain
         do {
             try saveTokenToKeychain(value: loginUserResponse.getToken().getValue())
-        } catch KeychainError.tokenNotSaved {
-            print("fuck")
-        } catch KeychainError.tokenNotUpdated {
-            print("ugh")
         } catch {
-            print("fuck ugh")
+            print("UserServices error saving token in keychain")
+//            publisher.loginFailed(response: "Error saving toke in client, please report this bug")
+            return
         }
-        
-        print("added token successfully mayve")
-        
-        
-//        do {
-//            let gotValue = try getTokenFromKeychain()
-//            print(gotValue)
-//        } catch KeychainError.tokenNotFound {
-//            print("fuck it")
-//        } catch {
-//            print("really fuck it")
-//        }
-//
-//        // save token value
-//        let tokenStruct = TokenStruct(value: loginUserResponse.getToken().getValue())
-//        let tokenValue = tokenStruct.value.data(using: String.Encoding.utf8)!
-//        let server = "server"
-//        let account = "account"
-//        let attributes: [String: Any] = [
-//            kSecClass as String: kSecClassInternetPassword,
-//            kSecAttrAccount as String: account,
-//            kSecAttrServer as String: server,
-//            kSecValueData as String: tokenValue
-//        ]
-//        let addstatus = SecItemAdd(attributes as CFDictionary, nil)
-//        guard addstatus == errSecSuccess else {
-//            print("Error in UserServices didLogin")
-//            // emit login failed notification
-//            publisher.loginFailed()
-//            return
-//        }
-        
         
         // emit did login notification
         publisher.loginSucceeded(response: loginUserResponse)
+    }
+    
+    func loginFailed(_ notification: Notification) {
+        print("UserServices received ConnectionLoginFailed event.")
+        
+        // parse response
+        let loginErrorResponse = LoginUserErrorResponseDTO(
+            response: notification.userInfo!["data"] as! Response
+        )
+        
+        // publish failed login notification
+        publisher.loginFailed(response: loginErrorResponse)
+    }
+    
+    func registerSucceed(_ notification: Notification) {
+        print("UserServices received ConnectionRegisterSucceed event.")
+        
+        // parse response
+        let registerErrorResponse = RegisterUserErrorResponseDTO(
+            response: notification.userInfo!["data"] as! Response
+        )
+        
+        // publish failed register notification
+        publisher.registerFailed(response: registerErrorResponse)
+    }
+    
+    func registerFailed(_ notification: Notification) {
+        print("UserServices received ConnectionRegisterFailed event.")
+        
+        // parse response
+        let registerErrorResponse = RegisterUserErrorResponseDTO(
+            response: notification.userInfo!["data"] as! Response
+        )
+        
+        // publish failed register notification
+        publisher.registerFailed(response: registerErrorResponse)
     }
     
     func didGetUsers(_ notification: Notification) {

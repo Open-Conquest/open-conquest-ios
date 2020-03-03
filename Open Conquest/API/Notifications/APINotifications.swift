@@ -63,7 +63,14 @@ class APILoginSucceedData {
 }
 
 class APILoginFailedData {
+    let message: String
+    init(message: String) {
+        self.message = message
+    }
     
+    func getMessage() -> String {
+        return message
+    }
 }
 
 class APIDidGetUsersData {

@@ -32,6 +32,12 @@ class UserServicePublisher: Publisher {
         post(notification: notification)
     }
     
+    func loginFailed(message: String) {
+        let data = GameLoginFailedData(message: message)
+        let notification = gameNotificationFactory.buildGameLoginFailedNotification(data: data)
+        post(notification: notification)
+    }
+    
     func didGetUsers(users: [User]) {
         let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .user, entities: users)
         post(notification: notification)

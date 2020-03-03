@@ -45,8 +45,15 @@ class UserServicesPublisher: Publisher {
         post(notification: notif)
     }
     
-    func loginFailed() {
-        let notification = notificationFactory.buildNotification(name: .APILoginFailed, data: nil)
+    func loginFailed(response: LoginUserErrorResponseDTO) {
+        let data = APILoginFailedData(message: response.getMessage())
+        let notification = notificationFactory.buildNotification(name: .APILoginFailed, data: data)
+        post(notification: notification)
+    }
+    
+    func registerFailed(response: RegisterUserErrorResponseDTO) {
+        let data = APIRegisterFailedData(message: response.getMessage())
+        let notification = notificationFactory.buildNotification(name: .APIRegisterFailed, data: data)
         post(notification: notification)
     }
     
