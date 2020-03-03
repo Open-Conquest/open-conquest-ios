@@ -34,6 +34,10 @@ class GameNotificationFactory: NotificationFactory {
         return buildNotification(name: .GameTryRegister, data: notifData)
     }
     
+    func buildGameRegisterSucceedNotification(data: GameRegisterSucceedData) -> Notification {
+        return buildNotification(name: .GameRegisterSucceed, data: data)
+    }
+    
     func buildGameRegisterFailedNotification(data: GameRegisterFailedData) -> Notification {
         return buildNotification(name: .GameRegisterFailed, data: data)
     }

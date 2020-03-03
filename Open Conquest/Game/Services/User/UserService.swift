@@ -27,7 +27,7 @@ class UserService: GameService {
         subscriber.subscribe(observingFunction: tryGetUsers(_:), name: .SceneTryGetUsers)
         
         // subscribe to api notifications
-//        subscriber.subscribe(observingFunction: registerSucceed(_:), name: .APIRegisterSucceed)
+        subscriber.subscribe(observingFunction: registerSucceed(_:), name: .APIRegisterSucceed)
         subscriber.subscribe(observingFunction: registerFailed(_:), name: .APIRegisterFailed)
         subscriber.subscribe(observingFunction: loginSucceed(_:), name: .APILoginSucceed)
         subscriber.subscribe(observingFunction: loginFailed(_:), name: .APILoginFailed)
@@ -38,7 +38,34 @@ class UserService: GameService {
         fatalError("not implemented")
     }
     
-    // scene
+    // listening to scene
+    func tryRegister(_ notification: Notification) {
+        print("UserService recieved SceneTryRegister event.")
+        
+        let tryRegisterData = notification.userInfo!["data"] as! SceneTryRegisterData
+        publisher.tryRegister(data: tryRegisterData)
+    }
+
+    // listening to api
+    func registerSucceed(_ notification: Notification) {
+        print("UserService recieved APIRegisterSucceed event.")
+
+        // initialize user from notification
+        let registerSucceedData = notification.userInfo!["data"] as! APIRegisterSucceedData
+        user = User(username: registerSucceedData.getUsername())
+        publisher.registerSucceed(user: user!)
+    }
+
+    // listening to api
+    func registerFailed(_ notification: Notification) {
+        print("UserService recieved APIRegisterFailed event.")
+
+        // let scene know register failed
+        let registerFailedData = notification.userInfo!["data"] as! APIRegisterFailedData
+        publisher.registerFailed(message: registerFailedData.getMessage())
+    }
+    
+    // listening to scene
     func tryLogin(_ notification: Notification) {
         print("UserService recieved SceneTryLogin event.")
 
@@ -55,37 +82,7 @@ class UserService: GameService {
         
     }
     
-    // scene
-    func tryRegister(_ notification: Notification) {
-        print("UserService recieved SceneTryRegister event.")
-        
-        let tryRegisterData = notification.userInfo!["data"] as! SceneTryRegisterData
-        publisher.tryRegister(data: tryRegisterData)
-    }
-
-    // api
-    func registerSucceed(_ notification: Notification) {
-        print("UserService recieved APIRegisterSucceed event.")
-
-        // initialize user from notification
-        let registerSucceedData = notification.userInfo!["data"] as! APIRegisterSucceedData
-        // create a user from username
-        let username = registerSucceedData.getUsername()
-
-        print("UserService publishing GameLoginSucceeded event...")
-        publisher.loginSucceed()
-    }
-
-    // api
-    func registerFailed(_ notification: Notification) {
-        print("UserService recieved APIRegisterFailed event.")
-
-        // initialize user from notification
-        let registerFailedData = notification.userInfo!["data"] as! APIRegisterFailedData
-        publisher.registerFailed(message: registerFailedData.getMessage())
-    }
-    
-    // api
+    // listening to api
     func loginSucceed(_ notification: Notification) {
         print("UserService recieved APILoginSucceed event.")
         
@@ -97,6 +94,7 @@ class UserService: GameService {
         publisher.loginSucceed()
     }
     
+    // listening to api
     func loginFailed(_ notification: Notification) {
         print("UserService received APILoginFailed event.")
         
@@ -107,7 +105,7 @@ class UserService: GameService {
         publisher.loginFailed(message: errorMessage)
     }
     
-    // scene
+    // listening to scene
     func tryGetUsers(_ notification: Notification) {
         print("UserService received SceneGetUsers event")
         
@@ -119,7 +117,7 @@ class UserService: GameService {
         }
     }
     
-    // api
+    // listening to api
     func didGetUsers(_ notification: Notification) {
         print("UserService received APIDidGetUsers event.")
         

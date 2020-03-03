@@ -55,11 +55,6 @@ extension Notification.Name
 }
 
 
-class GameLoginSucceedData {
-}
-
-
-
 class GameLoadData {
 }
 

@@ -97,12 +97,12 @@ class UserServices: BaseAPIServices {
         print("UserServices received ConnectionRegisterSucceed event.")
         
         // parse response
-        let registerErrorResponse = RegisterUserErrorResponseDTO(
+        let registerErrorResponse = RegisterUserResponseDTO(
             response: notification.userInfo!["data"] as! Response
         )
         
         // publish failed register notification
-        publisher.registerFailed(response: registerErrorResponse)
+        publisher.registerSucceed(response: registerErrorResponse)
     }
     
     func registerFailed(_ notification: Notification) {

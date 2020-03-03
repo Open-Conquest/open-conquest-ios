@@ -1,5 +1,5 @@
 //
-//  APIRegisterSucceedData.swift
+//  GameRegisterSucceedData.swift
 //  Open Conquest
 //
 //  Created by Zach Wild on 3/2/20.
@@ -8,9 +8,8 @@
 
 import Foundation
 
-class APIRegisterSucceedData {
-    var username: String
-    
+class GameRegisterSucceedData {
+    let username: String
     init(username: String) {
         self.username = username
     }

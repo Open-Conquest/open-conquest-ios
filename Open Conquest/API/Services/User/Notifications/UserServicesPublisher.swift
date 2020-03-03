@@ -47,14 +47,20 @@ class UserServicesPublisher: Publisher {
     
     func loginFailed(response: LoginUserErrorResponseDTO) {
         let data = APILoginFailedData(message: response.getMessage())
-        let notification = notificationFactory.buildNotification(name: .APILoginFailed, data: data)
-        post(notification: notification)
+        let notif = notificationFactory.buildNotification(name: .APILoginFailed, data: data)
+        post(notification: notif)
+    }
+    
+    func registerSucceed(response: RegisterUserResponseDTO) {
+        let data    = APIRegisterSucceedData(username: response.getUsername())
+        let notif   = notificationFactory.buildNotification(name: .APIRegisterSucceed, data: data)
+        post(notification: notif)
     }
     
     func registerFailed(response: RegisterUserErrorResponseDTO) {
         let data = APIRegisterFailedData(message: response.getMessage())
-        let notification = notificationFactory.buildNotification(name: .APIRegisterFailed, data: data)
-        post(notification: notification)
+        let notif = notificationFactory.buildNotification(name: .APIRegisterFailed, data: data)
+        post(notification: notif)
     }
     
     func didGetUsers(response: GetUsersResponse) {

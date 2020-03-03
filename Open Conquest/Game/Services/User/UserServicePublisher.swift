@@ -16,14 +16,25 @@ class UserServicePublisher: Publisher {
         gameNotificationFactory = GameNotificationFactory()
         super.init()
     }
-    
-    func tryLogin(data: SceneTryLoginData) {
-        let notification = gameNotificationFactory.buildGameTryLoginNotification(data: data)
+    func tryRegister(data: SceneTryRegisterData) {
+        let notification = gameNotificationFactory.buildGameTryRegisterNotification(data: data)
         post(notification: notification)
     }
     
-    func tryRegister(data: SceneTryRegisterData) {
-        let notification = gameNotificationFactory.buildGameTryRegisterNotification(data: data)
+    func registerSucceed(user: User) {
+        let data = GameRegisterSucceedData(username: user.getUsername())
+        let notification = gameNotificationFactory.buildGameRegisterSucceedNotification(data: data)
+        post(notification: notification)
+    }
+    
+    func registerFailed(message: String) {
+        let data = GameRegisterFailedData(message: message)
+        let notification = gameNotificationFactory.buildGameRegisterFailedNotification(data: data)
+        post(notification: notification)
+    }
+    
+    func tryLogin(data: SceneTryLoginData) {
+        let notification = gameNotificationFactory.buildGameTryLoginNotification(data: data)
         post(notification: notification)
     }
     
@@ -35,16 +46,6 @@ class UserServicePublisher: Publisher {
     func loginFailed(message: String) {
         let data = GameLoginFailedData(message: message)
         let notification = gameNotificationFactory.buildGameLoginFailedNotification(data: data)
-        post(notification: notification)
-    }
-    
-    func registerSucceed() {
-        
-    }
-    
-    func registerFailed(message: String) {
-        let data = GameRegisterFailedData(message: message)
-        let notification = gameNotificationFactory.buildGameRegisterFailedNotification(data: data)
         post(notification: notification)
     }
     
