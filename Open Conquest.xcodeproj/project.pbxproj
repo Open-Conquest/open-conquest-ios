@@ -646,6 +646,7 @@
 				C2EF8E79240DDA1F0002354D /* Map */,
 				C2EF8E7A240DDA240002354D /* March */,
 				C2EF8E71240DD8C80002354D /* User */,
+				C2E7DB5224143CAF00121B47 /* Player */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -706,6 +707,13 @@
 				C276CBE223D681C2005D21A0 /* CDUser+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C2E7DB5224143CAF00121B47 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		C2EF8E5A240DA4950002354D /* Notifications */ = {
