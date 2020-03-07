@@ -123,6 +123,7 @@
 		C2E7DB5C2414415B00121B47 /* PlayerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5B2414415B00121B47 /* PlayerDTO.swift */; };
 		C2E7DB5E241441CF00121B47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5D241441CF00121B47 /* Player.swift */; };
 		C2E7DB60241441F500121B47 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5F241441F500121B47 /* Entity.swift */; };
+		C2E7DB63241454BA00121B47 /* SceneTryCreatePlayerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB62241454BA00121B47 /* SceneTryCreatePlayerData.swift */; };
 		C2EF8E57240D65410002354D /* BaseAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E56240D65400002354D /* BaseAPIServices.swift */; };
 		C2EF8E59240DA3D40002354D /* LoginUserErrorResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E58240DA3D40002354D /* LoginUserErrorResponseDTO.swift */; };
 		C2EF8E5C240DA4E90002354D /* APILoginFailedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E5B240DA4E90002354D /* APILoginFailedData.swift */; };
@@ -307,6 +308,7 @@
 		C2E7DB5B2414415B00121B47 /* PlayerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDTO.swift; sourceTree = "<group>"; };
 		C2E7DB5D241441CF00121B47 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C2E7DB5F241441F500121B47 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		C2E7DB62241454BA00121B47 /* SceneTryCreatePlayerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTryCreatePlayerData.swift; sourceTree = "<group>"; };
 		C2EF8E56240D65400002354D /* BaseAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIServices.swift; sourceTree = "<group>"; };
 		C2EF8E58240DA3D40002354D /* LoginUserErrorResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserErrorResponseDTO.swift; sourceTree = "<group>"; };
 		C2EF8E5B240DA4E90002354D /* APILoginFailedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoginFailedData.swift; sourceTree = "<group>"; };
@@ -753,6 +755,14 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		C2E7DB61241454A700121B47 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				C2E7DB62241454BA00121B47 /* SceneTryCreatePlayerData.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		C2EF8E5A240DA4950002354D /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -1005,6 +1015,7 @@
 			children = (
 				C2EF8E93240DE7CC0002354D /* CreatePlayerScene.swift */,
 				C2EF8E95240DE7E70002354D /* CreatePlayerScenePublisher.swift */,
+				C2E7DB61241454A700121B47 /* Notifications */,
 				C2EF8E99240DE8EB0002354D /* View */,
 			);
 			path = CreatePlayer;
@@ -1329,6 +1340,7 @@
 				C2834893236BC56B00381EA3 /* LoadingSceneBackground.swift in Sources */,
 				923B38B922A0812900748F6F /* LoginSceneBackground.swift in Sources */,
 				923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */,
+				C2E7DB63241454BA00121B47 /* SceneTryCreatePlayerData.swift in Sources */,
 				C2D7B8E923907C35006571E2 /* ArmyServicePublisher.swift in Sources */,
 				C26C1A2823D621A70083E392 /* MarchSelectorContent.swift in Sources */,
 				C2F5192E23AAE37B0042094E /* GetMapResponse.swift in Sources */,

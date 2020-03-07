@@ -93,6 +93,11 @@ class CreatePlayerScene: SKScene, Scene {
 
     @objc func tryCreateNewPlayer() {
         print("CreatePlayerScene try create player button pressed")
+        
+        // get playername from ui
+        let playerName = "test_playername"
+        
+        publisher.tryCreatePlayer(name: playerName)
     }
     
     func createNewPlayerFailed(_ notifiction: Notification) {

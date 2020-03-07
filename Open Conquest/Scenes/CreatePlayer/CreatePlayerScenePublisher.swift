@@ -8,6 +8,15 @@
 
 import Foundation
 
-class CreatePlayerScenePublisher {
+class CreatePlayerScenePublisher: ScenePublisher {
     
+    override init() {
+        super.init()
+    }
+    
+    func tryCreatePlayer(name: String) {
+        let data = SceneTryCreatePlayerData(name: name)
+        let notification = sceneNotificationFactory.buildNotification(name: .SceneTryCreatePlayer, data: data)
+        post(notification: notification)
+    }
 }
