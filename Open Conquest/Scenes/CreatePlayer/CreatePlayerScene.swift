@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import UIKit
 import PureLayout
 
 class CreatePlayerScene: SKScene, Scene {
@@ -61,8 +62,11 @@ class CreatePlayerScene: SKScene, Scene {
     func setupGestures() {}
     
     func setupUIActions() {
-        let tryCreatePlayer = #selector(self.tryCreateNewPlayer:))
-        createPlayerView.pickerCard.createPlayerButton.addTarget(tryCreateNewPlayer(), action: tryCreatePlayer, for: .touchUpInside)
+        createPlayerView.pickerCard.createPlayerButton.addTarget(
+            self,
+            action: #selector(self.createPlayerPressed(sender:)),
+            for: .touchUpInside
+        )
     }
 
     // MARK: CLEANUP METHODS
@@ -102,6 +106,11 @@ class CreatePlayerScene: SKScene, Scene {
     }
 
     // MARK: GESTURING METHODS
+    
+    @IBAction func createPlayerPressed(sender: UIButton) {
+        print("create player pressed")
+        // get data for player to create and make create player request
+    }
 
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {
         if tapGesture.state != .ended {
