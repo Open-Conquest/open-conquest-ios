@@ -12,7 +12,7 @@ class Player: Entity {
     let name: String
 
     init(id: EntityID, name: String) {
-        super.init(id)
         self.name = name
+        super.init(id: id)
     }
 }

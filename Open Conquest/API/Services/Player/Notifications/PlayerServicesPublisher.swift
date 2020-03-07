@@ -25,6 +25,12 @@ class PlayerServicesPublisher: Publisher {
 //        post(notification: notification)
 //    }
     
+    func tryCreatePlayer(data: CreatePlayerRequestDTO) {
+        // TODO: include the users token from logging in with the request
+        let notification = apiNotificationFactory.buildNotification(name: .APIMakeRequest, data: data)
+        post(notification: notification)
+    }
+    
     // MARK: GAME PUBLISHING METHODS
     
 //    func loginSucceeded(response: LoginUserResponseDTO) {

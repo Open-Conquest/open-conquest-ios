@@ -558,6 +558,9 @@
 		C277ED6523931BE800894B7A /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				C2D1BDE02345EABA00ADF01E /* Request.swift */,
+				C2D1BDE22345EABE00ADF01E /* Response.swift */,
+				C283D5A32408DEEB00E109A0 /* Token.swift */,
 				C2402E032383603700858422 /* GetComponentRequest.swift */,
 				C2E7DB5B2414415B00121B47 /* PlayerDTO.swift */,
 			);
@@ -803,9 +806,6 @@
 				C2EF8E5A240DA4950002354D /* Notifications */,
 				C2FBBE1E240C205B0023014F /* APIOperations.swift */,
 				C2FBBE20240C20690023014F /* APIServices.swift */,
-				C2D1BDE02345EABA00ADF01E /* Request.swift */,
-				C2D1BDE22345EABE00ADF01E /* Response.swift */,
-				C283D5A32408DEEB00E109A0 /* Token.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";

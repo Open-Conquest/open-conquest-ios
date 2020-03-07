@@ -42,12 +42,12 @@ class PlayerServices: BaseAPIServices {
         print("UserServices receieved GameTryCreatePlayer event.")
         
         // get game entities from notification
-        let tryCreatePlayerData = notification.userInfo!["data"] as! GameTryCreatePlayerData
-        
-        // build DTO from game entities
-        
-        // publish DTO to connection to send message to server
-        publisher.tryCreatePlayer()
+//        let tryCreatePlayerData = notification.userInfo!["data"] as! GameTryCreatePlayerData
+//
+//        // build DTO from game entities
+//
+//        // publish DTO to connection to send message to server
+//        publisher.tryCreatePlayer()
     }
     
     
@@ -56,25 +56,25 @@ class PlayerServices: BaseAPIServices {
         print("UserServices received ConnectionLoginSucceeded event.")
 
         // convert response to DTO
-        let createPlayerResponse = CreatePlayerResponseDTO(response:
-            notification.userInfo!["data"] as! Response
-        )
-        
-        // map DTO to game entities
-
-        // emit did create player notification with data
-        publisher.loginSucceeded(response: loginUserResponse)
+//        let createPlayerResponse = CreatePlayerResponseDTO(response:
+//            notification.userInfo!["data"] as! Response
+//        )
+//        
+//        // map DTO to game entities
+//
+//        // emit did create player notification with data
+//        publisher.loginSucceeded(response: loginUserResponse)
     }
     
     func createdPlayerFailed(_ notification: Notification) {
         print("UserServices received ConnectionLoginFailed event.")
         
-        // convert response to DTO
-        let createPlayerErrorResponse = CreatePlayerErrorResponseDTO(
-            response: notification.userInfo!["data"] as! Response
-        )
-        
-        // publish failed login notification
-        publisher.loginFailed(response: loginErrorResponse)
+//        // convert response to DTO
+//        let createPlayerErrorResponse = CreatePlayerErrorResponseDTO(
+//            response: notification.userInfo!["data"] as! Response
+//        )
+//
+//        // publish failed login notification
+//        publisher.loginFailed(response: loginErrorResponse)
     }
 }
