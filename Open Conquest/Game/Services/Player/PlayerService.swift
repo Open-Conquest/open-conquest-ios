@@ -9,8 +9,7 @@
 import Foundation
 
 class PlayerService: GameService {
-    var user:       Player?
-    var users:      [Player]?
+    var player:       Player?
     var publisher:  UserServicePublisher
     var subscriber: Subscriber
     
@@ -22,16 +21,11 @@ class PlayerService: GameService {
     
     func setupSubscribers() {
         // subscribe to scene notifications
-        subscriber.subscribe(observingFunction: tryLogin(_:), name: .SceneTryLogin)
-        subscriber.subscribe(observingFunction: tryRegister(_:), name: .SceneTryRegister)
-        subscriber.subscribe(observingFunction: tryGetUsers(_:), name: .SceneTryGetUsers)
+        subscriber.subscribe(observingFunction: tryCreatePlayer(_:), name: .SceneTryCreatePlayer)
         
         // subscribe to api notifications
-        subscriber.subscribe(observingFunction: registerSucceed(_:), name: .APIRegisterSucceed)
-        subscriber.subscribe(observingFunction: registerFailed(_:), name: .APIRegisterFailed)
-        subscriber.subscribe(observingFunction: loginSucceed(_:), name: .APILoginSucceed)
-        subscriber.subscribe(observingFunction: loginFailed(_:), name: .APILoginFailed)
-        subscriber.subscribe(observingFunction: didGetUsers(_:), name: .APIDidGetUsers)
+//        subscriber.subscribe(observingFunction: createPlayerSucceed(_:), name: .APICreatePlayerSucceed)
+//        subscriber.subscribe(observingFunction: createPlayerFailed(_:), name: .APICreatePlayerFailed)
     }
 
     func update(notification: Notification) {
@@ -39,92 +33,47 @@ class PlayerService: GameService {
     }
     
     // listening to scene
-    func tryRegister(_ notification: Notification) {
-        print("UserService recieved SceneTryRegister event.")
-        
-        let tryRegisterData = notification.userInfo!["data"] as! SceneTryRegisterData
-        publisher.tryRegister(data: tryRegisterData)
-    }
+    func tryCreatePlayer(_ notification: Notification) {
+        print("PlayerService recieved SceneTryCreatePlayer event.")
 
-    // listening to api
-    func registerSucceed(_ notification: Notification) {
-        print("UserService recieved APIRegisterSucceed event.")
-
-        // initialize user from notification
-        let registerSucceedData = notification.userInfo!["data"] as! APIRegisterSucceedData
-        user = User(username: registerSucceedData.getUsername())
-        publisher.registerSucceed(user: user!)
-    }
-
-    // listening to api
-    func registerFailed(_ notification: Notification) {
-        print("UserService recieved APIRegisterFailed event.")
-
-        // let scene know register failed
-        let registerFailedData = notification.userInfo!["data"] as! APIRegisterFailedData
-        publisher.registerFailed(message: registerFailedData.getMessage())
-    }
-    
-    // listening to scene
-    func tryLogin(_ notification: Notification) {
-        print("UserService recieved SceneTryLogin event.")
-
-        if (user != nil) {
-            // user is already logged in
-            // do nothing
+        if (player != nil) {
+            // already are playing as a player
         }
         else {
             // user is not logged in
-            print("UserService found that user is not logged in.")
-            let tryLoginData = notification.userInfo!["data"] as! SceneTryLoginData
-            publisher.tryLogin(data: tryLoginData)
+            print("PlayerService found that a player has not been initialized")
+            let incomingNotifData = notification.userInfo!["data"] as! SceneTryCreatePlayerData
+            
+            // create a player from incoming data
+            let player = Player(id: nil, name: incomingNotifData.getName())
+            
+            // post outgoing notification to try to create player to API
+            publisher.tryCreatePlayer(player: player)
         }
         
     }
     
-    // listening to api
-    func loginSucceed(_ notification: Notification) {
-        print("UserService recieved APILoginSucceed event.")
-        
-        // initialize user from notification
-        let loginSucceedData = notification.userInfo!["data"] as! APILoginSucceedData
-        user = User(apiLoginSucceedData: loginSucceedData)
-        
-        print("UserService publishing GameLoginSucceeded event...")
-        publisher.loginSucceed()
-    }
-    
-    // listening to api
-    func loginFailed(_ notification: Notification) {
-        print("UserService received APILoginFailed event.")
-        
-        // notify scene of error
-        let loginErrorData = notification.userInfo!["data"] as! APILoginFailedData
-        let errorMessage = loginErrorData.getMessage()
-        
-        publisher.loginFailed(message: errorMessage)
-    }
-    
-    // listening to scene
-    func tryGetUsers(_ notification: Notification) {
-        print("UserService received SceneGetUsers event")
-        
-        if (users != nil) {
-            publisher.didGetUsers(users: self.users!)
-        }
-        else {
-            publisher.tryGetUsers()
-        }
-    }
-    
-    // listening to api
-    func didGetUsers(_ notification: Notification) {
-        print("UserService received APIDidGetUsers event.")
-        
-        let users = notification.userInfo!["data"] as! [User]
-        self.users = users
-
-        publisher.didGetUsers(users: users)
-    }
+//    // listening to api
+//    func loginSucceed(_ notification: Notification) {
+//        print("UserService recieved APILoginSucceed event.")
+//
+//        // initialize user from notification
+//        let loginSucceedData = notification.userInfo!["data"] as! APILoginSucceedData
+//        user = User(apiLoginSucceedData: loginSucceedData)
+//
+//        print("UserService publishing GameLoginSucceeded event...")
+//        publisher.loginSucceed()
+//    }
+//
+//    // listening to api
+//    func loginFailed(_ notification: Notification) {
+//        print("UserService received APILoginFailed event.")
+//
+//        // notify scene of error
+//        let loginErrorData = notification.userInfo!["data"] as! APILoginFailedData
+//        let errorMessage = loginErrorData.getMessage()
+//
+//        publisher.loginFailed(message: errorMessage)
+//    }
 }
 

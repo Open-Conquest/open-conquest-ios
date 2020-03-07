@@ -17,7 +17,8 @@ class PlayerServicePublisher: Publisher {
         super.init()
     }
     
-    func tryCreatePlayer(data: GameTryCreatePlayerData) {
+    func tryCreatePlayer(player: Player) {
+        let data = GameTryCreatePlayerData(player: player)
         let notification = gameNotificationFactory.buildNotification(name: .GameTryCreatePlayer, data: data)
         post(notification: notification)
     }
