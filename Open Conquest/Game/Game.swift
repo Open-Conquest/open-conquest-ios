@@ -19,6 +19,7 @@ class Game {
     var mapService:     MapService
     var marchService:   MarchService
     var userService:    UserService
+    var playerService: PlayerService
 
     init(dataContext: NSManagedObjectContext) {
         context         = dataContext
@@ -30,6 +31,7 @@ class Game {
         mapService      = MapService()
         marchService    = MarchService()
         userService     = UserService()
+        playerService = PlayerService()
         
         print("Game intialized")
     }
@@ -41,4 +43,5 @@ enum GameEntityType: String {
     case map    = "map"
     case march  = "march"
     case user   = "user"
+    case player = "player"
 }

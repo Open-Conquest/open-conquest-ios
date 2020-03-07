@@ -124,6 +124,10 @@
 		C2E7DB5E241441CF00121B47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5D241441CF00121B47 /* Player.swift */; };
 		C2E7DB60241441F500121B47 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5F241441F500121B47 /* Entity.swift */; };
 		C2E7DB63241454BA00121B47 /* SceneTryCreatePlayerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB62241454BA00121B47 /* SceneTryCreatePlayerData.swift */; };
+		C2E7DB662414557F00121B47 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB652414557F00121B47 /* PlayerService.swift */; };
+		C2E7DB682414558900121B47 /* PlayerServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB672414558900121B47 /* PlayerServicePublisher.swift */; };
+		C2E7DB6B2414559E00121B47 /* GameTryCreatePlayerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB6A2414559E00121B47 /* GameTryCreatePlayerData.swift */; };
+		C2E7DB6E2414560C00121B47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB6D2414560C00121B47 /* Player.swift */; };
 		C2EF8E57240D65410002354D /* BaseAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E56240D65400002354D /* BaseAPIServices.swift */; };
 		C2EF8E59240DA3D40002354D /* LoginUserErrorResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E58240DA3D40002354D /* LoginUserErrorResponseDTO.swift */; };
 		C2EF8E5C240DA4E90002354D /* APILoginFailedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E5B240DA4E90002354D /* APILoginFailedData.swift */; };
@@ -309,6 +313,10 @@
 		C2E7DB5D241441CF00121B47 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C2E7DB5F241441F500121B47 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		C2E7DB62241454BA00121B47 /* SceneTryCreatePlayerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTryCreatePlayerData.swift; sourceTree = "<group>"; };
+		C2E7DB652414557F00121B47 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		C2E7DB672414558900121B47 /* PlayerServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerServicePublisher.swift; sourceTree = "<group>"; };
+		C2E7DB6A2414559E00121B47 /* GameTryCreatePlayerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTryCreatePlayerData.swift; sourceTree = "<group>"; };
+		C2E7DB6D2414560C00121B47 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C2EF8E56240D65400002354D /* BaseAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIServices.swift; sourceTree = "<group>"; };
 		C2EF8E58240DA3D40002354D /* LoginUserErrorResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserErrorResponseDTO.swift; sourceTree = "<group>"; };
 		C2EF8E5B240DA4E90002354D /* APILoginFailedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoginFailedData.swift; sourceTree = "<group>"; };
@@ -674,6 +682,7 @@
 		C2D1BDB72343F94800ADF01E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C2E7DB642414556E00121B47 /* Player */,
 				C2EF8E85240DE1820002354D /* User */,
 				C2EF8E8C240DE27D0002354D /* Game */,
 				C2EF8E8D240DE2830002354D /* Army */,
@@ -761,6 +770,33 @@
 				C2E7DB62241454BA00121B47 /* SceneTryCreatePlayerData.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		C2E7DB642414556E00121B47 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				C2E7DB652414557F00121B47 /* PlayerService.swift */,
+				C2E7DB672414558900121B47 /* PlayerServicePublisher.swift */,
+				C2E7DB6C241455F400121B47 /* Entities */,
+				C2E7DB692414558F00121B47 /* Notifications */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		C2E7DB692414558F00121B47 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				C2E7DB6A2414559E00121B47 /* GameTryCreatePlayerData.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		C2E7DB6C241455F400121B47 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C2E7DB6D2414560C00121B47 /* Player.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C2EF8E5A240DA4950002354D /* Notifications */ = {
@@ -1295,6 +1331,7 @@
 				C2D50847237B4A2100F48B32 /* SceneNotifications.swift in Sources */,
 				C2D5084D237B518700F48B32 /* APINotifications.swift in Sources */,
 				C2F574E523A9C0FF00E2DE5D /* GetCitiesResponse.swift in Sources */,
+				C2E7DB6B2414559E00121B47 /* GameTryCreatePlayerData.swift in Sources */,
 				C2F5191F23AAD9F10042094E /* MarchService.swift in Sources */,
 				C2EF8E9D240DEB030002354D /* CreatePlayerBackground.swift in Sources */,
 				C2BF586623D5720700772635 /* MarchSelectorFooter.swift in Sources */,
@@ -1357,6 +1394,7 @@
 				923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */,
 				C276CBF123D681C2005D21A0 /* CDArmy+CoreDataClass.swift in Sources */,
 				C283D5A62409132E00E109A0 /* RegisterRequest.swift in Sources */,
+				C2E7DB662414557F00121B47 /* PlayerService.swift in Sources */,
 				C2F5192423AADB3A0042094E /* March.swift in Sources */,
 				C2D1BDE32345EABE00ADF01E /* Response.swift in Sources */,
 				C2D1BDB92343F95500ADF01E /* MapService.swift in Sources */,
@@ -1395,6 +1433,7 @@
 				C2FBBE21240C20690023014F /* APIServices.swift in Sources */,
 				C2D5084F237B518E00F48B32 /* APINotificationFactory.swift in Sources */,
 				C2D1BDCD2345189E00ADF01E /* LoginScenePublisher.swift in Sources */,
+				C2E7DB6E2414560C00121B47 /* Player.swift in Sources */,
 				C2D5084B237B4B2300F48B32 /* GameNotifications.swift in Sources */,
 				C276CBEF23D681C2005D21A0 /* CDMap+CoreDataClass.swift in Sources */,
 				C2D1BDDF2345EA0800ADF01E /* Connection.swift in Sources */,
@@ -1425,6 +1464,7 @@
 				C277ED682393661800894B7A /* City.swift in Sources */,
 				C2834890236BC4DD00381EA3 /* LoadingSceneView.swift in Sources */,
 				C258E57F23D662CB0078E317 /* GameEntity.swift in Sources */,
+				C2E7DB682414558900121B47 /* PlayerServicePublisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
