@@ -36,6 +36,8 @@ class ConnectionMessageDispatch {
             publisher.publishMarchResponse(response: response)
         case APIServices.User:
             publisher.publishUserResponse(response: response)
+        case APIServices.Player:
+            publisher.publishPlayerResponse(response: response)
         }
     }
 }
