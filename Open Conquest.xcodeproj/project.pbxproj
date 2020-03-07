@@ -117,6 +117,12 @@
 		C2D7B8E923907C35006571E2 /* ArmyServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D7B8E823907C35006571E2 /* ArmyServicePublisher.swift */; };
 		C2DDC9D723CA24D700456276 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2DDC9D523CA24D600456276 /* Model.xcdatamodeld */; };
 		C2E0A903234D9114000F6FCD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E0A902234D9114000F6FCD /* User.swift */; };
+		C2E7DB5424143D1300121B47 /* PlayerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5324143D1300121B47 /* PlayerServices.swift */; };
+		C2E7DB5824143D6700121B47 /* PlayerServicesPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5724143D6700121B47 /* PlayerServicesPublisher.swift */; };
+		C2E7DB5A2414411E00121B47 /* CreatePlayerRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB592414411E00121B47 /* CreatePlayerRequestDTO.swift */; };
+		C2E7DB5C2414415B00121B47 /* PlayerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5B2414415B00121B47 /* PlayerDTO.swift */; };
+		C2E7DB5E241441CF00121B47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5D241441CF00121B47 /* Player.swift */; };
+		C2E7DB60241441F500121B47 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5F241441F500121B47 /* Entity.swift */; };
 		C2EF8E57240D65410002354D /* BaseAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E56240D65400002354D /* BaseAPIServices.swift */; };
 		C2EF8E59240DA3D40002354D /* LoginUserErrorResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E58240DA3D40002354D /* LoginUserErrorResponseDTO.swift */; };
 		C2EF8E5C240DA4E90002354D /* APILoginFailedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF8E5B240DA4E90002354D /* APILoginFailedData.swift */; };
@@ -295,6 +301,12 @@
 		C2D7B8E823907C35006571E2 /* ArmyServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyServicePublisher.swift; sourceTree = "<group>"; };
 		C2DDC9D623CA24D600456276 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C2E0A902234D9114000F6FCD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C2E7DB5324143D1300121B47 /* PlayerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerServices.swift; sourceTree = "<group>"; };
+		C2E7DB5724143D6700121B47 /* PlayerServicesPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerServicesPublisher.swift; sourceTree = "<group>"; };
+		C2E7DB592414411E00121B47 /* CreatePlayerRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerRequestDTO.swift; sourceTree = "<group>"; };
+		C2E7DB5B2414415B00121B47 /* PlayerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDTO.swift; sourceTree = "<group>"; };
+		C2E7DB5D241441CF00121B47 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		C2E7DB5F241441F500121B47 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		C2EF8E56240D65400002354D /* BaseAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIServices.swift; sourceTree = "<group>"; };
 		C2EF8E58240DA3D40002354D /* LoginUserErrorResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserErrorResponseDTO.swift; sourceTree = "<group>"; };
 		C2EF8E5B240DA4E90002354D /* APILoginFailedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoginFailedData.swift; sourceTree = "<group>"; };
@@ -516,6 +528,8 @@
 				C2F5192323AADB3A0042094E /* March.swift */,
 				C2E0A902234D9114000F6FCD /* User.swift */,
 				C284DBD323C3B04E004ADEFC /* Resources.swift */,
+				C2E7DB5D241441CF00121B47 /* Player.swift */,
+				C2E7DB5F241441F500121B47 /* Entity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -545,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				C2402E032383603700858422 /* GetComponentRequest.swift */,
+				C2E7DB5B2414415B00121B47 /* PlayerDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -712,8 +727,27 @@
 		C2E7DB5224143CAF00121B47 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				C2E7DB5324143D1300121B47 /* PlayerServices.swift */,
+				C2E7DB5524143D1700121B47 /* DTOs */,
+				C2E7DB5624143D1F00121B47 /* Notifications */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		C2E7DB5524143D1700121B47 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				C2E7DB592414411E00121B47 /* CreatePlayerRequestDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		C2E7DB5624143D1F00121B47 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				C2E7DB5724143D6700121B47 /* PlayerServicesPublisher.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		C2EF8E5A240DA4950002354D /* Notifications */ = {
@@ -741,8 +775,8 @@
 			children = (
 				C2D1BDD123455B5C00ADF01E /* UserServicesPublisher.swift */,
 				C2EF8E5B240DA4E90002354D /* APILoginFailedData.swift */,
-				C2EF8E5D240DA5090002354D /* APILoginSucceedData.swift */,
 				C2EF8E6A240DAC480002354D /* APIRegisterFailedData.swift */,
+				C2EF8E5D240DA5090002354D /* APILoginSucceedData.swift */,
 				C2EF8E6E240DD4070002354D /* APIRegisterSucceedData.swift */,
 			);
 			path = Notifications;
@@ -1235,6 +1269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92E5190D22A750DB000B1F59 /* Subscriber.swift in Sources */,
+				C2E7DB60241441F500121B47 /* Entity.swift in Sources */,
 				C2D50849237B4B1600F48B32 /* GameNotificationFactory.swift in Sources */,
 				C23CF4A4237F5EA900833792 /* ArmyService.swift in Sources */,
 				C276CBF423D681C2005D21A0 /* CDUser+CoreDataProperties.swift in Sources */,
@@ -1273,6 +1308,7 @@
 				C2D1BDBE2344425D00ADF01E /* UserService.swift in Sources */,
 				C2EF8EA3240DF0400002354D /* CreatePlayerButton.swift in Sources */,
 				C2EF8E5E240DA5090002354D /* APILoginSucceedData.swift in Sources */,
+				C2E7DB5824143D6700121B47 /* PlayerServicesPublisher.swift in Sources */,
 				C2EF8E6D240DACBB0002354D /* RegisterUserErrorResponseDTO.swift in Sources */,
 				C2D1BDD223455B5C00ADF01E /* UserServicesPublisher.swift in Sources */,
 				C2EF8E57240D65410002354D /* BaseAPIServices.swift in Sources */,
@@ -1285,6 +1321,7 @@
 				C2F5191D23AACC9F0042094E /* MapServicePublisher.swift in Sources */,
 				C2F5192623AADEB00042094E /* MapServices.swift in Sources */,
 				C2EF8E87240DE19F0002354D /* GameRegisterSucceedData.swift in Sources */,
+				C2E7DB5E241441CF00121B47 /* Player.swift in Sources */,
 				C2EF8E69240DAB020002354D /* GameRegisterFailedData.swift in Sources */,
 				C23CF49B237EA1D200833792 /* ConnectionNotifications.swift in Sources */,
 				C27A47B3237A43A400740918 /* Scene.swift in Sources */,
@@ -1299,6 +1336,7 @@
 				C276CBEA23D681C2005D21A0 /* CDTile+CoreDataProperties.swift in Sources */,
 				C2402E042383603700858422 /* GetComponentRequest.swift in Sources */,
 				C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */,
+				C2E7DB5C2414415B00121B47 /* PlayerDTO.swift in Sources */,
 				C2FBBE1F240C205B0023014F /* APIOperations.swift in Sources */,
 				C276CBE523D681C2005D21A0 /* CDUnit+CoreDataClass.swift in Sources */,
 				923B38C622A0832200748F6F /* MapOverlayView.swift in Sources */,
@@ -1314,6 +1352,7 @@
 				C276CBED23D681C2005D21A0 /* CDArmy_Units+CoreDataClass.swift in Sources */,
 				923B38BB22A0815600748F6F /* LoginSceneGameImage.swift in Sources */,
 				C276CBEB23D681C2005D21A0 /* CDMarch+CoreDataClass.swift in Sources */,
+				C2E7DB5424143D1300121B47 /* PlayerServices.swift in Sources */,
 				C20E1FE623B106C9002A8E7E /* MarchNode.swift in Sources */,
 				C277ED6A2393663500894B7A /* CityServicePublisher.swift in Sources */,
 				C284DBD023C3AE79004ADEFC /* ResourceTickerView.swift in Sources */,
@@ -1336,6 +1375,7 @@
 				C2D50841237B3ED000F48B32 /* SceneNotificationFactory.swift in Sources */,
 				C27BA72A23ADF82300034023 /* ScenePublisher.swift in Sources */,
 				C2F574E323A9825C00E2DE5D /* CityServicesPublisher.swift in Sources */,
+				C2E7DB5A2414411E00121B47 /* CreatePlayerRequestDTO.swift in Sources */,
 				C2EF8E94240DE7CC0002354D /* CreatePlayerScene.swift in Sources */,
 				C2F574E123A981F600E2DE5D /* CityServices.swift in Sources */,
 				923B38DC22A1DB2C00748F6F /* MapCamera.swift in Sources */,
