@@ -10,7 +10,7 @@ import Foundation
 
 class PlayerService: GameService {
     var player:       Player?
-    var publisher:  UserServicePublisher
+    var publisher: PlayerServicePublisher
     var subscriber: Subscriber
     
     init() {

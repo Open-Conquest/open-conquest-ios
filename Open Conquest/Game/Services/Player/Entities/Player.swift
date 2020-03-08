@@ -11,9 +11,9 @@ import Foundation
 class Player: Entity {
     let name: String
     
-    init(id: EntityID, name: String) {
+    init(id: EntityID?, name: String) {
         self.name = name
-        super(id: id)
+        super.init(id: id)
     }
     
     func getName() -> String {

@@ -14,4 +14,8 @@ class GameTryCreatePlayerData {
     init(player: Player) {
         self.player = player
     }
+    
+    func getPlayer() -> Player {
+        return self.player
+    }
 }

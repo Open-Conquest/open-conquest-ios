@@ -56,6 +56,8 @@ class GameNotificationFactory: NotificationFactory {
             return buildNotification(name: .GameTryGetMarches, data: query)
         case .user:
             return buildNotification(name: .GameTryGetUsers, data: query)
+        default:
+            fatalError()
         }
     }
     
@@ -71,6 +73,8 @@ class GameNotificationFactory: NotificationFactory {
             return buildNotification(name: .GameDidGetMarches, data: entities)
         case .user:
             return buildNotification(name: .GameDidGetUsers, data: entities)
+        default:
+            fatalError()
         }
     }
     

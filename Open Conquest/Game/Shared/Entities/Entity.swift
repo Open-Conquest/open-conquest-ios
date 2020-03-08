@@ -13,9 +13,9 @@ struct EntityID {
 }
 
 class Entity {
-    let id: EntityID
+    let id: EntityID?
     
-    init(id: EntityID) {
+    init(id: EntityID?) {
         self.id = id
     }
 }
