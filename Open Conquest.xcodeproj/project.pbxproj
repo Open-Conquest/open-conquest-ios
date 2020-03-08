@@ -121,7 +121,6 @@
 		C2E7DB5824143D6700121B47 /* PlayerServicesPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5724143D6700121B47 /* PlayerServicesPublisher.swift */; };
 		C2E7DB5A2414411E00121B47 /* CreatePlayerRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB592414411E00121B47 /* CreatePlayerRequestDTO.swift */; };
 		C2E7DB5C2414415B00121B47 /* PlayerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5B2414415B00121B47 /* PlayerDTO.swift */; };
-		C2E7DB5E241441CF00121B47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5D241441CF00121B47 /* Player.swift */; };
 		C2E7DB60241441F500121B47 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB5F241441F500121B47 /* Entity.swift */; };
 		C2E7DB63241454BA00121B47 /* SceneTryCreatePlayerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB62241454BA00121B47 /* SceneTryCreatePlayerData.swift */; };
 		C2E7DB662414557F00121B47 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7DB652414557F00121B47 /* PlayerService.swift */; };
@@ -310,7 +309,6 @@
 		C2E7DB5724143D6700121B47 /* PlayerServicesPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerServicesPublisher.swift; sourceTree = "<group>"; };
 		C2E7DB592414411E00121B47 /* CreatePlayerRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerRequestDTO.swift; sourceTree = "<group>"; };
 		C2E7DB5B2414415B00121B47 /* PlayerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDTO.swift; sourceTree = "<group>"; };
-		C2E7DB5D241441CF00121B47 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C2E7DB5F241441F500121B47 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		C2E7DB62241454BA00121B47 /* SceneTryCreatePlayerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTryCreatePlayerData.swift; sourceTree = "<group>"; };
 		C2E7DB652414557F00121B47 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
@@ -538,7 +536,6 @@
 				C2F5192323AADB3A0042094E /* March.swift */,
 				C2E0A902234D9114000F6FCD /* User.swift */,
 				C284DBD323C3B04E004ADEFC /* Resources.swift */,
-				C2E7DB5D241441CF00121B47 /* Player.swift */,
 				C2E7DB5F241441F500121B47 /* Entity.swift */,
 			);
 			path = Entities;
@@ -1369,7 +1366,6 @@
 				C2F5191D23AACC9F0042094E /* MapServicePublisher.swift in Sources */,
 				C2F5192623AADEB00042094E /* MapServices.swift in Sources */,
 				C2EF8E87240DE19F0002354D /* GameRegisterSucceedData.swift in Sources */,
-				C2E7DB5E241441CF00121B47 /* Player.swift in Sources */,
 				C2EF8E69240DAB020002354D /* GameRegisterFailedData.swift in Sources */,
 				C23CF49B237EA1D200833792 /* ConnectionNotifications.swift in Sources */,
 				C27A47B3237A43A400740918 /* Scene.swift in Sources */,
