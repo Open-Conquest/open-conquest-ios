@@ -12,6 +12,11 @@ import SwiftyJSON
 class PlayerDTO {
     var name: String
     
+    /* Expecting json to adhere to Player schema */
+    init(json: JSON) {
+        self.name = json["name"].string!
+    }
+    
     /* Create a PlayerDTO from a name String */
     init(name: String) {
         self.name = name
