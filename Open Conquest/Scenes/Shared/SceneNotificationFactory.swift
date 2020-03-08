@@ -36,6 +36,8 @@ class SceneNotificationFactory: NotificationFactory {
             return buildNotification(name: .SceneTryGetMarches, data: nil)
         case .user:
             return buildNotification(name: .SceneTryGetUsers, data: nil)
+        default:
+            fatalError()
         }
     }
 }
