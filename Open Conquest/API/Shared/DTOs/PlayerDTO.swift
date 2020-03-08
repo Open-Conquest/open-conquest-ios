@@ -12,11 +12,19 @@ import SwiftyJSON
 class PlayerDTO {
     var name: String
     
+    /* Create a PlayerDTO from a name String */
     init(name: String) {
         self.name = name
     }
     
-    // init from game entity
+    /* Create a PlayerDTO from a Player Entity */
+    init(player: Player) {
+        self.name = player.getName()
+    }
     
-    // create game entity from dto?
+    func toJSON() -> JSON {
+        return JSON([
+            "name": name
+        ])
+    }
 }

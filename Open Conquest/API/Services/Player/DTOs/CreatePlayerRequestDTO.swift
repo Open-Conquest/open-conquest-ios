@@ -9,11 +9,15 @@
 import Foundation
 import SwiftyJSON
 
-class CreatePlayerRequestDTO {
+class CreatePlayerRequestDTO: Request {
     var player: PlayerDTO
     
-    init(player: PlayerDTO) {
+    init(token: Token, player: PlayerDTO) {
         self.player = player
+        let data = JSON([
+            "player": player.toJSON()
+        ])
+        super.init(service: .Player, operation: .CreatePlayer, token: token, data: data)
     }
     
     // init from game entities

@@ -10,12 +10,12 @@ import Foundation
 
 import Foundation
 class PlayerServices: BaseAPIServices {
-    var publisher:  PlayerServicesPublisher
+    var publisher: PlayerServicesPublisher
     var subscriber: Subscriber
     
     override init() {
-        publisher   = PlayerServicesPublisher()
-        subscriber  = Subscriber()
+        publisher = PlayerServicesPublisher()
+        subscriber = Subscriber()
         
         super.init()
         setupSubscibers()
@@ -23,16 +23,11 @@ class PlayerServices: BaseAPIServices {
     
     func setupSubscibers() {
         // game subscribing methods
-//        subscriber.subscribe(observingFunction: tryLogin(_:), name: .GameTryLogin)
-//        subscriber.subscribe(observingFunction: tryRegister(_:), name: .GameTryRegister)
-//        subscriber.subscribe(observingFunction: tryGetUsers(_:), name: .GameTryGetUsers)
+        subscriber.subscribe(observingFunction: tryCreatePlayer(_:), name: .GameTryCreatePlayer)
 //
 //        // connection subscribing methods
 //        subscriber.subscribe(observingFunction: didLogin(_:), name: .ConnectionLoginSucceed)
 //        subscriber.subscribe(observingFunction: loginFailed(_:), name: .ConnectionLoginFailed)
-//        subscriber.subscribe(observingFunction: registerSucceed(_:), name: .ConnectionRegisterSucceed)
-//        subscriber.subscribe(observingFunction: registerFailed(_:), name: .ConnectionRegisterFailed)
-//        subscriber.subscribe(observingFunction: didGetUsers(_:), name: .ConnectionDidGetUsers)
     }
     
     // MARK: GAME SUBSCRIBING METHODS
@@ -42,18 +37,22 @@ class PlayerServices: BaseAPIServices {
         print("UserServices receieved GameTryCreatePlayer event.")
         
         // get game entities from notification
-//        let tryCreatePlayerData = notification.userInfo!["data"] as! GameTryCreatePlayerData
-//
-//        // build DTO from game entities
-//
-//        // publish DTO to connection to send message to server
-//        publisher.tryCreatePlayer()
+        let tryCreatePlayerData = notification.userInfo!["data"] as! GameTryCreatePlayerData
+
+        // build DTO from game entities
+        let playerDTO = PlayerDTO(player: tryCreatePlayerData.getPlayer())
+        
+        // get token from keychain
+        let token = Token(value: getTokenFromKeychain())
+        
+        // publish DTO to connection to send message to server
+        publisher.tryCreatePlayer(token: token, player: playerDTO)
     }
     
     
     // MARK: CONNECTION SUBSCRIBING METHODS
     func createPlayerSucceed(_ notification: Notification) {
-        print("UserServices received ConnectionLoginSucceeded event.")
+        print("UserServices received ConnectionCreatePlayerSucceed event.")
 
         // convert response to DTO
 //        let createPlayerResponse = CreatePlayerResponseDTO(response:
@@ -67,7 +66,7 @@ class PlayerServices: BaseAPIServices {
     }
     
     func createdPlayerFailed(_ notification: Notification) {
-        print("UserServices received ConnectionLoginFailed event.")
+        print("UserServices received ConnectionCreatePlayerFailed event.")
         
 //        // convert response to DTO
 //        let createPlayerErrorResponse = CreatePlayerErrorResponseDTO(

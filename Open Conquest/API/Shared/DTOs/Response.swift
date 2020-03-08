@@ -10,20 +10,20 @@ import Foundation
 import SwiftyJSON
 
 class Response {
-    var service:    APIServices
-    var operation:  APIOperations
-    var data:       JSON
+    var service: APIServices
+    var operation: APIOperations
+    var data: JSON
     
     init(service: APIServices, operation: APIOperations, data: JSON) {
-        self.service    = service
-        self.operation  = operation
-        self.data       = data
+        self.service = service
+        self.operation = operation
+        self.data = data
     }
     
     init(body: JSON) {
-        self.service    = APIServices(rawValue: body["service"].string!)!
-        self.operation  = APIOperations(rawValue: body["operation"].string!)!
-        self.data       = body["data"] 
+        self.service = APIServices(rawValue: body["service"].string!)!
+        self.operation = APIOperations(rawValue: body["operation"].string!)!
+        self.data = body["data"]
     }
     
     init(data: [AnyHashable: Any]) {

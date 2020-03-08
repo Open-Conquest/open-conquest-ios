@@ -25,8 +25,9 @@ class PlayerServicesPublisher: Publisher {
 //        post(notification: notification)
 //    }
     
-    func tryCreatePlayer(data: CreatePlayerRequestDTO) {
+    func tryCreatePlayer(token: Token, player: PlayerDTO) {
         // TODO: include the users token from logging in with the request
+        let data = CreatePlayerRequestDTO(token: token, player: player)
         let notification = apiNotificationFactory.buildNotification(name: .APIMakeRequest, data: data)
         post(notification: notification)
     }

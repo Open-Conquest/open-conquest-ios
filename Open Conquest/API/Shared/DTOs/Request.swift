@@ -21,6 +21,13 @@ class Request {
         self.data = data
     }
     
+    init(service: APIServices, operation: APIOperations, token: Token, data: JSON) {
+        self.service = service
+        self.operation = operation
+        self.token = token
+        self.data = data
+    }
+    
     init(service: String, operation: String, data: JSON) {
         self.service    = APIServices(rawValue: service)!
         self.operation  = APIOperations(rawValue: operation)!
@@ -36,12 +43,22 @@ class Request {
     }
     
     func toString() -> String {
-        let request = JSON([
-            "service": service.rawValue,
-            "operation": operation.rawValue,
-            "token": token?.getValue(),
-            "data": data
-        ])
+        var request: JSON
+        if let tokenVal = token?.getValue() {
+            request = JSON([
+                "service": service.rawValue,
+                "operation": operation.rawValue,
+                "token": ["value": tokenVal],
+                "data": data
+            ])
+        } else {
+            request = JSON([
+                "service": service.rawValue,
+                "operation": operation.rawValue,
+                "token": token?.getValue(),
+                "data": data
+            ])
+        }
         return request.rawString()!
     }
 }

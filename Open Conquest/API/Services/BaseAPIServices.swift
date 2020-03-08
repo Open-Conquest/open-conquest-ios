@@ -26,7 +26,7 @@ struct TokenStruct {
 class BaseAPIServices {
     init() {}
     
-    func getTokenFromKeychain() throws -> String {
+    func getTokenFromKeychain() -> String {
         let server = KeychainTokenValues.server.rawValue
         let account = KeychainTokenValues.account.rawValue
         
@@ -40,7 +40,8 @@ class BaseAPIServices {
         ]
         var item: CFTypeRef?
         let status = SecItemCopyMatching(query as CFDictionary, &item)
-        guard status == errSecSuccess else { throw KeychainError.tokenNotFound }
+        // if a token wasn't found return an empty string
+        guard status == errSecSuccess else { return "" }
 
         let responseItem = item as! [String: Any]
         let tokenData = responseItem[String(kSecValueData)] as! Data
