@@ -97,12 +97,19 @@ class UserServices: BaseAPIServices {
         print("UserServices received ConnectionRegisterSucceed event.")
         
         // parse response
-        let registerErrorResponse = RegisterUserResponseDTO(
+        let registerUserResponse = RegisterUserResponseDTO(
             response: notification.userInfo!["data"] as! Response
         )
+        // save token from response to keychain
+        do {
+            try saveTokenToKeychain(value: registerUserResponse.getToken().getValue())
+        } catch {
+            print("UserServices error saving token in keychain")
+            return
+        }
         
         // publish failed register notification
-        publisher.registerSucceed(response: registerErrorResponse)
+        publisher.registerSucceed(response: registerUserResponse)
     }
     
     func registerFailed(_ notification: Notification) {
