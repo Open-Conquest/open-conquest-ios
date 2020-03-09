@@ -75,8 +75,7 @@
 		C27BC47B2415867500AA59FA /* ResourcesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC47A2415867500AA59FA /* ResourcesDTO.swift */; };
 		C27BC47D2415872900AA59FA /* CityDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC47C2415872900AA59FA /* CityDTO.swift */; };
 		C27BC47F2415879900AA59FA /* ArmyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC47E2415879900AA59FA /* ArmyDTO.swift */; };
-		C27BC4812415888600AA59FA /* ArmyUnitsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4802415888600AA59FA /* ArmyUnitsDTO.swift */; };
-		C27BC4832415898100AA59FA /* UnitDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4822415898100AA59FA /* UnitDTO.swift */; };
+		C27BC4852415E18000AA59FA /* CreatePlayerErrorResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4842415E18000AA59FA /* CreatePlayerErrorResponseDTO.swift */; };
 		C283488E236BC43700381EA3 /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283488D236BC43700381EA3 /* LoadingScene.swift */; };
 		C2834890236BC4DD00381EA3 /* LoadingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283488F236BC4DD00381EA3 /* LoadingSceneView.swift */; };
 		C2834893236BC56B00381EA3 /* LoadingSceneBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2834892236BC56B00381EA3 /* LoadingSceneBackground.swift */; };
@@ -269,8 +268,7 @@
 		C27BC47A2415867500AA59FA /* ResourcesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesDTO.swift; sourceTree = "<group>"; };
 		C27BC47C2415872900AA59FA /* CityDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDTO.swift; sourceTree = "<group>"; };
 		C27BC47E2415879900AA59FA /* ArmyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyDTO.swift; sourceTree = "<group>"; };
-		C27BC4802415888600AA59FA /* ArmyUnitsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyUnitsDTO.swift; sourceTree = "<group>"; };
-		C27BC4822415898100AA59FA /* UnitDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDTO.swift; sourceTree = "<group>"; };
+		C27BC4842415E18000AA59FA /* CreatePlayerErrorResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerErrorResponseDTO.swift; sourceTree = "<group>"; };
 		C283488D236BC43700381EA3 /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		C283488F236BC4DD00381EA3 /* LoadingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneView.swift; sourceTree = "<group>"; };
 		C2834892236BC56B00381EA3 /* LoadingSceneBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneBackground.swift; sourceTree = "<group>"; };
@@ -585,8 +583,6 @@
 				C27BC47A2415867500AA59FA /* ResourcesDTO.swift */,
 				C27BC47C2415872900AA59FA /* CityDTO.swift */,
 				C27BC47E2415879900AA59FA /* ArmyDTO.swift */,
-				C27BC4802415888600AA59FA /* ArmyUnitsDTO.swift */,
-				C27BC4822415898100AA59FA /* UnitDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -625,6 +621,13 @@
 			children = (
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		C27BC4862415E74A00AA59FA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		C2834889236BC11700381EA3 /* Connection */ = {
@@ -675,6 +678,7 @@
 			children = (
 				C2DDC9D523CA24D600456276 /* Model.xcdatamodeld */,
 				C2DDCA2023CA25B000456276 /* Models */,
+				C27BC4862415E74A00AA59FA /* Repositories */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -767,6 +771,7 @@
 			children = (
 				C2E7DB592414411E00121B47 /* CreatePlayerRequestDTO.swift */,
 				C27BC478241585B700AA59FA /* CreatePlayerResponseDTO.swift */,
+				C27BC4842415E18000AA59FA /* CreatePlayerErrorResponseDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -1334,6 +1339,7 @@
 				C2E7DB60241441F500121B47 /* Entity.swift in Sources */,
 				C2D50849237B4B1600F48B32 /* GameNotificationFactory.swift in Sources */,
 				C23CF4A4237F5EA900833792 /* ArmyService.swift in Sources */,
+				C27BC4852415E18000AA59FA /* CreatePlayerErrorResponseDTO.swift in Sources */,
 				C276CBF423D681C2005D21A0 /* CDUser+CoreDataProperties.swift in Sources */,
 				C269764323D4D884007035ED /* UnitNameLabel.swift in Sources */,
 				C2F5193023AAE3830042094E /* GetMarchesResponse.swift in Sources */,
@@ -1413,7 +1419,6 @@
 				C2F5192423AADB3A0042094E /* March.swift in Sources */,
 				C2D1BDE32345EABE00ADF01E /* Response.swift in Sources */,
 				C2D1BDB92343F95500ADF01E /* MapService.swift in Sources */,
-				C27BC4832415898100AA59FA /* UnitDTO.swift in Sources */,
 				C2C383D023C65DEA00F61849 /* MapButtons.swift in Sources */,
 				C27BC479241585B700AA59FA /* CreatePlayerResponseDTO.swift in Sources */,
 				C276CBED23D681C2005D21A0 /* CDArmy_Units+CoreDataClass.swift in Sources */,
@@ -1479,7 +1484,6 @@
 				C2EF8E59240DA3D40002354D /* LoginUserErrorResponseDTO.swift in Sources */,
 				C2EF8EA1240DEB280002354D /* CreatePlayerCard.swift in Sources */,
 				C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */,
-				C27BC4812415888600AA59FA /* ArmyUnitsDTO.swift in Sources */,
 				C283D5A42408DEEB00E109A0 /* Token.swift in Sources */,
 				C277ED682393661800894B7A /* City.swift in Sources */,
 				C2834890236BC4DD00381EA3 /* LoadingSceneView.swift in Sources */,

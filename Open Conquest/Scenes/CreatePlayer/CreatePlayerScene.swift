@@ -58,6 +58,7 @@ class CreatePlayerScene: SKScene, Scene {
     func setupSubscribers() {
 //        subscriber.subscribe(observingFunction: didGetWorldPlayersCount(_:), name: .GameDidGetWorldPlayersCount)
         subscriber.subscribe(observingFunction: createNewPlayerSucceed(_:), name: .GameCreatePlayerSucceed)
+        subscriber.subscribe(observingFunction: createNewPlayerFailed(_:), name: .GameCreatePlayerFailed)
     }
 
     func setupGestures() {}
@@ -110,7 +111,8 @@ class CreatePlayerScene: SKScene, Scene {
     
     func createNewPlayerFailed(_ notifiction: Notification) {
         print("CreatePlayerScene received GameCreateNewPlayerFailed notification")
-        // todo
+        
+        // set some error message...
     }
 
     // MARK: GESTURING METHODS

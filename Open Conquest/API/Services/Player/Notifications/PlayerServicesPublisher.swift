@@ -32,4 +32,9 @@ class PlayerServicesPublisher: Publisher {
         let notif = notificationFactory.buildNotification(name: .APICreatePlayerSucceed, data: player)
         post(notification: notif)
     }
+    
+    func createPlayerFailed(message: String) {
+        let notification = notificationFactory.buildNotification(name: .APICreatePlayerFailed, data: message)
+        post(notification: notification)
+    }
 }

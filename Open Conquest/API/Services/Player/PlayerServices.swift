@@ -77,12 +77,10 @@ class PlayerServices: BaseAPIServices {
     func createdPlayerFailed(_ notification: Notification) {
         print("PlayerServices received ConnectionCreatePlayerFailed event.")
         
-        // convert response to DTO
-//        let createPlayerErrorResponse = CreatePlayerErrorResponseDTO(
-//            response: notification.userInfo!["data"] as! Response
-//        )
-//
-//        // publish failed login notification
-//        publisher.loginFailed(response: loginErrorResponse)
+        let createPlayerErrorResponse = CreatePlayerErrorResponseDTO(
+            response: notification.userInfo!["data"] as! Response
+        )
+        
+        publisher.createPlayerFailed(message: createPlayerErrorResponse.getMessage())
     }
 }
