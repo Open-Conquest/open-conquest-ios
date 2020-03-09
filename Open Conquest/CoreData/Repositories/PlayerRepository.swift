@@ -17,8 +17,32 @@ class PlayerRepository {
     }
     
     func savePlayer(player: Player) {
-        let entity = NSEntityDescription.entity(forEntityName: "CDPlayer", in: context)
-        let cdPlayer = NSManagedObject(entity: entity!, insertInto: context)
+        let playerEntity = NSEntityDescription.entity(forEntityName: "CDPlayer", in: context)
+        let cdPlayer = CDPlayer(entity: playerEntity!, insertInto: context)
         cdPlayer.setValue(player.getName(), forKey: "name")
+        
+        let resourcesEntity = NSEntityDescription.entity(forEntityName: "CDResources", in: context)
+        let cdResources = CDResources(entity: resourcesEntity!, insertInto: context)
+        cdPlayer.resources = cdResources
+        
+        do {
+            try context.save()
+        } catch {
+            print("FUCKKKKKK")
+        }
+    }
+    
+    func getPlayer(player: Player) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDPlayer")
+        //request.predicate = NSPredicate(format: "age = %@", "12")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+               print(data.value(forKey: "name") as! String)
+            }
+        } catch {
+            print("Failed")
+        }
     }
 }
