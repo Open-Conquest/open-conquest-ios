@@ -23,7 +23,7 @@ class CreatePlayerView: UIView {
         header = CreatePlayerHeader(frame: .zero)
         header.backgroundColor = .blue
         
-        pickerCard = CreatePlayerCard(frame: .zero)
+        pickerCard = CreatePlayerCard(frame: frame)
         pickerCard.backgroundColor = .green
         
         super.init(frame: frame)
@@ -42,24 +42,29 @@ class CreatePlayerView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        if (frame == .zero) {
+            return
+        }
+        
         background.autoPinEdge(.left, to: .left, of: self)
         background.autoPinEdge(.right, to: .right, of: self)
         background.autoPinEdge(.top, to: .top, of: self)
         background.autoPinEdge(.bottom, to: .bottom, of: self)
         
+        let headerHeight = frame.height/11
         header.autoPinEdge(.left, to: .left, of: self)
         header.autoPinEdge(.right, to: .right, of: self)
         header.autoPinEdge(.top, to: .top, of: self)
-        header.autoSetDimension(.height, toSize: frame.height/11)
+        header.autoSetDimension(.height, toSize: headerHeight)
         
-        let height = self.frame.height
-        let width = self.frame.width
-        let heightOffset = height / 4
-        let widthOffset = width / 6
+        let heightOffset = (frame.height - headerHeight)/12
+        let widthOffset = frame.width / 12
         pickerCard.autoPinEdge(.left, to: .left, of: self, withOffset: widthOffset)
         pickerCard.autoPinEdge(.right, to: .right, of: self, withOffset: -widthOffset)
-        pickerCard.autoPinEdge(.top, to: .top, of: self, withOffset: heightOffset)
+        pickerCard.autoPinEdge(.top, to: .bottom, of: header, withOffset: heightOffset)
         pickerCard.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: -heightOffset)
+        pickerCard.layer.cornerRadius = 10;
+        pickerCard.layer.masksToBounds = true;
     }
     
     func setupGestures() {
