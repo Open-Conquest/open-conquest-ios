@@ -59,6 +59,28 @@
 		C27BC47F2415879900AA59FA /* ArmyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC47E2415879900AA59FA /* ArmyDTO.swift */; };
 		C27BC4852415E18000AA59FA /* CreatePlayerErrorResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4842415E18000AA59FA /* CreatePlayerErrorResponseDTO.swift */; };
 		C27BC4882415E7F600AA59FA /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4872415E7F600AA59FA /* PlayerRepository.swift */; };
+		C27BC4A32416AF0300AA59FA /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC48D2416AF0300AA59FA /* CDUser+CoreDataClass.swift */; };
+		C27BC4A42416AF0300AA59FA /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC48E2416AF0300AA59FA /* CDUser+CoreDataProperties.swift */; };
+		C27BC4A52416AF0300AA59FA /* CDMarch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC48F2416AF0300AA59FA /* CDMarch+CoreDataClass.swift */; };
+		C27BC4A62416AF0300AA59FA /* CDMarch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4902416AF0300AA59FA /* CDMarch+CoreDataProperties.swift */; };
+		C27BC4A72416AF0300AA59FA /* CDMap+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4912416AF0300AA59FA /* CDMap+CoreDataClass.swift */; };
+		C27BC4A82416AF0300AA59FA /* CDMap+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4922416AF0300AA59FA /* CDMap+CoreDataProperties.swift */; };
+		C27BC4A92416AF0300AA59FA /* CDArmy_Units+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4932416AF0300AA59FA /* CDArmy_Units+CoreDataClass.swift */; };
+		C27BC4AA2416AF0300AA59FA /* CDArmy_Units+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4942416AF0300AA59FA /* CDArmy_Units+CoreDataProperties.swift */; };
+		C27BC4AB2416AF0300AA59FA /* CDWorld+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4952416AF0300AA59FA /* CDWorld+CoreDataClass.swift */; };
+		C27BC4AC2416AF0300AA59FA /* CDWorld+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4962416AF0300AA59FA /* CDWorld+CoreDataProperties.swift */; };
+		C27BC4AD2416AF0300AA59FA /* CDArmy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4972416AF0300AA59FA /* CDArmy+CoreDataClass.swift */; };
+		C27BC4AE2416AF0300AA59FA /* CDArmy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4982416AF0300AA59FA /* CDArmy+CoreDataProperties.swift */; };
+		C27BC4AF2416AF0300AA59FA /* CDCity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4992416AF0300AA59FA /* CDCity+CoreDataClass.swift */; };
+		C27BC4B02416AF0300AA59FA /* CDCity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC49A2416AF0300AA59FA /* CDCity+CoreDataProperties.swift */; };
+		C27BC4B12416AF0300AA59FA /* CDResources+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC49B2416AF0300AA59FA /* CDResources+CoreDataClass.swift */; };
+		C27BC4B22416AF0300AA59FA /* CDResources+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC49C2416AF0300AA59FA /* CDResources+CoreDataProperties.swift */; };
+		C27BC4B32416AF0300AA59FA /* CDUnit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC49D2416AF0300AA59FA /* CDUnit+CoreDataClass.swift */; };
+		C27BC4B42416AF0300AA59FA /* CDUnit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC49E2416AF0300AA59FA /* CDUnit+CoreDataProperties.swift */; };
+		C27BC4B52416AF0300AA59FA /* CDPlayer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC49F2416AF0300AA59FA /* CDPlayer+CoreDataClass.swift */; };
+		C27BC4B62416AF0300AA59FA /* CDPlayer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4A02416AF0300AA59FA /* CDPlayer+CoreDataProperties.swift */; };
+		C27BC4B72416AF0300AA59FA /* CDTile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4A12416AF0300AA59FA /* CDTile+CoreDataClass.swift */; };
+		C27BC4B82416AF0300AA59FA /* CDTile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27BC4A22416AF0300AA59FA /* CDTile+CoreDataProperties.swift */; };
 		C283488E236BC43700381EA3 /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283488D236BC43700381EA3 /* LoadingScene.swift */; };
 		C2834890236BC4DD00381EA3 /* LoadingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283488F236BC4DD00381EA3 /* LoadingSceneView.swift */; };
 		C2834893236BC56B00381EA3 /* LoadingSceneBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2834892236BC56B00381EA3 /* LoadingSceneBackground.swift */; };
@@ -235,6 +257,28 @@
 		C27BC47E2415879900AA59FA /* ArmyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyDTO.swift; sourceTree = "<group>"; };
 		C27BC4842415E18000AA59FA /* CreatePlayerErrorResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerErrorResponseDTO.swift; sourceTree = "<group>"; };
 		C27BC4872415E7F600AA59FA /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
+		C27BC48D2416AF0300AA59FA /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC48E2416AF0300AA59FA /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC48F2416AF0300AA59FA /* CDMarch+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMarch+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC4902416AF0300AA59FA /* CDMarch+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMarch+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC4912416AF0300AA59FA /* CDMap+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMap+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC4922416AF0300AA59FA /* CDMap+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMap+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC4932416AF0300AA59FA /* CDArmy_Units+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy_Units+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC4942416AF0300AA59FA /* CDArmy_Units+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy_Units+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC4952416AF0300AA59FA /* CDWorld+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDWorld+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC4962416AF0300AA59FA /* CDWorld+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDWorld+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC4972416AF0300AA59FA /* CDArmy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC4982416AF0300AA59FA /* CDArmy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmy+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC4992416AF0300AA59FA /* CDCity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC49A2416AF0300AA59FA /* CDCity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC49B2416AF0300AA59FA /* CDResources+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDResources+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC49C2416AF0300AA59FA /* CDResources+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDResources+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC49D2416AF0300AA59FA /* CDUnit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUnit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC49E2416AF0300AA59FA /* CDUnit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUnit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC49F2416AF0300AA59FA /* CDPlayer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlayer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC4A02416AF0300AA59FA /* CDPlayer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlayer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C27BC4A12416AF0300AA59FA /* CDTile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C27BC4A22416AF0300AA59FA /* CDTile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C283488D236BC43700381EA3 /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		C283488F236BC4DD00381EA3 /* LoadingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneView.swift; sourceTree = "<group>"; };
 		C2834892236BC56B00381EA3 /* LoadingSceneBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSceneBackground.swift; sourceTree = "<group>"; };
@@ -597,6 +641,35 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		C27BC4B92416B47600AA59FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C27BC48D2416AF0300AA59FA /* CDUser+CoreDataClass.swift */,
+				C27BC48E2416AF0300AA59FA /* CDUser+CoreDataProperties.swift */,
+				C27BC48F2416AF0300AA59FA /* CDMarch+CoreDataClass.swift */,
+				C27BC4902416AF0300AA59FA /* CDMarch+CoreDataProperties.swift */,
+				C27BC4912416AF0300AA59FA /* CDMap+CoreDataClass.swift */,
+				C27BC4922416AF0300AA59FA /* CDMap+CoreDataProperties.swift */,
+				C27BC4932416AF0300AA59FA /* CDArmy_Units+CoreDataClass.swift */,
+				C27BC4942416AF0300AA59FA /* CDArmy_Units+CoreDataProperties.swift */,
+				C27BC4952416AF0300AA59FA /* CDWorld+CoreDataClass.swift */,
+				C27BC4962416AF0300AA59FA /* CDWorld+CoreDataProperties.swift */,
+				C27BC4972416AF0300AA59FA /* CDArmy+CoreDataClass.swift */,
+				C27BC4982416AF0300AA59FA /* CDArmy+CoreDataProperties.swift */,
+				C27BC4992416AF0300AA59FA /* CDCity+CoreDataClass.swift */,
+				C27BC49A2416AF0300AA59FA /* CDCity+CoreDataProperties.swift */,
+				C27BC49B2416AF0300AA59FA /* CDResources+CoreDataClass.swift */,
+				C27BC49C2416AF0300AA59FA /* CDResources+CoreDataProperties.swift */,
+				C27BC49D2416AF0300AA59FA /* CDUnit+CoreDataClass.swift */,
+				C27BC49E2416AF0300AA59FA /* CDUnit+CoreDataProperties.swift */,
+				C27BC49F2416AF0300AA59FA /* CDPlayer+CoreDataClass.swift */,
+				C27BC4A02416AF0300AA59FA /* CDPlayer+CoreDataProperties.swift */,
+				C27BC4A12416AF0300AA59FA /* CDTile+CoreDataClass.swift */,
+				C27BC4A22416AF0300AA59FA /* CDTile+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C2834889236BC11700381EA3 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,6 +717,7 @@
 			isa = PBXGroup;
 			children = (
 				C2DDC9D523CA24D600456276 /* Model.xcdatamodeld */,
+				C27BC4B92416B47600AA59FA /* Models */,
 				C27BC4862415E74A00AA59FA /* Repositories */,
 			);
 			path = CoreData;
@@ -1294,16 +1368,22 @@
 				C2E7DB6B2414559E00121B47 /* GameTryCreatePlayerData.swift in Sources */,
 				C2F5191F23AAD9F10042094E /* MarchService.swift in Sources */,
 				C2EF8E9D240DEB030002354D /* CreatePlayerBackground.swift in Sources */,
+				C27BC4B32416AF0300AA59FA /* CDUnit+CoreDataClass.swift in Sources */,
 				C2BF586623D5720700772635 /* MarchSelectorFooter.swift in Sources */,
 				C299F0A8234BDA4B0076C747 /* LoginUserResponseDTO.swift in Sources */,
 				C2F5192823AADEB70042094E /* MapServicesPublisher.swift in Sources */,
 				C2D1BDBB2343F96600ADF01E /* Tile.swift in Sources */,
 				92A2A342229B635A0090287C /* GameScene.swift in Sources */,
 				C2491FE323D241B2000663C6 /* MarchSelectorView.swift in Sources */,
+				C27BC4B12416AF0300AA59FA /* CDResources+CoreDataClass.swift in Sources */,
+				C27BC4AC2416AF0300AA59FA /* CDWorld+CoreDataProperties.swift in Sources */,
 				C2F5192A23AADEC10042094E /* MarchServices.swift in Sources */,
 				C2D1BDE12345EABA00ADF01E /* Request.swift in Sources */,
 				C2834895236BC5DE00381EA3 /* LoadingScenePublisher.swift in Sources */,
+				C27BC4B82416AF0300AA59FA /* CDTile+CoreDataProperties.swift in Sources */,
 				C2C383D223C66C5500F61849 /* GameSceneNodeNames.swift in Sources */,
+				C27BC4AF2416AF0300AA59FA /* CDCity+CoreDataClass.swift in Sources */,
+				C27BC4A52416AF0300AA59FA /* CDMarch+CoreDataClass.swift in Sources */,
 				92A2A344229B635A0090287C /* GameViewController.swift in Sources */,
 				C2F5192C23AADEC90042094E /* MarchServicesPublisher.swift in Sources */,
 				C23CF4A2237F5E8A00833792 /* CityService.swift in Sources */,
@@ -1318,13 +1398,18 @@
 				C2D1BDD223455B5C00ADF01E /* UserServicesPublisher.swift in Sources */,
 				C2EF8E57240D65410002354D /* BaseAPIServices.swift in Sources */,
 				C299F0AD234C2EF60076C747 /* UserServicePublisher.swift in Sources */,
+				C27BC4AA2416AF0300AA59FA /* CDArmy_Units+CoreDataProperties.swift in Sources */,
+				C27BC4A42416AF0300AA59FA /* CDUser+CoreDataProperties.swift in Sources */,
 				C2B9B2FA2387BE7300BCF103 /* LoadingSceneProgressLabel.swift in Sources */,
 				C2EF8E8A240DE1D70002354D /* GameLoginSucceedData.swift in Sources */,
+				C27BC4B52416AF0300AA59FA /* CDPlayer+CoreDataClass.swift in Sources */,
 				C2834897236BC71400381EA3 /* GamePublisher.swift in Sources */,
 				923B38DE22A2F6C400748F6F /* API.swift in Sources */,
 				C2D1BDD52345A95500ADF01E /* Map.swift in Sources */,
 				C2F5191D23AACC9F0042094E /* MapServicePublisher.swift in Sources */,
+				C27BC4A92416AF0300AA59FA /* CDArmy_Units+CoreDataClass.swift in Sources */,
 				C2F5192623AADEB00042094E /* MapServices.swift in Sources */,
+				C27BC4A82416AF0300AA59FA /* CDMap+CoreDataProperties.swift in Sources */,
 				C2EF8E87240DE19F0002354D /* GameRegisterSucceedData.swift in Sources */,
 				C2EF8E69240DAB020002354D /* GameRegisterFailedData.swift in Sources */,
 				C23CF49B237EA1D200833792 /* ConnectionNotifications.swift in Sources */,
@@ -1332,6 +1417,7 @@
 				C28CD02223CD3F30003F8B2A /* NavbarView.swift in Sources */,
 				C2834893236BC56B00381EA3 /* LoadingSceneBackground.swift in Sources */,
 				923B38B922A0812900748F6F /* LoginSceneBackground.swift in Sources */,
+				C27BC4AE2416AF0300AA59FA /* CDArmy+CoreDataProperties.swift in Sources */,
 				923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */,
 				C2E7DB63241454BA00121B47 /* SceneTryCreatePlayerData.swift in Sources */,
 				C2D7B8E923907C35006571E2 /* ArmyServicePublisher.swift in Sources */,
@@ -1341,11 +1427,13 @@
 				C2402E042383603700858422 /* GetComponentRequest.swift in Sources */,
 				C277ED6323931BCB00894B7A /* GetArmiesResponse.swift in Sources */,
 				C2E7DB5C2414415B00121B47 /* PlayerDTO.swift in Sources */,
+				C27BC4B62416AF0300AA59FA /* CDPlayer+CoreDataProperties.swift in Sources */,
 				C2FBBE1F240C205B0023014F /* APIOperations.swift in Sources */,
 				923B38C622A0832200748F6F /* MapOverlayView.swift in Sources */,
 				C27BC47F2415879900AA59FA /* ArmyDTO.swift in Sources */,
 				C28CD02423CD449B003F8B2A /* NavbarButton.swift in Sources */,
 				92A2A33C229B635A0090287C /* AppDelegate.swift in Sources */,
+				C27BC4B72416AF0300AA59FA /* CDTile+CoreDataClass.swift in Sources */,
 				923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */,
 				C283D5A62409132E00E109A0 /* RegisterRequest.swift in Sources */,
 				C2E7DB662414557F00121B47 /* PlayerService.swift in Sources */,
@@ -1365,8 +1453,10 @@
 				C2EF8E9B240DE8F20002354D /* CreatePlayerView.swift in Sources */,
 				C2EF8E65240DA5670002354D /* GameTryLoginData.swift in Sources */,
 				C2EF8E96240DE7E70002354D /* CreatePlayerScenePublisher.swift in Sources */,
+				C27BC4B02416AF0300AA59FA /* CDCity+CoreDataProperties.swift in Sources */,
 				C2C383D423C7D45600F61849 /* Unit.swift in Sources */,
 				C2FDC5752384756800C0E556 /* GetUsersResponse.swift in Sources */,
+				C27BC4AD2416AF0300AA59FA /* CDArmy+CoreDataClass.swift in Sources */,
 				C284DBD423C3B04E004ADEFC /* Resources.swift in Sources */,
 				92E5191322A76021000B1F59 /* Notifications.swift in Sources */,
 				C27BC47B2415867500AA59FA /* ResourcesDTO.swift in Sources */,
@@ -1376,12 +1466,14 @@
 				C23CF4A7237F5FDC00833792 /* Army.swift in Sources */,
 				C269764123D4D6A8007035ED /* UnitIconView.swift in Sources */,
 				C2D50841237B3ED000F48B32 /* SceneNotificationFactory.swift in Sources */,
+				C27BC4A62416AF0300AA59FA /* CDMarch+CoreDataProperties.swift in Sources */,
 				C27BA72A23ADF82300034023 /* ScenePublisher.swift in Sources */,
 				C2F574E323A9825C00E2DE5D /* CityServicesPublisher.swift in Sources */,
 				C2E7DB5A2414411E00121B47 /* CreatePlayerRequestDTO.swift in Sources */,
 				C2EF8E94240DE7CC0002354D /* CreatePlayerScene.swift in Sources */,
 				C2F574E123A981F600E2DE5D /* CityServices.swift in Sources */,
 				923B38DC22A1DB2C00748F6F /* MapCamera.swift in Sources */,
+				C27BC4B42416AF0300AA59FA /* CDUnit+CoreDataProperties.swift in Sources */,
 				923B38C422A0829E00748F6F /* MapNode.swift in Sources */,
 				C2FBBE21240C20690023014F /* APIServices.swift in Sources */,
 				C2D5084F237B518E00F48B32 /* APINotificationFactory.swift in Sources */,
@@ -1395,6 +1487,7 @@
 				9244332722C5810C00913284 /* Game.swift in Sources */,
 				C2D1BDE72346975F00ADF01E /* LoginRequest.swift in Sources */,
 				C2D7B8E52390788E006571E2 /* ArmyServices.swift in Sources */,
+				C27BC4AB2416AF0300AA59FA /* CDWorld+CoreDataClass.swift in Sources */,
 				C28348A1236BDF3300381EA3 /* LoadingSceneProgressBar.swift in Sources */,
 				9244332922C6CC5C00913284 /* NotificationFactory.swift in Sources */,
 				C2EF8E9F240DEB1D0002354D /* CreatePlayerHeader.swift in Sources */,
@@ -1406,6 +1499,7 @@
 				C2EF8E63240DA5580002354D /* GameTryRegisterData.swift in Sources */,
 				C28348A3236C93B800381EA3 /* ConnectionPublisher.swift in Sources */,
 				C2EF8E59240DA3D40002354D /* LoginUserErrorResponseDTO.swift in Sources */,
+				C27BC4A72416AF0300AA59FA /* CDMap+CoreDataClass.swift in Sources */,
 				C2EF8EA1240DEB280002354D /* CreatePlayerCard.swift in Sources */,
 				C2F4A40A23D3DFC7004B97C9 /* MarchSelectorTable.swift in Sources */,
 				C283D5A42408DEEB00E109A0 /* Token.swift in Sources */,
@@ -1413,6 +1507,8 @@
 				C2834890236BC4DD00381EA3 /* LoadingSceneView.swift in Sources */,
 				C258E57F23D662CB0078E317 /* GameEntity.swift in Sources */,
 				C2E7DB682414558900121B47 /* PlayerServicePublisher.swift in Sources */,
+				C27BC4B22416AF0300AA59FA /* CDResources+CoreDataProperties.swift in Sources */,
+				C27BC4A32416AF0300AA59FA /* CDUser+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

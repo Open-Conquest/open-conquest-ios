@@ -65,6 +65,9 @@ class PlayerService: GameService {
         // save player to core data
         playerRepository.savePlayer(player: createdPlayer)
         
+        // get player from core data to test
+        playerRepository.getPlayer(player: Player(id: nil, name: "test_playername"))
+        
         // post notifcation for scene to transition
         publisher.createPlayerSucceed()
     }
