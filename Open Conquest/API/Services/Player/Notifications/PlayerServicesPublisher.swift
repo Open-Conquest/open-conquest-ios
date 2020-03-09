@@ -18,13 +18,7 @@ class PlayerServicesPublisher: Publisher {
     }
     
     // MARK: CONNECTION PUBLISHING METHODS
-    
-//    func tryCreatePlayer(data: GameTryLoginData) {
-//        let request = LoginRequest(gameTryLoginData: gameTryLoginData)
-//        let notification = apiNotificationFactory.buildAPITryLoginNotification(request: request)
-//        post(notification: notification)
-//    }
-    
+
     func tryCreatePlayer(token: Token, player: PlayerDTO) {
         // TODO: include the users token from logging in with the request
         let data = CreatePlayerRequestDTO(token: token, player: player)
@@ -33,10 +27,9 @@ class PlayerServicesPublisher: Publisher {
     }
     
     // MARK: GAME PUBLISHING METHODS
-    
-//    func loginSucceeded(response: LoginUserResponseDTO) {
-//        let data    = APILoginSucceedData(username: response.getUsername())
-//        let notif   = notificationFactory.buildNotification(name: .APILoginSucceed, data: data)
-//        post(notification: notif)
-//    }
+
+    func createPlayerSucceed(player: Player) {
+        let notif = notificationFactory.buildNotification(name: .APICreatePlayerSucceed, data: player)
+        post(notification: notif)
+    }
 }

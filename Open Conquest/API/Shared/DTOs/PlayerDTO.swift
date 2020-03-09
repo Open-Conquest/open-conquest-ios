@@ -32,4 +32,8 @@ class PlayerDTO {
             "name": name
         ])
     }
+    
+    func toEntity() -> Player {
+        return Player(id: nil, name: name)
+    }
 }

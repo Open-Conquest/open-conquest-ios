@@ -18,8 +18,8 @@ class CityServicePublisher: Publisher {
     // MARK: METHODS PUBLISHING TO SCENE
     
     func didGetCities(cities: [City]) {
-        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .city, entities: cities)
-        post(notification: notification)
+//        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .city, entities: cities)
+//        post(notification: notification)
     }
     
     // MARK: METHODS PUBLISHING TO API

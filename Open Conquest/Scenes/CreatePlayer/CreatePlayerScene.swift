@@ -57,6 +57,7 @@ class CreatePlayerScene: SKScene, Scene {
 
     func setupSubscribers() {
 //        subscriber.subscribe(observingFunction: didGetWorldPlayersCount(_:), name: .GameDidGetWorldPlayersCount)
+        subscriber.subscribe(observingFunction: createNewPlayerSucceed(_:), name: .GameCreatePlayerSucceed)
     }
 
     func setupGestures() {}
@@ -94,14 +95,20 @@ class CreatePlayerScene: SKScene, Scene {
     @objc func tryCreateNewPlayer() {
         print("CreatePlayerScene try create player button pressed")
         
-    }
-    
-    func createNewPlayerFailed(_ notifiction: Notification) {
-        print("CreatePlayerScene received GameCreateNewPlayerSucceed notification")
-        // todo
+        let playerName = "test_playername"
+        publisher.tryCreatePlayer(name: playerName)
     }
     
     func createNewPlayerSucceed(_ notifiction: Notification) {
+        print("CreatePlayerScene received GameCreateNewPlayerSucceed notification")
+        // present loading scene
+        prepareForNavigation()
+        let scene = LoadingScene()
+        scene.scaleMode = .aspectFill
+        view!.presentScene(scene)
+    }
+    
+    func createNewPlayerFailed(_ notifiction: Notification) {
         print("CreatePlayerScene received GameCreateNewPlayerFailed notification")
         // todo
     }
@@ -109,12 +116,8 @@ class CreatePlayerScene: SKScene, Scene {
     // MARK: GESTURING METHODS
     
     @IBAction func createPlayerPressed(sender: UIButton) {
-        print("create player pressed")
-        // get data for player to create and make create player request
-        // get playername from ui
-        let playerName = "test_playername"
-        
-        publisher.tryCreatePlayer(name: playerName)
+        print("Create new player button pressed")
+        tryCreateNewPlayer()
     }
 
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {

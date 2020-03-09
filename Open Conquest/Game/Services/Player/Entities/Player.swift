@@ -9,7 +9,10 @@
 import Foundation
 
 class Player: Entity {
-    let name: String
+    var name: String
+    var armies = [Army]()
+    var cities = [City]()
+    var resources = Resources(gold: 0)
     
     init(id: EntityID?, name: String) {
         self.name = name
@@ -18,5 +21,21 @@ class Player: Entity {
     
     func getName() -> String {
         return self.name
+    }
+    
+    func setName(name: String) {
+        self.name = name
+    }
+    
+    func setResources(resources: Resources) {
+        self.resources = resources
+    }
+    
+    func addArmy(army: Army) {
+        armies.append(army)
+    }
+    
+    func addCity(city: City) {
+        cities.append(city)
     }
 }

@@ -23,4 +23,8 @@ class ResourcesDTO {
             "gold": gold
         ])
     }
+    
+    func toEntity() -> Resources {
+        return Resources(gold: gold)
+    }
 }

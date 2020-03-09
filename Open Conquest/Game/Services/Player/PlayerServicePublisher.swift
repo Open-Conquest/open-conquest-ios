@@ -23,6 +23,11 @@ class PlayerServicePublisher: Publisher {
         post(notification: notification)
     }
     
+    func createPlayerSucceed() {
+        let notification = gameNotificationFactory.buildNotification(name: .GameCreatePlayerSucceed, data: nil)
+        post(notification: notification)
+    }
+    
 //    func loginSucceed() {
 //        let notification = gameNotificationFactory.buildGameLoginSucceedNotification()
 //        post(notification: notification)

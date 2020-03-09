@@ -8,7 +8,6 @@
 
 import Foundation
 
-import Foundation
 class PlayerServices: BaseAPIServices {
     var publisher: PlayerServicesPublisher
     var subscriber: Subscriber
@@ -60,16 +59,19 @@ class PlayerServices: BaseAPIServices {
         )
         
         // get entities from response
-        let playerDTO = createPlayerResponse.getPlayer()
-        let resouresDTO = createPlayerResponse.getResources()
-        let armyDTO = createPlayerResponse.getResources()
-        let cityDTO = createPlayerResponse.getCity()
-        // let mapDTO = createPlayerResponse.getMap()
-
-        print("did convert and get all dtos")
-        print(createPlayerResponse)
+        let player = createPlayerResponse.getPlayer().toEntity()
+        let resources = createPlayerResponse.getResources().toEntity()
+        let army = createPlayerResponse.getArmy().toEntity()
+        let city = createPlayerResponse.getCity().toEntity()
+        // let mapDTO = createPlayerResponse.getMap().toEntity()
+        
+        // set player's resources, city, and army
+        player.addArmy(army: army)
+        player.addCity(city: city)
+        player.setResources(resources: resources)
+        
         // emit did create player notification with data
-//        publisher.loginSucceeded(response: loginUserResponse)
+        publisher.createPlayerSucceed(player: player)
     }
     
     func createdPlayerFailed(_ notification: Notification) {

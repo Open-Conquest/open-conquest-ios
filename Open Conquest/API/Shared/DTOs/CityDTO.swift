@@ -30,4 +30,8 @@ class CityDTO {
             "col": col
         ])
     }
+    
+    func toEntity() -> City {
+        return City(name: name, level: level, row: row, col: col)
+    }
 }

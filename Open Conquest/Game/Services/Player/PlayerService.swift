@@ -24,7 +24,7 @@ class PlayerService: GameService {
         subscriber.subscribe(observingFunction: tryCreatePlayer(_:), name: .SceneTryCreatePlayer)
         
         // subscribe to api notifications
-//        subscriber.subscribe(observingFunction: createPlayerSucceed(_:), name: .APICreatePlayerSucceed)
+        subscriber.subscribe(observingFunction: createPlayerSucceed(_:), name: .APICreatePlayerSucceed)
 //        subscriber.subscribe(observingFunction: createPlayerFailed(_:), name: .APICreatePlayerFailed)
     }
 
@@ -53,17 +53,18 @@ class PlayerService: GameService {
         
     }
     
-//    // listening to api
-//    func loginSucceed(_ notification: Notification) {
-//        print("UserService recieved APILoginSucceed event.")
-//
-//        // initialize user from notification
-//        let loginSucceedData = notification.userInfo!["data"] as! APILoginSucceedData
-//        user = User(apiLoginSucceedData: loginSucceedData)
-//
-//        print("UserService publishing GameLoginSucceeded event...")
-//        publisher.loginSucceed()
-//    }
+    // listening to api
+    func createPlayerSucceed(_ notification: Notification) {
+        print("UserService recieved APICreatePlayerSucceed event.")
+
+        // get player entity from notification
+        let createdPlayer = notification.userInfo!["data"] as! Player
+        
+        // save player to core data
+        
+        // post notifcation for scene to transition
+        publisher.createPlayerSucceed()
+    }
 //
 //    // listening to api
 //    func loginFailed(_ notification: Notification) {

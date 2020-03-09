@@ -9,25 +9,41 @@
 import Foundation
 import SwiftyJSON
 
-class City: GameEntity {
+class City: Entity {
+    let name: String
+    let level: Int
+    let row: Int
+    let col: Int
     
-    var tile_id:    Int
-    var name:       String
-    var city_id:    Int
-    var user_id:    Int
-    var level:      Int
-    
-    required init(json: JSON) {
-        // parse json that would be expected in
-        tile_id = json["tile_id"].int!
-        name = json["city_name"].string!
-        city_id = json["city_id"].int!
-        user_id = json["user_id"].int!
-        level = json["city_level"].int!
+    init(name: String, level: Int, row: Int, col: Int) {
+        self.name = name
+        self.level = level
+        self.row = row
+        self.col = col
+        super.init(id: EntityID(value: 0))
     }
-    
-    func toJSON() -> JSON {
-        return JSON()
-    }
-    
 }
+
+// OLD CITY ENTITY
+//class City: GameEntity {
+//
+//    var tile_id:    Int
+//    var name:       String
+//    var city_id:    Int
+//    var user_id:    Int
+//    var level:      Int
+//
+//    required init(json: JSON) {
+//        // parse json that would be expected in
+//        tile_id = json["tile_id"].int!
+//        name = json["city_name"].string!
+//        city_id = json["city_id"].int!
+//        user_id = json["user_id"].int!
+//        level = json["city_level"].int!
+//    }
+//
+//    func toJSON() -> JSON {
+//        return JSON()
+//    }
+//
+//}

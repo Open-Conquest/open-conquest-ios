@@ -27,14 +27,15 @@ class MarchSelectorTable: UITableView, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return army.getUnits().count
+//        return army.getUnits().count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "unit") as! UnitSelectorCell
         
-        let units = army.getUnits()[indexPath.row]
-        cell.setup(units: units)
+//        let units = army.getUnits()[indexPath.row]
+//        cell.setup(units: units)
         
         return cell
     }
@@ -105,13 +106,13 @@ class MarchSelectorTable: UITableView, UITableViewDelegate, UITableViewDataSourc
         unitCount.autoPinEdge(.top, to: .top, of: slider)
     }
     
-    func setup(units: [Unit: Int]) {
-        for (unit, count) in units {
-            
-            slider.maximumValue = Float(count)
-            unitCount.text = String(count)
-        }
-    }
+//    func setup(units: [Unit: Int]) {
+////        for (unit, count) in units {
+////
+////            slider.maximumValue = Float(count)
+////            unitCount.text = String(count)
+////        }
+//    }
     
     func getUnits() -> Int {
         return Int(slider.value)
