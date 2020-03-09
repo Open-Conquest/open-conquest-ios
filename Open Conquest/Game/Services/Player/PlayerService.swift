@@ -9,13 +9,15 @@
 import Foundation
 
 class PlayerService: GameService {
-    var player:       Player?
+    var player: Player?
     var publisher: PlayerServicePublisher
     var subscriber: Subscriber
+    let playerRepository: PlayerRepository
     
-    init() {
+    init(playerRepository: PlayerRepository) {
         self.publisher  = PlayerServicePublisher()
         self.subscriber = Subscriber()
+        self.playerRepository = playerRepository
         setupSubscribers()
     }
     
@@ -61,6 +63,7 @@ class PlayerService: GameService {
         let createdPlayer = notification.userInfo!["data"] as! Player
         
         // save player to core data
+        playerRepository.savePlayer(player: createdPlayer)
         
         // post notifcation for scene to transition
         publisher.createPlayerSucceed()
@@ -73,16 +76,5 @@ class PlayerService: GameService {
         
         publisher.createPlayerFailed(message: message)
     }
-//
-//    // listening to api
-//    func loginFailed(_ notification: Notification) {
-//        print("UserService received APILoginFailed event.")
-//
-//        // notify scene of error
-//        let loginErrorData = notification.userInfo!["data"] as! APILoginFailedData
-//        let errorMessage = loginErrorData.getMessage()
-//
-//        publisher.loginFailed(message: errorMessage)
-//    }
 }
 

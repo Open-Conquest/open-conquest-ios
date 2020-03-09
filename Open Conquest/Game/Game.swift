@@ -10,28 +10,30 @@ import Foundation
 import CoreData
 
 class Game {
-    var subscriber:     Subscriber
-    var gamePublisher:  GamePublisher
-    var context:        NSManagedObjectContext
+    var subscriber: Subscriber
+    var gamePublisher: GamePublisher
+    var context: NSManagedObjectContext
     
-    var armyService:    ArmyService
-    var cityService:    CityService
-    var mapService:     MapService
-    var marchService:   MarchService
-    var userService:    UserService
+    var armyService: ArmyService
+    var cityService: CityService
+    var mapService: MapService
+    var marchService: MarchService
+    var userService: UserService
     var playerService: PlayerService
 
     init(dataContext: NSManagedObjectContext) {
-        context         = dataContext
-        subscriber      = Subscriber()
-        gamePublisher   = GamePublisher()
+        context = dataContext
+        subscriber = Subscriber()
+        gamePublisher = GamePublisher()
         
-        armyService     = ArmyService(context: context)
-        cityService     = CityService()
-        mapService      = MapService()
-        marchService    = MarchService()
-        userService     = UserService()
-        playerService = PlayerService()
+        let playerRepository = PlayerRepository(context: context)
+        
+        armyService = ArmyService(context: context)
+        cityService = CityService()
+        mapService = MapService()
+        marchService = MarchService()
+        userService = UserService()
+        playerService = PlayerService(playerRepository: playerRepository)
         
         print("Game intialized")
     }
