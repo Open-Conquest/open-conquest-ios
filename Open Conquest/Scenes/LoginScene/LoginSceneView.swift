@@ -64,7 +64,8 @@ class LoginSceneView: UIView {
         let backgroundWidth = viewWidth
         background?.autoSetDimension(.height, toSize: backgroundHeight)
         background?.autoSetDimension(.width, toSize: backgroundWidth)
-        background!.backgroundColor = .black
+        background!.backgroundColor =
+        backgroundColor = UIColor(red: 20, green: 126, blue: 251, alpha: 1)
         
         let gameImageHeight = viewWidth/1.5
         let gameImageWidth = viewWidth/1.5
