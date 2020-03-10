@@ -11,7 +11,6 @@ import UIKit
 import PureLayout
 
 class CreatePlayerView: UIView {
-    var scrollView
     var background: CreatePlayerBackground
     var header: CreatePlayerHeader
     var pickerCard: CreatePlayerCard

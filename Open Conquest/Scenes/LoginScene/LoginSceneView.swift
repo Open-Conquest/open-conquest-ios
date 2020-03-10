@@ -18,6 +18,7 @@ class LoginSceneView: UIView {
     var passwordField: LoginScenePasswordField?
     var loginButton: LoginSceneLoginButton?
     var switchModeButton: UIButton?
+    var creditLabel: UILabel?
     var errorMessage: UILabel?
     
     override init(frame: CGRect) {
@@ -42,6 +43,7 @@ class LoginSceneView: UIView {
         passwordField = LoginScenePasswordField()
         loginButton = LoginSceneLoginButton()
         switchModeButton = UIButton()
+        creditLabel = UILabel()
         errorMessage = UILabel()
     }
     
@@ -53,6 +55,7 @@ class LoginSceneView: UIView {
         addSubview(passwordField!)
         addSubview(loginButton!)
         addSubview(switchModeButton!)
+        addSubview(creditLabel!)
         addSubview(errorMessage!)
     }
     
@@ -64,8 +67,9 @@ class LoginSceneView: UIView {
         let backgroundWidth = viewWidth
         background?.autoSetDimension(.height, toSize: backgroundHeight)
         background?.autoSetDimension(.width, toSize: backgroundWidth)
-        background!.backgroundColor =
-        backgroundColor = UIColor(red: 20, green: 126, blue: 251, alpha: 1)
+//        let color = UIColor(displayP3Red: 20.0/255.0, green: 126.0/255.0, blue: 251.0/255.0, alpha: 1.0)
+        let color = UIColor(displayP3Red: 207.0/255.0, green: 185.0/255.0, blue: 151.0/255.0, alpha: 1.0)
+        background?.backgroundColor = color
         
         let gameImageHeight = viewWidth/1.5
         let gameImageWidth = viewWidth/1.5
@@ -76,17 +80,10 @@ class LoginSceneView: UIView {
         gameImage?.autoSetDimension(.height, toSize: gameImageHeight)
         gameImage?.autoPinEdge(toSuperviewEdge: .top, withInset: gameImageHeight/4)
         
-//        gameLabel?.autoPinEdge(.top, to: .bottom, of: gameImage, withOffset: 10)
-//        gameLabel?.autoPinEdge(toSuperviewEdge: .left, withInset: viewWidth/7)
-//        gameLabel?.autoPinEdge(toSuperviewEdge: .left, withInset: viewWidth/7)
-//        gameLabel?.text = "Open Conquest"
-//        gameLabel?.font = UIFont(name: "Chalkduster", size: 24)
-        
-        
         let usernameFieldHeight = viewHeight/15
         let usernameFieldWidth = viewWidth - 20
         usernameField?.autoSetDimension(.height, toSize: usernameFieldHeight)
-        usernameField?.autoPinEdge(.top, to: .bottom, of: gameImage, withOffset: 50)
+        usernameField?.autoPinEdge(.top, to: .bottom, of: gameImage, withOffset: 10)
         usernameField?.autoPinEdge(toSuperviewEdge: .left, withInset: viewWidth/7)
         usernameField?.autoPinEdge(toSuperviewEdge: .right, withInset: viewWidth/7)
         usernameField?.text = "test_username"
@@ -103,29 +100,48 @@ class LoginSceneView: UIView {
         let loginButtonHeight =  viewHeight/14
         let loginButtonWidth = viewWidth/2
         loginButton?.autoSetDimension(.height, toSize: loginButtonHeight)
-        loginButton?.autoPinEdge(.top, to: .bottom, of: passwordField, withOffset: loginButtonHeight-10)
+        loginButton?.autoPinEdge(.top, to: .bottom, of: passwordField, withOffset: 20)
         loginButton?.autoPinEdge(toSuperviewEdge: .left, withInset: viewWidth/7)
         loginButton?.autoPinEdge(toSuperviewEdge: .right, withInset: viewWidth/7)
-        loginButton?.layer.cornerRadius = 20;
+//        loginButton?.layer.cornerRadius = 20;
+        loginButton?.layer.borderColor = UIColor.black.cgColor
+        loginButton?.layer.borderWidth = 5.0
         loginButton?.layer.masksToBounds = true;
         
-        let switchModeButtonHeight = viewHeight/14
+        let switchModeButtonHeight = viewHeight/18
         let switchModeButtonWidth = viewWidth
         switchModeButton?.autoSetDimension(.height, toSize: switchModeButtonHeight)
         switchModeButton?.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 20)
         switchModeButton?.autoSetDimension(.width, toSize: loginButtonWidth)
-        switchModeButton?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
-        switchModeButton?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
+        switchModeButton?.autoPinEdge(toSuperviewEdge: .left, withInset: viewWidth/5)
+        switchModeButton?.autoPinEdge(toSuperviewEdge: .right, withInset: viewWidth/5)
         switchModeButton?.setTitle("Register Account", for: UIControl.State.normal)
-        switchModeButton?.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)
+        switchModeButton?.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16)
+//        switchModeButton?.layer.cornerRadius = 20;
+        switchModeButton?.layer.borderColor = UIColor.black.cgColor
+        switchModeButton?.layer.borderWidth = 5.0
+        switchModeButton?.layer.masksToBounds = true;
+        switchModeButton?.backgroundColor = .gray
+        
+        let creditLabelWidth = viewWidth
+        creditLabel?.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 10)
+        creditLabel?.autoPinEdge(toSuperviewEdge: .bottom, withInset: 20)
+        creditLabel?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
+        creditLabel?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
+        creditLabel?.textAlignment = .center
+        creditLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        creditLabel?.textColor = UIColor.white
+        creditLabel?.lineBreakMode = .byWordWrapping
+        creditLabel?.numberOfLines = 0
+        creditLabel?.text = "Developed by Zach Wild"
         
         let errorMessageWidth = viewWidth
-        errorMessage?.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 10)
+        errorMessage?.autoPinEdge(.top, to: .bottom, of: creditLabel, withOffset: 10)
         errorMessage?.autoPinEdge(toSuperviewEdge: .bottom, withInset: 20)
         errorMessage?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
         errorMessage?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
         errorMessage?.textAlignment = .center
-        errorMessage?.font = UIFont(name: "Chalkduster", size: 18)
+        errorMessage?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
         errorMessage?.textColor = UIColor.red
         errorMessage?.lineBreakMode = .byWordWrapping
         errorMessage?.numberOfLines = 0

@@ -24,8 +24,8 @@ class LoginScenePasswordField: UITextField {
     }
     
     func setup() {
-        self.placeholder = "\tPassword"
-        self.font = UIFont(name: "Chalkduster", size: 24)
+        self.placeholder = "Password"
+        self.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24)
         self.textColor = UIColor.white
     }
     
@@ -35,7 +35,7 @@ class LoginScenePasswordField: UITextField {
             return
         }
         
-        bottomLine.frame = CGRect(x: 0.0, y: 55 - 1, width: frame.width, height: 4.0)
+        bottomLine.frame = CGRect(x: 0.0, y: 50 - 1, width: frame.width, height: 4.0)
         bottomLine.backgroundColor = UIColor.white.cgColor
         self.borderStyle = .none
         self.layer.addSublayer(bottomLine)

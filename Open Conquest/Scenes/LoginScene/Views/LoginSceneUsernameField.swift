@@ -24,8 +24,8 @@ class LoginSceneUsernameField: UITextField {
         }
         
         func setup() {
-            self.placeholder = "\tUsername"
-            self.font = UIFont(name: "Chalkduster", size: 24)
+            self.placeholder = "Username"
+            self.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24)
             self.textColor = UIColor.white
         }
         
