@@ -63,12 +63,14 @@ class ArmyUnitsDTO {
 class ArmyDTO {
     var units = [ArmyUnitsDTO]()
     
+    /* Initialize an army dto from some json exepecting army schema */
     init(json: JSON) {
         for jsonArmyUnits in json["units"].array! {
             units.append(ArmyUnitsDTO(json: jsonArmyUnits))
         }
     }
     
+    /* Create an army entity from this dto */
     func toEntity() -> Army {
         var armyUnitsEntities = [ArmyUnits]()
         for armyUnits in units {

@@ -20,18 +20,23 @@ class PlayerServices: BaseAPIServices {
         setupSubscibers()
     }
     
+    /*
+        Subscribe listening methods to notifications from Connection & Game controllers.
+     */
     func setupSubscibers() {
-        // game subscribing methods
         subscriber.subscribe(observingFunction: tryCreatePlayer(_:), name: .GameTryCreatePlayer)
 
-        // connection subscribing methods
         subscriber.subscribe(observingFunction: createPlayerSucceed(_:), name: .ConnectionCreatePlayerSucceed)
         subscriber.subscribe(observingFunction: createdPlayerFailed(_:), name: .ConnectionCreatePlayerFailed)
     }
     
     // MARK: GAME SUBSCRIBING METHODS
     
-    /* Receive player to create */
+    /*
+        Listening for Game's GameTryCreatePlayer notification for trying to create a new player.
+        Its expected that this notification will have a GameTryCreatePlayerData object that contains
+        the player's name that the game wants to try to create.
+     */
     func tryCreatePlayer(_ notification: Notification) {
         print("PlayerServices receieved GameTryCreatePlayer event.")
         
@@ -50,6 +55,13 @@ class PlayerServices: BaseAPIServices {
     
     
     // MARK: CONNECTION SUBSCRIBING METHODS
+    
+    /*
+        Listening to Connection's ConnectionCreatePlayerSucced notification for receiving
+        a create player succeed message from the world server. Should create a notification
+        with a player entity from the json in the message. The expected json is defined in the
+        CreatePlayerResponse schema.
+     */
     func createPlayerSucceed(_ notification: Notification) {
         print("PlayerServices received ConnectionCreatePlayerSucceed event.")
 
@@ -63,7 +75,6 @@ class PlayerServices: BaseAPIServices {
         let resources = createPlayerResponse.getResources().toEntity()
         let army = createPlayerResponse.getArmy().toEntity()
         let city = createPlayerResponse.getCity().toEntity()
-        // let mapDTO = createPlayerResponse.getMap().toEntity()
         
         // set player's resources, city, and army
         player.addArmy(army: army)
@@ -74,6 +85,12 @@ class PlayerServices: BaseAPIServices {
         publisher.createPlayerSucceed(player: player)
     }
     
+    /*
+        Listening to Connection's notification for receiving a create player failed
+        message from the world server. Should post a notification containing the error
+        message from the message. The Response data thats expected is defined in the
+        CreatePlayerErrorResponse schema.
+     */
     func createdPlayerFailed(_ notification: Notification) {
         print("PlayerServices received ConnectionCreatePlayerFailed event.")
         

@@ -15,6 +15,7 @@ class CityDTO {
     let row: Int
     let col: Int
     
+    /* Create a dto from json city schema */
     init(json: JSON) {
         name = json["name"].string!
         level = json["level"].int!
@@ -22,6 +23,7 @@ class CityDTO {
         col = json["col"].int!
     }
     
+    /* Create a json schema city object */
     func toJSON() -> JSON {
         return JSON([
             "name": name,
@@ -31,6 +33,7 @@ class CityDTO {
         ])
     }
     
+    /* Create a city entity from this dto */
     func toEntity() -> City {
         return City(name: name, level: level, row: row, col: col)
     }
