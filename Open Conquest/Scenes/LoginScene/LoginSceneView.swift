@@ -19,14 +19,31 @@ class LoginSceneView: UIView {
     var loginButton: LoginSceneLoginButton?
     var switchModeButton: UIButton?
     var creditLabel: UILabel?
-    var errorMessage: UILabel?
+    var errorMessage: ErrorMessageLabel
     
     override init(frame: CGRect) {
+        /* initialize subviews */
+        errorMessage = ErrorMessageLabel(frame: .zero)
+        
         super.init(frame: frame)
+        
+        /* add subviews to view */
+        addSubview(errorMessage)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        if (frame == .zero) {
+            return
+        }
+        
+        errorMessage.text = "something important"
+        errorMessage.autoPinEdge(.top, to: .bottom, of: creditLabel, withOffset: 10)
+        errorMessage.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
+        errorMessage.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
     }
     
     func setup() {
@@ -44,7 +61,6 @@ class LoginSceneView: UIView {
         loginButton = LoginSceneLoginButton()
         switchModeButton = UIButton()
         creditLabel = UILabel()
-        errorMessage = UILabel()
     }
     
     func addSubviews() {
@@ -56,7 +72,6 @@ class LoginSceneView: UIView {
         addSubview(loginButton!)
         addSubview(switchModeButton!)
         addSubview(creditLabel!)
-        addSubview(errorMessage!)
     }
     
     func setupConstraints() {
@@ -67,7 +82,6 @@ class LoginSceneView: UIView {
         let backgroundWidth = viewWidth
         background?.autoSetDimension(.height, toSize: backgroundHeight)
         background?.autoSetDimension(.width, toSize: backgroundWidth)
-//        let color = UIColor(displayP3Red: 20.0/255.0, green: 126.0/255.0, blue: 251.0/255.0, alpha: 1.0)
         let color = UIColor(displayP3Red: 207.0/255.0, green: 185.0/255.0, blue: 151.0/255.0, alpha: 1.0)
         background?.backgroundColor = color
         
@@ -81,7 +95,6 @@ class LoginSceneView: UIView {
         gameImage?.autoPinEdge(toSuperviewEdge: .top, withInset: gameImageHeight/4)
         
         let usernameFieldHeight = viewHeight/15
-        let usernameFieldWidth = viewWidth - 20
         usernameField?.autoSetDimension(.height, toSize: usernameFieldHeight)
         usernameField?.autoPinEdge(.top, to: .bottom, of: gameImage, withOffset: 10)
         usernameField?.autoPinEdge(toSuperviewEdge: .left, withInset: viewWidth/7)
@@ -103,13 +116,11 @@ class LoginSceneView: UIView {
         loginButton?.autoPinEdge(.top, to: .bottom, of: passwordField, withOffset: 20)
         loginButton?.autoPinEdge(toSuperviewEdge: .left, withInset: viewWidth/7)
         loginButton?.autoPinEdge(toSuperviewEdge: .right, withInset: viewWidth/7)
-//        loginButton?.layer.cornerRadius = 20;
         loginButton?.layer.borderColor = UIColor.black.cgColor
         loginButton?.layer.borderWidth = 5.0
         loginButton?.layer.masksToBounds = true;
         
         let switchModeButtonHeight = viewHeight/18
-        let switchModeButtonWidth = viewWidth
         switchModeButton?.autoSetDimension(.height, toSize: switchModeButtonHeight)
         switchModeButton?.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 20)
         switchModeButton?.autoSetDimension(.width, toSize: loginButtonWidth)
@@ -117,13 +128,12 @@ class LoginSceneView: UIView {
         switchModeButton?.autoPinEdge(toSuperviewEdge: .right, withInset: viewWidth/5)
         switchModeButton?.setTitle("Register Account", for: UIControl.State.normal)
         switchModeButton?.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16)
-//        switchModeButton?.layer.cornerRadius = 20;
         switchModeButton?.layer.borderColor = UIColor.black.cgColor
         switchModeButton?.layer.borderWidth = 5.0
         switchModeButton?.layer.masksToBounds = true;
         switchModeButton?.backgroundColor = .gray
         
-        let creditLabelWidth = viewWidth
+        let creditLabelWidth = viewWidthi
         creditLabel?.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 10)
         creditLabel?.autoPinEdge(toSuperviewEdge: .bottom, withInset: 20)
         creditLabel?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
@@ -134,17 +144,6 @@ class LoginSceneView: UIView {
         creditLabel?.lineBreakMode = .byWordWrapping
         creditLabel?.numberOfLines = 0
         creditLabel?.text = "Developed by Zach Wild"
-        
-        let errorMessageWidth = viewWidth
-        errorMessage?.autoPinEdge(.top, to: .bottom, of: creditLabel, withOffset: 10)
-        errorMessage?.autoPinEdge(toSuperviewEdge: .bottom, withInset: 20)
-        errorMessage?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
-        errorMessage?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
-        errorMessage?.textAlignment = .center
-        errorMessage?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
-        errorMessage?.textColor = UIColor.red
-        errorMessage?.lineBreakMode = .byWordWrapping
-        errorMessage?.numberOfLines = 0
     }
     
     func switchMode(mode: LoginSceneMode) {
@@ -159,7 +158,7 @@ class LoginSceneView: UIView {
     }
     
     func setErrorMessage(message: String) {
-        errorMessage?.text = message
+        errorMessage.text = message
     }
     
     func getUsername() -> String {

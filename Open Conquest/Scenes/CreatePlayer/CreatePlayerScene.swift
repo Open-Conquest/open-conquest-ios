@@ -12,22 +12,15 @@ import UIKit
 import PureLayout
 
 class CreatePlayerScene: SKScene, Scene {
-    let publisher: CreatePlayerScenePublisher
-    let subscriber: Subscriber
-
-    let createPlayerView: CreatePlayerView
+    let publisher = CreatePlayerScenePublisher()
+    let subscriber = Subscriber()
+    let createPlayerView = CreatePlayerView(frame: .zero)
 
     override init() {
-        publisher = CreatePlayerScenePublisher()
-        subscriber = Subscriber()
-        createPlayerView = CreatePlayerView(frame: .zero)
         super.init()
     }
 
     override init(size: CGSize) {
-        publisher = CreatePlayerScenePublisher()
-        subscriber = Subscriber()
-        createPlayerView = CreatePlayerView(frame: .zero)
         super.init(size: size)
     }
 
@@ -36,15 +29,20 @@ class CreatePlayerScene: SKScene, Scene {
     }
 
     override func didMove(to view: SKView) {
+        setupSubscribers()
         setupUI()
         setupGestures()
         setupUIActions()
-        setupSubscribers()
     }
 
     override func update(_ currentTime: TimeInterval) {}
 
     // MARK: SETUP METHODS
+    
+    func setupSubscribers() {
+        subscriber.subscribe(observingFunction: createNewPlayerSucceed(_:), name: .GameCreatePlayerSucceed)
+        subscriber.subscribe(observingFunction: createNewPlayerFailed(_:), name: .GameCreatePlayerFailed)
+    }
 
     func setupUI() {
         // setup march selector view
@@ -55,24 +53,22 @@ class CreatePlayerScene: SKScene, Scene {
         createPlayerView.autoPinEdge(.bottom, to: .bottom, of: view!)
     }
 
-    func setupSubscribers() {
-//        subscriber.subscribe(observingFunction: didGetWorldPlayersCount(_:), name: .GameDidGetWorldPlayersCount)
-        subscriber.subscribe(observingFunction: createNewPlayerSucceed(_:), name: .GameCreatePlayerSucceed)
-        subscriber.subscribe(observingFunction: createNewPlayerFailed(_:), name: .GameCreatePlayerFailed)
-    }
+    func setupUIActions() {}
 
-    func setupGestures() {}
-    
-    func setupUIActions() {
+    func setupGestures() {
         createPlayerView.pickerCard.createPlayerButton.addTarget(
             self,
             action: #selector(self.createPlayerPressed(sender:)),
             for: .touchUpInside
         )
     }
+    
 
     // MARK: CLEANUP METHODS
 
+    /*
+        Remove all subviews in preparation for navigation to another scene.
+     */
     func prepareForNavigation() {
         for subview in view!.subviews {
             subview.removeFromSuperview()
@@ -80,19 +76,21 @@ class CreatePlayerScene: SKScene, Scene {
         teardownSubscribers()
     }
 
+    /*
+        Unsubscribe methods from notifications they previously subscribed to in setupSubscribers(:)
+     */
     func teardownSubscribers() {
-        // todo
-    }
-
-    // MARK: SUBSCRIBING METHODS
-    
-    func didGetWorldPlayersCount(_ notifiction: Notification) {
-        print("CreatePlayerScene received GameDidGetWorldPlayersCount notification")
-        // todo
+        subscriber.unsubscribe(observingFunction: createNewPlayerSucceed(_:))
+        subscriber.unsubscribe(observingFunction: createNewPlayerFailed(_:))
     }
 
     // MARK: PUBLISHING METHODS
 
+    /*
+        Post a SceneTryCreateNewPlayer notification. Its expected that Game PlayerServices is subscribed
+        to this notification and then will make an API request for it. This method should get the name
+        for the player that the user wants to create from the UI and include it in the notification.
+     */
     @objc func tryCreateNewPlayer() {
         print("CreatePlayerScene try create player button pressed")
         // get player name from view
@@ -100,6 +98,12 @@ class CreatePlayerScene: SKScene, Scene {
         publisher.tryCreatePlayer(name: playerName!)
     }
     
+    /*
+        This method is subscribed to the GameCreatePlayerSucceed notification, which means that it'll be
+        called one PlayerServices posts a message indicating that a new player has been created for the
+        user using this client. The notification won't include any data but once it's received we should
+        present the loading scene.
+     */
     func createNewPlayerSucceed(_ notifiction: Notification) {
         print("CreatePlayerScene received GameCreateNewPlayerSucceed notification")
         // present loading scene
@@ -109,6 +113,11 @@ class CreatePlayerScene: SKScene, Scene {
         view!.presentScene(scene)
     }
     
+    /*
+        This method is subscribed to the GameCreatePlayerFailed notification, which means that an attempt to
+        create a new player by the user of this client failed. The notification should contain an error message
+        in it's data which this method should display in the UI.
+     */
     func createNewPlayerFailed(_ notifiction: Notification) {
         print("CreatePlayerScene received GameCreateNewPlayerFailed notification")
         
@@ -117,6 +126,10 @@ class CreatePlayerScene: SKScene, Scene {
 
     // MARK: GESTURING METHODS
     
+    /*
+        This method is triggered when the create player button is pressed. It should call the tryCreateNewPlayer
+        method which will post a SceneTryCreateNewPlayer notification.
+     */
     @IBAction func createPlayerPressed(sender: UIButton) {
         print("Create new player button pressed")
         tryCreateNewPlayer()
