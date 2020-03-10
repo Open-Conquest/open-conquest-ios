@@ -95,9 +95,9 @@ class CreatePlayerScene: SKScene, Scene {
 
     @objc func tryCreateNewPlayer() {
         print("CreatePlayerScene try create player button pressed")
-        
-        let playerName = "test_playername"
-        publisher.tryCreatePlayer(name: playerName)
+        // get player name from view
+        let playerName = createPlayerView.pickerCard.playernameField.text
+        publisher.tryCreatePlayer(name: playerName!)
     }
     
     func createNewPlayerSucceed(_ notifiction: Notification) {
