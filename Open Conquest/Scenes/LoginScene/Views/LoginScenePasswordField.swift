@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 
 class LoginScenePasswordField: UITextField {
+    var bottomLine: CALayer
     
     init() {
+        bottomLine = CALayer()
         super.init(frame: CGRect.zero)
         setup()
+        self.layer.addSublayer(bottomLine)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,10 +24,21 @@ class LoginScenePasswordField: UITextField {
     }
     
     func setup() {
-        self.placeholder = "\tpassword"
+        self.placeholder = "\tPassword"
         self.font = UIFont(name: "Chalkduster", size: 24)
         self.textColor = UIColor.white
-        self.backgroundColor = UIColor.gray
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if (frame == .zero) {
+            return
+        }
+        
+        bottomLine.frame = CGRect(x: 0.0, y: 55 - 1, width: frame.width, height: 4.0)
+        bottomLine.backgroundColor = UIColor.white.cgColor
+        self.borderStyle = .none
+        self.layer.addSublayer(bottomLine)
     }
 }
 

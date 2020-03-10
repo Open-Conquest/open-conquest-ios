@@ -9,20 +9,12 @@
 import Foundation
 import UIKit
 
-class LoginSceneBackground: UIImageView {
+class LoginSceneBackground: UIView {
     
-    var gameImage: LoginSceneGameImage?
-    
-    init() {
-        let backgroundImage = UIImage(named: "LoginScene_background")
-        super.init(image: backgroundImage)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
-    
-    override init(image: UIImage?) {
-        let backgroundImage = UIImage(named: "LoginScene_background")
-        super.init(image: backgroundImage)
-    }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
