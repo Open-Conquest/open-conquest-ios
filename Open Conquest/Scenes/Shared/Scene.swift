@@ -10,15 +10,9 @@ import Foundation
 import SpriteKit
 
 protocol Scene {
-    
     func setupUI()
-    
     func setupGestures()
-    
     func prepareForNavigation()
-    
     func setupSubscribers()
-    
     func teardownSubscribers()
-    
 }

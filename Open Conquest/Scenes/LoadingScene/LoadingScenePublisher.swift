@@ -21,4 +21,8 @@ class LoadingScenePublisher: ScenePublisher {
         getMarches()
         getUsers()
     }
+    
+    func tryGetWorld() {
+        
+    }
 }

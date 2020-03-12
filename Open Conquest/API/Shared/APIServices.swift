@@ -9,10 +9,11 @@
 import Foundation
 
 enum APIServices: String {
-    case Army   = "army"
-    case City   = "city"
-    case Map    = "map"
-    case March  = "march"
-    case User   = "user"
+    case Army = "army"
+    case City = "city"
+    case Map = "map"
+    case March = "march"
+    case User = "user"
     case Player = "player"
+    case World = "world"
 }

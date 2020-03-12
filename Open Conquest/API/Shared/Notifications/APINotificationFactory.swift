@@ -22,7 +22,4 @@ class APINotificationFactory: NotificationFactory {
         return buildNotification(name: .APIMakeRequest, data: request)
     }
     
-    func buildAPIGetComponentNotification(request: GetEntityRequest) -> Notification {
-        return buildNotification(name: .APIMakeRequest, data: request)
-    }
 }
