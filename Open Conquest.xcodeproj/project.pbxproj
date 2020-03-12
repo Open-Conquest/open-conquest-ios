@@ -34,7 +34,6 @@
 		92A2A374229B66450090287C /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A373229B66450090287C /* LoginScene.swift */; };
 		92E5190B22A750D0000B1F59 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190A22A750D0000B1F59 /* Publisher.swift */; };
 		92E5190D22A750DB000B1F59 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190C22A750DB000B1F59 /* Subscriber.swift */; };
-		92E5191322A76021000B1F59 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5191222A76021000B1F59 /* Notifications.swift */; };
 		C20E1FE623B106C9002A8E7E /* MarchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E1FE523B106C9002A8E7E /* MarchNode.swift */; };
 		C237374523ADB761002FEBF1 /* GameScenePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C237374423ADB761002FEBF1 /* GameScenePublisher.swift */; };
 		C23CF49B237EA1D200833792 /* ConnectionNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CF49A237EA1D200833792 /* ConnectionNotifications.swift */; };
@@ -226,7 +225,6 @@
 		92A2A373229B66450090287C /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
 		92E5190A22A750D0000B1F59 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		92E5190C22A750DB000B1F59 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
-		92E5191222A76021000B1F59 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		B2844570776E81819817B8CB /* Pods-Open Conquest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest/Pods-Open Conquest.release.xcconfig"; sourceTree = "<group>"; };
 		C20E1FE523B106C9002A8E7E /* MarchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchNode.swift; sourceTree = "<group>"; };
 		C237374423ADB761002FEBF1 /* GameScenePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScenePublisher.swift; sourceTree = "<group>"; };
@@ -673,7 +671,6 @@
 			children = (
 				92E5190A22A750D0000B1F59 /* Publisher.swift */,
 				92E5190C22A750DB000B1F59 /* Subscriber.swift */,
-				92E5191222A76021000B1F59 /* Notifications.swift */,
 				9244332822C6CC5C00913284 /* NotificationFactory.swift */,
 			);
 			path = Notifications;
@@ -696,6 +693,13 @@
 				C2BFEC8C241AAEC900912F3F /* CDArmyUnits+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C2BFECA0241AE08600912F3F /* World */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = World;
 			sourceTree = "<group>";
 		};
 		C2C383D823C8E3D200F61849 /* CoreData */ = {
@@ -725,6 +729,7 @@
 		C2D1BDB72343F94800ADF01E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C2BFECA0241AE08600912F3F /* World */,
 				C2E7DB642414556E00121B47 /* Player */,
 				C2EF8E85240DE1820002354D /* User */,
 				C2EF8E8C240DE27D0002354D /* Game */,
@@ -1437,7 +1442,6 @@
 				C2FDC5752384756800C0E556 /* GetUsersResponse.swift in Sources */,
 				C284DBD423C3B04E004ADEFC /* Resources.swift in Sources */,
 				C2BFEC91241AAEC900912F3F /* CDResources+CoreDataClass.swift in Sources */,
-				92E5191322A76021000B1F59 /* Notifications.swift in Sources */,
 				C27BC47B2415867500AA59FA /* ResourcesDTO.swift in Sources */,
 				C2EF8E6F240DD4070002354D /* APIRegisterSucceedData.swift in Sources */,
 				C27BC47D2415872900AA59FA /* CityDTO.swift in Sources */,
