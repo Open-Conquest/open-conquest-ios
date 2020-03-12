@@ -120,7 +120,6 @@ class CreatePlayerScene: SKScene, Scene {
      */
     func createNewPlayerFailed(_ notifiction: Notification) {
         print("CreatePlayerScene received GameCreateNewPlayerFailed notification")
-        
         // set some error message...
     }
 
@@ -133,11 +132,5 @@ class CreatePlayerScene: SKScene, Scene {
     @IBAction func createPlayerPressed(sender: UIButton) {
         print("Create new player button pressed")
         tryCreateNewPlayer()
-    }
-
-    @objc func handleTap(tapGesture: UITapGestureRecognizer) {
-        if tapGesture.state != .ended {
-            return
-        }
     }
 }

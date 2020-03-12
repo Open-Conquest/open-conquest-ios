@@ -10,14 +10,20 @@ import Foundation
 
 class Player: Entity {
     var name: String
-    var armies = [Army]()
-    var cities = [City]()
     var resources = Resources(gold: 0)
+    var armies = [Army]()
+    var city: City?
     
     init(id: EntityID?, name: String) {
         self.name = name
         super.init(id: id)
     }
+    
+    func addArmy(army: Army) {
+        armies.append(army)
+    }
+    
+    // MARK: GETTERS & SETTERS
     
     func getName() -> String {
         return self.name
@@ -27,15 +33,27 @@ class Player: Entity {
         self.name = name
     }
     
+    func getResources() -> Resources {
+        return resources
+    }
+    
+    func getArmies() -> [Army] {
+        return armies
+    }
+    
+    func getCity() -> City? {
+        return city
+    }
+    
     func setResources(resources: Resources) {
         self.resources = resources
     }
     
-    func addArmy(army: Army) {
-        armies.append(army)
+    func setArmies(armies: [Army]) {
+        self.armies = armies
     }
     
-    func addCity(city: City) {
-        cities.append(city)
+    func setCity(city: City) {
+        self.city = city
     }
 }

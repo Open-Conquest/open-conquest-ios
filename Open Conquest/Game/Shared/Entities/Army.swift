@@ -61,6 +61,10 @@ class Army: Entity {
         self.units = units
         super.init(id: EntityID(value: id))
     }
+    
+    func getUnits() -> [ArmyUnits] {
+        return units
+    }
 }
 
 // OLD ARMY CLASS

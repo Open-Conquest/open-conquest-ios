@@ -78,7 +78,7 @@ class PlayerServices: BaseAPIServices {
         
         // set player's resources, city, and army
         player.addArmy(army: army)
-        player.addCity(city: city)
+        player.setCity(city: city)
         player.setResources(resources: resources)
         
         // emit did create player notification with data
