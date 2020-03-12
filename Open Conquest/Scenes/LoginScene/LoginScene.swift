@@ -14,24 +14,24 @@ enum LoginSceneMode {
 }
 
 class LoginScene: SKScene, Scene {
-    var loginView:      LoginSceneView
-    var publisher:      LoginScenePublisher
-    var subscriber:     Subscriber
-    var mode:           LoginSceneMode
+    var loginView: LoginSceneView
+    var publisher: LoginScenePublisher
+    var subscriber: Subscriber
+    var mode: LoginSceneMode
     
     override init() {
-        self.loginView      = LoginSceneView(frame: UIScreen.main.bounds)
-        self.publisher      = LoginScenePublisher()
-        self.subscriber     = Subscriber()
-        self.mode           = .Login
+        self.loginView = LoginSceneView(frame: UIScreen.main.bounds)
+        self.publisher = LoginScenePublisher()
+        self.subscriber = Subscriber()
+        self.mode = .Login
         super.init()
     }
     
     override init(size: CGSize) {
-        self.loginView      = LoginSceneView(frame: UIScreen.main.bounds)
-        self.publisher      = LoginScenePublisher()
-        self.subscriber     = Subscriber()
-        self.mode           = .Login
+        self.loginView = LoginSceneView(frame: UIScreen.main.bounds)
+        self.publisher = LoginScenePublisher()
+        self.subscriber = Subscriber()
+        self.mode = .Login
         super.init(size: size)
     }
     
@@ -65,8 +65,8 @@ class LoginScene: SKScene, Scene {
     }
     
     func setupUIActions() {
-        loginView.loginButton!.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
-        loginView.switchModeButton!.addTarget(self, action: #selector(switchMode), for: .touchUpInside)
+        loginView.loginButton.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
+        loginView.switchModeButton.addTarget(self, action: #selector(switchMode), for: .touchUpInside)
     }
     
     func setupGestures() {
@@ -113,12 +113,12 @@ class LoginScene: SKScene, Scene {
     
     func loginSucceeded(_ notification: Notification) {
         print("LoginScene recieved loginSucceed event from game.")
-        print("LoginScene presenting PickPlayerScene...")
+        print("LoginScene presenting CreatePlayerScene...")
         loginView.setErrorMessage(message: "")
-//        prepareForNavigation()
-//        let scene = LoadingScene()
-//        scene.scaleMode = .aspectFill
-//        view!.presentScene(scene)
+        prepareForNavigation()
+        let scene = CreatePlayerScene()
+        scene.scaleMode = .aspectFill
+        view!.presentScene(scene)
     }
     
     func loginFailed(_ notification: Notification) {
@@ -132,10 +132,10 @@ class LoginScene: SKScene, Scene {
         print("LoginScene recieved registerSucceed event from game.")
         print("LoginScene presenting CreatePlayerScene...")
         loginView.setErrorMessage(message: "")
-        //        prepareForNavigation()
-        //        let scene = LoadingScene()
-        //        scene.scaleMode = .aspectFill
-        //        view!.presentScene(scene)
+        prepareForNavigation()
+        let scene = CreatePlayerScene()
+        scene.scaleMode = .aspectFill
+        view!.presentScene(scene)
     }
     
     func registerFailed(_ notification: Notification) {

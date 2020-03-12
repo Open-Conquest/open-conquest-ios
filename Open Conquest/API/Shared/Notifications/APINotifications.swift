@@ -20,6 +20,9 @@ enum APINotifications: String
     case RegisterSucceed   = "api-register-succeed"
     case RegisterFailed    = "api-register-failed"
     
+    case CreatePlayerSucceed = "api-create-player-succeed"
+    case CreatePlayerFailed = "api-create-player-failed"
+    
     case DidGetArmies   = "api-did-get-armies"
     case DidGetCities   = "api-did-get-cities"
     case DidGetMap      = "api-did-get-map"
@@ -37,6 +40,9 @@ extension Notification.Name
     static let APILoginFailed   = Notification.Name(rawValue: APINotifications.LoginFailed.rawValue)
     static let APIRegisterSucceed  = Notification.Name(rawValue: APINotifications.RegisterSucceed.rawValue)
     static let APIRegisterFailed   = Notification.Name(rawValue: APINotifications.RegisterFailed.rawValue)
+    
+    static let APICreatePlayerSucceed = Notification.Name(rawValue: APINotifications.CreatePlayerSucceed.rawValue)
+    static let APICreatePlayerFailed = Notification.Name(rawValue: APINotifications.CreatePlayerFailed.rawValue)
     
     static let APIDidGetArmies  = Notification.Name(rawValue: APINotifications.DidGetArmies.rawValue)
     static let APIDidGetCities  = Notification.Name(rawValue: APINotifications.DidGetCities.rawValue)

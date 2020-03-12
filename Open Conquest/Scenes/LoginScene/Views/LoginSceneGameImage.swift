@@ -12,12 +12,12 @@ import UIKit
 class LoginSceneGameImage: UIImageView {
     
     init() {
-        let backgroundImage = UIImage(named: "LoginScene_game-image")
+        let backgroundImage = UIImage(named: "WizardLogo")
         super.init(image: backgroundImage)
     }
     
     override init(image: UIImage?) {
-        let backgroundImage = UIImage(named: "LoginScene_game-image")
+        let backgroundImage = UIImage(named: "WizardLogo")
         super.init(image: backgroundImage)
     }
     

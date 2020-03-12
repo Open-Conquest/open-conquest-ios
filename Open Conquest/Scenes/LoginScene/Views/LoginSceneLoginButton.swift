@@ -23,10 +23,11 @@ class LoginSceneLoginButton: UIButton {
     
     func setup() {
         self.setTitle("Login", for: UIControl.State.normal)
-        self.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)
-        
-        // TODO enum
-        self.backgroundColor = UIColor.gray
+        self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24)
+        self.backgroundColor = UIColor.lightGray
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 5.0
+        layer.masksToBounds = true;
     }
 }
 

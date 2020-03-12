@@ -13,10 +13,10 @@ class GetArmiesResponse {
     var armies: [Army] = [Army]()
     
     init(response: Response) {
-        for army in response.getData().array! {
-            let newArmy = Army(json: army)
-            self.armies.append(newArmy)
-        }
+//        for army in response.getData().array! {
+//            let newArmy = Army(json: army)
+//            self.armies.append(newArmy)
+//        }
     }
     
     func getArmies() -> [Army] {

@@ -14,4 +14,6 @@ enum APIOperations: String {
     case get    = "get"
     case RegisterUser = "registerUser"
     case RegisterUserError = "registerUserError"
+    case CreatePlayer = "createPlayer"
+    case CreatePlayerError = "createPlayerError"
 }

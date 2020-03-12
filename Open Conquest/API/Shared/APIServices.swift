@@ -14,4 +14,5 @@ enum APIServices: String {
     case Map    = "map"
     case March  = "march"
     case User   = "user"
+    case Player = "player"
 }

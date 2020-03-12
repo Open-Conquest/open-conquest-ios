@@ -76,4 +76,17 @@ class ConnectionPublisher: Publisher {
         }
         post(notification: notification)
     }
+    
+    func publishPlayerResponse(response: Response) {
+        var notification: Notification
+        switch response.getOperation() {
+            case APIOperations.CreatePlayer:
+                notification = notificationFactory.buildNotification(name: .ConnectionCreatePlayerSucceed, data: response)
+            case APIOperations.CreatePlayerError:
+                notification = notificationFactory.buildNotification(name: .ConnectionCreatePlayerFailed, data: response)
+            default:
+                fatalError("Unexpected operation \(response.getOperation())")
+        }
+        post(notification: notification)
+    }
 }
