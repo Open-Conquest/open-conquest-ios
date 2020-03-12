@@ -50,11 +50,7 @@ class LoadingScene: SKScene, Scene {
     // MARK: SETUP METHODS
     
     func setupSubscribers() {
-        subscriber.subscribe(observingFunction: gotArmies(_:),  name: .GameDidGetArmies)
-        subscriber.subscribe(observingFunction: gotCities(_:),  name: .GameDidGetCities)
-        subscriber.subscribe(observingFunction: gotMap(_:),     name: .GameDidGetMap)
-        subscriber.subscribe(observingFunction: gotMarches(_:), name: .GameDidGetMarches)
-        subscriber.subscribe(observingFunction: gotUsers(_:),   name: .GameDidGetUsers)
+        subscriber.subscribe(observingFunction: gotArmies(_:),  name: .GameDidGetWorld)
     }
     
     func setupUI() {

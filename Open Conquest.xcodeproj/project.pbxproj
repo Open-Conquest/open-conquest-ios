@@ -679,10 +679,9 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		C2C383D823C8E3D200F61849 /* CoreData */ = {
+		C2BFEC9F241ADA8000912F3F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C2DDC9D523CA24D600456276 /* Model.xcdatamodeld */,
 				C2BFEC81241AAEC900912F3F /* CDCity+CoreDataClass.swift */,
 				C2BFEC82241AAEC900912F3F /* CDCity+CoreDataProperties.swift */,
 				C2BFEC83241AAEC900912F3F /* CDArmy+CoreDataClass.swift */,
@@ -695,6 +694,15 @@
 				C2BFEC8A241AAEC900912F3F /* CDPlayer+CoreDataProperties.swift */,
 				C2BFEC8B241AAEC900912F3F /* CDArmyUnits+CoreDataClass.swift */,
 				C2BFEC8C241AAEC900912F3F /* CDArmyUnits+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2C383D823C8E3D200F61849 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C2DDC9D523CA24D600456276 /* Model.xcdatamodeld */,
+				C2BFEC9F241ADA8000912F3F /* Models */,
 				C27BC4862415E74A00AA59FA /* Repositories */,
 			);
 			path = CoreData;
