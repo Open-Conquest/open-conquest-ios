@@ -13,11 +13,17 @@ class PlayerService: GameService {
     var publisher: PlayerServicePublisher
     var subscriber: Subscriber
     let playerRepository: PlayerRepository
+    let cityRepository: CityRepository
+    let armyRepository: ArmyRepository
+    let resourcesRepository: ResourcesRepository
     
-    init(playerRepository: PlayerRepository) {
+    init(playerRepository: PlayerRepository, cityRepository: CityRepository, armyRepository: ArmyRepository, resourcesRepository: ResourcesRepository) {
         self.publisher  = PlayerServicePublisher()
         self.subscriber = Subscriber()
         self.playerRepository = playerRepository
+        self.cityRepository = cityRepository
+        self.armyRepository = armyRepository
+        self.resourcesRepository = resourcesRepository
         setupSubscribers()
     }
     
@@ -52,7 +58,6 @@ class PlayerService: GameService {
             // post outgoing notification to try to create player to API
             publisher.tryCreatePlayer(player: player)
         }
-        
     }
     
     // listening to api
@@ -60,13 +65,16 @@ class PlayerService: GameService {
         print("PlayerService recieved APICreatePlayerSucceed event.")
 
         // get player entity from notification
-        let createdPlayer = notification.userInfo!["data"] as! Player
+        let player = notification.userInfo!["data"] as! Player
         
         // save player to core data
-        playerRepository.savePlayer(player: createdPlayer)
-        
-        // get player from core data to test
-        playerRepository.getPlayer(player: Player(id: nil, name: "test_playername"))
+        let cdPlayer = playerRepository.savePlayer(player: player)
+        // save player's city to core data
+        cityRepository.saveCity(player: cdPlayer, city: player.getCity()!)
+        // save player's army to core data
+        armyRepository.saveArmy(player: cdPlayer, army: player.getArmies()[0])
+        // save player's resources to core data
+        resourcesRepository.saveResources(player: cdPlayer, resources: player.getResources())
         
         // post notifcation for scene to transition
         publisher.createPlayerSucceed()

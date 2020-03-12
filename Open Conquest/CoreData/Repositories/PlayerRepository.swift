@@ -16,7 +16,7 @@ class PlayerRepository {
         self.context = context
     }
     
-    func savePlayer(player: Player) {
+    func savePlayer(player: Player) -> CDPlayer {
         /* create new core data player from entity */
         let playerEntity = NSEntityDescription.entity(forEntityName: "CDPlayer", in: context)
         let cdPlayer = CDPlayer(entity: playerEntity!, insertInto: context)
@@ -55,19 +55,29 @@ class PlayerRepository {
         } catch {
             print("FUCKKKKKK")
         }
+        
+        return cdPlayer
     }
     
-    func getPlayer(player: Player) {
+    func getPlayer(player: Player) -> Player? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDPlayer")
-        //request.predicate = NSPredicate(format: "age = %@", "12")
+        request.predicate = NSPredicate(format: "name = %@", player.getName())
         request.returnsObjectsAsFaults = false
         do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-               print(data.value(forKey: "name") as! String)
+            let result = try context.fetch(request) as! [NSManagedObject]
+            if (result.count > 1) {
+                fatalError("NOOOO")
+            } else {
+                for data in result as! [NSManagedObject] {
+                    return Player(
+                        id: nil, name:
+                        data.value(forKey: "name") as! String
+                    )
+                }
             }
         } catch {
             print("Failed")
         }
+        return nil
     }
 }

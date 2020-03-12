@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
         // get core data managed context from app delegate
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        game        = Game(dataContext: context)
+        game        = Game(context: context)
         api         = API()
         scene       = LoginScene()
         connection  = Connection()
