@@ -15,4 +15,6 @@ enum APIOperations: String {
     case RegisterUserError = "registerUserError"
     case CreatePlayer = "createPlayer"
     case CreatePlayerError = "createPlayerError"
+    case GetWorld = "getWorld"
+    case GetWorldError = "getWorldError"
 }
