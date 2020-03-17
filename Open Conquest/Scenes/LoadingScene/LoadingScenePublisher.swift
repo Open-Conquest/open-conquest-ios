@@ -14,14 +14,6 @@ class LoadingScenePublisher: ScenePublisher {
         super.init()
     }
     
-    func getAllGameComponents() {
-        getArmies()
-        getCities()
-        getMap()
-        getMarches()
-        getUsers()
-    }
-    
     func tryGetWorld() {
         
     }

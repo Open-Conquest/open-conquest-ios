@@ -20,10 +20,10 @@ class CityServices {
     }
     
     func setupSubscribers() {
-        
-        subscriber.subscribe(observingFunction: tryGetCities(_:), name: .GameTryGetCities)
-        
-        subscriber.subscribe(observingFunction: didGetCities(_:), name: .ConnectionDidGetCities)
+//        
+//        subscriber.subscribe(observingFunction: tryGetCities(_:), name: .GameTryGetCities)
+//        
+//        subscriber.subscribe(observingFunction: didGetCities(_:), name: .ConnectionDidGetCities)
     }
     
     // MARK: GAME SUBSCRIBING METHODS

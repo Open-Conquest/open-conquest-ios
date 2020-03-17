@@ -22,14 +22,14 @@ class MapServicePublisher: Publisher {
         var mapData = [Map]()
         mapData.append(map)
         
-        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .map, entities: mapData)
-        post(notification: notification)
+//        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .map, entities: mapData)
+//        post(notification: notification)
     }
     
     // MARK: API PUBLISHING METHODS
     
     func tryGetMap() {
-        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .map)
-        post(notification: notification)
+//        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .map)
+//        post(notification: notification)
     }
 }

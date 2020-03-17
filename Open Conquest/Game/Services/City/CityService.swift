@@ -21,9 +21,9 @@ class CityService: GameService {
     
     func setupSubscribers() {
         
-        subscriber.subscribe(observingFunction: tryGetCities(_:), name: .SceneTryGetCities)
-        
-        subscriber.subscribe(observingFunction: didGetCities(_:), name: .APIDidGetCities)
+//        subscriber.subscribe(observingFunction: tryGetCities(_:), name: .SceneTryGetCities)
+//        
+//        subscriber.subscribe(observingFunction: didGetCities(_:), name: .APIDidGetCities)
     }
     
     // MARK: SCENE SUBSCRIBING METHODS

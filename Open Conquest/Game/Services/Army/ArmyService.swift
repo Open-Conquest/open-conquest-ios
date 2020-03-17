@@ -30,28 +30,25 @@ class ArmyService: GameService {
     }
     
     func setupSubscribers() {
-        subscriber.subscribe(observingFunction: tryGetArmies(_:), name: .SceneTryGetArmies)
-        
-        subscriber.subscribe(observingFunction: didGetArmies(_:), name: .APIDidGetArmies)
     }
     
     // MARK: SCENE SUBSCRIBING METHODS
     
-    func tryGetArmies(_ notification: Notification) {
-        print("ArmyService received SceneTryGetArmies event")
-        
-        // if armies have already been loaded
-        if (armies != nil) {
-            // send those armies to the scene
-            publisher.didGetArmies(armies: armies!)
-        }
-        // if armies have not been loaded
-        else {
-            // make api request to get armies
-            publisher.tryGetArmies()
-        }
-        
-    }
+//    func tryGetArmies(_ notification: Notification) {
+//        print("ArmyService received SceneTryGetArmies event")
+//
+//        // if armies have already been loaded
+//        if (armies != nil) {
+//            // send those armies to the scene
+//            publisher.didGetArmies(armies: armies!)
+//        }
+//        // if armies have not been loaded
+//        else {
+//            // make api request to get armies
+//            publisher.tryGetArmies()
+//        }
+//
+//    }
     
     // MARK: API SUBSCRIBING METHODS
     
@@ -64,17 +61,17 @@ class ArmyService: GameService {
         
     }
     
-    func didGetArmies(_ notification: Notification) {
-        print("ArmyService received APIDidGetArmies event.")
-        
-        // get armies from notification
-        armies = notification.userInfo!["data"] as? [Army]
-        
-        // save armies from notification
-        
-        
-        // send armies array to scene
-        publisher.didGetArmies(armies: armies!)
-    }
+//    func didGetArmies(_ notification: Notification) {
+//        print("ArmyService received APIDidGetArmies event.")
+//
+//        // get armies from notification
+//        armies = notification.userInfo!["data"] as? [Army]
+//
+//        // save armies from notification
+//
+//
+//        // send armies array to scene
+//        publisher.didGetArmies(armies: armies!)
+//    }
 }
 

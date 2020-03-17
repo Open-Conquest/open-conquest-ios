@@ -47,8 +47,10 @@ class ConnectionPublisher: Publisher {
     func publishWorldResponse(response: Response) {
         var notification: Notification
         switch response.getOperation() {
-        case APIOperation.GetWorld:
-            notificatino = notificationFactory.buildNotification(name: .ConnectionDidGetWorld, data: response)
+        case APIOperations.GetWorld:
+            notification = notificationFactory.buildNotification(name: .ConnectionDidGetWorld, data: response)
+        case APIOperations.GetWorldError:
+            notification = notificationFactory.buildNotification(name: .ConnectionDidGetWorldFailed, data: response)
         default:
             fatalError("Unexpected operation \(response.getOperation())")
         }

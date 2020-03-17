@@ -50,12 +50,12 @@ class UserServicePublisher: Publisher {
     }
     
     func didGetUsers(users: [User]) {
-        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .user, entities: users)
-        post(notification: notification)
+//        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .user, entities: users)
+//        post(notification: notification)
     }
     
     func tryGetUsers() {
-        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .user)
-        post(notification: notification)
+//        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .user)
+//        post(notification: notification)
     }
 }

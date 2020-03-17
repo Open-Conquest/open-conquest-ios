@@ -25,8 +25,8 @@ class CityServicePublisher: Publisher {
     // MARK: METHODS PUBLISHING TO API
     
     func tryGetCities() {
-        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .city)
-        post(notification: notification)
+//        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .city)
+//        post(notification: notification)
     }
     
 }

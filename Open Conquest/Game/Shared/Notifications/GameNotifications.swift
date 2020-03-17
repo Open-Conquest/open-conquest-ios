@@ -23,6 +23,8 @@ enum GameNotifications: String
     case CreatePlayerFailed = "game-try-create-player-failed"
     
     case TryGetWorld = "game-try-get-world"
+    case DidGetWorld = "game-did-get-world"
+    case DidGetWorldFailed = "game-did-get-world-failed"
 }
 
 extension Notification.Name
@@ -40,6 +42,8 @@ extension Notification.Name
     static let GameCreatePlayerFailed = Notification.Name(rawValue: GameNotifications.CreatePlayerFailed.rawValue)
     
     static let GameTryGetWorld = Notification.Name(rawValue: GameNotifications.TryGetWorld.rawValue)
+    static let GameDidGetWorld = Notification.Name(rawValue: GameNotifications.DidGetWorld.rawValue)
+    static let GameDidGetWorldFailed = Notification.Name(rawValue: GameNotifications.DidGetWorldFailed.rawValue)
 }
 
 

@@ -21,6 +21,7 @@ enum ConnectionNotifications: String
     case CreatePlayerFailed = "connection-create-player-failed"
     
     case DidGetWorld = "connection-did-get-world"
+    case DidGetWorldFailed = "connection-did-get-world-failed"
 }
 
 extension Notification.Name
@@ -35,4 +36,5 @@ extension Notification.Name
     static let ConnectionCreatePlayerFailed = Notification.Name(rawValue: ConnectionNotifications.CreatePlayerFailed.rawValue)
     
     static let ConnectionDidGetWorld = Notification.Name(rawValue: ConnectionNotifications.DidGetWorld.rawValue)
+    static let ConnectionDidGetWorldFailed = Notification.Name(rawValue: ConnectionNotifications.DidGetWorldFailed.rawValue)
 }

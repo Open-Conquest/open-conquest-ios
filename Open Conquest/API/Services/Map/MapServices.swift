@@ -21,9 +21,9 @@ class MapServices {
     
     func setupSubscribers() {
         
-        subscriber.subscribe(observingFunction: tryGetmap(_:), name: .GameTryGetMap)
-        
-        subscriber.subscribe(observingFunction: didGetmap(_:), name: .ConnectionDidGetMap)
+//        subscriber.subscribe(observingFunction: tryGetmap(_:), name: .GameTryGetMap)
+//        
+//        subscriber.subscribe(observingFunction: didGetmap(_:), name: .ConnectionDidGetMap)
     }
     
     // MARK: GAME SUBSCRIBING METHODS

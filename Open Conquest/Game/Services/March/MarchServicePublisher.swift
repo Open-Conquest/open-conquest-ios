@@ -20,15 +20,15 @@ class MarchServicePublisher: Publisher {
     
     func didGetMarches(marches: [March]) {
         
-        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .march, entities: marches)
-        post(notification: notification)
+//        let notification = gameNotificationFactory.buildDidGetEntityNotification(entityType: .march, entities: marches)
+//        post(notification: notification)
     }
     
     // MARK: METHODS PUBLISHING TO API
     
     func tryGetMarches() {
         
-        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .march)
-        post(notification: notification)
+//        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .march)
+//        post(notification: notification)
     }
 }

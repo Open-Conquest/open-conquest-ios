@@ -27,7 +27,7 @@ class ArmyServicePublisher: Publisher {
     // MARK: METHODS PUBLISHING TO API
     
     func tryGetArmies() {
-        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .army)
-        post(notification: notification)
+//        let notification = gameNotificationFactory.buildTryGetEntityNotification(entityType: .army)
+//        post(notification: notification)
     }
 }

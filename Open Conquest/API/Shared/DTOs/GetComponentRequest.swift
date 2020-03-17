@@ -13,7 +13,7 @@ class GetEntityRequest: Request {
     
     init(entity: GameEntityType) {
         let data = JSON()
-        super.init(service: APIServices(rawValue: entity.rawValue)!, operation: APIOperations.get, data: data)
+        super.init(service: APIServices(rawValue: entity.rawValue)!, operation: APIOperations.CreatePlayer, data: data)
     }
 }
 

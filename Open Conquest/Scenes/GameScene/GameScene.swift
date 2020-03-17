@@ -100,15 +100,15 @@ class GameScene: SKScene, Scene {
     }
     
     func setupSubscribers() {
-        subscriber.subscribe(observingFunction: didGetCities(_:), name: .GameDidGetCities)
-        subscriber.subscribe(observingFunction: didGetMap(_:), name: .GameDidGetMap)
-        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .GameDidGetMarches)
+//        subscriber.subscribe(observingFunction: didGetCities(_:), name: .GameDidGetCities)
+//        subscriber.subscribe(observingFunction: didGetMap(_:), name: .GameDidGetMap)
+//        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .GameDidGetMarches)
     }
     
     func loadComponentsIntialState() {
-        publisher.getCities()
-        publisher.getMap()
-        publisher.getMarches()
+//        publisher.getCities()
+//        publisher.getMap()
+//        publisher.getMarches()
     }
     
     // MARK: CLEANUP METHODS

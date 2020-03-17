@@ -24,14 +24,14 @@ class UserService: GameService {
         // subscribe to scene notifications
         subscriber.subscribe(observingFunction: tryLogin(_:), name: .SceneTryLogin)
         subscriber.subscribe(observingFunction: tryRegister(_:), name: .SceneTryRegister)
-        subscriber.subscribe(observingFunction: tryGetUsers(_:), name: .SceneTryGetUsers)
+//        subscriber.subscribe(observingFunction: tryGetUsers(_:), name: .SceneTryGetUsers)
         
         // subscribe to api notifications
         subscriber.subscribe(observingFunction: registerSucceed(_:), name: .APIRegisterSucceed)
         subscriber.subscribe(observingFunction: registerFailed(_:), name: .APIRegisterFailed)
         subscriber.subscribe(observingFunction: loginSucceed(_:), name: .APILoginSucceed)
         subscriber.subscribe(observingFunction: loginFailed(_:), name: .APILoginFailed)
-        subscriber.subscribe(observingFunction: didGetUsers(_:), name: .APIDidGetUsers)
+//        subscriber.subscribe(observingFunction: didGetUsers(_:), name: .APIDidGetUsers)
     }
 
     func update(notification: Notification) {

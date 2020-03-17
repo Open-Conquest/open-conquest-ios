@@ -20,8 +20,8 @@ class MarchService: GameService {
     }
     
     func setupSubscribers() {
-        subscriber.subscribe(observingFunction: tryGetMarches(_:), name: .SceneTryGetMarches)
-        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .APIDidGetMarches)
+//        subscriber.subscribe(observingFunction: tryGetMarches(_:), name: .SceneTryGetMarches)
+//        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .APIDidGetMarches)
         //subscriber.subscribe(observingFunction: tryCreateMarch(_:), name: .SceneTryCreateMarch)
     }
     

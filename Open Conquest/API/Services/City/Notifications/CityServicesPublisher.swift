@@ -18,8 +18,8 @@ class CityServicesPublisher: APIPublisher {
     
     // did receive cities data from connection
     func didGetCities(cities: [City]) {
-        let notification = notificationFactory.buildNotification(name: .APIDidGetCities, data: cities)
-        post(notification: notification)
+//        let notification = notificationFactory.buildNotification(name: .APIDidGetCities, data: cities)
+//        post(notification: notification)
     }
     
 }
