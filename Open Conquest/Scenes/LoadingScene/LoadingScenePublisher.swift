@@ -15,6 +15,7 @@ class LoadingScenePublisher: ScenePublisher {
     }
     
     func tryGetWorld() {
-        
+        let notification = sceneNotificationFactory.buildNotification(name: .SceneTryGetWorld, data: nil)
+        post(notification: notification)
     }
 }

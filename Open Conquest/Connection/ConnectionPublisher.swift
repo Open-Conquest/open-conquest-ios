@@ -54,5 +54,6 @@ class ConnectionPublisher: Publisher {
         default:
             fatalError("Unexpected operation \(response.getOperation())")
         }
+        post(notification: notification)
     }
 }

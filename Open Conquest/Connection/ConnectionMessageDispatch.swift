@@ -21,8 +21,8 @@ class ConnectionMessageDispatch {
     }
     
     func handle(json: JSON) {
-        let response    = Response(body: json)
-        let service     = response.getService()
+        let response = Response(body: json)
+        let service = response.getService()
         print("ConnectionMessageDispatch received response: \(response.toString())")
         
         switch service {

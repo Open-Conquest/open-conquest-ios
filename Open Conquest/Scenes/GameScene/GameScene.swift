@@ -21,16 +21,6 @@ class GameScene: SKScene, Scene {
     var rowSelected: Int?
     var colSelected: Int?
     
-    override init() {
-        publisher = GameScenePublisher()
-        subscriber = Subscriber()
-        map = MapNode(map: Map())
-        overlay = MapOverlayView()
-        marchSelectorView = MarchSelectorView(frame: .zero)
-        gestures = GameSceneGestures()
-        super.init()
-    }
-    
     override init(size: CGSize) {
         publisher = GameScenePublisher()
         subscriber = Subscriber()
@@ -41,6 +31,16 @@ class GameScene: SKScene, Scene {
         super.init(size: size)
     }
     
+    init(world: World) {
+        publisher = GameScenePublisher()
+        subscriber = Subscriber()
+        map = MapNode(map: world.map)
+        overlay = MapOverlayView()
+        marchSelectorView = MarchSelectorView(frame: .zero)
+        gestures = GameSceneGestures()
+        super.init()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -49,7 +49,7 @@ class GameScene: SKScene, Scene {
         setupUI()
         setupGestures()
         setupSubscribers()
-        loadComponentsIntialState()
+        tryGetWorld()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -64,6 +64,9 @@ class GameScene: SKScene, Scene {
         let camera = SKCameraNode()
         self.camera = camera
         map.addChild(camera)
+        self.camera!.position = map.centerOfTile(atColumn: 0, row: 0)
+        let zoomAction = SKAction.scale(by: 1000, duration: 0)
+        self.camera!.run(zoomAction)
         
         // setup overlay
         view!.addSubview(overlay)
@@ -80,14 +83,17 @@ class GameScene: SKScene, Scene {
     
     func setupGestures() {
         gestures = GameSceneGestures()
+        
         // setup pan gesture
         let panSelector = #selector(self.handlePan(panGesture:))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
         view!.addGestureRecognizer(panGestureRecognizer)
+        
         // setup pinch gesture
         let pinchGesture = #selector(self.handlePinch(pinchGesture:))
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: pinchGesture)
         view!.addGestureRecognizer(pinchGestureRecognizer)
+        
         // setup tap gesture
         let tapSelector = #selector(self.handleTap(tapGesture:))
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: tapSelector)
@@ -100,15 +106,7 @@ class GameScene: SKScene, Scene {
     }
     
     func setupSubscribers() {
-//        subscriber.subscribe(observingFunction: didGetCities(_:), name: .GameDidGetCities)
-//        subscriber.subscribe(observingFunction: didGetMap(_:), name: .GameDidGetMap)
-//        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .GameDidGetMarches)
-    }
-    
-    func loadComponentsIntialState() {
-//        publisher.getCities()
-//        publisher.getMap()
-//        publisher.getMarches()
+        subscriber.subscribe(observingFunction: didGetWorld(_:), name: .GameDidGetWorld)
     }
     
     // MARK: CLEANUP METHODS
@@ -123,50 +121,18 @@ class GameScene: SKScene, Scene {
     
     // MARK: SUBSCRIBING METHODS
     
-    func didGetCities(_ notifiction: Notification) {
-        print("GameScene recieved scene-did-get-cities event...")
-        // todo
-    }
-    
-    func didGetMap(_ notification: Notification) {
-        print("GameScene recieved scene-did-get-map event...")
+    func didGetWorld(_ notification: Notification) {
+        print("GameScene received game-did-get-world notification")
         
-        // parse map from notification
-        let mapData = notification.userInfo!["data"] as! [Map]
+        let world = notification.userInfo!["world"] as! World
         
-        // draw map
-        map.drawMapFromMapModel(map: mapData[0])
-        
-        // move camera to focus on map
-        camera!.position = map.centerOfTile(atColumn: 0, row: 0)
-        let zoomAction = SKAction.scale(by: 1000, duration: 0)
-        camera!.run(zoomAction)
-    }
-    
-    func didGetMarches(_ notification: Notification) {
-        print("GameScene recieved scene-did-get-marches event...")
-        
-        // parse marches from notification
-        let newMarches = notification.userInfo!["data"] as! [March]
-        
-        // add all the marches to the map
-        for march in newMarches {
-            map.addMarch(march: march)
-        }
+        map.drawMapFromMapModel(map: world.map)
     }
     
     // MARK: PUBLISHING METHODS
     
-    
-    /**
-     Called when a user tries to attack a city with a selected army.
-     
-     - parameter row: The row of the city that the user is trying to attack.
-     - parameter col: The col of the city that the user is trying to attack.
-     - parameter army: The units that the user is trying to attack with.
-     */
-    func createMarch(row: Int, col: Int, army: Army) {
-        
+    func tryGetWorld() {
+        publisher.tryGetWorld()
     }
     
     // MARK: GESTURING METHODS
@@ -185,6 +151,9 @@ class GameScene: SKScene, Scene {
         if tapGesture.state != .ended {
             return
         }
+        
+        print(map.numberOfRows)
+        print(map.numberOfColumns)
         
         // get the location of the tap in skview
         let tapLocation = tapGesture.location(in: tapGesture.view)

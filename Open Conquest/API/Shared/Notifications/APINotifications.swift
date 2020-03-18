@@ -24,6 +24,7 @@ enum APINotifications: String
     case CreatePlayerFailed = "api-create-player-failed"
     
     case DidGetWorld = "api-did-get-world"
+    case DidGetWorldFailed = "api-did-get-world-failed"
 }
 
 extension Notification.Name
@@ -41,6 +42,7 @@ extension Notification.Name
     static let APICreatePlayerFailed = Notification.Name(rawValue: APINotifications.CreatePlayerFailed.rawValue)
     
     static let APIDidGetWorld = Notification.Name(rawValue: APINotifications.DidGetWorld.rawValue)
+    static let APIDidGetWorldFailed = Notification.Name(rawValue: APINotifications.DidGetWorldFailed.rawValue)
 }
 
 class APIMakeRequestData {

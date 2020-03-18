@@ -10,15 +10,10 @@ import Foundation
 import SwiftyJSON
 
 class Map: GameEntity {
-    
-    func toJSON() -> JSON {
-        fatalError()
-    }
-    
     var tiles: [[Tile]]
     var numRows: Int
     var numCols: Int
-
+    
     init(tiles: [[Tile]]) {
         self.tiles = tiles
 
@@ -39,6 +34,11 @@ class Map: GameEntity {
        self.numRows = 0
        self.numCols = 0
     }
+    
+    func toJSON() -> JSON {
+        fatalError()
+    }
+
     
     func update() {
         

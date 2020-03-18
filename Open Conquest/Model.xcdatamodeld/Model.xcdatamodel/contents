@@ -16,6 +16,12 @@
         <attribute name="row" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPlayer" inverseName="city" inverseEntity="CDPlayer"/>
     </entity>
+    <entity name="CDMap" representedClassName="CDMap" syncable="YES">
+        <attribute name="map_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="maxCols" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="maxRows" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="CDPlayer" representedClassName=".CDPlayer" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="armies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDArmy" inverseName="player" inverseEntity="CDArmy"/>
@@ -25,6 +31,11 @@
     <entity name="CDResources" representedClassName="CDResources" syncable="YES">
         <attribute name="gold" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPlayer" inverseName="resources" inverseEntity="CDPlayer"/>
+    </entity>
+    <entity name="CDTile" representedClassName="CDTile" syncable="YES">
+        <attribute name="col" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="row" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="CDUnit" representedClassName="CDUnit" syncable="YES">
         <attribute name="attack" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -38,8 +49,10 @@
         <element name="CDArmy" positionX="-117" positionY="216" width="128" height="73"/>
         <element name="CDArmyUnits" positionX="-108" positionY="225" width="128" height="88"/>
         <element name="CDCity" positionX="-126" positionY="207" width="128" height="118"/>
+        <element name="CDMap" positionX="-117" positionY="234" width="128" height="103"/>
         <element name="CDPlayer" positionX="-27" positionY="108" width="128" height="103"/>
         <element name="CDResources" positionX="-218.4453125" positionY="268.45703125" width="128" height="73"/>
+        <element name="CDTile" positionX="-126" positionY="225" width="128" height="88"/>
         <element name="CDUnit" positionX="-99" positionY="234" width="128" height="133"/>
     </elements>
 </model>

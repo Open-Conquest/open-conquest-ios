@@ -18,6 +18,7 @@ class API {
     var marchServices: MarchServices
     var userServices: UserServices
     var playerServices: PlayerServices
+    var worldServices: WorldServices
     
     init() {
         print("API initializing...")
@@ -30,6 +31,7 @@ class API {
         marchServices = MarchServices()
         userServices = UserServices()
         playerServices = PlayerServices()
+        worldServices = WorldServices()
         print("API initialized.")
     }
 }

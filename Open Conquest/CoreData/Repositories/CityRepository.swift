@@ -31,4 +31,8 @@ class CityRepository {
             print("FUCKKKKKK")
         }
     }
+    
+    func saveCities(cities: [City]) {
+        
+    }
 }

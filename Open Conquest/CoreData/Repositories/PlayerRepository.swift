@@ -59,6 +59,10 @@ class PlayerRepository {
         return cdPlayer
     }
     
+    func savePlayers(players: [Player]) {
+        
+    }
+    
     func getPlayer(player: Player) -> Player? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDPlayer")
         request.predicate = NSPredicate(format: "name = %@", player.getName())

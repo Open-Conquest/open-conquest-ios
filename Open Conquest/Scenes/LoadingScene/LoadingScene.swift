@@ -13,7 +13,8 @@ class LoadingScene: SKScene, Scene {
     var publisher: LoadingScenePublisher
     var subscriber: Subscriber
     var componentsLoaded: Int = 0
-    let totalComponents: Int = 5
+    let totalComponents: Int = 1
+    var world: World?
 
     // MARK: INITIALIZATION METHODS
     
@@ -36,7 +37,7 @@ class LoadingScene: SKScene, Scene {
         setupSubscribers()
         setupUI()
         setupUIActions()
-        tryLoading()
+        tryGetWorld()
     }
     
     override func update(_ currentTime: TimeInterval) {}
@@ -72,13 +73,12 @@ class LoadingScene: SKScene, Scene {
     }
     
     func prepareForNavigation() {
-        loadingView.removeFromSuperview()
         teardownSubscribers()
     }
     
     // MARK: PUBLISHING METHODS
     
-    @objc func tryLoading() {
+    @objc func tryGetWorld() {
         print("LoadingScene trying to load game...")
         publisher.tryGetWorld()
     }
@@ -87,6 +87,9 @@ class LoadingScene: SKScene, Scene {
     
     func didGetWorld(_ notification: Notification) {
         print("LoadingScene received DidGetWorld event from game.")
+        
+        world = notification.userInfo!["data"] as! World
+        
         presentGameScene()
     }
     
@@ -95,7 +98,7 @@ class LoadingScene: SKScene, Scene {
     func presentGameScene() {
         print("LoadingScene presenting GameScene...")
         prepareForNavigation()
-        let scene = GameScene()
+        let scene = GameScene(world: world!)
         scene.scaleMode = .aspectFill
         view!.presentScene(scene)
     }
