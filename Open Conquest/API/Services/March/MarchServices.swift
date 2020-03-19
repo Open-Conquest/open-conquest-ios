@@ -21,9 +21,9 @@ class MarchServices {
     
     func setupSubscribers() {
         
-        subscriber.subscribe(observingFunction: tryGetMarch(_:), name: .GameTryGetMarches)
-        
-        subscriber.subscribe(observingFunction: didGetMarch(_:), name: .ConnectionDidGetMarches)
+//        subscriber.subscribe(observingFunction: tryGetMarch(_:), name: .GameTryGetMarches)
+//        
+//        subscriber.subscribe(observingFunction: didGetMarch(_:), name: .ConnectionDidGetMarches)
     }
     
     // MARK: GAME SUBSCRIBING METHODS

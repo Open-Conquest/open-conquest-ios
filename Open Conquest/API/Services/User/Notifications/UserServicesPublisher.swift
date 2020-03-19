@@ -32,9 +32,9 @@ class UserServicesPublisher: Publisher {
     }
     
     func getUsers() {
-        let request = GetEntityRequest(entity: .user)
-        let notification = apiNotificationFactory.buildAPIGetComponentNotification(request: request)
-        post(notification: notification)
+//        let request = GetEntityRequest(entity: .user)
+//        let notification = apiNotificationFactory.buildAPIGetComponentNotification(request: request)
+//        post(notification: notification)
     }
     
     // MARK: GAME PUBLISHING METHODS
@@ -64,9 +64,9 @@ class UserServicesPublisher: Publisher {
     }
     
     func didGetUsers(response: GetUsersResponse) {
-        let users = response.getUsers()
-        let notification = notificationFactory.buildNotification(name: .APIDidGetUsers, data: users)
-        post(notification: notification)
+//        let users = response.getUsers()
+//        let notification = notificationFactory.buildNotification(name: .APIDidGetUsers, data: users)
+//        post(notification: notification)
     }
     
 }

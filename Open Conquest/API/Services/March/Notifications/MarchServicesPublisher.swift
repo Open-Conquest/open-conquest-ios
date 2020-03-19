@@ -18,8 +18,8 @@ class MarchServicesPublisher: APIPublisher {
     
     // did receive cities data from connection
     func didGetMarches(marches: [March]) {
-        let notification = notificationFactory.buildNotification(name: .APIDidGetMarches, data: marches)
-        post(notification: notification)
+//        let notification = notificationFactory.buildNotification(name: .APIDidGetMarches, data: marches)
+//        post(notification: notification)
     }
     
 }

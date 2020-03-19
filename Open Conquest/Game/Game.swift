@@ -15,15 +15,17 @@ class Game {
     var cityService: CityService
     var mapService: MapService
     var marchService: MarchService
-    var userService: UserService
     var playerService: PlayerService
+    var userService: UserService
+    var worldService: WorldService
 
     init(context: NSManagedObjectContext) {
         self.context = context
         // create repositories with context
-        let playerRepository = PlayerRepository(context: context)
-        let cityRepository = CityRepository(context: context)
         let armyRepository = ArmyRepository(context: context)
+        let cityRepository = CityRepository(context: context)
+        let mapRepository = MapRepository(context: context)
+        let playerRepository = PlayerRepository(context: context)
         let resourcesRepository = ResourcesRepository(context: context)
         
         // create enitity services with repositories
@@ -31,12 +33,17 @@ class Game {
         cityService = CityService()
         mapService = MapService()
         marchService = MarchService()
-        userService = UserService()
         playerService = PlayerService(
             playerRepository: playerRepository,
             cityRepository: cityRepository,
             armyRepository: armyRepository,
             resourcesRepository: resourcesRepository
+        )
+        userService = UserService()
+        worldService = WorldService(
+            playerRepository: playerRepository,
+            mapRepository: mapRepository,
+            cityRepository: cityRepository
         )
         
         print("Game intialized")

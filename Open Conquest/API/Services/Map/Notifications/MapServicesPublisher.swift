@@ -18,8 +18,8 @@ class MapServicesPublisher: APIPublisher {
     
     // did receive cities data from connection
     func didGetMap(map: [Map]) {
-        let notification = notificationFactory.buildNotification(name: .APIDidGetMap, data: map)
-        post(notification: notification)
+//        let notification = notificationFactory.buildNotification(name: .APIDidGetMap, data: map)
+//        post(notification: notification)
     }
     
 }

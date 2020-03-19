@@ -41,41 +41,4 @@ class GameNotificationFactory: NotificationFactory {
     func buildGameRegisterFailedNotification(data: GameRegisterFailedData) -> Notification {
         return buildNotification(name: .GameRegisterFailed, data: data)
     }
-    
-    // TODO: add query
-    func buildTryGetEntityNotification(entityType: GameEntityType) -> Notification {
-        let query = JSON()
-        switch entityType {
-        case .army:
-            return buildNotification(name: .GameTryGetArmies, data: query)
-        case .city:
-            return buildNotification(name: .GameTryGetCities, data: query)
-        case .map:
-            return buildNotification(name: .GameTryGetMap, data: query)
-        case .march:
-            return buildNotification(name: .GameTryGetMarches, data: query)
-        case .user:
-            return buildNotification(name: .GameTryGetUsers, data: query)
-        default:
-            fatalError()
-        }
-    }
-    
-    func buildDidGetEntityNotification(entityType: GameEntityType, entities: [GameEntity]) -> Notification {
-        switch entityType {
-        case .army:
-            return buildNotification(name: .GameDidGetArmies, data: entities)
-        case .city:
-            return buildNotification(name: .GameDidGetCities, data: entities)
-        case .map:
-            return buildNotification(name: .GameDidGetMap, data: entities)
-        case .march:
-            return buildNotification(name: .GameDidGetMarches, data: entities)
-        case .user:
-            return buildNotification(name: .GameDidGetUsers, data: entities)
-        default:
-            fatalError()
-        }
-    }
-    
 }

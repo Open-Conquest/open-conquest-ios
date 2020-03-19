@@ -21,10 +21,10 @@ class ArmyServices {
     
     func setupSubscibers() {
         // game subscribing methods
-        subscriber.subscribe(observingFunction: tryGetArmies(_:), name: .GameTryGetArmies)
+//        subscriber.subscribe(observingFunction: tryGetArmies(_:), name: .GameTryGetArmies)
         
         // connection subscribing methods
-        subscriber.subscribe(observingFunction: didGetArmies(_:), name: .ConnectionDidGetArmies)
+//        subscriber.subscribe(observingFunction: didGetArmies(_:), name: .ConnectionDidGetArmies)
     }
     
     func tryGetArmies(_ notification: Notification) {

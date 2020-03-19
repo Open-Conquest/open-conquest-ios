@@ -15,40 +15,34 @@ enum APINotifications: String
     case MakeRequest    = "api-make-request"
     
     // all of these are observed by the game components
-    case LoginSucceed   = "api-login-succeed"
-    case LoginFailed    = "api-login-failed"
-    case RegisterSucceed   = "api-register-succeed"
-    case RegisterFailed    = "api-register-failed"
+    case LoginSucceed = "api-login-succeed"
+    case LoginFailed = "api-login-failed"
+    case RegisterSucceed = "api-register-succeed"
+    case RegisterFailed = "api-register-failed"
     
     case CreatePlayerSucceed = "api-create-player-succeed"
     case CreatePlayerFailed = "api-create-player-failed"
     
-    case DidGetArmies   = "api-did-get-armies"
-    case DidGetCities   = "api-did-get-cities"
-    case DidGetMap      = "api-did-get-map"
-    case DidGetMarches  = "api-did-get-marches"
-    case DidGetUsers    = "api-did-get-users"
+    case DidGetWorld = "api-did-get-world"
+    case DidGetWorldFailed = "api-did-get-world-failed"
 }
 
 extension Notification.Name
 {
     // only request that is observed by the connection
-    static let APIMakeRequest   = Notification.Name(rawValue: APINotifications.MakeRequest.rawValue)
+    static let APIMakeRequest = Notification.Name(rawValue: APINotifications.MakeRequest.rawValue)
     
     // all of these are observed by the game components
     static let APILoginSucceed  = Notification.Name(rawValue: APINotifications.LoginSucceed.rawValue)
-    static let APILoginFailed   = Notification.Name(rawValue: APINotifications.LoginFailed.rawValue)
-    static let APIRegisterSucceed  = Notification.Name(rawValue: APINotifications.RegisterSucceed.rawValue)
-    static let APIRegisterFailed   = Notification.Name(rawValue: APINotifications.RegisterFailed.rawValue)
+    static let APILoginFailed = Notification.Name(rawValue: APINotifications.LoginFailed.rawValue)
+    static let APIRegisterSucceed = Notification.Name(rawValue: APINotifications.RegisterSucceed.rawValue)
+    static let APIRegisterFailed = Notification.Name(rawValue: APINotifications.RegisterFailed.rawValue)
     
     static let APICreatePlayerSucceed = Notification.Name(rawValue: APINotifications.CreatePlayerSucceed.rawValue)
     static let APICreatePlayerFailed = Notification.Name(rawValue: APINotifications.CreatePlayerFailed.rawValue)
     
-    static let APIDidGetArmies  = Notification.Name(rawValue: APINotifications.DidGetArmies.rawValue)
-    static let APIDidGetCities  = Notification.Name(rawValue: APINotifications.DidGetCities.rawValue)
-    static let APIDidGetMap     = Notification.Name(rawValue: APINotifications.DidGetMap.rawValue)
-    static let APIDidGetMarches = Notification.Name(rawValue: APINotifications.DidGetMarches.rawValue)
-    static let APIDidGetUsers   = Notification.Name(rawValue: APINotifications.DidGetUsers.rawValue)
+    static let APIDidGetWorld = Notification.Name(rawValue: APINotifications.DidGetWorld.rawValue)
+    static let APIDidGetWorldFailed = Notification.Name(rawValue: APINotifications.DidGetWorldFailed.rawValue)
 }
 
 class APIMakeRequestData {

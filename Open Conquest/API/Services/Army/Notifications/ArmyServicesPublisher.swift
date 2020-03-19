@@ -17,9 +17,9 @@ class ArmyServicesPublisher: APIPublisher {
     // MARK: GAME PUBLISHING METHODS
     
     func didGetArmies(response: GetArmiesResponse) {
-        let armies = response.getArmies()
-        let notification = notificationFactory.buildNotification(name: .APIDidGetArmies, data: armies)
-        post(notification: notification)
+//        let armies = response.getArmies()
+//        let notification = notificationFactory.buildNotification(name: .APIDidGetArmies, data: armies)
+//        post(notification: notification)
     }
     
 }

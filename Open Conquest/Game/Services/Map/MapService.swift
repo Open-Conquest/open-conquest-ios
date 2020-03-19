@@ -20,8 +20,8 @@ class MapService: GameService {
     }
     
     func setupSubscribers() {
-        subscriber.subscribe(observingFunction: tryGetMap(_:), name: .SceneTryGetMap)
-        subscriber.subscribe(observingFunction: didGetMap(_:), name: .APIDidGetMap)
+//        subscriber.subscribe(observingFunction: tryGetMap(_:), name: .SceneTryGetMap)
+//        subscriber.subscribe(observingFunction: didGetMap(_:), name: .APIDidGetMap)
     }
     
     func update(notification: Notification) {

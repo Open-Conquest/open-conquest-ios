@@ -23,14 +23,14 @@ class UserServices: BaseAPIServices {
         // game subscribing methods
         subscriber.subscribe(observingFunction: tryLogin(_:), name: .GameTryLogin)
         subscriber.subscribe(observingFunction: tryRegister(_:), name: .GameTryRegister)
-        subscriber.subscribe(observingFunction: tryGetUsers(_:), name: .GameTryGetUsers)
+//        subscriber.subscribe(observingFunction: tryGetUsers(_:), name: .GameTryGetUsers)
         
         // connection subscribing methods
         subscriber.subscribe(observingFunction: didLogin(_:), name: .ConnectionLoginSucceed)
         subscriber.subscribe(observingFunction: loginFailed(_:), name: .ConnectionLoginFailed)
         subscriber.subscribe(observingFunction: registerSucceed(_:), name: .ConnectionRegisterSucceed)
         subscriber.subscribe(observingFunction: registerFailed(_:), name: .ConnectionRegisterFailed)
-        subscriber.subscribe(observingFunction: didGetUsers(_:), name: .ConnectionDidGetUsers)
+//        subscriber.subscribe(observingFunction: didGetUsers(_:), name: .ConnectionDidGetUsers)
     }
     
     // MARK: GAME SUBSCRIBING METHODS

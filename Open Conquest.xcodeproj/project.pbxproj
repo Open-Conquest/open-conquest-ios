@@ -34,7 +34,6 @@
 		92A2A374229B66450090287C /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A373229B66450090287C /* LoginScene.swift */; };
 		92E5190B22A750D0000B1F59 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190A22A750D0000B1F59 /* Publisher.swift */; };
 		92E5190D22A750DB000B1F59 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5190C22A750DB000B1F59 /* Subscriber.swift */; };
-		92E5191322A76021000B1F59 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5191222A76021000B1F59 /* Notifications.swift */; };
 		C20E1FE623B106C9002A8E7E /* MarchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E1FE523B106C9002A8E7E /* MarchNode.swift */; };
 		C237374523ADB761002FEBF1 /* GameScenePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C237374423ADB761002FEBF1 /* GameScenePublisher.swift */; };
 		C23CF49B237EA1D200833792 /* ConnectionNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CF49A237EA1D200833792 /* ConnectionNotifications.swift */; };
@@ -46,6 +45,21 @@
 		C2515AF22418466400ABCBC7 /* ErrorMessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2515AF12418466400ABCBC7 /* ErrorMessageLabel.swift */; };
 		C2515AF42418659C00ABCBC7 /* GenericLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2515AF32418659C00ABCBC7 /* GenericLabel.swift */; };
 		C258E57F23D662CB0078E317 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258E57E23D662CB0078E317 /* GameEntity.swift */; };
+		C2672F78242260ED00084C42 /* WorldService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F77242260ED00084C42 /* WorldService.swift */; };
+		C2672F7A242261D800084C42 /* WorldRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F79242261D800084C42 /* WorldRepository.swift */; };
+		C2672F7C2422623400084C42 /* WorldServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F7B2422623400084C42 /* WorldServicePublisher.swift */; };
+		C2672F7E2422633C00084C42 /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F7D2422633C00084C42 /* MapRepository.swift */; };
+		C2672F812422644800084C42 /* WorldServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F802422644800084C42 /* WorldServices.swift */; };
+		C2672F83242264FC00084C42 /* WorldServicesPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F82242264FC00084C42 /* WorldServicesPublisher.swift */; };
+		C2672F852422659900084C42 /* GetWorldRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F842422659900084C42 /* GetWorldRequestDTO.swift */; };
+		C2672F882422838B00084C42 /* GetWorldResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F872422838B00084C42 /* GetWorldResponseDTO.swift */; };
+		C2672F8A2422852C00084C42 /* MapDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F892422852C00084C42 /* MapDTO.swift */; };
+		C2672F8C24229B4B00084C42 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F8B24229B4B00084C42 /* World.swift */; };
+		C2672F8F24229C2300084C42 /* WorldDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F8E24229C2300084C42 /* WorldDTO.swift */; };
+		C2672F922422A31100084C42 /* CDTile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F902422A31100084C42 /* CDTile+CoreDataClass.swift */; };
+		C2672F932422A31100084C42 /* CDTile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F912422A31100084C42 /* CDTile+CoreDataProperties.swift */; };
+		C2672F962422A67200084C42 /* CDMap+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F942422A67200084C42 /* CDMap+CoreDataClass.swift */; };
+		C2672F972422A67200084C42 /* CDMap+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2672F952422A67200084C42 /* CDMap+CoreDataProperties.swift */; };
 		C269764123D4D6A8007035ED /* UnitIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269764023D4D6A8007035ED /* UnitIconView.swift */; };
 		C269764323D4D884007035ED /* UnitNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269764223D4D884007035ED /* UnitNameLabel.swift */; };
 		C26C1A2823D621A70083E392 /* MarchSelectorContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1A2723D621A70083E392 /* MarchSelectorContent.swift */; };
@@ -226,7 +240,6 @@
 		92A2A373229B66450090287C /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
 		92E5190A22A750D0000B1F59 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		92E5190C22A750DB000B1F59 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
-		92E5191222A76021000B1F59 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		B2844570776E81819817B8CB /* Pods-Open Conquest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open Conquest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open Conquest/Pods-Open Conquest.release.xcconfig"; sourceTree = "<group>"; };
 		C20E1FE523B106C9002A8E7E /* MarchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchNode.swift; sourceTree = "<group>"; };
 		C237374423ADB761002FEBF1 /* GameScenePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScenePublisher.swift; sourceTree = "<group>"; };
@@ -239,6 +252,21 @@
 		C2515AF12418466400ABCBC7 /* ErrorMessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageLabel.swift; sourceTree = "<group>"; };
 		C2515AF32418659C00ABCBC7 /* GenericLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericLabel.swift; sourceTree = "<group>"; };
 		C258E57E23D662CB0078E317 /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
+		C2672F77242260ED00084C42 /* WorldService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldService.swift; sourceTree = "<group>"; };
+		C2672F79242261D800084C42 /* WorldRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldRepository.swift; sourceTree = "<group>"; };
+		C2672F7B2422623400084C42 /* WorldServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldServicePublisher.swift; sourceTree = "<group>"; };
+		C2672F7D2422633C00084C42 /* MapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
+		C2672F802422644800084C42 /* WorldServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldServices.swift; sourceTree = "<group>"; };
+		C2672F82242264FC00084C42 /* WorldServicesPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldServicesPublisher.swift; sourceTree = "<group>"; };
+		C2672F842422659900084C42 /* GetWorldRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorldRequestDTO.swift; sourceTree = "<group>"; };
+		C2672F872422838B00084C42 /* GetWorldResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorldResponseDTO.swift; sourceTree = "<group>"; };
+		C2672F892422852C00084C42 /* MapDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDTO.swift; sourceTree = "<group>"; };
+		C2672F8B24229B4B00084C42 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		C2672F8E24229C2300084C42 /* WorldDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldDTO.swift; sourceTree = "<group>"; };
+		C2672F902422A31100084C42 /* CDTile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C2672F912422A31100084C42 /* CDTile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C2672F942422A67200084C42 /* CDMap+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMap+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C2672F952422A67200084C42 /* CDMap+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMap+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C269764023D4D6A8007035ED /* UnitIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitIconView.swift; sourceTree = "<group>"; };
 		C269764223D4D884007035ED /* UnitNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitNameLabel.swift; sourceTree = "<group>"; };
 		C26C1A2723D621A70083E392 /* MarchSelectorContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarchSelectorContent.swift; sourceTree = "<group>"; };
@@ -547,8 +575,20 @@
 				C2E0A902234D9114000F6FCD /* User.swift */,
 				C284DBD323C3B04E004ADEFC /* Resources.swift */,
 				C2E7DB5F241441F500121B47 /* Entity.swift */,
+				C2672F8B24229B4B00084C42 /* World.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		C2672F7F2422643000084C42 /* World */ = {
+			isa = PBXGroup;
+			children = (
+				C2672F802422644800084C42 /* WorldServices.swift */,
+				C2672F82242264FC00084C42 /* WorldServicesPublisher.swift */,
+				C2672F842422659900084C42 /* GetWorldRequestDTO.swift */,
+				C2672F872422838B00084C42 /* GetWorldResponseDTO.swift */,
+			);
+			path = World;
 			sourceTree = "<group>";
 		};
 		C269763E23D4D691007035ED /* Shared */ = {
@@ -585,6 +625,8 @@
 				C27BC47A2415867500AA59FA /* ResourcesDTO.swift */,
 				C27BC47C2415872900AA59FA /* CityDTO.swift */,
 				C27BC47E2415879900AA59FA /* ArmyDTO.swift */,
+				C2672F892422852C00084C42 /* MapDTO.swift */,
+				C2672F8E24229C2300084C42 /* WorldDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -632,6 +674,8 @@
 				C2BFEC99241AB0C000912F3F /* CityRepository.swift */,
 				C2BFEC9B241AB44700912F3F /* ArmyRepositoy.swift */,
 				C2BFEC9D241AB72500912F3F /* ResourcesRepository.swift */,
+				C2672F79242261D800084C42 /* WorldRepository.swift */,
+				C2672F7D2422633C00084C42 /* MapRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -673,28 +717,48 @@
 			children = (
 				92E5190A22A750D0000B1F59 /* Publisher.swift */,
 				92E5190C22A750DB000B1F59 /* Subscriber.swift */,
-				92E5191222A76021000B1F59 /* Notifications.swift */,
 				9244332822C6CC5C00913284 /* NotificationFactory.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		C2BFEC9F241ADA8000912F3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2BFEC83241AAEC900912F3F /* CDArmy+CoreDataClass.swift */,
+				C2BFEC84241AAEC900912F3F /* CDArmy+CoreDataProperties.swift */,
+				C2BFEC8B241AAEC900912F3F /* CDArmyUnits+CoreDataClass.swift */,
+				C2BFEC8C241AAEC900912F3F /* CDArmyUnits+CoreDataProperties.swift */,
+				C2BFEC81241AAEC900912F3F /* CDCity+CoreDataClass.swift */,
+				C2BFEC82241AAEC900912F3F /* CDCity+CoreDataProperties.swift */,
+				C2672F942422A67200084C42 /* CDMap+CoreDataClass.swift */,
+				C2672F952422A67200084C42 /* CDMap+CoreDataProperties.swift */,
+				C2BFEC89241AAEC900912F3F /* CDPlayer+CoreDataClass.swift */,
+				C2BFEC8A241AAEC900912F3F /* CDPlayer+CoreDataProperties.swift */,
+				C2BFEC85241AAEC900912F3F /* CDResources+CoreDataClass.swift */,
+				C2BFEC86241AAEC900912F3F /* CDResources+CoreDataProperties.swift */,
+				C2BFEC87241AAEC900912F3F /* CDUnit+CoreDataClass.swift */,
+				C2BFEC88241AAEC900912F3F /* CDUnit+CoreDataProperties.swift */,
+				C2672F902422A31100084C42 /* CDTile+CoreDataClass.swift */,
+				C2672F912422A31100084C42 /* CDTile+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2BFECA0241AE08600912F3F /* World */ = {
+			isa = PBXGroup;
+			children = (
+				C2672F77242260ED00084C42 /* WorldService.swift */,
+				C2672F7B2422623400084C42 /* WorldServicePublisher.swift */,
+			);
+			path = World;
 			sourceTree = "<group>";
 		};
 		C2C383D823C8E3D200F61849 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				C2DDC9D523CA24D600456276 /* Model.xcdatamodeld */,
-				C2BFEC81241AAEC900912F3F /* CDCity+CoreDataClass.swift */,
-				C2BFEC82241AAEC900912F3F /* CDCity+CoreDataProperties.swift */,
-				C2BFEC83241AAEC900912F3F /* CDArmy+CoreDataClass.swift */,
-				C2BFEC84241AAEC900912F3F /* CDArmy+CoreDataProperties.swift */,
-				C2BFEC85241AAEC900912F3F /* CDResources+CoreDataClass.swift */,
-				C2BFEC86241AAEC900912F3F /* CDResources+CoreDataProperties.swift */,
-				C2BFEC87241AAEC900912F3F /* CDUnit+CoreDataClass.swift */,
-				C2BFEC88241AAEC900912F3F /* CDUnit+CoreDataProperties.swift */,
-				C2BFEC89241AAEC900912F3F /* CDPlayer+CoreDataClass.swift */,
-				C2BFEC8A241AAEC900912F3F /* CDPlayer+CoreDataProperties.swift */,
-				C2BFEC8B241AAEC900912F3F /* CDArmyUnits+CoreDataClass.swift */,
-				C2BFEC8C241AAEC900912F3F /* CDArmyUnits+CoreDataProperties.swift */,
+				C2BFEC9F241ADA8000912F3F /* Models */,
 				C27BC4862415E74A00AA59FA /* Repositories */,
 			);
 			path = CoreData;
@@ -710,6 +774,7 @@
 				C2EF8E7A240DDA240002354D /* March */,
 				C2EF8E71240DD8C80002354D /* User */,
 				C2E7DB5224143CAF00121B47 /* Player */,
+				C2672F7F2422643000084C42 /* World */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -717,6 +782,7 @@
 		C2D1BDB72343F94800ADF01E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C2BFECA0241AE08600912F3F /* World */,
 				C2E7DB642414556E00121B47 /* Player */,
 				C2EF8E85240DE1820002354D /* User */,
 				C2EF8E8C240DE27D0002354D /* Game */,
@@ -1341,13 +1407,16 @@
 				923B38BF22A0818300748F6F /* LoginSceneUsernameField.swift in Sources */,
 				C2EF8E6B240DAC480002354D /* APIRegisterFailedData.swift in Sources */,
 				C2BFEC8E241AAEC900912F3F /* CDCity+CoreDataProperties.swift in Sources */,
+				C2672F882422838B00084C42 /* GetWorldResponseDTO.swift in Sources */,
 				C2D50847237B4A2100F48B32 /* SceneNotifications.swift in Sources */,
 				C2D5084D237B518700F48B32 /* APINotifications.swift in Sources */,
 				C2F574E523A9C0FF00E2DE5D /* GetCitiesResponse.swift in Sources */,
+				C2672F7C2422623400084C42 /* WorldServicePublisher.swift in Sources */,
 				C2E7DB6B2414559E00121B47 /* GameTryCreatePlayerData.swift in Sources */,
 				C2515AF42418659C00ABCBC7 /* GenericLabel.swift in Sources */,
 				C2F5191F23AAD9F10042094E /* MarchService.swift in Sources */,
 				C2EF8E9D240DEB030002354D /* CreatePlayerBackground.swift in Sources */,
+				C2672F7A242261D800084C42 /* WorldRepository.swift in Sources */,
 				C2BF586623D5720700772635 /* MarchSelectorFooter.swift in Sources */,
 				C299F0A8234BDA4B0076C747 /* LoginUserResponseDTO.swift in Sources */,
 				C2BFEC95241AAEC900912F3F /* CDPlayer+CoreDataClass.swift in Sources */,
@@ -1357,9 +1426,11 @@
 				C2BFEC8F241AAEC900912F3F /* CDArmy+CoreDataClass.swift in Sources */,
 				C2491FE323D241B2000663C6 /* MarchSelectorView.swift in Sources */,
 				C2F5192A23AADEC10042094E /* MarchServices.swift in Sources */,
+				C2672F962422A67200084C42 /* CDMap+CoreDataClass.swift in Sources */,
 				C2D1BDE12345EABA00ADF01E /* Request.swift in Sources */,
 				C2834895236BC5DE00381EA3 /* LoadingScenePublisher.swift in Sources */,
 				C2C383D223C66C5500F61849 /* GameSceneNodeNames.swift in Sources */,
+				C2672F922422A31100084C42 /* CDTile+CoreDataClass.swift in Sources */,
 				92A2A344229B635A0090287C /* GameViewController.swift in Sources */,
 				C2F5192C23AADEC90042094E /* MarchServicesPublisher.swift in Sources */,
 				C23CF4A2237F5E8A00833792 /* CityService.swift in Sources */,
@@ -1392,6 +1463,8 @@
 				C2834893236BC56B00381EA3 /* LoadingSceneBackground.swift in Sources */,
 				923B38B922A0812900748F6F /* LoginSceneBackground.swift in Sources */,
 				923B38C122A0819A00748F6F /* LoginScenePasswordField.swift in Sources */,
+				C2672F8F24229C2300084C42 /* WorldDTO.swift in Sources */,
+				C2672F932422A31100084C42 /* CDTile+CoreDataProperties.swift in Sources */,
 				C2E7DB63241454BA00121B47 /* SceneTryCreatePlayerData.swift in Sources */,
 				C2D7B8E923907C35006571E2 /* ArmyServicePublisher.swift in Sources */,
 				C26C1A2823D621A70083E392 /* MarchSelectorContent.swift in Sources */,
@@ -1408,6 +1481,8 @@
 				923B38BD22A0816F00748F6F /* LoginSceneLoginButton.swift in Sources */,
 				C283D5A62409132E00E109A0 /* RegisterRequest.swift in Sources */,
 				C2E7DB662414557F00121B47 /* PlayerService.swift in Sources */,
+				C2672F8C24229B4B00084C42 /* World.swift in Sources */,
+				C2672F7E2422633C00084C42 /* MapRepository.swift in Sources */,
 				C2F5192423AADB3A0042094E /* March.swift in Sources */,
 				C2D1BDE32345EABE00ADF01E /* Response.swift in Sources */,
 				C2D1BDB92343F95500ADF01E /* MapService.swift in Sources */,
@@ -1417,19 +1492,22 @@
 				C2E7DB5424143D1300121B47 /* PlayerServices.swift in Sources */,
 				C20E1FE623B106C9002A8E7E /* MarchNode.swift in Sources */,
 				C277ED6A2393663500894B7A /* CityServicePublisher.swift in Sources */,
+				C2672F78242260ED00084C42 /* WorldService.swift in Sources */,
 				C284DBD023C3AE79004ADEFC /* ResourceTickerView.swift in Sources */,
 				C2515AF22418466400ABCBC7 /* ErrorMessageLabel.swift in Sources */,
 				C2EF8E84240DE0480002354D /* RegisterUserResponseDTO.swift in Sources */,
 				923B38DA22A1D99C00748F6F /* GameSceneGestures.swift in Sources */,
 				C2D7B8E723907A40006571E2 /* ArmyServicesPublisher.swift in Sources */,
+				C2672F972422A67200084C42 /* CDMap+CoreDataProperties.swift in Sources */,
 				C2EF8E9B240DE8F20002354D /* CreatePlayerView.swift in Sources */,
 				C2EF8E65240DA5670002354D /* GameTryLoginData.swift in Sources */,
 				C2EF8E96240DE7E70002354D /* CreatePlayerScenePublisher.swift in Sources */,
 				C2C383D423C7D45600F61849 /* Unit.swift in Sources */,
+				C2672F8A2422852C00084C42 /* MapDTO.swift in Sources */,
+				C2672F83242264FC00084C42 /* WorldServicesPublisher.swift in Sources */,
 				C2FDC5752384756800C0E556 /* GetUsersResponse.swift in Sources */,
 				C284DBD423C3B04E004ADEFC /* Resources.swift in Sources */,
 				C2BFEC91241AAEC900912F3F /* CDResources+CoreDataClass.swift in Sources */,
-				92E5191322A76021000B1F59 /* Notifications.swift in Sources */,
 				C27BC47B2415867500AA59FA /* ResourcesDTO.swift in Sources */,
 				C2EF8E6F240DD4070002354D /* APIRegisterSucceedData.swift in Sources */,
 				C27BC47D2415872900AA59FA /* CityDTO.swift in Sources */,
@@ -1462,6 +1540,7 @@
 				C2D7B8E52390788E006571E2 /* ArmyServices.swift in Sources */,
 				C28348A1236BDF3300381EA3 /* LoadingSceneProgressBar.swift in Sources */,
 				9244332922C6CC5C00913284 /* NotificationFactory.swift in Sources */,
+				C2672F852422659900084C42 /* GetWorldRequestDTO.swift in Sources */,
 				C2EF8E9F240DEB1D0002354D /* CreatePlayerHeader.swift in Sources */,
 				C28348AA236CC3EB00381EA3 /* ConnectionMessageDispatch.swift in Sources */,
 				C2BFEC90241AAEC900912F3F /* CDArmy+CoreDataProperties.swift in Sources */,
@@ -1470,6 +1549,7 @@
 				C2DDC9D723CA24D700456276 /* Model.xcdatamodeld in Sources */,
 				C27BC4882415E7F600AA59FA /* PlayerRepository.swift in Sources */,
 				C2BFEC8D241AAEC900912F3F /* CDCity+CoreDataClass.swift in Sources */,
+				C2672F812422644800084C42 /* WorldServices.swift in Sources */,
 				C2EF8E63240DA5580002354D /* GameTryRegisterData.swift in Sources */,
 				C28348A3236C93B800381EA3 /* ConnectionPublisher.swift in Sources */,
 				C2EF8E59240DA3D40002354D /* LoginUserErrorResponseDTO.swift in Sources */,

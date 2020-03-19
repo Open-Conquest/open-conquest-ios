@@ -23,22 +23,5 @@ class SceneNotificationFactory: NotificationFactory {
         let data = SceneTryRegisterData(username: username, password: password)
         return buildNotification(name: .SceneTryRegister, data: data)
     }
-    
-    func buildGetEntityNotification(entity: GameEntityType) -> Notification {
-        switch entity {
-        case .army:
-            return buildNotification(name: .SceneTryGetArmies, data: nil)
-        case .city:
-            return buildNotification(name: .SceneTryGetCities, data: nil)
-        case .map:
-            return buildNotification(name: .SceneTryGetMap, data: nil)
-        case .march:
-            return buildNotification(name: .SceneTryGetMarches, data: nil)
-        case .user:
-            return buildNotification(name: .SceneTryGetUsers, data: nil)
-        default:
-            fatalError()
-        }
-    }
 }
 

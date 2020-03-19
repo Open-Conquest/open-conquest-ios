@@ -14,11 +14,8 @@ class LoadingScenePublisher: ScenePublisher {
         super.init()
     }
     
-    func getAllGameComponents() {
-        getArmies()
-        getCities()
-        getMap()
-        getMarches()
-        getUsers()
+    func tryGetWorld() {
+        let notification = sceneNotificationFactory.buildNotification(name: .SceneTryGetWorld, data: nil)
+        post(notification: notification)
     }
 }

@@ -21,23 +21,19 @@ class ConnectionMessageDispatch {
     }
     
     func handle(json: JSON) {
-        let response    = Response(body: json)
-        let service     = response.getService()
+        let response = Response(body: json)
+        let service = response.getService()
         print("ConnectionMessageDispatch received response: \(response.toString())")
         
         switch service {
-        case APIServices.Army:
-            publisher.publishArmyResponse(response: response)
-        case APIServices.City:
-            publisher.publishCityResponse(response: response)
-        case APIServices.Map:
-            publisher.publishMapResponse(response: response)
-        case APIServices.March:
-            publisher.publishMarchResponse(response: response)
         case APIServices.User:
             publisher.publishUserResponse(response: response)
         case APIServices.Player:
             publisher.publishPlayerResponse(response: response)
+        case APIServices.World:
+            publisher.publishWorldResponse(response: response)
+        default:
+            print("Unexpected response from Connection: \(response.toString())")
         }
     }
 }
