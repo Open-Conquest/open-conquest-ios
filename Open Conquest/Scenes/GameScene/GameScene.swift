@@ -21,16 +21,6 @@ class GameScene: SKScene, Scene {
     var rowSelected: Int?
     var colSelected: Int?
     
-    override init() {
-        publisher = GameScenePublisher()
-        subscriber = Subscriber()
-        map = MapNode(map: Map())
-        overlay = MapOverlayView()
-        marchSelectorView = MarchSelectorView(frame: .zero)
-        gestures = GameSceneGestures()
-        super.init()
-    }
-    
     override init(size: CGSize) {
         publisher = GameScenePublisher()
         subscriber = Subscriber()
@@ -49,7 +39,7 @@ class GameScene: SKScene, Scene {
         setupUI()
         setupGestures()
         setupSubscribers()
-        loadComponentsIntialState()
+        tryGetWorld()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -80,14 +70,17 @@ class GameScene: SKScene, Scene {
     
     func setupGestures() {
         gestures = GameSceneGestures()
+        
         // setup pan gesture
         let panSelector = #selector(self.handlePan(panGesture:))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
         view!.addGestureRecognizer(panGestureRecognizer)
+        
         // setup pinch gesture
         let pinchGesture = #selector(self.handlePinch(pinchGesture:))
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: pinchGesture)
         view!.addGestureRecognizer(pinchGestureRecognizer)
+        
         // setup tap gesture
         let tapSelector = #selector(self.handleTap(tapGesture:))
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: tapSelector)
@@ -100,15 +93,10 @@ class GameScene: SKScene, Scene {
     }
     
     func setupSubscribers() {
-        subscriber.subscribe(observingFunction: didGetCities(_:), name: .GameDidGetCities)
-        subscriber.subscribe(observingFunction: didGetMap(_:), name: .GameDidGetMap)
-        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .GameDidGetMarches)
-    }
-    
-    func loadComponentsIntialState() {
-        publisher.getCities()
-        publisher.getMap()
-        publisher.getMarches()
+        subscriber.subscribe(observingFunction: didGetWorld(_:), name: .GameDidGetWorld)
+//        subscriber.subscribe(observingFunction: didGetCities(_:), name: .GameDidGetCities)
+//        subscriber.subscribe(observingFunction: didGetMap(_:), name: .GameDidGetMap)
+//        subscriber.subscribe(observingFunction: didGetMarches(_:), name: .GameDidGetMarches)
     }
     
     // MARK: CLEANUP METHODS
@@ -118,29 +106,29 @@ class GameScene: SKScene, Scene {
     }
     
     func teardownSubscribers() {
-        // todo
+        subscriber.unsubscribeAllObservers()
     }
     
     // MARK: SUBSCRIBING METHODS
     
-    func didGetCities(_ notifiction: Notification) {
-        print("GameScene recieved scene-did-get-cities event...")
-        // todo
-    }
-    
-    func didGetMap(_ notification: Notification) {
-        print("GameScene recieved scene-did-get-map event...")
+    /* Listening for didGetWorld notification from game. */
+    func didGetWorld(_ notification: Notification) {
+        print("GameScene received game-did-get-world event")
         
-        // parse map from notification
-        let mapData = notification.userInfo!["data"] as! [Map]
+        // get world from notification data
+        let world = notification.userInfo!["data"] as! World
         
-        // draw map
-        map.drawMapFromMapModel(map: mapData[0])
-        
-        // move camera to focus on map
+        // draw map from the world map
+        map.drawMapFromMapModel(map: world.map)
+        // move camera to 0,0 position on map
         camera!.position = map.centerOfTile(atColumn: 0, row: 0)
         let zoomAction = SKAction.scale(by: 1000, duration: 0)
         camera!.run(zoomAction)
+    }
+    
+    func didGetCities(_ notifiction: Notification) {
+        print("GameScene recieved scene-did-get-cities event...")
+        // todo
     }
     
     func didGetMarches(_ notification: Notification) {
@@ -157,6 +145,9 @@ class GameScene: SKScene, Scene {
     
     // MARK: PUBLISHING METHODS
     
+    func tryGetWorld() {
+        publisher.tryGetWorld()
+    }
     
     /**
      Called when a user tries to attack a city with a selected army.

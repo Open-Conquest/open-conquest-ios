@@ -18,4 +18,10 @@ class LoginScenePublisher: ScenePublisher {
         let notification = sceneNotificationFactory.buildTryLoginNotification(username: username, password: password) as! Notification
         post(notification: notification)
     }
+    
+    func tryRegister(username: String, password: String) {
+        let notification = sceneNotificationFactory.buildTryRegisterNotification(username: username, password: password) as! Notification
+        post(notification: notification)
+    }
 }
+ 

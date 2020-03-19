@@ -10,26 +10,41 @@ import Foundation
 import CoreData
 
 class Game {
-    var subscriber:     Subscriber
-    var gamePublisher:  GamePublisher
-    var context:        NSManagedObjectContext
-    
-    var armyService:    ArmyService
-    var cityService:    CityService
-    var mapService:     MapService
-    var marchService:   MarchService
-    var userService:    UserService
+    var context: NSManagedObjectContext
+    var armyService: ArmyService
+    var cityService: CityService
+    var mapService: MapService
+    var marchService: MarchService
+    var playerService: PlayerService
+    var userService: UserService
+    var worldService: WorldService
 
-    init(dataContext: NSManagedObjectContext) {
-        context         = dataContext
-        subscriber      = Subscriber()
-        gamePublisher   = GamePublisher()
+    init(context: NSManagedObjectContext) {
+        self.context = context
+        // create repositories with context
+        let armyRepository = ArmyRepository(context: context)
+        let cityRepository = CityRepository(context: context)
+        let mapRepository = MapRepository(context: context)
+        let playerRepository = PlayerRepository(context: context)
+        let resourcesRepository = ResourcesRepository(context: context)
         
-        armyService     = ArmyService(context: context)
-        cityService     = CityService()
-        mapService      = MapService()
-        marchService    = MarchService()
-        userService     = UserService()
+        // create enitity services with repositories
+        armyService = ArmyService(context: context)
+        cityService = CityService()
+        mapService = MapService()
+        marchService = MarchService()
+        playerService = PlayerService(
+            playerRepository: playerRepository,
+            cityRepository: cityRepository,
+            armyRepository: armyRepository,
+            resourcesRepository: resourcesRepository
+        )
+        userService = UserService()
+        worldService = WorldService(
+            playerRepository: playerRepository,
+            mapRepository: mapRepository,
+            cityRepository: cityRepository
+        )
         
         print("Game intialized")
     }
@@ -41,4 +56,5 @@ enum GameEntityType: String {
     case map    = "map"
     case march  = "march"
     case user   = "user"
+    case player = "player"
 }

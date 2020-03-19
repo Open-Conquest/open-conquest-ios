@@ -2,7 +2,7 @@
 //  CDArmy+CoreDataProperties.swift
 //  Open Conquest
 //
-//  Created by Zach Wild on 1/20/20.
+//  Created by Zach Wild on 3/12/20.
 //  Copyright © 2020 Zach Wild. All rights reserved.
 //
 //
@@ -17,27 +17,24 @@ extension CDArmy {
         return NSFetchRequest<CDArmy>(entityName: "CDArmy")
     }
 
-    @NSManaged public var army_id: Int64
-    @NSManaged public var user_id: Int64
-    @NSManaged public var units: NSSet?
-    @NSManaged public var user: CDUser?
-    @NSManaged public var march: CDMarch?
+    @NSManaged public var armyUnits: NSSet?
+    @NSManaged public var player: CDPlayer?
 
 }
 
-// MARK: Generated accessors for units
+// MARK: Generated accessors for armyUnits
 extension CDArmy {
 
-    @objc(addUnitsObject:)
-    @NSManaged public func addToUnits(_ value: CDArmy_Units)
+    @objc(addArmyUnitsObject:)
+    @NSManaged public func addToArmyUnits(_ value: CDArmyUnits)
 
-    @objc(removeUnitsObject:)
-    @NSManaged public func removeFromUnits(_ value: CDArmy_Units)
+    @objc(removeArmyUnitsObject:)
+    @NSManaged public func removeFromArmyUnits(_ value: CDArmyUnits)
 
-    @objc(addUnits:)
-    @NSManaged public func addToUnits(_ values: NSSet)
+    @objc(addArmyUnits:)
+    @NSManaged public func addToArmyUnits(_ values: NSSet)
 
-    @objc(removeUnits:)
-    @NSManaged public func removeFromUnits(_ values: NSSet)
+    @objc(removeArmyUnits:)
+    @NSManaged public func removeFromArmyUnits(_ values: NSSet)
 
 }

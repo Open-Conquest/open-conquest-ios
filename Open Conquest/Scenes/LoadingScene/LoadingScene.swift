@@ -13,7 +13,8 @@ class LoadingScene: SKScene, Scene {
     var publisher: LoadingScenePublisher
     var subscriber: Subscriber
     var componentsLoaded: Int = 0
-    let totalComponents: Int = 5
+    let totalComponents: Int = 1
+    var world: World?
 
     // MARK: INITIALIZATION METHODS
     
@@ -36,25 +37,17 @@ class LoadingScene: SKScene, Scene {
         setupSubscribers()
         setupUI()
         setupUIActions()
-        tryLoading()
+        tryGetWorld()
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        if (componentsLoaded == totalComponents) {
-            presentGameScene()
-        }
-    }
+    override func update(_ currentTime: TimeInterval) {}
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     // MARK: SETUP METHODS
     
     func setupSubscribers() {
-        subscriber.subscribe(observingFunction: gotArmies(_:),  name: .GameDidGetArmies)
-        subscriber.subscribe(observingFunction: gotCities(_:),  name: .GameDidGetCities)
-        subscriber.subscribe(observingFunction: gotMap(_:),     name: .GameDidGetMap)
-        subscriber.subscribe(observingFunction: gotMarches(_:), name: .GameDidGetMarches)
-        subscriber.subscribe(observingFunction: gotUsers(_:),   name: .GameDidGetUsers)
+        subscriber.subscribe(observingFunction: didGetWorld(_:),  name: .GameDidGetWorld)
     }
     
     func setupUI() {
@@ -76,52 +69,33 @@ class LoadingScene: SKScene, Scene {
     // MARK: CLEANUP METHODS
     
     func teardownSubscribers() {
-        subscriber.unsubscribe(observingFunction: gotArmies(_:))
-        subscriber.unsubscribe(observingFunction: gotCities(_:))
-        subscriber.unsubscribe(observingFunction: gotMap(_:))
-        subscriber.unsubscribe(observingFunction: gotMarches(_:))
-        subscriber.unsubscribe(observingFunction: gotUsers(_:))
+        subscriber.unsubscribeAllObservers()
+//        subscriber.unsubscribe(observingFunction: didGetWorld(_:))
     }
     
     func prepareForNavigation() {
+        for subview in loadingView.subviews {
+            subview.removeFromSuperview()
+        }
         loadingView.removeFromSuperview()
         teardownSubscribers()
     }
     
     // MARK: PUBLISHING METHODS
     
-    @objc func tryLoading() {
+    func tryGetWorld() {
         print("LoadingScene trying to load game...")
-        publisher.getAllGameComponents()
+        publisher.tryGetWorld()
     }
     
     // MARK: SUBSCRIBING METHODS
     
-    func gotArmies(_ notification: Notification) {
-        // duplicated code -- remove by adding wrapper to response? something
-        // todo later not so important right now
-        print("LoadingScene received DidGetArmies event from game.")
-        updateProgressBar()
-    }
-    
-    func gotCities(_ notification: Notification) {
-        print("LoadingScene received cityLoaded event from game.")
-        updateProgressBar()
-    }
-    
-    func gotMap(_ notification: Notification) {
-        print("LoadingScene received mapLoaded event from game.")
-        updateProgressBar()
-    }
-    
-    func gotMarches(_ notification: Notification) {
-        print("LoadingScene received marchLoaded event from game.")
-        updateProgressBar()
-    }
-    
-    func gotUsers(_ notification: Notification) {
-        print("LoadingScene received DidGetUsers event from game.")
-        updateProgressBar()
+    func didGetWorld(_ notification: Notification) {
+        print("LoadingScene received DidGetWorld event from game.")
+        
+        world = notification.userInfo!["data"] as! World
+        
+        presentGameScene()
     }
     
     // MARK: NAVIGATION METHODS
@@ -130,7 +104,8 @@ class LoadingScene: SKScene, Scene {
         print("LoadingScene presenting GameScene...")
         
         prepareForNavigation()
-        let scene = GameScene()
+        
+        let scene = GameScene(size: size)
         scene.scaleMode = .aspectFill
         view!.presentScene(scene)
     }

@@ -21,10 +21,16 @@ class GameViewController: UIViewController {
         // get core data managed context from app delegate
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        game        = Game(dataContext: context)
+        game        = Game(context: context)
         api         = API()
         scene       = LoginScene()
         connection  = Connection()
+        
+        // before presenting login scene
+        // see if user has token
+        // try to login with token
+        // if it doesnt work present login scene
+        // if it does work present loading scene
         
         if let view = self.view as? SKView {
             scene!.scaleMode = .aspectFill

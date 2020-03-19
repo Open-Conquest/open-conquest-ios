@@ -63,5 +63,4 @@ class Connection: WebSocketDelegate {
         print("Sending request to server: \(requestString)")
         socket.write(string: requestString)
     }
-    
 }

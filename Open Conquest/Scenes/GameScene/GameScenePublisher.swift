@@ -13,4 +13,8 @@ class GameScenePublisher: ScenePublisher {
     override init() {
     }
     
+    func tryGetWorld() {
+        let notification = sceneNotificationFactory.buildNotification(name: .SceneTryGetWorld, data: nil)
+        post(notification: notification)
+    }
 }

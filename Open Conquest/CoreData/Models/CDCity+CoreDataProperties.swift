@@ -2,7 +2,7 @@
 //  CDCity+CoreDataProperties.swift
 //  Open Conquest
 //
-//  Created by Zach Wild on 1/20/20.
+//  Created by Zach Wild on 3/12/20.
 //  Copyright © 2020 Zach Wild. All rights reserved.
 //
 //
@@ -17,12 +17,10 @@ extension CDCity {
         return NSFetchRequest<CDCity>(entityName: "CDCity")
     }
 
-    @NSManaged public var city_id: Int64
-    @NSManaged public var city_level: Int64
-    @NSManaged public var city_name: String?
-    @NSManaged public var tile_id: Int64
-    @NSManaged public var user_id: Int64
-    @NSManaged public var tile: CDTile?
-    @NSManaged public var user: CDUser?
+    @NSManaged public var col: Int16
+    @NSManaged public var level: Int16
+    @NSManaged public var name: String?
+    @NSManaged public var row: Int16
+    @NSManaged public var player: CDPlayer?
 
 }
