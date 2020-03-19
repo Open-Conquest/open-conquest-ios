@@ -39,9 +39,6 @@ class GameScene: SKScene, Scene {
         setupUI()
         setupGestures()
         setupSubscribers()
-        camera!.position = map.centerOfTile(atColumn: 0, row: 0)
-        let zoomAction = SKAction.scale(by: 1000, duration: 0)
-        camera!.run(zoomAction)
         tryGetWorld()
     }
     
@@ -73,14 +70,17 @@ class GameScene: SKScene, Scene {
     
     func setupGestures() {
         gestures = GameSceneGestures()
+        
         // setup pan gesture
         let panSelector = #selector(self.handlePan(panGesture:))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: panSelector)
         view!.addGestureRecognizer(panGestureRecognizer)
+        
         // setup pinch gesture
         let pinchGesture = #selector(self.handlePinch(pinchGesture:))
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: pinchGesture)
         view!.addGestureRecognizer(pinchGestureRecognizer)
+        
         // setup tap gesture
         let tapSelector = #selector(self.handleTap(tapGesture:))
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: tapSelector)
@@ -106,37 +106,29 @@ class GameScene: SKScene, Scene {
     }
     
     func teardownSubscribers() {
-        // todo
+        subscriber.unsubscribeAllObservers()
     }
     
     // MARK: SUBSCRIBING METHODS
     
+    /* Listening for didGetWorld notification from game. */
     func didGetWorld(_ notification: Notification) {
         print("GameScene received game-did-get-world event")
         
+        // get world from notification data
         let world = notification.userInfo!["data"] as! World
         
+        // draw map from the world map
         map.drawMapFromMapModel(map: world.map)
+        // move camera to 0,0 position on map
+        camera!.position = map.centerOfTile(atColumn: 0, row: 0)
+        let zoomAction = SKAction.scale(by: 1000, duration: 0)
+        camera!.run(zoomAction)
     }
     
     func didGetCities(_ notifiction: Notification) {
         print("GameScene recieved scene-did-get-cities event...")
         // todo
-    }
-    
-    func didGetMap(_ notification: Notification) {
-        print("GameScene recieved scene-did-get-map event...")
-        
-        // parse map from notification
-        let mapData = notification.userInfo!["data"] as! [Map]
-        
-        // draw map
-        map.drawMapFromMapModel(map: mapData[0])
-        
-        // move camera to focus on map
-        camera!.position = map.centerOfTile(atColumn: 0, row: 0)
-        let zoomAction = SKAction.scale(by: 1000, duration: 0)
-        camera!.run(zoomAction)
     }
     
     func didGetMarches(_ notification: Notification) {
