@@ -69,16 +69,21 @@ class LoadingScene: SKScene, Scene {
     // MARK: CLEANUP METHODS
     
     func teardownSubscribers() {
-        subscriber.unsubscribe(observingFunction: didGetWorld(_:))
+        subscriber.unsubscribeAllObservers()
+//        subscriber.unsubscribe(observingFunction: didGetWorld(_:))
     }
     
     func prepareForNavigation() {
+        for subview in loadingView.subviews {
+            subview.removeFromSuperview()
+        }
+        loadingView.removeFromSuperview()
         teardownSubscribers()
     }
     
     // MARK: PUBLISHING METHODS
     
-    @objc func tryGetWorld() {
+    func tryGetWorld() {
         print("LoadingScene trying to load game...")
         publisher.tryGetWorld()
     }
@@ -97,8 +102,10 @@ class LoadingScene: SKScene, Scene {
         
     func presentGameScene() {
         print("LoadingScene presenting GameScene...")
+        
         prepareForNavigation()
-        let scene = GameScene(world: world!)
+        
+        let scene = GameScene(size: size)
         scene.scaleMode = .aspectFill
         view!.presentScene(scene)
     }

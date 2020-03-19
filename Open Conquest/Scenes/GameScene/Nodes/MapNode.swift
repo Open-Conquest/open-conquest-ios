@@ -40,8 +40,8 @@ class MapNode: SKTileMapNode {
         name = GameSceneNodeNames.map.rawValue
         tileSet = SKTileSet(named: "Sample Hexagonal Tile Set")!
         tileSize = CGSize(width: 111, height: 128)
-        numberOfRows = map.numRows
-        numberOfColumns = map.numCols
+        numberOfRows = 10
+        numberOfColumns = 10
         position = CGPoint(x: 0, y: 0)
         anchorPoint = CGPoint(x: 0, y: 0)
         
